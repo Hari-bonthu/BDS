@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" fill="none">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0247fe" />
+      <stop offset="60%" stop-color="#0b63f6" />
+      <stop offset="100%" stop-color="#00d2ff" />
+    </linearGradient>
+    <linearGradient id="darkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="120" rx="28" fill="#ffffff" />
+  <!-- B shape -->
+  <path d="M22 30 H50 C62 30 70 38 70 48 C70 54 66 59 60 62 C68 65 73 72 73 82 C73 94 63 102 49 102 H22 V30 Z M36 44 V58 H48 C54 58 58 54 58 49 C58 44 54 44 48 44 H36 Z M36 72 V88 H50 C56 88 60 84 60 80 C60 76 56 72 50 72 H36 Z" fill="url(#blueGrad)" />
+  <!-- S shape stylized -->
+  <path d="M78 40 C73 40 68 43 65 48 L74 54 C76 51 78 50 82 50 C86 50 89 52 89 55 C89 58 86 60 80 62 C71 65 65 70 65 78 C65 89 74 96 86 96 C93 96 99 92 103 86 L94 80 C92 84 89 86 85 86 C81 86 78 84 78 80 C78 77 81 75 87 73 C96 70 102 65 102 56 C102 46 92 40 78 40 Z" fill="url(#darkGrad)" />
+  <!-- Digital pixel blocks -->
+  <rect x="88" y="24" width="7" height="7" fill="#0b63f6" />
+  <rect x="98" y="16" width="9" height="9" fill="#00d2ff" />
+  <rect x="100" y="28" width="8" height="8" fill="#1e293b" />
+</svg>
