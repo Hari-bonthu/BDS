@@ -28,13 +28,6 @@ interface QuoteModalProps {
   language?: Language;
 }
 
-const budgetOptions = [
-  { id: '5k-10k', label: '₹5,000 – ₹10,000', sub: 'Starter' },
-  { id: '10k-20k', label: '₹10,000 – ₹20,000', sub: 'Most Popular', recommended: true },
-  { id: '20k-35k', label: '₹20,000 – ₹35,000', sub: 'Growth' },
-  { id: '35k-plus', label: '₹35,000+', sub: 'Enterprise' }
-];
-
 const goalOptions = [
   'Store Footfalls',
   'Patient Appointments',
@@ -55,7 +48,6 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   const [contactName, setContactName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
-  const [budget, setBudget] = useState('₹10,000 – ₹20,000');
   const [selectedGoals, setSelectedGoals] = useState<string[]>(['Store Footfalls']);
   const [notes, setNotes] = useState('');
   const [submitted, setSubmitted] = useState(false);
@@ -102,7 +94,6 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
       phone,
       email,
       selectedService,
-      budget,
       goals: selectedGoals,
       notes,
       timestamp: new Date().toISOString()
@@ -143,7 +134,6 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     `📱 *Phone:* ${phone}\n` +
     (email ? `✉️ *Email:* ${email}\n` : '') +
     `🎯 *Primary Service:* ${selectedService}\n` +
-    `💰 *Budget Range:* ${budget}\n` +
     (selectedGoals.length > 0 ? `🚀 *Goals:* ${selectedGoals.join(', ')}\n` : '') +
     (notes ? `📝 *Notes:* ${notes}\n` : '') +
     `📍 *Location:* Rajahmundry & East Godavari, AP`
@@ -164,16 +154,9 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
         id="quote-consultation-modal-box"
         className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-stone-200 overflow-hidden max-h-[94vh] flex flex-col animate-in zoom-in-95 duration-200"
       >
-        {/* Subtle Brand Accent Bar */}
-        <div className="h-1.5 bg-gradient-to-r from-blue-600 via-cyan-400 to-blue-700 shrink-0" />
-
         {/* Modal Header */}
         <div className="px-6 py-5 border-b border-stone-100 bg-[#fafaf9] flex items-start justify-between gap-4 shrink-0">
           <div className="space-y-1">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-[11px] font-extrabold uppercase tracking-wider">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-              <span>Affordable Digital Growth • Rajahmundry</span>
-            </div>
             <h3 className="text-xl sm:text-2xl font-black text-stone-950 tracking-tight">
               Get a Free Custom Quote
             </h3>
@@ -264,7 +247,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     <option value="all-in-one">Complete 360° Regional Growth Package (Highest ROAS)</option>
                     {servicesList.map((s) => (
                       <option key={s.id} value={s.id}>
-                        {s.title} — from {s.startingPrice}
+                        {s.title}
                       </option>
                     ))}
                   </select>
@@ -347,46 +330,6 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                       className="w-full pl-10 pr-3.5 py-2.5 rounded-xl border border-stone-300 bg-white text-sm font-medium text-stone-900 placeholder:text-stone-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none transition-all"
                     />
                   </div>
-                </div>
-              </div>
-
-              {/* Approximate Monthly Marketing Budget Chips */}
-              <div className="space-y-2">
-                <div className="flex items-center justify-between">
-                  <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider">
-                    Approximate Monthly Marketing Budget
-                  </label>
-                  <span className="text-[11px] font-semibold text-blue-600">
-                    Selected: {budget}
-                  </span>
-                </div>
-                <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                  {budgetOptions.map((opt) => (
-                    <button
-                      key={opt.id}
-                      type="button"
-                      onClick={() => setBudget(opt.label)}
-                      className={`relative p-2.5 rounded-2xl border text-center transition-all cursor-pointer ${
-                        budget === opt.label
-                          ? 'bg-stone-950 text-white border-stone-950 shadow-sm'
-                          : 'bg-stone-50/70 hover:bg-stone-100 text-stone-800 border-stone-200/80'
-                      }`}
-                    >
-                      {opt.recommended && (
-                        <span className="absolute -top-2 left-1/2 -translate-x-1/2 bg-blue-600 text-white text-[9px] font-black uppercase px-2 py-0.2 rounded-full tracking-wider">
-                          POPULAR
-                        </span>
-                      )}
-                      <div className="text-xs font-bold leading-tight">{opt.label}</div>
-                      <div
-                        className={`text-[10px] mt-0.5 ${
-                          budget === opt.label ? 'text-stone-300' : 'text-stone-400'
-                        }`}
-                      >
-                        {opt.sub}
-                      </div>
-                    </button>
-                  ))}
                 </div>
               </div>
 

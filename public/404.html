@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bhargav Digital Solutions (BDS)</title>
+    <script>
+      // Single Page Application clean-path redirect for GitHub Pages (No Hashtags)
+      // Redirects 404 paths to root with query param ?p= so index.html can restore clean pathname via history.replaceState
+      (function () {
+        var l = window.location;
+        var pathSegments = l.pathname.split('/').filter(Boolean);
+        var isRepo = pathSegments[0] === 'BDS';
+        var repoPrefix = isRepo ? '/BDS' : '';
+        var remainingSegments = isRepo ? pathSegments.slice(1) : pathSegments;
+        var remainingPath = '/' + remainingSegments.join('/');
+        if (!remainingSegments.length) remainingPath = '/';
+        var search = l.search ? '&' + l.search.slice(1) : '';
+        var targetUrl = repoPrefix + '/?p=' + encodeURIComponent(remainingPath) + search;
+        l.replace(targetUrl);
+      })();
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

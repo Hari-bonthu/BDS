@@ -14,11 +14,13 @@ import {
   Award,
   Zap,
   Target,
-  Users
+  Users,
+  Briefcase
 } from 'lucide-react';
 import { caseStudiesList, testimonialsList, companyInfo } from '../data/companyData';
 import { CTASection } from '../components/common/CTASection';
 import { PageId, Language } from '../types';
+import { asset } from '../utils/asset';
 import {
   GoogleLogo,
   GoogleMapsLogo,
@@ -37,10 +39,10 @@ interface PortfolioPageProps {
 
 // Visual image mapping for case studies
 const caseStudyImages: Record<string, string> = {
-  'retail-silks': '/assets/campaign-silks.jpg',
-  'dental-clinic': '/assets/campaign-dental.jpg',
-  'real-estate-villas': '/assets/campaign-villas.jpg',
-  'interiors-decors': '/assets/service-video-ads.jpg'
+  'retail-silks': asset('assets/campaign-silks.webp'),
+  'dental-clinic': asset('assets/campaign-dental.webp'),
+  'real-estate-villas': asset('assets/campaign-villas.webp'),
+  'interiors-decors': asset('assets/service-video-ads.webp')
 };
 
 // Platform badges mapping for case studies
@@ -154,15 +156,6 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
           ========================================================================= */}
       <section className="relative pt-12 sm:pt-20 pb-16 sm:pb-20 border-b border-stone-200/80 bg-gradient-to-b from-[#fbf9f4] via-[#fafaf9] to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
-          
-          {/* Eyebrow badge with blue dot */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-stone-200/80 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-700 mb-5">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-            <span>
-              {isTe ? 'ధృవీకరించబడిన ఫలితాలు & కేస్ స్టడీస్' : 'VERIFIED LOCAL PROOF & CASE STUDIES'}
-            </span>
-          </div>
-
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-stone-950 tracking-tight leading-[1.15]">
             {isTe ? (
               <>
@@ -318,17 +311,20 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
                   
-                  {/* Left Column: Dedicated Crystal-Clear Visual Asset & Platform Badges */}
-                  <div className="lg:col-span-5 bg-stone-50 border-b lg:border-b-0 lg:border-r border-stone-200/80 flex flex-col justify-between overflow-hidden">
+                  {/* Left Column: Dedicated Visual Asset & Platform Badges (No empty space, full flex height) */}
+                  <div className="lg:col-span-5 bg-white border-b lg:border-b-0 lg:border-r border-stone-200/80 flex flex-col justify-between overflow-hidden">
                     
-                    {/* Full-Color, Uncovered Image Asset */}
-                    <div className="relative w-full h-72 sm:h-80 lg:h-84 overflow-hidden bg-stone-100">
+                    {/* Full-Height Responsive Image Asset */}
+                    <div className="relative w-full flex-1 min-h-[320px] sm:min-h-[380px] overflow-hidden bg-stone-100 group">
                       {campaignImage ? (
                         <img
                           src={campaignImage}
                           alt={study.title}
-                          className="w-full h-full object-cover object-center scale-100 transition-transform duration-700 hover:scale-105"
+                          width={600}
+                          height={400}
+                          className="w-full h-full object-cover object-center scale-100 transition-transform duration-700 group-hover:scale-105"
                           loading="lazy"
+                          decoding="async"
                         />
                       ) : (
                         <div className="w-full h-full bg-stone-100 flex items-center justify-center text-stone-400">
@@ -336,56 +332,57 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                         </div>
                       )}
 
-                      {/* Subtle Floating Frosted Glass Pills (Zero dark wash over the photo) */}
+                      {/* Floating Category & Corridor Badges */}
                       <div className="absolute top-3.5 inset-x-3.5 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
-                        <div className="flex flex-wrap items-center gap-1.5">
-                          <span className="px-3 py-1 rounded-full bg-stone-950/80 backdrop-blur-md text-white border border-white/20 text-[11px] font-extrabold uppercase tracking-wider shadow-sm">
-                            {study.industry}
-                          </span>
-                          {study.neighborhood && (
-                            <span className="flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 rounded-full bg-stone-950/70 backdrop-blur-md text-stone-100 border border-white/20 shadow-sm">
-                              <MapPin className="w-3 h-3 text-cyan-400" />
-                              <span>{study.neighborhood}</span>
+                        <div className="flex flex-col gap-1.5 items-start">
+                          <div className="flex flex-wrap items-center gap-1.5">
+                            <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-stone-950/85 backdrop-blur-md text-white border border-white/20 text-[11px] font-bold shadow-sm">
+                              <Briefcase className="w-3.5 h-3.5 text-stone-300" />
+                              <span>{study.industry}</span>
+                            </span>
+                            {study.neighborhood && (
+                              <span className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-stone-950/85 backdrop-blur-md text-stone-100 border border-white/20 text-[11px] font-semibold shadow-sm">
+                                <MapPin className="w-3.5 h-3.5 text-cyan-400" />
+                                <span>{study.neighborhood}</span>
+                              </span>
+                            )}
+                          </div>
+
+                          {study.bilingualTag && (
+                            <span className="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-emerald-700/90 backdrop-blur-md text-white border border-emerald-400/40 shadow-sm">
+                              {study.bilingualTag}
                             </span>
                           )}
                         </div>
+                      </div>
 
-                        {study.bilingualTag && (
-                          <span className="text-[11px] font-bold px-2.5 py-1 rounded-lg bg-emerald-600/90 backdrop-blur-md text-white border border-emerald-400/40 shadow-sm">
-                            {study.bilingualTag}
-                          </span>
-                        )}
+                      {/* Bottom-Left Image Overlay Badge */}
+                      <div className="absolute bottom-3 left-3 pointer-events-none">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 text-white text-xs font-bold shadow-md">
+                          <TrendingUp className="w-3.5 h-3.5 text-emerald-200" />
+                          <span>Real Results. Local Impact.</span>
+                        </span>
                       </div>
                     </div>
 
-                    {/* Clean Editorial Platforms & Verified Footer Panel */}
-                    <div className="p-5 sm:p-6 bg-white border-t border-stone-200/80 space-y-4">
-                      <div>
-                        <span className="text-[10px] font-extrabold uppercase tracking-wider text-stone-500 block mb-2">
-                          Platforms &amp; Growth Channels
-                        </span>
-                        <div className="flex flex-wrap gap-1.5">
-                          {platforms.map((p, pIdx) => {
-                            const IconComponent = p.component;
-                            return (
-                              <div
-                                key={pIdx}
-                                className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-[#fafaf9] text-stone-800 text-[11px] font-semibold border border-stone-200/80 shadow-2xs"
-                              >
-                                <IconComponent className="w-3.5 h-3.5 shrink-0" />
-                                <span>{p.label}</span>
-                              </div>
-                            );
-                          })}
-                        </div>
-                      </div>
-
-                      <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs text-stone-600">
-                        <span>Lead Strategist: <strong className="text-stone-900 font-bold">Bhargav</strong></span>
-                        <span className="flex items-center gap-1 text-emerald-600 font-bold">
-                          <CheckCircle2 className="w-3.5 h-3.5" />
-                          <span>100% Verified ROI</span>
-                        </span>
+                    {/* Clean Platforms Used Footer Panel */}
+                    <div className="p-4 sm:p-5 bg-white border-t border-stone-200/80 space-y-2.5">
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-stone-400 block">
+                        Platforms Used
+                      </span>
+                      <div className="flex flex-wrap gap-2">
+                        {platforms.map((p, pIdx) => {
+                          const IconComponent = p.component;
+                          return (
+                            <div
+                              key={pIdx}
+                              className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#fafaf9] hover:bg-stone-100 text-stone-800 text-xs font-semibold border border-stone-200/80 shadow-2xs transition-colors"
+                            >
+                              <IconComponent className="w-3.5 h-3.5 shrink-0" />
+                              <span>{p.label}</span>
+                            </div>
+                          );
+                        })}
                       </div>
                     </div>
                   </div>
@@ -421,11 +418,11 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                           </p>
                         </div>
 
-                        <div className="p-5 rounded-2xl bg-blue-50/50 border border-blue-100 space-y-2">
+                        <div className="p-5 rounded-2xl bg-blue-50/50 border border-blue-100/80 space-y-2">
                           <div className="flex items-center gap-2">
                             <span className="w-2 h-2 rounded-full bg-blue-600" />
                             <span className="text-xs font-bold uppercase tracking-wider text-blue-900">
-                              Our BDS Strategy & Execution
+                              Our BDS Strategy &amp; Execution
                             </span>
                           </div>
                           <p className="text-xs sm:text-sm text-stone-700 leading-relaxed">
@@ -434,22 +431,22 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                         </div>
                       </div>
 
-                      {/* Verified Results Spotlight */}
+                      {/* Verified Results Spotlight with Clean White Cards and Blue Metrics */}
                       <div>
                         <span className="text-xs font-bold uppercase tracking-wider text-stone-500 block mb-3">
-                          Campaign Impact & Key Verified Results
+                          Campaign Impact &amp; Key Results
                         </span>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                           {study.results.map((res, rIdx) => (
                             <div
                               key={rIdx}
-                              className="p-4 rounded-xl bg-stone-900 text-white flex flex-col justify-between"
+                              className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200/90 shadow-2xs flex flex-col justify-between space-y-1 hover:border-blue-200 transition-colors"
                             >
-                              <span className="text-xs text-stone-300 font-medium">
-                                {res.label}
-                              </span>
-                              <span className="text-2xl sm:text-3xl font-black text-cyan-300 mt-2">
+                              <span className="text-3xl sm:text-4xl font-black text-blue-600 tracking-tight">
                                 {res.metric}
+                              </span>
+                              <span className="text-xs text-stone-600 font-medium">
+                                {res.label}
                               </span>
                             </div>
                           ))}
@@ -471,7 +468,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
 
                     {/* Bottom Action Triggers */}
                     <div className="pt-6 border-t border-stone-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-                      <div className="text-xs text-stone-500 text-center sm:text-left">
+                      <div className="text-xs text-stone-500 text-center sm:text-left font-medium">
                         Want a similar growth engine for your showroom, clinic, or firm?
                       </div>
 

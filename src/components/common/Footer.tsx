@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { BDSLogo } from './BDSLogo';
 import { companyInfo } from '../../data/companyData';
+import { servicesList } from '../../data/servicesData';
 import { PageId } from '../../types';
 
 interface FooterProps {
@@ -17,6 +18,12 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) => {
+  const getNavHref = (page: PageId): string => {
+    if (page === 'home') return '/';
+    if (servicesList.some((s) => s.id === page)) return `/services/${page}`;
+    return `/${page}`;
+  };
+
   const handleNav = (page: PageId) => {
     onNavigate(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -25,12 +32,22 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
   return (
     <footer id="main-site-footer" className="bg-stone-950 text-stone-300 border-t border-stone-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-10 lg:gap-12 items-start">
           
-          {/* Column 1: Brand Logo & Tagline (5 cols) */}
-          <div className="md:col-span-5 space-y-5">
+          {/* Column 1: Brand Logo & Tagline (4 cols) */}
+          <div className="md:col-span-4 space-y-5">
             <div className="flex items-center">
-              <BDSLogo size="md" variant="full" />
+              <a
+                href="/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('home');
+                }}
+                className="inline-block focus:outline-none"
+                aria-label="Bhargav Digital Solutions Homepage"
+              >
+                <BDSLogo size="md" variant="full" className="brightness-0 invert opacity-95 hover:opacity-100 transition-opacity" />
+              </a>
             </div>
 
             <p className="text-sm text-stone-400 leading-relaxed max-w-sm">
@@ -42,71 +59,101 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
             </p>
           </div>
 
-          {/* Column 2: Navigation Links (3 cols) */}
-          <div className="md:col-span-3 space-y-4">
+          {/* Column 2: Navigation Links (2 cols) */}
+          <div className="md:col-span-2 space-y-4">
             <p className="text-xs font-bold uppercase tracking-widest text-stone-400">
               Navigation
             </p>
-            <ul className="space-y-2.5 text-sm font-medium">
+            <ul className="space-y-2 text-sm font-medium">
               <li>
-                <button
-                  type="button"
-                  onClick={() => handleNav('services')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                <a
+                  href="/services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav('services');
+                  }}
+                  className="hover:text-white transition-colors block py-0.5"
                 >
-                  Services
-                </button>
+                  Services Hub
+                </a>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handleNav('portfolio')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                <a
+                  href="/portfolio"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav('portfolio');
+                  }}
+                  className="hover:text-white transition-colors block py-0.5"
                 >
-                  Results (Case Studies)
-                </button>
+                  Results &amp; Proof
+                </a>
+              </li>
+
+              <li>
+                <a
+                  href="/about"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav('about');
+                  }}
+                  className="hover:text-white transition-colors block py-0.5"
+                >
+                  About &amp; Founder
+                </a>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handleNav('pricing')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  Pricing &amp; Packages
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => handleNav('about')}
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  About Us &amp; Founder
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => handleNav('insights')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                <a
+                  href="/insights"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav('insights');
+                  }}
+                  className="hover:text-white transition-colors block py-0.5"
                 >
                   Marketing Insights
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => handleNav('contact')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                <a
+                  href="/contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav('contact');
+                  }}
+                  className="hover:text-white transition-colors block py-0.5"
                 >
-                  Contact
-                </button>
+                  Contact Office
+                </a>
               </li>
             </ul>
           </div>
 
-          {/* Column 3: Contact Details & Rajahmundry Office (4 cols) */}
-          <div className="md:col-span-4 space-y-4">
+          {/* Column 3: 7 Core Services Deep Dives (3 cols) */}
+          <div className="md:col-span-3 space-y-4">
+            <p className="text-xs font-bold uppercase tracking-widest text-stone-400">
+              Agency Services
+            </p>
+            <ul className="space-y-2 text-xs text-stone-400">
+              {servicesList.map((srv) => (
+                <li key={srv.id}>
+                  <a
+                    href={`/services/${srv.id}`}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNav(srv.id);
+                    }}
+                    className="hover:text-cyan-400 transition-colors block py-0.5 truncate"
+                  >
+                    {srv.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Contact Details & Rajahmundry Office (3 cols) */}
+          <div className="md:col-span-3 space-y-4">
             <p className="text-xs font-bold uppercase tracking-widest text-stone-400">
               Rajahmundry Office
             </p>

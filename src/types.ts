@@ -20,7 +20,7 @@ export interface InsightArticle {
   id: string;
   slug: string;
   title: string;
-  category: 'Local SEO' | 'Pricing & ROI' | 'Video & Reels' | 'Healthcare' | 'Retail & Showrooms';
+  category: 'Local SEO' | 'Pricing & ROI' | 'Marketing ROI' | 'Video & Reels' | 'Healthcare' | 'Retail & Showrooms';
   readTime: string;
   summary: string;
   targetKeyword: string;

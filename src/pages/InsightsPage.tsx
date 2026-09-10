@@ -14,6 +14,7 @@ import { insightsArticlesList } from '../data/insightsData';
 import { companyInfo } from '../data/companyData';
 import { PageId, InsightArticle, Language } from '../types';
 import { WhatsAppLogo } from '../components/common/PlatformLogos';
+import { asset } from '../utils/asset';
 
 interface InsightsPageProps {
   language?: Language;
@@ -24,40 +25,31 @@ interface InsightsPageProps {
 // Map authentic high-res photography to each article
 const articleImageMap: Record<string, { src: string; caption: string; captionTe: string }> = {
   'local-seo-guide-rajahmundry-2026': {
-    src: '/assets/service-local-seo.jpg',
+    src: asset('assets/service-local-seo.webp'),
     caption: 'Google Maps #1 ranking strategy on Indian commercial high streets',
     captionTe: 'గూగుల్ మ్యాప్స్ #1 స్థానిక ర్యాంకింగ్ వ్యూహం'
   },
   'digital-marketing-pricing-andhra-pradesh-2026': {
-    src: '/assets/service-reporting-insights.jpg',
+    src: asset('assets/service-reporting-insights.webp'),
     caption: 'Executive transparency: Spend vs verified local revenue attribution',
     captionTe: 'మార్కెటింగ్ బడ్జెట్ & స్పష్టమైన ROI ఆడిట్'
   },
   'dental-clinic-patient-lead-generation-east-godavari': {
-    src: '/assets/campaign-dental.jpg',
+    src: asset('assets/campaign-dental.webp'),
     caption: 'Smile Craft Dental Danavaipeta: 180+ verified high-intent patient inquiries',
     captionTe: 'స్మైల్ క్రాఫ్ట్ డెంటల్ దానవాయిపేట: 180+ రోగుల విచారణలు'
   },
   'saree-jewelry-showroom-telugu-reels-strategy': {
-    src: '/assets/service-content-creation.jpg',
+    src: asset('assets/service-content-creation.webp'),
     caption: 'Telugu festive creative direction: High-conversion pattu saree campaign',
     captionTe: 'తెలుగు పండుగల క్రియేటివ్ డైరెక్షన్ & పట్టు చీరల క్యాంపెయిన్'
   },
   'meta-ads-vs-google-ads-local-business-andhra-pradesh': {
-    src: '/assets/service-video-ads.jpg',
+    src: asset('assets/service-video-ads.webp'),
     caption: 'Commercial showroom production: High-ROAS vertical video ad shoots',
     captionTe: 'షోరూమ్ షూట్: హై-ROAS వర్టికల్ రీల్స్ & యాడ్స్'
   }
 };
-
-const categories = [
-  { id: 'all', label: 'All Playbooks', labelTe: 'అన్ని గైడ్‌లు' },
-  { id: 'Local SEO', label: 'Local SEO & Maps', labelTe: 'లోకల్ SEO & మ్యాప్స్' },
-  { id: 'Pricing & ROI', label: 'Pricing & ROI', labelTe: 'ధరలు & ROI' },
-  { id: 'Healthcare', label: 'Healthcare & Clinics', labelTe: 'హెల్త్‌కేర్ & క్లినిక్స్' },
-  { id: 'Retail & Showrooms', label: 'Retail & Showrooms', labelTe: 'షోరూమ్‌లు & రిటైల్' },
-  { id: 'Video & Reels', label: 'Video & Paid Ads', labelTe: 'వీడియో & పెయిడ్ యాడ్స్' }
-];
 
 export const InsightsPage: React.FC<InsightsPageProps> = ({
   language = 'en',
@@ -65,17 +57,11 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
   onOpenQuoteModal
 }) => {
   const isTe = language === 'te';
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [activeArticle, setActiveArticle] = useState<InsightArticle | null>(null);
-
-  const filteredArticles =
-    selectedCategory === 'all'
-      ? insightsArticlesList
-      : insightsArticlesList.filter((a) => a.category === selectedCategory);
 
   const featuredArticle = insightsArticlesList[0];
   const featuredImg = articleImageMap[featuredArticle.slug] || {
-    src: '/assets/service-local-seo.jpg',
+    src: './assets/service-local-seo.webp',
     caption: 'Google Maps #1 ranking strategy in Rajahmundry & Coastal AP',
     captionTe: 'గూగుల్ మ్యాప్స్ #1 స్థానిక ర్యాంకింగ్ వ్యూహం'
   };
@@ -119,7 +105,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
       {/* =========================================================================
           02 — FEATURED STORY (Card-Free Editorial Split Layout)
           ========================================================================= */}
-      {selectedCategory === 'all' && !activeArticle && (
+      {!activeArticle && (
         <section className="py-12 sm:py-16 border-b border-stone-200/80 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
@@ -181,8 +167,11 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                   <img
                     src={featuredImg.src}
                     alt={featuredArticle.title}
+                    width={560}
+                    height={420}
                     className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                     loading="eager"
+                    decoding="async"
                   />
                 </div>
                 <p className="text-[11px] font-mono text-stone-500 flex items-center justify-between px-1">
@@ -197,42 +186,15 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
       )}
 
       {/* =========================================================================
-          03 — CATEGORY FILTER BAR (Editorial Hairline Tabs)
-          ========================================================================= */}
-      <section className="py-6 bg-[#fafaf9] border-b border-stone-200/80 sticky top-16 sm:top-20 z-20 backdrop-blur-md bg-[#fafaf9]/95">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
-            {categories.map((cat) => (
-              <button
-                key={cat.id}
-                type="button"
-                onClick={() => {
-                  setSelectedCategory(cat.id);
-                  setActiveArticle(null);
-                }}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold whitespace-nowrap transition-colors cursor-pointer ${
-                  selectedCategory === cat.id
-                    ? 'bg-stone-950 text-white shadow-xs'
-                    : 'bg-white text-stone-600 border border-stone-200 hover:border-stone-400 hover:text-stone-900'
-                }`}
-              >
-                {isTe ? cat.labelTe : cat.label}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* =========================================================================
-          04 — EDITORIAL ARTICLES LIST (Card-Free, Hairline Divided Layout)
+          03 — EDITORIAL ARTICLES LIST (Card-Free, Hairline Divided Layout)
           ========================================================================= */}
       <section className="py-12 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="divide-y divide-stone-200">
-            {filteredArticles.map((article, idx) => {
+            {insightsArticlesList.map((article, idx) => {
               const artImg = articleImageMap[article.slug] || {
-                src: '/assets/service-local-seo.jpg',
+                src: './assets/service-local-seo.webp',
                 caption: article.title,
                 captionTe: article.title
               };
@@ -311,8 +273,11 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                         <img
                           src={artImg.src}
                           alt={article.title}
+                          width={400}
+                          height={250}
                           className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
                           loading="lazy"
+                          decoding="async"
                         />
                       </div>
                     </div>
@@ -375,6 +340,10 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                     <img
                       src={articleImageMap[activeArticle.slug].src}
                       alt={activeArticle.title}
+                      width={800}
+                      height={450}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover"
                     />
                   </div>
@@ -465,14 +434,18 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
           {/* Founder Visual Seal */}
           <div className="flex flex-col items-center space-y-2">
             <div className="relative">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-stone-300 shadow-sm bg-white">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-stone-300 shadow-md bg-stone-900">
                 <img
-                  src="/assets/profile_cutout.png"
+                  src={asset('assets/Bhargav_Headshot.png')}
                   alt="Bhargav - Founder, BDS"
-                  className="w-full h-full object-cover object-top"
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-cover object-center"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
-              <span className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white shadow-xs" title="Direct Access" />
+              <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white shadow-xs" title="Direct Access" />
             </div>
             <p className="text-xs font-mono font-bold uppercase tracking-wider text-stone-400">
               Bhargav · Founder, BDS

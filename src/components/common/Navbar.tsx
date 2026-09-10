@@ -58,6 +58,12 @@ export const Navbar: React.FC<NavbarProps> = ({
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const getNavHref = (page: PageId): string => {
+    if (page === 'home') return '/';
+    if (servicesList.some((s) => s.id === page)) return `/services/${page}`;
+    return `/${page}`;
+  };
+
   const isServiceActive =
     currentPage === 'services' || servicesList.some((s) => s.id === currentPage);
 
@@ -85,14 +91,17 @@ export const Navbar: React.FC<NavbarProps> = ({
           
           {/* Left: BDS Brand Logo */}
           <div className="flex-shrink-0 flex items-center">
-            <button
-              type="button"
-              onClick={() => handleNavClick('home')}
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('home');
+              }}
               className="flex items-center gap-2 focus:outline-none cursor-pointer"
               aria-label="Bhargav Digital Solutions Home"
             >
               <BDSLogo size="md" variant="full" />
-            </button>
+            </a>
           </div>
 
           {/* Center: Minimal Editorial Navigation Links */}
@@ -100,9 +109,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Services Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <div className="inline-flex items-center">
-                <button
-                  type="button"
-                  onClick={() => handleNavClick('services')}
+                <a
+                  href="/services"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick('services');
+                  }}
                   onMouseEnter={() => setServicesDropdownOpen(true)}
                   className={`px-3 py-2 rounded-lg transition-colors cursor-pointer ${
                     isServiceActive
@@ -111,7 +123,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   }`}
                 >
                   {t.services}
-                </button>
+                </a>
                 <button
                   type="button"
                   onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
@@ -128,33 +140,41 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onMouseLeave={() => setServicesDropdownOpen(false)}
                   className="absolute left-0 mt-1.5 w-72 bg-white rounded-2xl shadow-xl border border-stone-200 p-2.5 space-y-1 animate-in fade-in zoom-in-95 duration-150"
                 >
-                  <button
-                    type="button"
-                    onClick={() => handleNavClick('services')}
+                  <a
+                    href="/services"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick('services');
+                    }}
                     className="w-full text-left p-2.5 rounded-xl hover:bg-stone-50 font-bold text-xs text-blue-600 flex items-center justify-between border-b border-stone-100 mb-1 cursor-pointer"
                   >
                     <span>All 7 Services Overview</span>
                     <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
+                  </a>
                   {servicesList.map((srv) => (
-                    <button
+                    <a
                       key={srv.id}
-                      type="button"
-                      onClick={() => handleNavClick(srv.id)}
+                      href={`/services/${srv.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavClick(srv.id);
+                      }}
                       className="w-full text-left px-3 py-2 rounded-lg hover:bg-stone-50 text-xs font-semibold text-stone-800 flex items-center justify-between transition-colors cursor-pointer"
                     >
                       <span>{srv.title}</span>
-                      <span className="text-[10px] text-stone-400 font-normal">{srv.startingPrice}</span>
-                    </button>
+                    </a>
                   ))}
                 </div>
               )}
             </div>
 
             {/* Results (points to portfolio) */}
-            <button
-              type="button"
-              onClick={() => handleNavClick('portfolio')}
+            <a
+              href="/portfolio"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('portfolio');
+              }}
               className={`px-3 py-2 rounded-lg transition-colors cursor-pointer ${
                 currentPage === 'portfolio'
                   ? 'text-blue-600 bg-stone-100 font-bold'
@@ -162,25 +182,17 @@ export const Navbar: React.FC<NavbarProps> = ({
               }`}
             >
               {t.results}
-            </button>
+            </a>
 
-            {/* Pricing */}
-            <button
-              type="button"
-              onClick={() => handleNavClick('pricing')}
-              className={`px-3 py-2 rounded-lg transition-colors cursor-pointer ${
-                currentPage === 'pricing'
-                  ? 'text-blue-600 bg-stone-100 font-bold'
-                  : 'text-stone-700 hover:text-blue-600 hover:bg-stone-100/70'
-              }`}
-            >
-              {t.pricing}
-            </button>
+
 
             {/* About */}
-            <button
-              type="button"
-              onClick={() => handleNavClick('about')}
+            <a
+              href="/about"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('about');
+              }}
               className={`px-3 py-2 rounded-lg transition-colors cursor-pointer ${
                 currentPage === 'about'
                   ? 'text-blue-600 bg-stone-100 font-bold'
@@ -188,12 +200,15 @@ export const Navbar: React.FC<NavbarProps> = ({
               }`}
             >
               {t.about}
-            </button>
+            </a>
 
             {/* Insights */}
-            <button
-              type="button"
-              onClick={() => handleNavClick('insights')}
+            <a
+              href="/insights"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('insights');
+              }}
               className={`px-3 py-2 rounded-lg transition-colors cursor-pointer ${
                 currentPage === 'insights'
                   ? 'text-blue-600 bg-stone-100 font-bold'
@@ -201,47 +216,25 @@ export const Navbar: React.FC<NavbarProps> = ({
               }`}
             >
               {t.insights}
-            </button>
+            </a>
           </div>
 
           {/* Right: Contact + Language Toggle + Action CTA */}
           <div className="hidden lg:flex items-center space-x-3">
-            <button
-              type="button"
-              onClick={() => handleNavClick('contact')}
+            <a
+              href="/contact"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('contact');
+              }}
               className={`px-2.5 py-1.5 text-sm font-semibold transition-colors cursor-pointer ${
                 currentPage === 'contact' ? 'text-blue-600 font-bold' : 'text-stone-600 hover:text-stone-900'
               }`}
             >
               {t.contact}
-            </button>
+            </a>
 
-            {/* Compact Language Switcher: EN | తెలుగు */}
-            <div className="flex items-center rounded-lg border border-stone-300 bg-white p-0.5 text-xs font-bold tracking-tight shadow-2xs">
-              <button
-                type="button"
-                onClick={() => onToggleLanguage('en')}
-                className={`px-2 py-1 rounded-md transition-all cursor-pointer ${
-                  language === 'en'
-                    ? 'bg-slate-950 text-white shadow-2xs'
-                    : 'text-stone-600 hover:text-stone-950'
-                }`}
-              >
-                EN
-              </button>
-              <span className="text-stone-300 px-0.5 select-none">|</span>
-              <button
-                type="button"
-                onClick={() => onToggleLanguage('te')}
-                className={`px-2 py-1 rounded-md transition-all cursor-pointer font-telugu ${
-                  language === 'te'
-                    ? 'bg-blue-600 text-white shadow-2xs'
-                    : 'text-stone-600 hover:text-stone-950'
-                }`}
-              >
-                తెలుగు
-              </button>
-            </div>
+            {/* Language Switcher hidden for now: can be re-enabled later */}
 
             <a
               href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent(companyInfo.whatsappMessage)}`}
@@ -264,27 +257,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           {/* Mobile Menu Controls */}
           <div className="flex lg:hidden items-center space-x-2">
-            {/* Mobile Language Switcher */}
-            <div className="flex items-center rounded-lg border border-stone-300 bg-white p-0.5 text-[11px] font-bold">
-              <button
-                type="button"
-                onClick={() => onToggleLanguage('en')}
-                className={`px-1.5 py-0.5 rounded ${
-                  language === 'en' ? 'bg-slate-950 text-white' : 'text-stone-600'
-                }`}
-              >
-                EN
-              </button>
-              <button
-                type="button"
-                onClick={() => onToggleLanguage('te')}
-                className={`px-1.5 py-0.5 rounded font-telugu ${
-                  language === 'te' ? 'bg-blue-600 text-white' : 'text-stone-600'
-                }`}
-              >
-                తెలుగు
-              </button>
-            </div>
+            {/* Mobile Language Switcher hidden for now */}
 
             <button
               type="button"
@@ -301,69 +274,79 @@ export const Navbar: React.FC<NavbarProps> = ({
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
           <div className="lg:hidden pt-4 pb-6 border-t border-stone-200 mt-3 space-y-2">
-            <button
-              type="button"
-              onClick={() => handleNavClick('home')}
-              className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold ${
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('home');
+              }}
+              className={`block w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold ${
                 currentPage === 'home' ? 'text-blue-600 bg-stone-100' : 'text-stone-800'
               }`}
             >
               Home
-            </button>
-            <button
-              type="button"
-              onClick={() => handleNavClick('services')}
-              className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold ${
+            </a>
+            <a
+              href="/services"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('services');
+              }}
+              className={`block w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold ${
                 currentPage === 'services' ? 'text-blue-600 bg-stone-100' : 'text-stone-800'
               }`}
             >
               {t.services}
-            </button>
-            <button
-              type="button"
-              onClick={() => handleNavClick('portfolio')}
-              className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold ${
+            </a>
+            <a
+              href="/portfolio"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('portfolio');
+              }}
+              className={`block w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold ${
                 currentPage === 'portfolio' ? 'text-blue-600 bg-stone-100' : 'text-stone-800'
               }`}
             >
               {t.results}
-            </button>
-            <button
-              type="button"
-              onClick={() => handleNavClick('pricing')}
-              className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold ${
-                currentPage === 'pricing' ? 'text-blue-600 bg-stone-100' : 'text-stone-800'
-              }`}
-            >
-              {t.pricing}
-            </button>
-            <button
-              type="button"
-              onClick={() => handleNavClick('about')}
-              className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold ${
+            </a>
+
+            <a
+              href="/about"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('about');
+              }}
+              className={`block w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold ${
                 currentPage === 'about' ? 'text-blue-600 bg-stone-100' : 'text-stone-800'
               }`}
             >
               {t.about}
-            </button>
-            <button
-              type="button"
-              onClick={() => handleNavClick('insights')}
-              className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold ${
+            </a>
+            <a
+              href="/insights"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('insights');
+              }}
+              className={`block w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold ${
                 currentPage === 'insights' ? 'text-blue-600 bg-stone-100' : 'text-stone-800'
               }`}
             >
               {t.insights}
-            </button>
-            <button
-              type="button"
-              onClick={() => handleNavClick('contact')}
-              className={`w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold ${
+            </a>
+            <a
+              href="/contact"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('contact');
+              }}
+              className={`block w-full text-left px-3 py-2.5 rounded-lg text-sm font-bold ${
                 currentPage === 'contact' ? 'text-blue-600 bg-stone-100' : 'text-stone-800'
               }`}
             >
               {t.contact}
-            </button>
+            </a>
 
             <div className="pt-3 border-t border-stone-200 space-y-2">
               <button

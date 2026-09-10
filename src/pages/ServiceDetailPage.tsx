@@ -26,6 +26,7 @@ import {
 import { servicesList } from '../data/servicesData';
 import { companyInfo } from '../data/companyData';
 import { PageId, Language } from '../types';
+import { asset } from '../utils/asset';
 import {
   GoogleLogo,
   GoogleMapsLogo,
@@ -89,37 +90,37 @@ const serviceLogoMap: Record<string, { component: React.FC<{ className?: string 
 // Map high-definition editorial production images to each service
 const serviceHeroImageMap: Record<string, { src: string; caption: string; captionTe: string }> = {
   'content-creation': {
-    src: '/assets/service-content-creation.jpg',
+    src: asset('assets/service-content-creation.webp'),
     caption: 'Production desk: Bilingual Telugu creative direction & festive campaign assets',
     captionTe: 'ప్రొడక్షన్ డెస్క్: తెలుగు క్రియేటివ్ డైరెక్షన్ & పండుగల క్యాంపెయిన్ ఆస్తులు'
   },
   'short-form-video-ads': {
-    src: '/assets/service-video-ads.jpg',
+    src: asset('assets/service-video-ads.webp'),
     caption: 'On-location showroom shoot: 4K vertical Reels & cinematic ad production',
     captionTe: 'షోరూమ్ షూట్: 4K వర్టికల్ రీల్స్ & సినిమాటిక్ ప్రకటనల ప్రొడక్షన్'
   },
   'social-media-management': {
-    src: '/assets/service-social-media.jpg',
+    src: asset('assets/service-social-media.webp'),
     caption: 'Editorial brand curation: Aesthetic Instagram feeds, stories & native publishing schedule',
     captionTe: 'బ్రాండ్ క్యూరేషన్: ఇన్‌స్టాగ్రామ్ ఫీడ్, స్టోరీలు & స్థానిక ప్రచురణ'
   },
   'platform-coverage': {
-    src: '/assets/service-local-seo.jpg',
+    src: asset('assets/service-local-seo.webp'),
     caption: 'Google Maps #1 ranking: Local pack visibility, 5-star review acquisition & direct calls',
     captionTe: 'గూగుల్ మ్యాప్స్ #1 ర్యాంకింగ్: స్థానిక విజిబిలిటీ, 5-స్టార్ రివ్యూలు & కాల్స్'
   },
   'content-operations': {
-    src: '/assets/service-content-ops.jpg',
+    src: asset('assets/service-content-ops.webp'),
     caption: 'Digital operations hub: 30-day editorial pipeline, shoot schedules & organized cloud drives',
     captionTe: 'కంటెంట్ ఆపరేషన్స్: 30 రోజుల ఎడిటోరియల్ క్యాలెండర్ & ఆర్గనైజ్డ్ క్లౌడ్ డ్రైవ్స్'
   },
   'community-management': {
-    src: '/assets/service-community-mgt.jpg',
+    src: asset('assets/service-community-mgt.webp'),
     caption: 'Real-time response: Rapid customer qualification on WhatsApp Business & Instagram DMs',
     captionTe: 'రియల్ టైమ్ స్పందన: వాట్సాప్ మరియు ఇన్‌స్టాగ్రామ్ లీడ్స్ వెనువెంటనే క్వాలిఫికేషన్'
   },
   'reporting-insights': {
-    src: '/assets/service-reporting-insights.jpg',
+    src: asset('assets/service-reporting-insights.webp'),
     caption: 'Executive transparency: Live ROAS metrics, bi-weekly audits & cost-per-lead tracking',
     captionTe: 'పారదర్శకమైన రిపోర్టింగ్: లైవ్ ROAS మెట్రిక్స్ & లీడ్స్ ఆడిట్ రిపోర్ట్'
   }
@@ -128,37 +129,37 @@ const serviceHeroImageMap: Record<string, { src: string; caption: string; captio
 // Map real regional case study campaign imagery
 const serviceCaseProofMap: Record<string, { src: string; client: string; result: string }> = {
   'content-creation': {
-    src: '/assets/campaign-silks.jpg',
+    src: asset('assets/campaign-silks.webp'),
     client: 'Sri Srinivasa Silks · Main Road Showroom',
     result: '+340% festive footfalls with native Telugu ad creatives'
   },
   'short-form-video-ads': {
-    src: '/assets/campaign-dental.jpg',
+    src: asset('assets/campaign-dental.webp'),
     client: 'Smile Craft Dental · Danavaipeta Clinic',
     result: '180+ verified patient calls from 12km geofenced ads'
   },
   'social-media-management': {
-    src: '/assets/campaign-silks.jpg',
+    src: asset('assets/campaign-silks.webp'),
     client: 'Kalyani Silks · Regional Festive Drop',
     result: '4.8× Instagram engagement & 120+ direct WhatsApp inquiries'
   },
   'platform-coverage': {
-    src: '/assets/campaign-dental.jpg',
+    src: asset('assets/campaign-dental.webp'),
     client: 'Smile Craft Dental · Local Search Pack',
     result: '#1 Google Maps position across Rajahmundry search queries'
   },
   'content-operations': {
-    src: '/assets/campaign-villas.jpg',
+    src: asset('assets/campaign-villas.webp'),
     client: 'Godavari Meadows · Premium Gated Villas',
     result: 'Zero-delay 30-day visual pipeline & villa walkthrough launches'
   },
   'community-management': {
-    src: '/assets/campaign-dental.jpg',
+    src: asset('assets/campaign-dental.webp'),
     client: 'Smile Craft Dental · Inbound Patient Inquiries',
     result: '<15 minute average lead response rate resulting in 72 booked checkups'
   },
   'reporting-insights': {
-    src: '/assets/campaign-villas.jpg',
+    src: asset('assets/campaign-villas.webp'),
     client: 'Godavari Meadows · Ad Spend Audit',
     result: '6.4× tracked ROAS with verified cost per qualified site visit'
   }
@@ -210,70 +211,70 @@ const serviceBespokeFlows: Record<string, ServiceCustomFlow> = {
   'content-creation': {
     sectionTitle: 'What BDS Actually Delivers Every Month',
     sectionTitleTe: 'ప్రతినెలా మేము అందించే క్రియేటివ్ డెలివరబుల్స్',
-    sectionSubtitle: 'No generic Canva templates. Every graphic, carousel, and Telugu caption is crafted specifically for regional retail showrooms.',
-    sectionSubtitleTe: 'ఎటువంటి సాధారణ టెంప్లేట్‌లు వాడము. మీ షోరూమ్ కోసం ప్రత్యేకంగా డిజైన్ చేసిన గ్రాఫిక్స్ మరియు తెలుగు కాపీ.',
+    sectionSubtitle: 'No generic Canva templates. Every graphic, multi-slide carousel, and Telugu caption is crafted specifically for your business to attract local customers.',
+    sectionSubtitleTe: 'ఎటువంటి సాధారణ టెంప్లేట్‌లు వాడము. మీ వ్యాపారం కోసం ప్రత్యేకంగా డిజైన్ చేసిన హై-క్వాలిటీ గ్రాఫిక్స్ మరియు ఆకట్టుకునే తెలుగు కాపీ.',
     operationalItems: [
       {
         number: '01',
-        title: 'Showroom Product Flatlays & Drape Visuals',
-        titleTe: 'షోరూమ్ ప్రోడక్ట్ ఫోటోగ్రఫీ & డ్రేప్ విజువల్స్',
-        description: 'Visiting your store to style and capture festival pattu sarees, bridal jewelry, or retail collections under authentic showroom lighting.',
-        descriptionTe: 'మీ షోరూమ్‌కి వచ్చి పట్టు చీరలు, బంగారు ఆభరణాలు మరియు దుస్తులను నిజమైన షోరూమ్ లైటింగ్‌లో షూట్ చేస్తాము.',
-        deliverables: ['15–30 High-res static feed creatives', 'Drape styling & macro texture closeups', 'Showroom brand color grading'],
-        deliverablesTe: ['15–30 హై-రెస్ స్టాటిక్ పోస్ట్‌లు', 'ఫ్యాబ్రిక్ & టెక్స్చర్ క్లోజప్స్', 'షోరూమ్ బ్రాండ్ కలర్ గ్రేడింగ్']
+        title: 'On-Site Product & Facility Visuals',
+        titleTe: 'ఆన్-సైట్ ప్రోడక్ట్ & బిజినెస్ ఫోటోగ్రఫీ',
+        description: 'Visiting your business premises to style and capture retail collections, clinic facilities, showroom products, or project walkthroughs under professional lighting.',
+        descriptionTe: 'మీ వ్యాపార ప్రాంగణానికి వచ్చి ప్రోడక్ట్స్, క్లినిక్ సేవలు లేదా కలెక్షన్లను ప్రొఫెషనల్ లైటింగ్‌లో ఫోటోగ్రఫీ చేస్తాము.',
+        deliverables: ['15–30 High-res static feed creatives', 'Macro product details & facility highlights', 'Brand-consistent color grading'],
+        deliverablesTe: ['15–30 హై-రెస్ స్టాటిక్ పోస్ట్‌లు', 'ప్రోడక్ట్ డీటెయిల్స్ & హైలైట్స్', 'బ్రాండ్ కలర్ గ్రేడింగ్']
       },
       {
         number: '02',
         title: 'Native Telugu + English Copywriting',
         titleTe: 'ప్రామాణిక తెలుగు + ఇంగ్లీష్ కాపీరైటింగ్',
-        description: 'Culturally resonant headlines for Sankranti, Ugadi, Dasara, and wedding muhurthams that local buyers emotionally connect with.',
-        descriptionTe: 'సంక్రాంతి, దసరా, పెళ్లిళ్ల ముహూర్తాలకు సరిపోయే ఆకట్టుకునే తెలుగు ముఖ్యాంశాలు.',
-        deliverables: ['Regional dialect & festival hooks', 'Clear pricing & showroom location mentions', 'Compelling call-to-actions'],
-        deliverablesTe: ['ప్రాంతీయ పండుగల హుక్స్', 'ధరలు & లొకేషన్ స్పష్టత', 'కస్టమర్లను ఆకర్షించే ఆఫర్లు']
+        description: 'Culturally resonant headlines for festival seasons, promotional campaigns, and service highlights that local buyers emotionally connect with.',
+        descriptionTe: 'స్థానిక పండుగలు, ఆఫర్లు మరియు సేవల కోసం కస్టమర్లను ఆకట్టుకునే ప్రాంతీయ తెలుగు కాపీరైటింగ్.',
+        deliverables: ['Regional dialect & festival hooks', 'Compelling offers & business location mentions', 'Clear call-to-actions'],
+        deliverablesTe: ['ప్రాంతీయ పండుగల హుక్స్', 'ఆఫర్లు & లొకేషన్ వివరాలు', 'కస్టమర్లను ఆకర్షించే ఆఫర్లు']
       },
       {
         number: '03',
-        title: 'Multi-Slide Fabric & Hallmark Carousels',
-        titleTe: 'మల్టీ-స్లైడ్ ఎడ్యుకేషనల్ కరౌసెల్స్',
-        description: '5-slide educational carousels breaking down fabric weight, silk purity, or BIS hallmark authenticity that build buyer trust before they visit.',
-        descriptionTe: 'బట్ట నాణ్యత, పట్టు స్వచ్ఛత లేదా హాల్‌మార్క్ వివరాలను వివరించే 5-స్లైడ్ కరౌసెల్స్.',
-        deliverables: ['Swipeable product feature breakdowns', 'Buyer guide & authenticity cards', 'Customer hesitation objection busters'],
+        title: 'Multi-Slide Educational & Product Carousels',
+        titleTe: 'మల్టీ-స్లైడ్ ఎడ్యుకేషనల్ & ప్రోడక్ట్ కరౌసెల్స్',
+        description: '5-slide educational carousels breaking down key product features, customer benefits, service walkthroughs, or quality certifications that build buyer trust before they visit.',
+        descriptionTe: 'ప్రోడక్ట్ విశిష్టతలు, కస్టమర్ ప్రయోజనాలు, నాణ్యతా ప్రమాణాలు మరియు సేవల వివరాలను అందించే 5-స్లైడ్ ఎడ్యుకేషనల్ కరౌసెల్స్.',
+        deliverables: ['Swipeable product & service breakdowns', 'Buyer guide & trust-building cards', 'Customer hesitation objection busters'],
         deliverablesTe: ['ప్రోడక్ట్ వివరాల స్లైడ్స్', 'కొనుగోలుదారుల గైడ్ కార్డ్స్', 'నమ్మకాన్ని పెంచే సమాచారం']
       },
       {
         number: '04',
-        title: 'WhatsApp Broadcast & Status Flyers',
-        titleTe: 'వాట్సాప్ బ్రాడ్‌కాస్ట్ & స్టేటస్ ఫ్లైయర్స్',
-        description: 'High-conversion vertical flyers sized specifically for showroom owners to broadcast on their 5,000+ local customer WhatsApp lists.',
-        descriptionTe: 'మీ 5,000+ కస్టమర్ల వాట్సాప్ లిస్ట్‌కి పంపడానికి అనువైన వర్టికల్ ఫ్లైయర్స్.',
-        deliverables: ['9:16 Smartphone optimized flyers', 'Lightweight for instant loading', 'Direct showroom phone/WhatsApp link'],
+        title: 'WhatsApp Broadcast & Social Story Flyers',
+        titleTe: 'వాట్సాప్ బ్రాడ్‌కాస్ట్ & సోషల్ స్టోరీ ఫ్లైయర్స్',
+        description: 'High-conversion vertical creatives sized specifically for business owners to broadcast across local customer WhatsApp lists and Instagram Stories.',
+        descriptionTe: 'మీ కస్టమర్ల వాట్సాప్ లిస్ట్ మరియు ఇన్‌స్టాగ్రామ్ స్టోరీస్ కోసం ప్రత్యేకంగా డిజైన్ చేసిన వర్టికల్ ఫ్లైయర్స్.',
+        deliverables: ['9:16 Smartphone optimized flyers', 'Lightweight for instant loading', 'Direct phone/WhatsApp ordering links'],
         deliverablesTe: ['9:16 సైజ్ ఫ్లైయర్స్', 'వేగంగా లోడ్ అయ్యే ఫార్మాట్', 'డైరెక్ట్ వాట్సాప్ ఆర్డర్ లింక్']
       }
     ],
     workflowEyebrow: 'THE CREATIVE PRODUCTION CYCLE',
     workflowTitle: 'How we produce your monthly visual campaign',
     workflowTitleTe: 'నెలవారీ క్రియేటివ్ ప్రొడక్షన్ విధానం',
-    workflowSubtitle: 'A structured monthly cadence that keeps your showroom looking premium and ready for every festival rush.',
-    workflowSubtitleTe: 'ప్రతి పండుగ సీజన్‌కు మీ షోరూమ్ ముందుండేలా పక్కా ప్లానింగ్.',
+    workflowSubtitle: 'A structured monthly cadence that keeps your brand looking premium and ready for every commercial peak.',
+    workflowSubtitleTe: 'ప్రతి సీజన్‌కు మీ వ్యాపారం ముందుండేలా పక్కా ప్లానింగ్.',
     workflowSteps: [
-      { step: '01', timeline: 'Week 1', title: 'Monthly Showroom Walkthrough', titleTe: 'షోరూమ్ వాక్‌త్రూ & ప్రోడక్ట్ సెలక్షన్', description: 'We review new stock arrivals, festival discount offers, and select the hero garments/products to feature for the coming 30 days.', descriptionTe: 'కొత్త స్టాక్, ఆఫర్లను పరిశీలించి రాబోయే 30 రోజులకు కావలసిన హీరో ప్రోడక్ట్‌లను ఎంచుకుంటాము.' },
+      { step: '01', timeline: 'Week 1', title: 'Monthly Marketing Asset Walkthrough', titleTe: 'మంత్లీ ప్లానింగ్ & ఆఫర్ల సెలక్షన్', description: 'We review new stock arrivals, monthly special offers, and select the hero products or services to feature for the coming 30 days.', descriptionTe: 'కొత్త ఆఫర్లు మరియు ముఖ్యమైన సేవల వివరాలను పరిశీలించి రాబోయే 30 రోజులకు ప్రణాళిక వేస్తాము.' },
       { step: '02', timeline: 'Week 1', title: 'Telugu Cultural Scripting', titleTe: 'తెలుగు స్క్రిప్టింగ్ & కాపీరైటింగ్', description: 'Writing bespoke Telugu captions and festival headlines tailored to local East Godavari shopping psychology.', descriptionTe: 'తూర్పు గోదావరి ప్రజల కొనుగోలు మనస్తత్వానికి తగినట్లుగా ఆకర్షణీయమైన తెలుగు కాపీ రాస్తాము.' },
-      { step: '03', timeline: 'Week 2', title: 'High-Resolution Design & Export', titleTe: 'డిజైన్ & మల్టీ-ఫార్మాట్ ఎక్స్‌పోర్ట్', description: 'Polishing visuals with authentic showroom lighting, color accuracy, and rendering in Instagram, Facebook, and WhatsApp formats.', descriptionTe: 'రంగుల ఖచ్చితత్వంతో డిజైన్ చేసి ఇన్‌స్టాగ్రామ్ మరియు వాట్సాప్ సైజుల్లో సిద్ధం చేస్తాము.' },
-      { step: '04', timeline: 'Continuous', title: 'Pre-Festival Launch Alignment', titleTe: 'పండుగల సమయానికి పబ్లిషింగ్', description: 'Releasing graphics 10–14 days ahead of festival dates so families plan their shopping trips to your store in advance.', descriptionTe: 'పండుగలకు 10-14 రోజుల ముందే ప్రచారాన్ని ప్రారంభించి కస్టమర్లను మీ షోరూమ్‌కి రప్పిస్తాము.' }
+      { step: '03', timeline: 'Week 2', title: 'High-Resolution Design & Export', titleTe: 'డిజైన్ & మల్టీ-ఫార్మాట్ ఎక్స్‌పోర్ట్', description: 'Polishing visuals with authentic lighting, brand color accuracy, and rendering in Instagram, Facebook, and WhatsApp formats.', descriptionTe: 'రంగుల ఖచ్చితత్వంతో డిజైన్ చేసి ఇన్‌స్టాగ్రామ్ మరియు వాట్సాప్ సైజుల్లో సిద్ధం చేస్తాము.' },
+      { step: '04', timeline: 'Continuous', title: 'Pre-Festival Launch Alignment', titleTe: 'పండుగల సమయానికి పబ్లిషింగ్', description: 'Releasing graphics 10–14 days ahead of key dates so families and buyers plan their visits in advance.', descriptionTe: 'కీలక తేదీలకు 10-14 రోజుల ముందే ప్రచారాన్ని ప్రారంభించి కస్టమర్లను మీ వ్యాపారానికి రప్పిస్తాము.' }
     ],
     specialFeature: {
       tag: 'THE BDS ADVANTAGE',
       title: 'Why Generic Metro Templates Fail in Rajahmundry',
       titleTe: 'సాధారణ టెంప్లేట్‌లు రాజమండ్రిలో ఎందుకు పని చేయవు?',
-      description: 'Local buyers in East Godavari respond to authentic cultural nuance, familiar regional terms (Main Road, Danavaipeta, Kotipalli, Pushkar Ghat), and genuine festival sentiment—not generic stock photos.',
-      descriptionTe: 'రాజమండ్రి కస్టమర్లు స్థానిక భాష, లొకేషన్లు మరియు నిజమైన ఫ్యాబ్రిక్ విజువల్స్‌ను చూసి మాత్రమే కొనుగోలు చేస్తారు.',
+      description: 'Local buyers in East Godavari respond to authentic cultural nuance, familiar regional landmarks (Main Road, Danavaipeta, Kotipalli, Pushkar Ghat), and genuine local sentiment—not generic stock photos.',
+      descriptionTe: 'రాజమండ్రి కస్టమర్లు స్థానిక భాష, లొకేషన్లు మరియు నిజమైన విజువల్స్‌ను చూసి మాత్రమే కనెక్ట్ అవుతారు.',
       bullets: [
-        'Real showroom product drapes photographed under true retail lighting',
+        'Real on-site product and facility photography under professional lighting',
         'Native Telugu copywriting without robotic Google Translate errors',
         'Sized specifically for rapid WhatsApp broadcast sharing'
       ],
       bulletsTe: [
-        'నిజమైన షోరూమ్ లైటింగ్‌లో తీసిన దుస్తుల ఫోటోగ్రఫీ',
+        'నిజమైన లైటింగ్‌లో తీసిన ప్రోడక్ట్ మరియు బిజినెస్ ఫోటోగ్రఫీ',
         'గూగుల్ ట్రాన్స్‌లేట్ తప్పులు లేని అచ్చ తెలుగు కాపీరైటింగ్',
         'వాట్సాప్ స్టేటస్ మరియు బ్రాడ్‌కాస్ట్‌లకు తగిన ఫార్మాట్'
       ]
@@ -844,8 +845,11 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                 <img
                   src={heroImg.src}
                   alt={service.title}
+                  width={560}
+                  height={420}
                   className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
                   loading="eager"
+                  decoding="async"
                 />
               </div>
               <p className="text-[11px] font-mono text-stone-500 flex items-center justify-between px-1">
@@ -1042,8 +1046,11 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                         <img
                           src={caseImg.src}
                           alt={caseImg.client}
+                          width={640}
+                          height={400}
                           className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
                           loading="lazy"
+                          decoding="async"
                         />
                       </div>
                       <div className="flex items-center justify-between text-xs text-stone-500 px-1">
@@ -1148,14 +1155,18 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
           {/* Founder Visual Seal */}
           <div className="flex flex-col items-center space-y-2">
             <div className="relative">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-stone-300 shadow-sm bg-white">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-stone-300 shadow-md bg-stone-900">
                 <img
-                  src="/assets/profile_cutout.png"
+                  src={asset('assets/Bhargav_Profile.png')}
                   alt="Bhargav - Founder, BDS"
+                  width={80}
+                  height={80}
                   className="w-full h-full object-cover object-top"
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
-              <span className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white shadow-xs" title="Direct Access" />
+              <span className="absolute -bottom-1 -right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white shadow-xs" title="Direct Access" />
             </div>
             <p className="text-xs font-mono font-bold uppercase tracking-wider text-stone-400">
               Bhargav · Founder, BDS

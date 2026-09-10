@@ -1,4 +1,5 @@
 import React from 'react';
+import { asset } from '../../utils/asset';
 
 interface BDSLogoProps {
   className?: string;
@@ -28,8 +29,10 @@ export const BDSLogo: React.FC<BDSLogoProps> = ({
       title="Bhargav Digital Solutions — Digital Today, Grow Tomorrow"
     >
       <img
-        src="/assets/logo-bds.png"
+        src={asset('assets/logo-bds.webp')}
         alt="Bhargav Digital Solutions (BDS) Logo"
+        width={180}
+        height={48}
         className={`${sizeClasses[size]} w-auto object-contain object-left`}
         loading="eager"
         decoding="async"

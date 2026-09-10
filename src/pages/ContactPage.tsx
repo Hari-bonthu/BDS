@@ -10,7 +10,9 @@ import {
   MessageCircle,
   Building,
   User,
-  ShieldCheck
+  ShieldCheck,
+  Navigation,
+  Compass
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { companyInfo, regionalCoverageAreas } from '../data/companyData';
@@ -28,7 +30,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuoteModal }) =>
     email: '',
     businessName: '',
     service: 'short-form-video-ads',
-    budget: '₹10,000 - ₹20,000 / mo',
+    budget: 'Growth Scale (Reels, Meta Ads & Local SEO)',
     message: ''
   });
 
@@ -87,11 +89,6 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuoteModal }) =>
       {/* ================= HERO SECTION ================= */}
       <section className="relative pt-10 sm:pt-16 pb-12 sm:pb-16 bg-gradient-to-b from-blue-50/60 via-slate-50 to-white border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-100 text-blue-900 text-xs font-bold mb-4 shadow-xs">
-            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-            <span>Direct Founder Contact & Consultation</span>
-          </div>
-
           <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
             Let&apos;s Grow Your Business in{' '}
             <span className="text-blue-600">Rajahmundry & Beyond</span>
@@ -190,7 +187,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuoteModal }) =>
                   Chat on WhatsApp
                 </h4>
                 <p className="text-xs text-emerald-100 mt-0.5">
-                  Fastest way to get campaign pricing
+                  Direct connection with Founder Bhargav
                 </p>
               </div>
 
@@ -203,24 +200,6 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuoteModal }) =>
                 <MessageCircle className="w-4 h-4 text-emerald-600" />
                 <span>Start Chat</span>
               </a>
-            </div>
-
-            {/* Regional Coverage Footprint Card */}
-            <div className="rounded-3xl bg-slate-50 border border-slate-200 p-6 space-y-3">
-              <p className="text-xs font-bold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-blue-600" />
-                <span>District Coverage &amp; Service Radius:</span>
-              </p>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                We provide on-location video shooting and digital management across all key commercial corridors:
-              </p>
-              <div className="flex flex-wrap gap-1.5 text-[11px] pt-1">
-                {regionalCoverageAreas.map((area, i) => (
-                  <span key={i} className="px-2.5 py-1 rounded-lg bg-white border border-slate-200 text-slate-800 font-semibold shadow-2xs">
-                    📍 {area.name.split(',')[0]}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
 
@@ -375,10 +354,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuoteModal }) =>
                         onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-sm font-medium bg-slate-50 focus:ring-2 focus:ring-blue-600 focus:outline-none"
                       >
-                        <option value="₹5,000 - ₹10,000 / mo">₹5,000 - ₹10,000 / mo (Starter)</option>
-                        <option value="₹10,000 - ₹20,000 / mo">₹10,000 - ₹20,000 / mo (Pro)</option>
-                        <option value="₹20,000 - ₹35,000 / mo">₹20,000 - ₹35,000 / mo (Dominance)</option>
-                        <option value="₹35,000+ / mo">₹35,000+ / mo (Enterprise)</option>
+                        <option value="Starter Scale (Single Channel / Local Visibility)">Starter Scale (Single Channel / Local Visibility)</option>
+                        <option value="Growth Scale (Reels, Meta Ads & Local SEO)">Growth Scale (Reels, Meta Ads & Local SEO)</option>
+                        <option value="Dominance Scale (Omnichannel 360° Retainer)">Dominance Scale (Omnichannel 360° Retainer)</option>
+                        <option value="Custom Scope / To Be Discussed">Custom Scope / To Be Discussed</option>
                       </select>
                     </div>
                   </div>
@@ -416,6 +395,91 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuoteModal }) =>
                 </form>
               )}
             </div>
+          </div>
+        </div>
+
+        {/* ================= DISTRICT COVERAGE & SERVICE RADIUS (FULL WIDTH CONTAINER) ================= */}
+        <div className="mt-12 sm:mt-16 rounded-3xl bg-gradient-to-b from-slate-50/90 via-white to-slate-50/50 border border-slate-200/90 p-6 sm:p-10 shadow-sm">
+          {/* Section Header */}
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-slate-200">
+            <div className="space-y-2 max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100/80 text-blue-800 text-xs font-bold uppercase tracking-wider">
+                <Navigation className="w-3.5 h-3.5 text-blue-600" />
+                <span>On-Location Production &amp; Regional Service Radius</span>
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                District Coverage &amp; Service Radius
+              </h3>
+              <p className="text-sm text-slate-600 leading-relaxed">
+                Headquartered in Danavaipeta, Rajahmundry, we provide on-location 4K video shoots, clinic and showroom walkthroughs, and active digital management across all major commercial corridors in East Godavari and Coastal AP:
+              </p>
+            </div>
+
+            <div className="flex items-center gap-2 text-xs font-bold text-slate-700 bg-white px-4 py-2.5 rounded-2xl border border-slate-200 shadow-2xs shrink-0">
+              <Compass className="w-4 h-4 text-blue-600" />
+              <span>Full East Godavari &amp; Coastal AP Footprint</span>
+            </div>
+          </div>
+
+          {/* Structured Responsive Grid of 8 Commercial Hubs with Location Icons */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 pt-6">
+            {regionalCoverageAreas.map((area, i) => (
+              <div
+                key={i}
+                className="p-4 rounded-2xl bg-white border border-slate-200/80 hover:border-blue-300 hover:shadow-md transition-all flex flex-col justify-between group"
+              >
+                <div className="space-y-2.5">
+                  <div className="flex items-center justify-between gap-2">
+                    <div className="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                      <MapPin className="w-4 h-4" />
+                    </div>
+                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-slate-100 text-slate-600 font-mono">
+                      {area.type}
+                    </span>
+                  </div>
+
+                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+                    {area.name}
+                  </h4>
+
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    {area.description}
+                  </p>
+                </div>
+
+                <div className="pt-3 mt-3 border-t border-slate-100 flex flex-wrap gap-1">
+                  {area.popularServices.map((srv, sIdx) => (
+                    <span
+                      key={sIdx}
+                      className="text-[10px] font-medium text-slate-600 bg-slate-50 px-2 py-0.5 rounded border border-slate-200/60"
+                    >
+                      {srv}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Reassurance Footer Banner */}
+          <div className="mt-6 pt-5 border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-600 bg-white rounded-2xl p-4 border border-slate-200/70">
+            <div className="flex items-center gap-2.5">
+              <div className="w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+                <CheckCircle2 className="w-3.5 h-3.5" />
+              </div>
+              <span className="font-medium text-slate-700">
+                <strong>Don't see your specific town listed?</strong> If your business is located in East Godavari, Kakinada, or Konaseema, our crew travels directly to your premises for video shoots and consultations.
+              </span>
+            </div>
+
+            <a
+              href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent('Hi Bhargav, I would like to confirm on-location video shooting coverage for my business location.')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-blue-600 hover:text-blue-800 font-bold shrink-0 transition-colors cursor-pointer"
+            >
+              <span>Confirm Location on WhatsApp →</span>
+            </a>
           </div>
         </div>
       </section>

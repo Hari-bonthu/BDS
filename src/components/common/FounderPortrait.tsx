@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Mail, Award, CheckCircle2, MapPin, Sparkles } from 'lucide-react';
+import { asset } from '../../utils/asset';
 import { companyInfo } from '../../data/companyData';
 
 interface FounderPortraitProps {
@@ -35,14 +36,26 @@ export const FounderPortrait: React.FC<FounderPortraitProps> = ({
               {/* Radial Backdrop Glow */}
               <div className="absolute inset-0 bg-radial from-blue-600/25 via-transparent to-transparent pointer-events-none" />
 
-              {/* High-Resolution Cutout Photo of Founder Bhargav */}
-              <img
-                src="/assets/founder-bhargav.png"
-                alt="Bhargav - Founder & Lead Digital Growth Strategist"
-                className="relative z-0 w-full h-full object-cover object-top scale-105 transition-transform duration-500 group-hover:scale-110"
-                loading="eager"
-                decoding="async"
-              />
+              {/* Stylized Executive Monogram Crest */}
+              <div className="relative z-0 w-full h-full flex flex-col items-center justify-center p-6 text-center space-y-3">
+                <div className="w-28 h-28 rounded-3xl overflow-hidden shadow-2xl border-2 border-blue-400/40 bg-stone-900">
+                  <img
+                    src={asset('assets/Bhargav_Profile.png')}
+                    alt="Bhargav - Founder & Lead Growth Strategist"
+                    width={112}
+                    height={112}
+                    className="w-full h-full object-cover object-top"
+                    loading="eager"
+                    decoding="async"
+                  />
+                </div>
+                <div className="space-y-1">
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-300 bg-blue-950/80 border border-blue-700/50 px-2.5 py-0.5 rounded-full inline-block">
+                    Direct Leadership
+                  </span>
+                  <p className="text-xs text-slate-400">Danavaipeta, Rajahmundry</p>
+                </div>
+              </div>
 
               {/* Status Ribbon on bottom of portrait */}
               <div className="relative z-10 w-full py-2 bg-gradient-to-t from-slate-950 via-slate-900/95 to-transparent text-center px-2">

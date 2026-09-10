@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import {
   ArrowRight,
   ArrowUpRight,
-  MessageCircle
+  MessageCircle,
+  MapPin
 } from 'lucide-react';
 import { companyInfo } from '../data/companyData';
 import { PageId, Language } from '../types';
+import { asset } from '../utils/asset';
 import {
   GoogleLogo,
   GoogleMapsLogo,
@@ -33,7 +35,7 @@ const heroShowcaseCampaigns = [
     clientTe: 'శ్రీ శ్రీనివాస సిల్క్స్',
     campaignName: 'Festive Drop Campaign',
     campaignNameTe: 'ఫెస్టివ్ పట్టు చీరల క్యాంపెయిన్',
-    image: '/assets/campaign-silks.jpg',
+    image: asset('assets/campaign-silks.webp'),
     resultNumber: '+180',
     resultLabel: 'showroom footfalls',
     resultLabelTe: 'షోరూమ్ కస్టమర్లు (14 రోజుల్లో)'
@@ -44,7 +46,7 @@ const heroShowcaseCampaigns = [
     clientTe: 'స్మైల్ క్రాఫ్ట్ డెంటల్ క్లినిక్',
     campaignName: 'Patient Acquisition Campaign',
     campaignNameTe: 'గూగుల్ మ్యాప్స్ పేషెంట్ క్యాంపెయిన్',
-    image: '/assets/campaign-dental.jpg',
+    image: asset('assets/campaign-dental.webp'),
     resultNumber: '110+',
     resultLabel: 'monthly appointments',
     resultLabelTe: 'నెలవారీ కొత్త అపాయింట్మెంట్లు'
@@ -55,7 +57,7 @@ const heroShowcaseCampaigns = [
     clientTe: 'గోదావరి మెడోస్ విల్లాస్',
     campaignName: 'Gated Community Campaign',
     campaignNameTe: 'గేటెడ్ కమ్యూనిటీ విల్లా లీడ్స్',
-    image: '/assets/campaign-villas.jpg',
+    image: asset('assets/campaign-villas.webp'),
     resultNumber: '240+',
     resultLabel: 'verified buyer inquiries',
     resultLabelTe: 'క్వాలిఫైడ్ విల్లా ఎంక్వైరీలు'
@@ -106,26 +108,18 @@ export const HomePage: React.FC<HomePageProps> = ({
             
             {/* Left Column: What BDS Does (Clean, Simple, Human) */}
             <div className="lg:col-span-7 space-y-6 sm:space-y-7">
-              {/* Eyebrow */}
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200/80 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-700">
-                <span className="w-1.5 h-1.5 rounded-full bg-blue-600" />
-                <span>
-                  {isTe ? 'స్థానిక వ్యాపారాలకు డిజిటల్ గ్రోత్' : 'DIGITAL GROWTH FOR LOCAL BUSINESSES'}
-                </span>
-              </div>
-
               {/* Primary Headline */}
               <h1 className="text-3xl sm:text-5xl lg:text-[58px] font-black tracking-tight text-stone-950 leading-[1.14] sm:leading-[1.12]">
                 {isTe ? (
                   <>
-                    మీ బిజినెస్కి ఎక్కువ మంది కస్టమర్లు రావాలంటే <br className="hidden sm:inline" />
-                    <span className="text-blue-600">ఆన్లైన్లో సరైన మార్కెటింగ్</span> అవసరం.
+                    రాజమండ్రిలో మీ బిజినెస్ గ్రోత్ కోసం <br className="hidden sm:inline" />
+                    <span className="text-blue-600">అఫర్డబుల్ డిజిటల్ మార్కెటింగ్</span> ఏజెన్సీ.
                   </>
                 ) : (
                   <>
-                    We help local businesses <br className="hidden sm:inline" />
-                    <span className="text-blue-600">get noticed, get found</span> <br className="hidden sm:inline" />
-                    and get more customers.
+                    Affordable Digital Marketing <br className="hidden sm:inline" />
+                    <span className="text-blue-600">Agency in Rajahmundry</span> <br className="hidden sm:inline" />
+                    to grow your local business.
                   </>
                 )}
               </h1>
@@ -133,9 +127,9 @@ export const HomePage: React.FC<HomePageProps> = ({
               {/* Supporting Copy */}
               <p className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-2xl font-normal">
                 {isTe ? (
-                  'రీల్స్, సోషల్ మీడియా, Google Maps, Ads ద్వారా మీ బిజినెస్కి ఎక్కువ రీచ్, ఎక్కువ inquiries, ఎక్కువ customers తీసుకురావడంలో మేము సహాయం చేస్తాము.'
+                  'భార్గవ్ డిజిటల్ సొల్యూషన్స్ (BDS): తెలుగు రీల్స్, సోషల్ మీడియా, Google Maps 3-Pack, మరియు పెయిడ్ యాడ్స్ ద్వారా మీ వ్యాపారానికి ఎక్కువ కస్టమర్లను తీసుకువస్తాము.'
                 ) : (
-                  'Reels, social media, Google Maps, content and performance ads — built to help businesses across Rajahmundry and Coastal Andhra grow.'
+                  'Bhargav Digital Solutions (BDS): High-converting Telugu Reels, social media management, Google Maps 3-Pack, and ROI-driven performance ads built for businesses across Rajahmundry and Coastal Andhra.'
                 )}
               </p>
 
@@ -184,8 +178,12 @@ export const HomePage: React.FC<HomePageProps> = ({
                     key={currentCampaign.image}
                     src={currentCampaign.image}
                     alt={`${currentCampaign.client} Campaign Visual`}
+                    width={560}
+                    height={380}
                     className="w-full h-full object-cover object-center animate-in fade-in duration-500 transform group-hover:scale-102 transition-transform duration-700"
                     loading="eager"
+                    fetchPriority={"high" as any}
+                    decoding="async"
                   />
 
                   {/* Gentle Bottom Dark Gradient for Clean Typography Readability */}
@@ -468,10 +466,13 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="lg:col-span-7">
               <div className="relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl shadow-stone-900/5 bg-stone-100">
                 <img
-                  src="/assets/campaign-silks.jpg"
+                  src={asset('assets/campaign-silks.webp')}
                   alt="Sri Srinivasa Silks Campaign Visual"
+                  width={640}
+                  height={400}
                   className="w-full h-full object-cover object-center"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -599,10 +600,13 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="order-1 lg:order-2 lg:col-span-7">
               <div className="relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl shadow-stone-900/5 bg-stone-100">
                 <img
-                  src="/assets/campaign-dental.jpg"
+                  src={asset('assets/campaign-dental.webp')}
                   alt="Smile Craft Dental Campaign Visual"
+                  width={640}
+                  height={400}
                   className="w-full h-full object-cover object-center"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -618,10 +622,13 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="lg:col-span-7">
               <div className="relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl shadow-stone-900/5 bg-stone-100">
                 <img
-                  src="/assets/campaign-villas.jpg"
+                  src={asset('assets/campaign-villas.webp')}
                   alt="Godavari Meadows Campaign Visual"
+                  width={640}
+                  height={400}
                   className="w-full h-full object-cover object-center"
                   loading="lazy"
+                  decoding="async"
                 />
               </div>
             </div>
@@ -706,10 +713,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
           
           {/* Header */}
-          <div className="space-y-2">
-            <p className="text-xs font-bold uppercase tracking-widest text-blue-600">
-              {isTe ? 'క్లయింట్ ఫీడ్‌బ్యాక్' : 'CLIENT FEEDBACK'}
-            </p>
+          <div>
             <h2 className="text-2xl sm:text-4xl font-black text-stone-950 tracking-tight leading-tight">
               {isTe ? 'మా క్లయింట్లు ఏమంటున్నారో చూడండి:' : "Don't take our word for it."}
             </h2>
@@ -720,11 +724,11 @@ export const HomePage: React.FC<HomePageProps> = ({
             <blockquote className="text-xl sm:text-3xl lg:text-4xl font-bold text-stone-950 leading-snug sm:leading-relaxed tracking-tight">
               {isTe ? (
                 <>
-                  &ldquo;<span className="text-blue-600">Bhargav Digital Solutions</span> మా పండుగ సీజన్ అమ్మకాలను పూర్తిగా మార్చేసింది. వారి <span className="text-blue-600">తెలుగు రీల్స్</span> మరియు <span className="text-blue-600">Facebook ads</span> వల్ల <span className="text-blue-600">రాజమండ్రి</span>, కొవ్వూరు, మండపేటల నుంచి వందలాది మంది కస్టమర్లు నేరుగా మా షోరూమ్‌కి వచ్చారు. వారు అందించే <span className="text-blue-600">quality of work</span> కి వారి ధర చాలా న్యాయమైనది!&rdquo;
+                  <span className="text-blue-600">Bhargav Digital Solutions</span> మా పండుగ సీజన్ అమ్మకాలను పూర్తిగా మార్చేసింది. వారి <span className="text-blue-600">తెలుగు రీల్స్</span> మరియు <span className="text-blue-600">Facebook ads</span> వల్ల <span className="text-blue-600">రాజమండ్రి</span>, కొవ్వూరు, మండపేటల నుంచి వందలాది మంది కస్టమర్లు నేరుగా మా షోరూమ్‌కి వచ్చారు. వారి ద్వారా మా వ్యాపారానికి వచ్చిన ఫలితాలు మరియు <span className="text-blue-600">quality of work</span> అద్భుతమైనవి!
                 </>
               ) : (
                 <>
-                  &ldquo;<span className="text-blue-600">Bhargav Digital Solutions</span> completely transformed our festive sales. Their <span className="text-blue-600">Telugu Reels</span> and <span className="text-blue-600">Facebook ads</span> brought hundreds of customers from across <span className="text-blue-600">Rajahmundry</span>, Kovvur, and Mandapeta directly into our showroom. The pricing is unbelievably fair for the <span className="text-blue-600">quality of work</span> they provide!&rdquo;
+                  <span className="text-blue-600">Bhargav Digital Solutions</span> completely transformed our festive sales. Their <span className="text-blue-600">Telugu Reels</span> and <span className="text-blue-600">Facebook ads</span> brought hundreds of customers from across <span className="text-blue-600">Rajahmundry</span>, Kovvur, and Mandapeta directly into our showroom. The measurable business growth and <span className="text-blue-600">quality of work</span> they provide has been extraordinary!
                 </>
               )}
             </blockquote>
@@ -747,46 +751,112 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* =========================================================================
-          05 — FOUNDER / ABOUT BDS (Concise Human Story)
+          05 — FOUNDER / ABOUT BDS (Executive Leadership & Local Stewardship)
           ========================================================================= */}
       <section className="py-16 sm:py-24 bg-[#fafaf9] border-b border-stone-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
             
-            {/* Left: Authentic Studio Portrait */}
+            {/* Left: Executive Founder & Stewardship Dossier Card (Pure architectural design, no photo) */}
             <div className="lg:col-span-5">
-              <div className="relative rounded-2xl bg-stone-100 border border-stone-200 overflow-hidden shadow-sm max-w-sm mx-auto">
-                <img
-                  src="/assets/founder-bhargav.png"
-                  alt="Bhargav - Founder & Lead Growth Strategist at BDS"
-                  className="w-full h-auto object-cover object-top"
-                  loading="lazy"
-                />
-                <div className="p-4 bg-stone-900 text-white flex items-center justify-between">
-                  <div>
-                    <p className="font-bold text-sm text-white">Bhargav</p>
-                    <p className="text-xs text-stone-400">Founder &amp; Lead Growth Strategist</p>
+              <div className="relative rounded-3xl bg-gradient-to-b from-stone-950 via-slate-900 to-stone-950 text-white p-7 sm:p-8 border border-stone-800 shadow-xl overflow-hidden group">
+                {/* Ambient glow effect */}
+                <div className="absolute -top-10 -right-10 w-36 h-36 bg-blue-600/10 rounded-full blur-2xl pointer-events-none" />
+
+                <div className="space-y-6 relative z-10">
+                  {/* Founder Profile Photo & Designation */}
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex items-center gap-3.5 sm:gap-4">
+                      <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-cyan-400/50 shadow-xl shadow-blue-950/50 shrink-0 bg-stone-900">
+                        <img
+                          src={asset('assets/Bhargav_Headshot.png')}
+                          alt="Bhargav - Founder & Lead Growth Strategist"
+                          width={80}
+                          height={80}
+                          className="w-full h-full object-cover object-center"
+                          loading="eager"
+                          decoding="async"
+                        />
+                      </div>
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <h3 className="text-xl font-black text-white tracking-tight">Bhargav</h3>
+                          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" title="Active Direct Oversight" />
+                        </div>
+                        <p className="text-xs font-semibold text-cyan-300">
+                          Founder &amp; Lead Growth Strategist
+                        </p>
+                      </div>
+                    </div>
+
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-300 bg-blue-950/80 border border-blue-700/50 px-2.5 py-1 rounded-full shrink-0">
+                      8+ Yrs Exp
+                    </span>
                   </div>
-                  <span className="text-[11px] font-mono font-bold text-cyan-300 bg-stone-800 px-2 py-0.5 rounded">
-                    8+ Years Exp
-                  </span>
+
+                  {/* Location & Agency Tag */}
+                  <div className="flex items-center gap-2 text-xs text-stone-300 bg-stone-900/90 rounded-xl px-3.5 py-2.5 border border-stone-800">
+                    <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                    <span className="truncate">Danavaipeta Headquarters, Rajahmundry, AP</span>
+                  </div>
+
+                  {/* Founder's Direct Pledge */}
+                  <div className="p-4 rounded-2xl bg-stone-900/80 border border-stone-800/90 space-y-2">
+                    <p className="text-[11px] uppercase tracking-wider font-extrabold text-blue-400">
+                      Founder's Direct Pledge
+                    </p>
+                    <p className="text-xs sm:text-sm text-stone-200 leading-relaxed italic">
+                      &ldquo;Every campaign strategy, Telugu video script, and ad dollar is directed personally with me. Zero account managers, zero outsourced guesswork.&rdquo;
+                    </p>
+                  </div>
+
+                  {/* 3 Core Stewardship Metrics */}
+                  <div className="grid grid-cols-3 gap-2 pt-1 border-t border-stone-800/80 text-center">
+                    <div className="p-2.5 rounded-xl bg-stone-900/60">
+                      <p className="text-base font-black text-white">1-on-1</p>
+                      <p className="text-[10px] text-stone-400 font-medium">Weekly Reviews</p>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-stone-900/60">
+                      <p className="text-base font-black text-cyan-300">100%</p>
+                      <p className="text-[10px] text-stone-400 font-medium">Transparent ROI</p>
+                    </div>
+                    <div className="p-2.5 rounded-xl bg-stone-900/60">
+                      <p className="text-base font-black text-emerald-400">Direct</p>
+                      <p className="text-[10px] text-stone-400 font-medium">WhatsApp Line</p>
+                    </div>
+                  </div>
+
+                  {/* Direct Contact Button */}
+                  <div className="pt-1">
+                    <a
+                      href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent('Hi Bhargav, I would like to discuss digital marketing for my business in Rajahmundry.')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                    >
+                      <MessageCircle className="w-3.5 h-3.5" />
+                      <span>Connect with Founder Bhargav</span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Right: Story & Mission Statement */}
-            <div className="lg:col-span-7 space-y-5">
-              <p className="text-xs font-bold uppercase tracking-widest text-blue-600">
-                {isTe ? 'మా గురించి' : 'ABOUT BDS'}
-              </p>
+            <div className="lg:col-span-7 space-y-6">
+              <div className="space-y-2">
+                <p className="text-xs font-bold uppercase tracking-widest text-blue-600">
+                  {isTe ? 'మా గురించి' : 'ABOUT BDS · LEADERSHIP'}
+                </p>
 
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-stone-950 tracking-tight leading-tight">
-                {isTe ? (
-                  <>రాజమండ్రిలోనే... <br />పూర్తి బాధ్యతతో.</>
-                ) : (
-                  <>Built in Rajahmundry.<br />Built with accountability.</>
-                )}
-              </h2>
+                <h2 className="text-2xl sm:text-4xl font-extrabold text-stone-950 tracking-tight leading-tight">
+                  {isTe ? (
+                    <>రాజమండ్రిలోనే... <br />పూర్తి బాధ్యతతో.</>
+                  ) : (
+                    <>Built in Rajahmundry.<br />Built with accountability.</>
+                  )}
+                </h2>
+              </div>
 
               <p className="text-base sm:text-lg text-stone-700 leading-relaxed font-medium">
                 {isTe ? (
@@ -798,19 +868,46 @@ export const HomePage: React.FC<HomePageProps> = ({
 
               <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
                 {isTe ? (
-                  'డైరెక్ట్ ఫౌండర్ సపోర్ట్, పారదర్శకమైన ధరలు, మరియు బిజినెస్కి ఉపయోగపడే నిజమైన రిజల్ట్స్ ఇవ్వడం మా బాధ్యత.'
+                  'డైరెక్ట్ ఫౌండర్ సపోర్ట్, పారదర్శకమైన విధానం, మరియు బిజినెస్కి ఉపయోగపడే నిజమైన రిజల్ట్స్ ఇవ్వడం మా బాధ్యత.'
                 ) : (
-                  'We believe in direct founder involvement, transparent pricing, native Telugu cultural resonance, and marketing campaigns that produce measurable phone calls, walk-ins, and revenue.'
+                  'We believe in direct founder involvement, transparent attribution, native Telugu cultural resonance, and marketing campaigns that produce measurable phone calls, walk-ins, and revenue.'
                 )}
               </p>
+
+              {/* 3 Pillars of Difference */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+                <div className="p-3 rounded-2xl bg-white border border-stone-200/90 shadow-2xs space-y-1">
+                  <div className="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-xs">
+                    01
+                  </div>
+                  <h4 className="text-xs font-bold text-stone-900">Direct Senior Access</h4>
+                  <p className="text-[11px] text-stone-500 leading-snug">No account managers or junior interns between you and the strategist.</p>
+                </div>
+
+                <div className="p-3 rounded-2xl bg-white border border-stone-200/90 shadow-2xs space-y-1">
+                  <div className="w-7 h-7 rounded-lg bg-cyan-50 text-cyan-600 flex items-center justify-center font-bold text-xs">
+                    02
+                  </div>
+                  <h4 className="text-xs font-bold text-stone-900">Regional Resonance</h4>
+                  <p className="text-[11px] text-stone-500 leading-snug">Native Telugu copy and scripts tuned to Godavari shopping behavior.</p>
+                </div>
+
+                <div className="p-3 rounded-2xl bg-white border border-stone-200/90 shadow-2xs space-y-1">
+                  <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-xs">
+                    03
+                  </div>
+                  <h4 className="text-xs font-bold text-stone-900">Verified Outcomes</h4>
+                  <p className="text-[11px] text-stone-500 leading-snug">Tracked lead forms, calls, and showroom walk-ins, not vanity impressions.</p>
+                </div>
+              </div>
 
               <div className="pt-2">
                 <button
                   type="button"
                   onClick={() => onNavigate('about')}
-                  className="inline-flex items-center gap-2 text-base font-extrabold text-stone-950 hover:text-blue-600 transition-colors group cursor-pointer"
+                  className="inline-flex items-center gap-2 text-sm sm:text-base font-extrabold text-stone-950 hover:text-blue-600 transition-colors group cursor-pointer"
                 >
-                  <span>{isTe ? 'మా గురించి మరింత తెలుసుకోండి →' : 'Meet BDS →'}</span>
+                  <span>{isTe ? 'మా గురించి మరింత తెలుసుకోండి →' : 'Explore Founder Story & Philosophy →'}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>

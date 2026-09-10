@@ -462,16 +462,6 @@ export const PricingPage: React.FC<PricingPageProps> = ({
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[720px] h-[320px] bg-gradient-to-r from-blue-100/40 via-cyan-100/30 to-blue-200/40 blur-3xl pointer-events-none rounded-full" />
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-          {/* Eyebrow badge strictly adhering to BDS editorial design pattern */}
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-200/80 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-700 shadow-xs">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span>
-              {isTe
-                ? 'పారదర్శక ప్రాంతీయ ధరలు • దాపరికం లేని ఫీజులు'
-                : 'Transparent Regional Pricing • No Hidden Fees'}
-            </span>
-          </div>
-
           {/* Primary Editorial Headline */}
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-stone-950 tracking-tight leading-[1.14] max-w-4xl mx-auto">
             {isTe ? (

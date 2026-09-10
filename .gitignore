@@ -1,8 +1,46 @@
+# Dependencies
 node_modules/
+
+# Build & output
 build/
 dist/
 coverage/
-.DS_Store
-*.log
+
+# Environment
 .env*
 !.env.example
+
+# OS & Logs
+.DS_Store
+Thumbs.db
+*.log
+
+# Reports, Audits & Non-Runtime Documentation (SEO reports, PDFs, audit assets)
+*.pdf
+*seo-report*
+*SEO*
+*.docx
+*.xlsx
+*.pptx
+audit_screenshots/
+plans/
+PROJECT_OVERVIEW.txt
+
+# Design & Branding working source files
+*.psd
+*.ai
+*.fig
+*.sketch
+*.raw
+*.xd
+
+# Archives & binaries
+*.zip
+*.tar*
+*.rar
+*.7z
+
+# Temporary files & storage
+*.tmp
+*.temp
+.tempmediaStorage/

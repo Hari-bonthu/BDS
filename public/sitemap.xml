@@ -1,91 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
+  <!-- Primary Homepage -->
   <url>
     <loc>https://bhargavdigitalsolutions.com/</loc>
-    <lastmod>2026-09-03</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <!-- Services Catalog Matrix -->
+
+  <!-- Core Agency Hubs -->
   <url>
-    <loc>https://bhargavdigitalsolutions.com/#services</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://bhargavdigitalsolutions.com/services</loc>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
-  <!-- 7 Core Dedicated Service Pages -->
   <url>
-    <loc>https://bhargavdigitalsolutions.com/#short-form-video-ads</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://bhargavdigitalsolutions.com/pricing</loc>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://bhargavdigitalsolutions.com/#content-creation</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bhargavdigitalsolutions.com/#social-media-management</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bhargavdigitalsolutions.com/#platform-coverage</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bhargavdigitalsolutions.com/#content-operations</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bhargavdigitalsolutions.com/#community-management</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://bhargavdigitalsolutions.com/#reporting-insights</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <!-- Regional Marketing Insights & Playbooks Hub -->
-  <url>
-    <loc>https://bhargavdigitalsolutions.com/#insights</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <!-- Pricing, Portfolio, About, Contact -->
-  <url>
-    <loc>https://bhargavdigitalsolutions.com/#pricing</loc>
-    <lastmod>2026-09-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://bhargavdigitalsolutions.com/#portfolio</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://bhargavdigitalsolutions.com/portfolio</loc>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://bhargavdigitalsolutions.com/#about</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://bhargavdigitalsolutions.com/insights</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bhargavdigitalsolutions.com/about</loc>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://bhargavdigitalsolutions.com/#contact</loc>
-    <lastmod>2026-09-03</lastmod>
+    <loc>https://bhargavdigitalsolutions.com/contact</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 7 Core Dedicated Service Pages -->
+  <url>
+    <loc>https://bhargavdigitalsolutions.com/services/short-form-video-ads</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://bhargavdigitalsolutions.com/services/content-creation</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bhargavdigitalsolutions.com/services/social-media-management</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bhargavdigitalsolutions.com/services/platform-coverage</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bhargavdigitalsolutions.com/services/content-operations</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bhargavdigitalsolutions.com/services/community-management</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bhargavdigitalsolutions.com/services/reporting-insights</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Key Commercial Neighborhood & Satellite Market Hubs -->
+  <url>
+    <loc>https://bhargavdigitalsolutions.com/locations/danavaipeta</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bhargavdigitalsolutions.com/locations/main-road</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bhargavdigitalsolutions.com/locations/morampudi</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://bhargavdigitalsolutions.com/locations/kakinada</loc>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

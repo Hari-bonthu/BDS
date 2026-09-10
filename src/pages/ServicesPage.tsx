@@ -13,6 +13,7 @@ import {
   Layers
 } from 'lucide-react';
 import { PageId, Language } from '../types';
+import { asset } from '../utils/asset';
 import {
   GoogleLogo,
   GoogleMapsLogo,
@@ -340,9 +341,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
       <section className="pt-14 sm:pt-20 pb-8 sm:pb-12 bg-white border-b border-stone-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl space-y-3">
-            <p className="text-xs font-bold uppercase tracking-widest text-blue-600">
-              {isTe ? 'మా సర్వీసులు · రాజమండ్రి & తూర్పు గోదావరి' : 'OUR SERVICES · RAJAHMUNDRY & COASTAL ANDHRA'}
-            </p>
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-stone-950 tracking-tight leading-tight">
               {isTe ? (
                 <>కస్టమర్లను మీ వ్యాపారానికి తీసుకువచ్చే నిజమైన డిజిటల్ మార్కెటింగ్.</>
@@ -546,23 +544,6 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
       <section className="py-16 sm:py-24 bg-[#fafaf9]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl space-y-8">
           
-          {/* Founder Visual Seal */}
-          <div className="flex flex-col items-center space-y-2">
-            <div className="relative">
-              <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full overflow-hidden border-2 border-stone-300 shadow-sm bg-white">
-                <img
-                  src="/assets/profile_cutout.png"
-                  alt="Bhargav - Founder, BDS"
-                  className="w-full h-full object-cover object-top"
-                />
-              </div>
-              <span className="absolute bottom-1 right-1 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white shadow-xs" title="Direct Access" />
-            </div>
-            <p className="text-xs font-mono font-bold uppercase tracking-wider text-stone-400">
-              Bhargav · Founder, BDS
-            </p>
-          </div>
-
           <div className="space-y-3">
             <p className="text-xs font-bold uppercase tracking-widest text-blue-600">
               {isTe ? 'ప్రారంభించండి' : 'START WITH CONFIDENCE'}
@@ -576,8 +557,8 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             </h2>
             <p className="text-sm sm:text-base text-stone-600 font-normal leading-relaxed max-w-2xl mx-auto">
               {isTe
-                ? 'ఎటువంటి బలవంతం లేదా సేల్స్ ఒత్తిడి ఉండదు. భార్గవ్‌తో సూటిగా మాట్లాడి మీ వ్యాపారానికి రాజమండ్రిలో ఏది పనికొస్తుందో తెలుసుకోండి.'
-                : 'No sales pressure, no marketing fluff. Just a straightforward conversation with Bhargav about what works in Rajahmundry and how to get real results.'}
+                ? 'ఎటువంటి బలవంతం లేదా సేల్స్ ఒత్తిడి ఉండదు. మీ వ్యాపారానికి రాజమండ్రిలో ఏది సరైన ఫలితాలనిస్తుందో సూటిగా చర్చించి తెలుసుకోండి.'
+                : 'No sales pressure, no marketing fluff. Just a straightforward conversation about what works in Rajahmundry and how to get real results.'}
             </p>
           </div>
 

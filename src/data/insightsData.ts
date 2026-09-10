@@ -35,14 +35,14 @@ export const insightsArticlesList: InsightArticle[] = [
     id: '2',
     slug: 'digital-marketing-pricing-andhra-pradesh-2026',
     title: 'Digital Marketing Pricing in Andhra Pradesh: What Should Local Businesses Pay in 2026?',
-    category: 'Pricing & ROI',
+    category: 'Marketing ROI',
     readTime: '5 min read',
     targetKeyword: 'digital marketing cost in rajahmundry',
-    summary: 'A transparent breakdown of digital marketing costs in Tier-2 AP cities. Avoid paying ₹50,000+ metro retainers or wasting ₹2,000 on ineffective freelancers.',
+    summary: 'A transparent breakdown of what digital marketing really costs in Tier-2 AP cities — helping local businesses avoid overpriced metro agency retainers or ineffective low-budget freelancers.',
     keyTakeaways: [
-      'Why ₹2,000/mo freelance retainers fail: zero ad strategy and generic Canva templates.',
-      'Realistic monthly budgets for local retail (₹7,999 - ₹14,999) vs multi-branch enterprises (₹24,999+).',
-      'How to calculate expected lead costs for clinics (₹30-₹60/lead) and retail footfalls (₹8-₹15/inquiry).',
+      'Why low-cost freelance retainers fail: zero ad strategy and generic Canva templates.',
+      'Realistic monthly budgets for local retail businesses vs multi-branch enterprises differ significantly.',
+      'How to calculate expected lead costs for clinics and retail footfalls.',
       'The truth about ad spend vs agency management fee transparency.'
     ],
     contentSections: [
@@ -52,7 +52,7 @@ export const insightsArticlesList: InsightArticle[] = [
       },
       {
         heading: '2. The Fair Pricing Breakdown for East Godavari',
-        body: 'A high-impact campaign requires professional video editing, Telugu copywriting, daily community response, and Meta/Google ad optimization. At BDS, complete packages range transparently from ₹4,499/mo for single channels to ₹14,999/mo for full growth accelerators.'
+        body: 'A high-impact campaign requires professional video editing, Telugu copywriting, daily community response, and Meta/Google ad optimization. At BDS, every package is custom-quoted based on your specific channels, goals, and market competition — ensuring you never overpay for services you don\'t need.'
       }
     ],
     callToAction: 'Get a custom budget recommendation tailored specifically to your revenue goals.'

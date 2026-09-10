@@ -13,9 +13,11 @@ import {
   Building2,
   Clock,
   Mail,
-  Zap
+  Zap,
+  MessageCircle
 } from 'lucide-react';
 import { PageId, Language } from '../types';
+import { asset } from '../utils/asset';
 import { companyInfo, regionalCoverageAreas } from '../data/companyData';
 import { CTASection } from '../components/common/CTASection';
 import { WhatsAppLogo } from '../components/common/PlatformLogos';
@@ -43,14 +45,6 @@ export const AboutPage: React.FC<AboutPageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="max-w-4xl space-y-6">
-            {/* Status dot badge */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-stone-200/80 text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-700">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
-              <span>
-                {isTe ? 'మా కథ & ఉద్దేశం' : 'ABOUT BHARGAV DIGITAL SOLUTIONS (BDS)'}
-              </span>
-            </div>
-
             {/* High-impact editorial headline */}
             <h1 className="text-3xl sm:text-5xl lg:text-[62px] font-black tracking-tight text-stone-950 leading-[1.1]">
               {isTe ? (
@@ -172,32 +166,96 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-stone-200/80">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left: Authentic Studio Cutout Photo with Minimalist Frame */}
+          {/* Left: Architectural Executive Leadership Card (No photo image, pure architectural design) */}
           <div className="lg:col-span-5">
-            <div className="relative mx-auto max-w-sm rounded-3xl bg-gradient-to-b from-stone-100 to-stone-200/70 p-3 border border-stone-300/80 shadow-lg">
-              <div className="relative rounded-2xl overflow-hidden bg-stone-900 aspect-[4/5] flex items-end justify-center">
-                <img
-                  src="/assets/founder-bhargav.png"
-                  alt="Bhargav - Founder & Lead Digital Growth Strategist"
-                  className="w-full h-full object-cover object-top"
-                  loading="eager"
-                />
-                
-                {/* Floating status tag */}
-                <div className="absolute top-4 left-4 bg-stone-950/80 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full border border-white/20 flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                  <span>Founder &amp; Lead Strategist</span>
-                </div>
+            <div className="relative rounded-3xl bg-gradient-to-b from-stone-950 via-slate-900 to-stone-950 text-white p-7 sm:p-8 border border-stone-800 shadow-xl overflow-hidden group">
+              {/* Subtle ambient lighting */}
+              <div className="absolute -top-12 -right-12 w-40 h-40 bg-blue-600/10 rounded-full blur-2xl pointer-events-none" />
 
-                {/* Bottom pill bar */}
-                <div className="absolute bottom-3 inset-x-3 bg-stone-950/90 backdrop-blur-md p-3 rounded-xl border border-white/10 flex items-center justify-between text-white">
-                  <div>
-                    <p className="text-xs font-black">Bhargav</p>
-                    <p className="text-[10px] text-stone-400">Danavaipeta, Rajahmundry</p>
+              <div className="space-y-6 relative z-10">
+                {/* Header: Founder Profile Photo & Title */}
+                <div className="flex items-start justify-between gap-4">
+                  <div className="flex items-center gap-3.5 sm:gap-4">
+                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-cyan-400/50 shadow-xl shadow-blue-950/50 shrink-0 bg-stone-900">
+                      <img
+                        src={asset('assets/Bhargav_Headshot.png')}
+                        alt="Bhargav - Founder & Lead Growth Strategist"
+                        width={80}
+                        height={80}
+                        className="w-full h-full object-cover object-center"
+                        loading="eager"
+                        decoding="async"
+                      />
+                    </div>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <h3 className="text-xl font-black text-white tracking-tight">Bhargav</h3>
+                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" title="Active Direct Oversight" />
+                      </div>
+                      <p className="text-xs font-semibold text-cyan-300">
+                        Founder &amp; Lead Growth Strategist
+                      </p>
+                    </div>
                   </div>
-                  <span className="text-[10px] font-mono font-bold bg-blue-600/30 text-cyan-300 border border-blue-400/40 px-2.5 py-0.5 rounded">
+
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-cyan-300 bg-blue-950/80 border border-blue-700/50 px-2.5 py-1 rounded-full shrink-0">
                     8+ Yrs Exp
                   </span>
+                </div>
+
+                {/* Headquarters Location Tag */}
+                <div className="flex items-center gap-2 text-xs text-stone-300 bg-stone-900/90 rounded-xl px-3.5 py-2.5 border border-stone-800">
+                  <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0" />
+                  <span className="truncate">Danavaipeta, Rajahmundry, East Godavari</span>
+                </div>
+
+                {/* Direct Founder Access Guarantee Block */}
+                <div className="p-4 rounded-2xl bg-stone-900/80 border border-stone-800/90 space-y-2">
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span className="text-[11px] uppercase tracking-wider font-extrabold text-blue-400">
+                      Direct Founder Commitment
+                    </span>
+                  </div>
+                  <p className="text-xs sm:text-sm text-stone-200 leading-relaxed italic">
+                    &ldquo;When you partner with BDS, your business strategy is developed, written, and monitored directly by me. You never deal with junior coordinators or outsourced guesswork.&rdquo;
+                  </p>
+                </div>
+
+                {/* 3 Executive Credentials */}
+                <div className="grid grid-cols-3 gap-2 pt-1 border-t border-stone-800/80 text-center">
+                  <div className="p-2.5 rounded-xl bg-stone-900/60">
+                    <p className="text-base font-black text-white">120+</p>
+                    <p className="text-[10px] text-stone-400 font-medium">Campaigns</p>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-stone-900/60">
+                    <p className="text-base font-black text-cyan-300">100%</p>
+                    <p className="text-[10px] text-stone-400 font-medium">Accountability</p>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-stone-900/60">
+                    <p className="text-base font-black text-emerald-400">Direct</p>
+                    <p className="text-[10px] text-stone-400 font-medium">WhatsApp</p>
+                  </div>
+                </div>
+
+                {/* Direct Action Line */}
+                <div className="pt-1 flex flex-col sm:flex-row gap-2">
+                  <a
+                    href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent('Hi Bhargav, I was reading your founder story on the BDS website and want to connect.')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 py-2.5 px-3 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-500 hover:to-blue-600 text-white font-bold text-xs shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                  >
+                    <MessageCircle className="w-3.5 h-3.5" />
+                    <span>WhatsApp Bhargav</span>
+                  </a>
+                  <a
+                    href={`tel:${companyInfo.phone}`}
+                    className="py-2.5 px-3 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-200 font-semibold text-xs border border-stone-700 transition-all flex items-center justify-center gap-1.5 cursor-pointer"
+                  >
+                    <Phone className="w-3.5 h-3.5 text-blue-400" />
+                    <span>Direct Call</span>
+                  </a>
                 </div>
               </div>
             </div>
@@ -218,11 +276,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               <p>
                 {isTe ? (
                   <>
-                    హైదరాబాద్ లేదా బెంగళూరులోని కార్పొరేట్ ఏజెన్సీలు క్లయింట్ల నుంచి నెలకు రూ. 50,000 నుండి రూ. 1 లక్ష వరకు వసూలు చేస్తాయి. కానీ ఆ ప్రాజెక్ట్‌లను స్థానిక భాష, సంస్కృతి తెలియని జూనియర్ ఇంటర్న్‌లకు అప్పగిస్తాయి.
+                    హైదరాబాద్ లేదా బెంగళూరులోని కార్పొరేట్ ఏజెన్సీలు క్లయింట్ల నుంచి భారీ ఫీజులు వసూలు చేస్తాయి. కానీ ఆ ప్రాజెక్ట్‌లను స్థానిక భాష, సంస్కృతి తెలియని జూనియర్ ఇంటర్న్‌లకు అప్పగిస్తాయి.
                   </>
                 ) : (
                   <>
-                    For years, business owners across Rajahmundry and East Godavari faced an unfair dilemma: spend ₹50,000 to ₹1,00,000 on metro agencies who don’t understand Godavari customer psychology, or hire ₹2,000 gig freelancers who deliver template graphics that bring zero phone calls.
+                    For years, business owners across Rajahmundry and East Godavari faced an unfair dilemma: spend ₹50,000 to ₹1,00,000 on metro agencies who don’t understand Godavari customer psychology, or hire gig freelancers who deliver template graphics that bring zero phone calls.
                   </>
                 )}
               </p>
@@ -233,7 +291,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                   </>
                 ) : (
                   <>
-                    I built BDS to provide an authentic third path: world-class performance marketing, conversational Telugu video reels, and Google Maps 3-Pack rankings at transparent, accessible prices starting at ₹7,999/month. When you partner with BDS, you speak directly with me—not a junior coordinator.
+                    I built BDS to provide an authentic third path: world-class performance marketing, conversational Telugu video reels, and Google Maps 3-Pack rankings at transparent, accessible rates tailored to each business's goals. When you partner with BDS, you speak directly with me—not a junior coordinator.
                   </>
                 )}
               </p>
@@ -243,7 +301,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             <div className="p-4 rounded-2xl bg-stone-100 border border-stone-200 flex items-center gap-3">
               <ShieldCheck className="w-5 h-5 text-blue-600 shrink-0" />
               <p className="text-xs sm:text-sm font-semibold text-stone-800">
-                Direct phone and WhatsApp access to Founder Bhargav for weekly reviews and strategy sprints.
+                Direct phone and WhatsApp access to Founder Bhargav for weekly reviews, shoot coordination, and strategy sprints.
               </p>
             </div>
 
@@ -513,11 +571,23 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                 We are proud to operate directly out of <strong>Danavaipeta, Rajahmundry</strong>. Drop in for a coffee with Bhargav or schedule an on-site visit for your showroom or clinic.
               </p>
               
-              <div className="space-y-1.5 text-xs text-stone-700 font-medium">
-                <p>📍 <strong>Office Address:</strong> {companyInfo.address}</p>
-                <p>⏰ <strong>Working Hours:</strong> {companyInfo.workingHours}</p>
-                <p>📞 <strong>Direct Line:</strong> {companyInfo.phoneDisplay}</p>
-                <p>✉️ <strong>Official Email:</strong> {companyInfo.email}</p>
+              <div className="space-y-2 text-xs text-stone-700 font-medium">
+                <p className="flex items-start gap-2">
+                  <MapPin className="w-3.5 h-3.5 text-blue-600 shrink-0 mt-0.5" />
+                  <span><strong>Office Address:</strong> {companyInfo.address}</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Clock className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                  <span><strong>Working Hours:</strong> {companyInfo.workingHours}</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Phone className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                  <span><strong>Direct Line:</strong> {companyInfo.phoneDisplay}</span>
+                </p>
+                <p className="flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                  <span><strong>Official Email:</strong> {companyInfo.email}</span>
+                </p>
               </div>
             </div>
 
