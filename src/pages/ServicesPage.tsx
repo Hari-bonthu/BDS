@@ -13,6 +13,7 @@ import {
   Layers
 } from 'lucide-react';
 import { PageId, Language } from '../types';
+import { companyInfo } from '../data/companyData';
 import { asset } from '../utils/asset';
 import {
   GoogleLogo,
@@ -48,10 +49,10 @@ const servicesCatalog = [
       'We design captivating brand graphics, bilingual Telugu & English ad copy, carousel storyboards, and promotional banners crafted specifically to resonate with customers across Rajahmundry, Kakinada, and East Godavari.',
     descriptionTe:
       'రాజమండ్రి మరియు గోదావరి జిల్లాల కస్టమర్లను ఆకట్టుకునేలా ప్రత్యేకమైన గ్రాఫిక్స్, తెలుగు/ఇంగ్లీష్ కాపీరైటింగ్ మరియు పండుగ ఆఫర్ల పోస్టర్ల రూపకల్పన.',
-    metric: '4.8× Higher Engagement',
-    metricTe: '4.8× అధిక ఎంగేజ్‌మెంట్',
-    metricSub: 'vs generic stock templates',
-    metricSubTe: 'సాధారణ స్టాక్ గ్రాఫిక్స్‌తో పోలిస్తే',
+    metric: 'High-Impact',
+    metricTe: 'హై-ఇంపాక్ట్ క్రియేటివ్స్',
+    metricSub: 'Bilingual regional storytelling',
+    metricSubTe: 'స్థానిక భాషా కంటెంట్ రూపకల్పన',
     deliverables: [
       '15–30 High-Resolution Social Media Creatives & Stories / month',
       'Multi-Slide Educational & Product Carousel Storyboards',
@@ -85,10 +86,10 @@ const servicesCatalog = [
       'Short-form vertical video is the fastest way to get noticed in Coastal Andhra. We script, edit, and run targeted video ad campaigns that stop users mid-scroll and convert viewers into showroom footfalls and qualified inquiries.',
     descriptionTe:
       'వైరల్ తెలుగు రీల్స్, షార్ట్స్ మరియు టార్గెటెడ్ మెటా/గూగుల్ యాడ్స్ ద్వారా షోరూమ్‌కి కస్టమర్ల రాకను మరియు బిజినెస్ ఎంక్వైరీలను పెంచుతాము.',
-    metric: '6.4× Average ROAS',
-    metricTe: '6.4× సగటు రిటర్న్ (ROAS)',
-    metricSub: 'tracked return on advertising spend',
-    metricSubTe: 'యాడ్ ఖర్చుపై సాధించిన వ్యాపార రాబడి',
+    metric: 'Targeted ROAS',
+    metricTe: 'లక్ష్య ఆధారిత ROAS',
+    metricSub: 'measurable campaign goals defined upfront',
+    metricSubTe: 'ముందుగా నిర్దేశించిన ప్రచార లక్ష్యాలు',
     deliverables: [
       'Full Scripting, Concept Hooks & Native Telugu Voiceover Editing',
       'Hyper-Targeted Location & Demographic Ads in East Godavari',
@@ -117,16 +118,16 @@ const servicesCatalog = [
     categoryTe: 'ఆర్గానిక్ గ్రోత్ & బ్రాండ్ అథారిటీ',
     title: 'Social Media Management',
     titleTe: 'సోషల్ మీడియా మేనేజ్‌మెంట్',
-    outcome: '100% Hands-Off Daily Posting, Profile Optimization & Regional Follower Growth',
+    outcome: 'Fully Managed Daily Posting, Profile Optimization & Regional Follower Growth',
     outcomeTe: 'నిరంతర పోస్టింగ్‌లు, బ్రాండ్ గ్రోత్, బయో ఆప్టిమైజేషన్ మరియు ఆర్గానిక్ ఫాలోవర్లు',
     description:
       'We run your social media completely so you can focus on running your business. From profile makeovers and hashtag research to daily scheduled publishing, your brand stays consistently active and authoritative.',
     descriptionTe:
       'మీ సోషల్ మీడియా హ్యాండిల్స్‌ని మేము పూర్తిగా నిర్వహిస్తాము. రోజువారీ పోస్టింగ్‌లు, బయో ఆప్టిమైజేషన్ మరియు స్థానిక ఫాలోవర్ల పెరుగుదలతో మీ బ్రాండ్ ప్రతిష్ట పెరుగుతుంది.',
-    metric: '+320% Organic Reach',
-    metricTe: '+320% ఆర్గానిక్ రీచ్',
-    metricSub: 'in the first 90 days of consistent publishing',
-    metricSubTe: 'మొదటి 90 రోజుల్లో పెరిగిన రీచ్',
+    metric: 'Consistent Reach',
+    metricTe: 'నిరంతర రీచ్',
+    metricSub: 'compounding organic growth across channels',
+    metricSubTe: 'క్రమం తప్పని పోస్టింగ్‌తో పెరిగే రీచ్',
     deliverables: [
       'Full Monthly Content Scheduling & Consistent Daily Publishing',
       'Profile Bio Optimization, Highlight Covers & Brand Grid Aesthetic',
@@ -154,16 +155,16 @@ const servicesCatalog = [
     categoryTe: 'లోకల్ సెర్చ్ & డిజిటల్ ప్రెజెన్స్',
     title: 'Platform Coverage & Local SEO',
     titleTe: 'ప్లాట్‌ఫాం కవరేజ్ & లోకల్ SEO',
-    outcome: 'Top 3 Google Maps Ranking, Google Search Dominance & 24/7 WhatsApp Setup',
-    outcomeTe: 'గూగుల్ మ్యాప్స్ టాప్ 3 ర్యాంకింగ్, లోకల్ సెర్చ్ మరియు వాట్సాప్ బిజినెస్ ఆటోమేషన్',
+    outcome: 'Google Maps 3-Pack Presence, Local Search Optimization & 24/7 WhatsApp Setup',
+    outcomeTe: 'గూగుల్ మ్యాప్స్ 3-ప్యాక్ ప్రెజెన్స్, లోకల్ సెర్చ్ మరియు వాట్సాప్ బిజినెస్ ఆటోమేషన్',
     description:
-      'When customers in Rajahmundry search for your category on Google or Google Maps, your business must appear at the top. We optimize your local profiles and integrate WhatsApp for instant customer discovery.',
+      'When customers in Rajahmundry search for your category on Google or Google Maps, your business must be easy to find. We optimize your local profiles and integrate WhatsApp for instant customer discovery.',
     descriptionTe:
-      'రాజమండ్రిలో కస్టమర్లు గూగుల్‌లో వెతికినప్పుడు మీ వ్యాపారమే టాప్‌లో కనిపించేలా గూగుల్ మ్యాప్స్ ఆప్టిమైజేషన్ మరియు వాట్సాప్ బిజినెస్ క్యాటలాగ్ సెటప్ చేస్తాము.',
-    metric: '#1 Top 3 Rank',
-    metricTe: '#1 టాప్ 3 ర్యాంకింగ్',
-    metricSub: 'on Google Maps Local 3-Pack',
-    metricSubTe: 'గూగుల్ మ్యాప్స్ లోకల్ ప్యాక్‌లో',
+      'రాజమండ్రిలో కస్టమర్లు గూగుల్‌లో వెతికినప్పుడు మీ వ్యాపారం ప్రముఖంగా కనిపించేలా గూగుల్ మ్యాప్స్ ఆప్టిమైజేషన్ మరియు వాట్సాప్ బిజినెస్ క్యాటలాగ్ సెటప్ చేస్తాము.',
+    metric: 'Local 3-Pack Focus',
+    metricTe: 'లోకల్ 3-ప్యాక్ ఫోకస్',
+    metricSub: 'Google Maps and local search profile tuning',
+    metricSubTe: 'గూగుల్ మ్యాప్స్ మరియు లోకల్ సెర్చ్ ఆప్టిమైజేషన్',
     deliverables: [
       'Complete Google Business Profile (GBP) Audit, Verification & Optimization',
       'Geotagged Photo Uploads, Category Tuning & Weekly Profile Updates',
@@ -194,24 +195,24 @@ const servicesCatalog = [
     outcome: 'Structured 30-Day Editorial Pipelines, Centralized Asset Hub & Rapid Turnaround',
     outcomeTe: 'క్రమబద్ధమైన ఎడిటోరియల్ వర్క్‌ఫ్లో, డిజిటల్ అసెట్స్ మరియు వేగవంతమైన డెలివరీ',
     description:
-      'Never worry about what to post tomorrow. We build an organized 30-day editorial pipeline, centralize all brand assets in a private cloud hub, and guarantee fast turnaround for flash sales and festive announcements.',
+      'Never worry about what to post tomorrow. We build an organized 30-day editorial pipeline, centralize all brand assets in a private cloud hub, and provide rapid turnaround for flash sales and festive announcements.',
     descriptionTe:
       'రేపు ఏం పోస్ట్ చేయాలనే టెన్షన్ లేకుండా 30 రోజుల ముందస్తు ప్లానింగ్, ప్రైవేట్ క్లౌడ్ అసెట్ హబ్ మరియు అత్యవసర ఆఫర్ల కోసం వేగవంతమైన డెలివరీ.',
-    metric: '<4 Hours',
-    metricTe: '<4 గంటల్లోపు',
-    metricSub: 'turnaround on urgent festival/offer creatives',
-    metricSubTe: 'అత్యవసర ఆఫర్ బ్యానర్ల డెలివరీ సమయం',
+    metric: 'Agile Sprints',
+    metricTe: 'వేగవంతమైన డెలివరీ',
+    metricSub: 'rapid delivery for urgent offers & promotions',
+    metricSubTe: 'అత్యవసర ఆఫర్ బ్యానర్ల వేగవంతమైన డెలివరీ',
     deliverables: [
       'Centralized Cloud Asset Hub for All Approved Designs, Videos & Raw Files',
       '30-Day Rolling Editorial Calendar with Zero Last-Minute Rushes',
       'Multi-Stage Design Quality Control & Brand Consistency Verification',
-      'Guaranteed Fast Turnaround for Breaking Offers and Flash Announcements'
+      'Fast Turnaround for Breaking Offers and Flash Announcements'
     ],
     deliverablesTe: [
       'అన్ని బ్రాండ్ డిజైన్లు మరియు వీడియోల కోసం క్లౌడ్ అసెట్ హబ్',
       '30 రోజుల ముందస్తు ఎడిటోరియల్ క్యాలెండర్',
       'మల్టీ-స్టేజ్ క్వాలిటీ చెకింగ్ మరియు బ్రాండ్ క్వాలిటీ కంట్రోల్',
-      'అత్యవసర ఆఫర్లకు గ్యారెంటీడ్ ఫాస్ట్ టర్న్‌అరౌండ్'
+      'అత్యవసర ఆఫర్లకు వేగవంతమైన డెలివరీ'
     ],
     logos: [
       { component: CreativesLogo, label: 'Asset Cloud' },
@@ -228,32 +229,32 @@ const servicesCatalog = [
     categoryTe: 'రెప్యుటేషన్ & కన్వర్షన్స్',
     title: 'Community Management',
     titleTe: 'కమ్యూనిటీ మేనేజ్‌మెంట్',
-    outcome: 'Sub-15 Minute DM Lead Capture, Comment Moderation & 5-Star Review Growth',
-    outcomeTe: '15 నిమిషాల్లోపు డిఎమ్ రెస్పాన్స్, కామెంట్ మోడరేషన్ మరియు 5-స్టార్ రివ్యూల పెంపు',
+    outcome: 'Rapid DM Lead Capture, Comment Moderation & Reputation Growth',
+    outcomeTe: 'వేగవంతమైన డిఎమ్ రెస్పాన్స్, కామెంట్ మోడరేషన్ మరియు రెప్యుటేషన్ పెంపు',
     description:
-      'Social media attention without fast response leads to lost sales. We monitor incoming DMs and comments 7 days a week, qualify customer inquiries, and accelerate 5-star Google reviews to build unshakeable local trust.',
+      'Social media attention without fast response leads to lost sales. We monitor incoming DMs and comments 7 days a week, qualify customer inquiries, and help build unshakeable local trust.',
     descriptionTe:
-      'సోషల్ మీడియాలో వచ్చే ఎంక్వైరీలకు వేగంగా సమాధానం ఇవ్వకపోతే కస్టమర్లను కోల్పోతాము. మేము మీ డిఎమ్స్, కామెంట్స్ మరియు గూగుల్ రివ్యూలను నిరంతరం పర్యవేక్షిస్తాము.',
-    metric: '<15 Min',
-    metricTe: '<15 నిమిషాలు',
-    metricSub: 'average inquiry response time across platforms',
-    metricSubTe: 'డిఎమ్ ఎంక్వైరీలకు సగటు రెస్పాన్స్ సమయం',
+      'సోషల్ మీడియాలో వచ్చే ఎంక్వైరీలకు వేగంగా సమాధానం ఇవ్వకపోతే కస్టమర్లను కోల్పోతాము. మేము మీ డిఎమ్స్, కామెంట్స్ మరియు కస్టమర్ ఎంక్వైరీలను నిరంతరం పర్యవేక్షిస్తాము.',
+    metric: 'Prompt Routing',
+    metricTe: 'తక్షణ లీడ్ రౌటింగ్',
+    metricSub: 'rapid inquiry triage and direct WhatsApp notification',
+    metricSubTe: 'ఎంక్వైరీల తక్షణ వెరిఫికేషన్ & వాట్సాప్ నోటిఫికేషన్',
     deliverables: [
-      'Sub-15 Min Inquiry Qualification & Instant Phone/WhatsApp Sales Routing',
+      'Prompt Inquiry Qualification & Instant Phone/WhatsApp Sales Routing',
       '7-Day/Week Comment Moderation & Spam / Competitor Filtering',
-      'Proactive 5-Star Google Maps Customer Review Acceleration Framework',
+      'Proactive Customer Reputation & Feedback Management Framework',
       'Crisis Prevention & Fast Resolution for Sensitive Customer Feedback'
     ],
     deliverablesTe: [
-      '15 నిమిషాల్లోపు ఎంక్వైరీ వెరిఫికేషన్ మరియు మీ సేల్స్ టీమ్‌కి ఫార్వర్డింగ్',
+      'ఎంక్వైరీ వెరిఫికేషన్ మరియు మీ సేల్స్ టీమ్‌కి తక్షణ ఫార్వర్డింగ్',
       'వారంలో 7 రోజులు కామెంట్ మోడరేషన్ మరియు స్పామ్ ఫిల్టరింగ్',
-      'జెన్యూన్ 5-స్టార్ గూగుల్ మ్యాప్స్ రివ్యూల యాక్సిలరేషన్ సిస్టమ్',
+      'కస్టమర్ రెప్యుటేషన్ మరియు ఫీడ్‌బ్యాక్ మేనేజ్‌మెంట్',
       'కస్టమర్ల సమస్యలకు తక్షణ రెస్పాన్స్ మరియు బ్రాండ్ రక్షణ'
     ],
     logos: [
       { component: InquiriesLogo, label: 'DM Capture' },
       { component: WhatsAppLogo, label: 'WhatsApp Routing' },
-      { component: GoogleMapsLogo, label: '5★ Reviews' }
+      { component: GoogleMapsLogo, label: 'Reputation' }
     ],
     bestFor: 'Clinics, Hospitality, Real Estate Developers & Premium Retail',
     bestForTe: 'క్లినిక్‌లు, హోటళ్లు, రియల్ ఎస్టేట్ మరియు లగ్జరీ షోరూమ్‌లు'
@@ -271,8 +272,8 @@ const servicesCatalog = [
       'You will never have to wonder where your marketing budget went. We provide transparent bi-weekly reports showing exact spend, footfall indicators, message leads, cost per inquiry, and strategic recommendations.',
     descriptionTe:
       'మీరు ఖర్చు పెట్టిన ప్రతి రూపాయికి లెక్క ఉంటుంది. అయోమయ పదాలు లేకుండా స్పష్టమైన ఎంక్వైరీలు, లీడ్ ఖర్చు మరియు బిజినెస్ గ్రోత్ సూచనలతో కూడిన రిపోర్టింగ్.',
-    metric: '100% Transparent',
-    metricTe: '100% పారదర్శకత',
+    metric: 'Transparent Reporting',
+    metricTe: 'పారదర్శక రిపోర్టింగ్',
     metricSub: 'rupee-for-rupee tracking of ad spend to revenue',
     metricSubTe: 'ఖర్చు పెట్టిన ప్రతి రూపాయికి పూర్తి లెక్క',
     deliverables: [
@@ -320,8 +321,8 @@ const serviceFaqs = [
   {
     q: 'Can we customize our package or bundle multiple services together?',
     qTe: 'మాకు అవసరమైన సర్వీసులను కలిపి కస్టమ్ ప్యాకేజీగా తీసుకోవచ్చా?',
-    a: 'Absolutely. Most of our clients prefer an all-in-one monthly growth package (combining Reels, Meta Ads, Google Maps SEO, and Community Management). Bundling provides a unified strategy, single-point accountability, and cost savings of up to 35%.',
-    aTe: 'ఖచ్చితంగా. మా క్లయింట్లలో ఎక్కువ మంది రీల్స్, యాడ్స్, గూగుల్ మ్యాప్స్ మరియు కమ్యూనిటీ మేనేజ్‌మెంట్‌లను కలిపి ఆల్-ఇన్-వన్ మంత్లీ ప్యాకేజీగా తీసుకుంటారు. దీనివల్ల మంచి సమన్వయం మరియు 35% వరకు ఖర్చు ఆదా అవుతుంది.'
+    a: 'Absolutely. Most of our clients prefer an all-in-one monthly growth package (combining Reels, Meta Ads, Google Maps SEO, and Community Management). Bundling provides a unified strategy, single-point accountability, and better overall value.',
+    aTe: 'ఖచ్చితంగా. మా క్లయింట్లలో ఎక్కువ మంది రీల్స్, యాడ్స్, గూగుల్ మ్యాప్స్ మరియు కమ్యూనిటీ మేనేజ్‌మెంట్‌లను కలిపి ఆల్-ఇన్-వన్ మంత్లీ ప్యాకేజీగా తీసుకుంటారు. దీనివల్ల మంచి సమన్వయం మరియు సమగ్ర ఫలితాలు లభిస్తాయి.'
   }
 ];
 
@@ -573,13 +574,13 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
             </button>
 
             <a
-              href="https://wa.me/919494825968?text=Hello%20Bhargav,%20I%20am%20exploring%20BDS%20services%20and%20would%20like%20to%20discuss%20a%20plan%20for%20my%20business."
+              href={`https://wa.me/${companyInfo.whatsappNumber}?text=Hello%20Bhargav,%20I%20am%20exploring%20BDS%20services%20and%20would%20like%20to%20discuss%20a%20plan%20for%20my%20business.`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-7 py-4 rounded-xl bg-white border border-stone-300 hover:border-stone-900 text-stone-950 font-extrabold text-sm transition-colors inline-flex items-center justify-center gap-2 shadow-xs cursor-pointer"
             >
               <WhatsAppLogo className="w-4 h-4 shrink-0" />
-              <span>{isTe ? 'వాట్సాప్‌లో మాట్లాడండి' : 'Chat on WhatsApp: +91 94948 25968'}</span>
+              <span>{isTe ? 'వాట్సాప్‌లో మాట్లాడండి' : `Chat on WhatsApp: ${companyInfo.phoneDisplay}`}</span>
             </a>
           </div>
 

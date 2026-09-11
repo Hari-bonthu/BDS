@@ -3,7 +3,9 @@ import {
   ArrowRight,
   ArrowUpRight,
   MessageCircle,
-  MapPin
+  MapPin,
+  TrendingUp,
+  User
 } from 'lucide-react';
 import { companyInfo } from '../data/companyData';
 import { PageId, Language } from '../types';
@@ -27,51 +29,51 @@ interface HomePageProps {
   onOpenQuoteModal: (service?: string) => void;
 }
 
-// 3 Real BDS Hero Showcase Campaigns (Hero remains 100% APPROVED & UNTOUCHED)
+// 3 BDS Campaign Concept Showcases (Illustrative creative direction examples)
 const heroShowcaseCampaigns = [
   {
     id: 'silks',
-    client: 'SRI SRINIVASA SILKS',
-    clientTe: 'శ్రీ శ్రీనివాస సిల్క్స్',
-    campaignName: 'Festive Drop Campaign',
-    campaignNameTe: 'ఫెస్టివ్ పట్టు చీరల క్యాంపెయిన్',
+    client: 'TEXTILE & BRIDAL RETAIL',
+    clientTe: 'టెక్స్టైల్ & బ్రైడల్ రీటెయిల్',
+    campaignName: 'Festive Video Concept',
+    campaignNameTe: 'ఫెస్టివ్ వీడియో క్యాంపెయిన్ కాన్సెప్ట్',
     image: asset('assets/campaign-silks.webp'),
-    resultNumber: '+180',
-    resultLabel: 'showroom footfalls',
-    resultLabelTe: 'షోరూమ్ కస్టమర్లు (14 రోజుల్లో)'
+    resultNumber: 'High',
+    resultLabel: 'footfall lift potential',
+    resultLabelTe: 'షోరూమ్ ట్రాఫిక్ పొటెన్షియల్'
   },
   {
     id: 'dental',
-    client: 'SMILE CRAFT DENTAL',
-    clientTe: 'స్మైల్ క్రాఫ్ట్ డెంటల్ క్లినిక్',
-    campaignName: 'Patient Acquisition Campaign',
-    campaignNameTe: 'గూగుల్ మ్యాప్స్ పేషెంట్ క్యాంపెయిన్',
+    client: 'HEALTHCARE & CLINICS',
+    clientTe: 'హెల్త్‌కేర్ & క్లినిక్స్',
+    campaignName: 'Local Search & Booking Concept',
+    campaignNameTe: 'లోకల్ సెర్చ్ & బుకింగ్ కాన్సెప్ట్',
     image: asset('assets/campaign-dental.webp'),
-    resultNumber: '110+',
-    resultLabel: 'monthly appointments',
-    resultLabelTe: 'నెలవారీ కొత్త అపాయింట్మెంట్లు'
+    resultNumber: '3-Pack',
+    resultLabel: 'Google Maps ranking model',
+    resultLabelTe: 'గూగుల్ మ్యాప్స్ 3-ప్యాక్ మోడల్'
   },
   {
     id: 'villas',
-    client: 'GODAVARI MEADOWS',
-    clientTe: 'గోదావరి మెడోస్ విల్లాస్',
-    campaignName: 'Gated Community Campaign',
-    campaignNameTe: 'గేటెడ్ కమ్యూనిటీ విల్లా లీడ్స్',
+    client: 'RESIDENTIAL REAL ESTATE',
+    clientTe: 'రెసిడెన్షియల్ రియల్ ఎస్టేట్',
+    campaignName: 'Buyer Lead Generation Concept',
+    campaignNameTe: 'బయర్ లీడ్ జనరేషన్ కాన్సెప్ట్',
     image: asset('assets/campaign-villas.webp'),
-    resultNumber: '240+',
-    resultLabel: 'verified buyer inquiries',
-    resultLabelTe: 'క్వాలిఫైడ్ విల్లా ఎంక్వైరీలు'
+    resultNumber: 'Verified',
+    resultLabel: 'buyer lead qualification model',
+    resultLabelTe: 'క్వాలిఫైడ్ బయర్ లీడ్ మోడల్'
   }
 ];
 
-// Clean client list for horizontal marquee
+// Industry Sector Specializations (replacing placeholder client names)
 const trustedClients = [
-  { name: 'Godavari Grand Hospitality', mark: 'GH' },
-  { name: 'Sri Srinivasa Silks', mark: 'SSS' },
-  { name: 'Smile Craft Dental', mark: 'SC' },
-  { name: 'Godavari Meadows', mark: 'GM' },
-  { name: 'Godavari Living Interiors', mark: 'GL' },
-  { name: 'Sri Valli Pattu Showroom', mark: 'SV' }
+  { name: 'Retail & Apparel Showrooms', mark: 'Retail' },
+  { name: 'Clinics & Healthcare Centers', mark: 'Health' },
+  { name: 'Real Estate & Builders', mark: 'Realty' },
+  { name: 'Interior Design Studios', mark: 'Design' },
+  { name: 'Educational Institutions', mark: 'Edu' },
+  { name: 'Hospitality & Restaurants', mark: 'Dine' }
 ];
 
 export const HomePage: React.FC<HomePageProps> = ({
@@ -149,7 +151,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   onClick={() => onNavigate('portfolio')}
                   className="px-6 py-3.5 rounded-xl bg-white hover:bg-stone-100 text-stone-800 font-bold text-sm sm:text-base border border-stone-300 transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer"
                 >
-                  <span>{isTe ? 'మా Results చూడండి' : 'See Our Results'}</span>
+                  <span>{isTe ? 'కాంపెయిన్ కాన్సెప్ట్స్ చూడండి' : 'Explore Campaign Concepts'}</span>
                   <ArrowUpRight className="w-4 h-4 text-stone-400" />
                 </button>
               </div>
@@ -157,9 +159,9 @@ export const HomePage: React.FC<HomePageProps> = ({
               {/* Proof Line */}
               <div className="pt-2 border-t border-stone-200/80">
                 <p className="text-xs sm:text-sm font-semibold text-stone-600 tracking-wide">
-                  <span className="text-stone-950 font-bold">120+</span> campaigns &nbsp;·&nbsp;{' '}
-                  <span className="text-stone-950 font-bold">98%</span> client retention &nbsp;·&nbsp;{' '}
-                  <span className="text-stone-950 font-bold">₹15L+</span> tracked revenue
+                  <span className="text-stone-950 font-bold">{isTe ? 'స్పష్టమైన లక్ష్యాలు' : 'Measurable KPIs'}</span> &nbsp;·&nbsp;{' '}
+                  <span className="text-stone-950 font-bold">{isTe ? 'పారదర్శకమైన రిపోర్టింగ్' : 'Transparent Reporting'}</span> &nbsp;·&nbsp;{' '}
+                  <span className="text-stone-950 font-bold">{isTe ? 'డైరెక్ట్ ఫౌండర్ స్ట్రాటజీ' : 'Direct Founder Strategy'}</span>
                 </p>
               </div>
             </div>
@@ -255,7 +257,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       <section className="py-7 sm:py-8 bg-white border-b border-stone-200/70 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-3.5 text-center">
           <p className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-stone-400">
-            {isTe ? 'గోదావరి జిల్లాల్లోని ప్రముఖ వ్యాపారాల నమ్మకం' : 'TRUSTED BY BUSINESSES ACROSS RAJAHMUNDRY & COASTAL ANDHRA'}
+            {isTe ? 'గోదావరి జిల్లాల్లోని కీలక వాణిజ్య రంగాలు' : 'SPECIALIZED FOR REGIONAL COMMERCIAL SECTORS'}
           </p>
         </div>
 
@@ -443,22 +445,22 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* Section Header */}
           <div className="max-w-3xl space-y-2">
             <p className="text-xs font-bold uppercase tracking-widest text-blue-600">
-              {isTe ? 'ఫలితాలు' : 'SELECTED WORK'}
+              {isTe ? 'క్యాంపెయిన్ కాన్సెప్ట్స్' : 'SAMPLE CREATIVE DIRECTION'}
             </p>
             <h2 className="text-3xl sm:text-5xl font-black text-stone-950 tracking-tight leading-tight">
-              {isTe ? 'నిజమైన వ్యాపారాలు · నిజమైన ఫలితాలు' : 'Real work. Real businesses. Real results.'}
+              {isTe ? 'క్యాంపెయిన్ కాన్సెప్ట్స్ & క్రియేటివ్ డైరెక్షన్' : 'Sample Creative Direction & Campaign Execution'}
             </h2>
             <p className="text-sm sm:text-base text-stone-500 font-normal">
               {isTe ? (
-                'సరైన స్థానిక వ్యూహం మరియు నిబద్ధత కలిసినప్పుడు వచ్చే ఫలితాలకు కొన్ని ఉదాహరణలు.'
+                'BDS తెలుగు క్రియేటివ్ స్టోరీటెల్లింగ్ మరియు పెర్ఫార్మెన్స్ అడ్వర్టైజింగ్‌ను కలిపి ఎలా పని చేస్తుందో చూపించే ఉదాహరణ క్యాంపెయిన్ బ్లూప్రింట్స్.'
               ) : (
-                'A few examples of what happens when local strategy meets serious execution.'
+                'Realistic campaign blueprints demonstrating how BDS combines Telugu creative storytelling with performance advertising for each local business category.'
               )}
             </p>
           </div>
 
           {/* =====================================================================
-              CARD 01 (ROW 1): SRI SRINIVASA SILKS (Image Left, Info Right)
+              CARD 01 (ROW 1): TEXTILE & BRIDAL RETAIL CONCEPT (Image Left, Info Right)
               ===================================================================== */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center border-t-2 border-stone-950 pt-10 sm:pt-14">
             
@@ -467,13 +469,17 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl shadow-stone-900/5 bg-stone-100">
                 <img
                   src={asset('assets/campaign-silks.webp')}
-                  alt="Sri Srinivasa Silks Campaign Visual"
+                  alt="Textile & Bridal Retail Campaign Concept Visual"
                   width={640}
                   height={400}
                   className="w-full h-full object-cover object-center"
                   loading="lazy"
                   decoding="async"
                 />
+                {/* Campaign Concept Badge */}
+                <div className="absolute top-3 left-3 bg-stone-950/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
+                  Campaign Concept
+                </div>
               </div>
             </div>
 
@@ -481,43 +487,44 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="lg:col-span-5 space-y-5">
               <div className="space-y-1">
                 <p className="text-xs font-mono font-bold uppercase tracking-wider text-stone-400">
-                  MAIN ROAD &amp; KOTIPALLI, RAJAHMUNDRY · RETAIL &amp; FASHION
+                  MAIN ROAD & KOTIPALLI, RAJAHMUNDRY · RETAIL & FASHION
                 </p>
                 <h3 className="text-2xl sm:text-3xl font-black text-stone-950 leading-tight">
-                  Sri Srinivasa Silks &amp; Handlooms
+                  Textile & Bridal Showroom Concept
                 </h3>
+                <p className="text-[11px] text-stone-400 font-medium italic">Conceptual example — illustrating BDS execution capability</p>
               </div>
 
-              {/* Dominant Eye-Catching Number (+180 Footfalls) */}
+              {/* Illustrative Outcome */}
               <div className="space-y-1">
                 <div className="flex items-baseline gap-3">
-                  <span className="text-6xl sm:text-7xl lg:text-8xl font-black text-stone-950 tracking-tight leading-none">
-                    +180
+                  <span className="text-5xl sm:text-6xl lg:text-7xl font-black text-stone-950 tracking-tight leading-none">
+                    High
                   </span>
                   <span className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-blue-600">
-                    SHOWROOM FOOTFALLS
+                    FOOTFALL LIFT POTENTIAL
                   </span>
                 </div>
-                <p className="text-xs text-stone-500 font-semibold">in 14 days · Festive bridal collection drop</p>
+                <p className="text-xs text-stone-500 font-semibold">Festive video campaign concept · Telugu voiceover reels + Meta Ads</p>
               </div>
 
-              {/* Supporting Metrics */}
+              {/* Supporting Approach */}
               <div className="flex items-center gap-6 pt-1 border-t border-stone-200">
                 <div>
-                  <p className="text-xs text-stone-400 font-semibold uppercase">Return On Ad Spend</p>
-                  <p className="text-xl font-black text-stone-950">12.8×</p>
+                  <p className="text-xs text-stone-400 font-semibold uppercase">Approach</p>
+                  <p className="text-base font-black text-stone-950">Video + Meta</p>
                 </div>
                 <div className="border-l border-stone-200 pl-6">
-                  <p className="text-xs text-stone-400 font-semibold uppercase">Cost Per Message Lead</p>
-                  <p className="text-xl font-black text-stone-950">₹34</p>
+                  <p className="text-xs text-stone-400 font-semibold uppercase">Targeting</p>
+                  <p className="text-base font-black text-stone-950">Radius-Based</p>
                 </div>
               </div>
 
               <p className="text-sm text-stone-600 leading-relaxed">
                 {isTe ? (
-                  'తెలుగు వాయిస్‌ఓవర్‌తో పట్టు చీరల ప్రమోషన్ రీల్స్ మరియు రాజమండ్రి చుట్టుపక్కల లొకేషన్ టార్గెటెడ్ యాడ్స్‌తో షోరూమ్‌కి వందల మంది కస్టమర్లు వచ్చారు.'
+                  'తెలుగు వాయిస్‌ఓవర్‌తో పట్టు చీరల ప్రమోషన్ రీల్స్ మరియు రాజమండ్రి చుట్టుపక్కల లొకేషన్ టార్గెటెడ్ యాడ్స్‌తో షోరూమ్‌కి వందల మంది కస్టమర్లు రాగలిగే కాన్సెప్ట్ ఫ్రేమ్‌వర్క్.'
                 ) : (
-                  'A localized video campaign featuring bridal pattu sarees with native Telugu voiceovers and radius-targeted Instagram Ads across East Godavari.'
+                  'A localized video campaign concept featuring bridal pattu sarees with native Telugu voiceovers and radius-targeted Instagram Ads across East Godavari.'
                 )}
               </p>
 
@@ -527,7 +534,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   onClick={() => onNavigate('portfolio')}
                   className="inline-flex items-center gap-2 text-sm font-extrabold text-stone-950 hover:text-blue-600 transition-colors group cursor-pointer"
                 >
-                  <span>{isTe ? 'కేస్ స్టడీ చూడండి →' : 'View Case Study →'}</span>
+                  <span>{isTe ? 'కాన్సెప్ట్ చూడండి →' : 'View Concept →'}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
@@ -536,7 +543,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
 
           {/* =====================================================================
-              CARD 02 (ROW 2): SMILE CRAFT DENTAL (Information Left, Image Right)
+              CARD 02 (ROW 2): HEALTHCARE & CLINICS CONCEPT (Information Left, Image Right)
               ===================================================================== */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center border-t border-stone-200 pt-12 sm:pt-16">
             
@@ -544,43 +551,44 @@ export const HomePage: React.FC<HomePageProps> = ({
             <div className="order-2 lg:order-1 lg:col-span-5 space-y-5">
               <div className="space-y-1">
                 <p className="text-xs font-mono font-bold uppercase tracking-wider text-stone-400">
-                  DANAVAIPETA, RAJAHMUNDRY · HEALTHCARE &amp; CLINICS
+                  DANAVAIPETA, RAJAHMUNDRY · HEALTHCARE & CLINICS
                 </p>
                 <h3 className="text-2xl sm:text-3xl font-black text-stone-950 leading-tight">
-                  Smile Craft Dental &amp; Implants
+                  Dental & Healthcare Clinic Concept
                 </h3>
+                <p className="text-[11px] text-stone-400 font-medium italic">Conceptual example — illustrating BDS execution capability</p>
               </div>
 
-              {/* Dominant Eye-Catching Number (110+ Appointments) */}
+              {/* Illustrative Outcome */}
               <div className="space-y-1">
                 <div className="flex items-baseline gap-3">
-                  <span className="text-6xl sm:text-7xl lg:text-8xl font-black text-stone-950 tracking-tight leading-none">
-                    110+
+                  <span className="text-5xl sm:text-6xl lg:text-7xl font-black text-stone-950 tracking-tight leading-none">
+                    3-Pack
                   </span>
                   <span className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-blue-600">
-                    MONTHLY APPOINTMENTS
+                    GOOGLE MAPS MODEL
                   </span>
                 </div>
-                <p className="text-xs text-stone-500 font-semibold">in 30 days · Patient acquisition &amp; Maps dominance</p>
+                <p className="text-xs text-stone-500 font-semibold">Local search & booking concept · Patient acquisition blueprint</p>
               </div>
 
-              {/* Supporting Metrics */}
+              {/* Supporting Approach */}
               <div className="flex items-center gap-6 pt-1 border-t border-stone-200">
                 <div>
-                  <p className="text-xs text-stone-400 font-semibold uppercase">Google Maps Rank</p>
-                  <p className="text-xl font-black text-stone-950">#1 Top 3</p>
+                  <p className="text-xs text-stone-400 font-semibold uppercase">Approach</p>
+                  <p className="text-base font-black text-stone-950">Maps SEO</p>
                 </div>
                 <div className="border-l border-stone-200 pl-6">
-                  <p className="text-xs text-stone-400 font-semibold uppercase">Verified Reviews</p>
-                  <p className="text-xl font-black text-stone-950">380+ 5★</p>
+                  <p className="text-xs text-stone-400 font-semibold uppercase">Inquiries</p>
+                  <p className="text-base font-black text-stone-950">Prompt Triage</p>
                 </div>
               </div>
 
               <p className="text-sm text-stone-600 leading-relaxed">
                 {isTe ? (
-                  'గూగుల్ బిజినెస్ ప్రొఫైల్ ఆప్టిమైజేషన్, పేషెంట్ రివ్యూల యాక్సిలరేషన్ మరియు 15 నిమిషాల్లోపు త్వరిత రెస్పాన్స్ సిస్టమ్‌తో ప్రతిరోజూ కొత్త పేషెంట్ల రాక.'
+                  'గూగుల్ బిజినెస్ ప్రొఫైల్ ఆప్టిమైజేషన్, పేషెంట్ రివ్యూల యాక్సిలరేషన్ మరియు త్వరిత ఎంక్వైరీ రెస్పాన్స్ సిస్టమ్‌తో ప్రతిరోజూ కొత్త పేషెంట్లను ఆకర్షించే కాన్సెప్ట్ బ్లూప్రింట్.'
                 ) : (
-                  'Complete Google Business Profile takeover, patient review acceleration system, and under 15-minute inquiry response handling that turned local searches into daily clinic appointments.'
+                  'A blueprint for Google Business Profile takeover, patient review acceleration, and prompt inquiry response handling to drive consistent clinic appointments.'
                 )}
               </p>
 
@@ -590,7 +598,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   onClick={() => onNavigate('portfolio')}
                   className="inline-flex items-center gap-2 text-sm font-extrabold text-stone-950 hover:text-blue-600 transition-colors group cursor-pointer"
                 >
-                  <span>{isTe ? 'కేస్ స్టడీ చూడండి →' : 'View Case Study →'}</span>
+                  <span>{isTe ? 'కాన్సెప్ట్ చూడండి →' : 'View Concept →'}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
@@ -601,20 +609,24 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl shadow-stone-900/5 bg-stone-100">
                 <img
                   src={asset('assets/campaign-dental.webp')}
-                  alt="Smile Craft Dental Campaign Visual"
+                  alt="Healthcare & Clinics Campaign Concept Visual"
                   width={640}
                   height={400}
                   className="w-full h-full object-cover object-center"
                   loading="lazy"
                   decoding="async"
                 />
+                {/* Campaign Concept Badge */}
+                <div className="absolute top-3 left-3 bg-stone-950/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
+                  Campaign Concept
+                </div>
               </div>
             </div>
 
           </div>
 
           {/* =====================================================================
-              CARD 03 (ROW 3): GODAVARI MEADOWS (Image Left, Information Right)
+              CARD 03 (ROW 3): RESIDENTIAL REAL ESTATE CONCEPT (Image Left, Information Right)
               ===================================================================== */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center border-t border-stone-200 pt-12 sm:pt-16">
             
@@ -623,13 +635,17 @@ export const HomePage: React.FC<HomePageProps> = ({
               <div className="relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl shadow-stone-900/5 bg-stone-100">
                 <img
                   src={asset('assets/campaign-villas.webp')}
-                  alt="Godavari Meadows Campaign Visual"
+                  alt="Residential Real Estate Campaign Concept Visual"
                   width={640}
                   height={400}
                   className="w-full h-full object-cover object-center"
                   loading="lazy"
                   decoding="async"
                 />
+                {/* Campaign Concept Badge */}
+                <div className="absolute top-3 left-3 bg-stone-950/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
+                  Campaign Concept
+                </div>
               </div>
             </div>
 
@@ -640,40 +656,41 @@ export const HomePage: React.FC<HomePageProps> = ({
                   NH16 CORRIDOR, RAJAHMUNDRY · REAL ESTATE
                 </p>
                 <h3 className="text-2xl sm:text-3xl font-black text-stone-950 leading-tight">
-                  Godavari Meadows Gated Community
+                  Gated Villa Community Concept
                 </h3>
+                <p className="text-[11px] text-stone-400 font-medium italic">Conceptual example — illustrating BDS execution capability</p>
               </div>
 
-              {/* Dominant Eye-Catching Number (240+ Inquiries) */}
+              {/* Illustrative Outcome */}
               <div className="space-y-1">
                 <div className="flex items-baseline gap-3">
-                  <span className="text-6xl sm:text-7xl lg:text-8xl font-black text-stone-950 tracking-tight leading-none">
-                    240+
+                  <span className="text-5xl sm:text-6xl lg:text-7xl font-black text-stone-950 tracking-tight leading-none">
+                    Verified
                   </span>
                   <span className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-blue-600">
-                    BUYER INQUIRIES
+                    BUYER LEAD MODEL
                   </span>
                 </div>
-                <p className="text-xs text-stone-500 font-semibold">in 45 days · Verified high-intent lead campaign</p>
+                <p className="text-xs text-stone-500 font-semibold">High-intent lead qualification concept · Drone walkthrough + Meta Ads</p>
               </div>
 
-              {/* Supporting Metrics */}
+              {/* Supporting Approach */}
               <div className="flex items-center gap-6 pt-1 border-t border-stone-200">
                 <div>
-                  <p className="text-xs text-stone-400 font-semibold uppercase">Cost Per Lead</p>
-                  <p className="text-xl font-black text-stone-950">₹42</p>
+                  <p className="text-xs text-stone-400 font-semibold uppercase">Approach</p>
+                  <p className="text-base font-black text-stone-950">Multi-Step Leads</p>
                 </div>
                 <div className="border-l border-stone-200 pl-6">
-                  <p className="text-xs text-stone-400 font-semibold uppercase">Luxury Villas Closed</p>
-                  <p className="text-xl font-black text-stone-950">9 Units</p>
+                  <p className="text-xs text-stone-400 font-semibold uppercase">Targeting</p>
+                  <p className="text-base font-black text-stone-950">NRI + Local</p>
                 </div>
               </div>
 
               <p className="text-sm text-stone-600 leading-relaxed">
                 {isTe ? (
-                  'హై-ఇంటెంట్ డ్రోన్ వీడియో యాడ్స్‌తో ప్రాజెక్ట్‌ను చూసి కొనుగోలు చేసే జెన్యూన్ కస్టమర్లు మరియు ఎన్ఆర్ఐ ఇన్వెస్టర్లను నేరుగా సైట్‌కి తీసుకువచ్చాము.'
+                  'హై-ఇంటెంట్ డ్రోన్ వీడియో యాడ్స్ మరియు బడ్జెట్ క్వాలిఫికేషన్ ఫారమ్‌లతో సీరియస్ హోమ్ బయర్లు మరియు NRI ఇన్వెస్టర్లను అందుకునే కాన్సెప్ట్ ఫ్రేమ్‌వర్క్.'
                 ) : (
-                  'High-intent demographic targeting and video walkthrough ads reaching qualified families, local entrepreneurs, and NRI investors looking for premium gated villas.'
+                  'A performance framework concept using drone walkthrough ads and multi-step budget qualification forms to reach serious home buyers and NRI investors.'
                 )}
               </p>
 
@@ -683,7 +700,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   onClick={() => onNavigate('portfolio')}
                   className="inline-flex items-center gap-2 text-sm font-extrabold text-stone-950 hover:text-blue-600 transition-colors group cursor-pointer"
                 >
-                  <span>{isTe ? 'కేస్ స్టడీ చూడండి →' : 'View Case Study →'}</span>
+                  <span>{isTe ? 'కాన్సెప్ట్ చూడండి →' : 'View Concept →'}</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </button>
               </div>
@@ -698,7 +715,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               onClick={() => onNavigate('portfolio')}
               className="inline-flex items-center gap-2 text-base font-extrabold text-stone-950 hover:text-blue-600 transition-colors group cursor-pointer"
             >
-              <span>{isTe ? 'అన్ని ఫలితాలు చూడండి →' : 'View All Results →'}</span>
+              <span>{isTe ? 'అన్ని కాన్సెప్ట్లు చూడండి →' : 'View All Campaign Concepts →'}</span>
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
@@ -707,46 +724,81 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* =========================================================================
-          04 — CLIENT FEEDBACK (Editorial Testimonial with Selective Blue Highlights)
+          04 — WHAT YOU CAN EXPECT FROM BDS (Capability Pillars)
           ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-white border-b border-stone-200/80">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
-          
+      <section className="py-16 sm:py-24 bg-stone-950 border-b border-stone-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-14">
+
           {/* Header */}
-          <div>
-            <h2 className="text-2xl sm:text-4xl font-black text-stone-950 tracking-tight leading-tight">
-              {isTe ? 'మా క్లయింట్లు ఏమంటున్నారో చూడండి:' : "Don't take our word for it."}
+          <div className="max-w-3xl space-y-3">
+            <p className="text-xs font-extrabold uppercase tracking-widest text-blue-400">
+              {isTe ? 'మీకు వాగ్దానం చేస్తున్నాం' : 'OUR PLEDGE TO EVERY CLIENT'}
+            </p>
+            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight">
+              {isTe ? 'BDS నుండి మీరు ఏమి ఆశించవచ్చు' : 'What You Can Expect from BDS'}
             </h2>
+            <p className="text-sm sm:text-base text-stone-400 font-normal leading-relaxed max-w-2xl">
+              {isTe
+                ? 'మేము సంఖ్యలు చెప్పము — మేము పని చేసి చూపిస్తాం. ప్రతి ఎంగేజ్‌మెంట్‌లో మీరు ఈ మూడు విషయాలు పొందుతారు.'
+                : 'We don\'t sell numbers — we deliver outcomes. Every engagement includes three non-negotiable commitments.'}
+            </p>
           </div>
 
-          {/* Large Editorial Quotation with Selective Blue Highlights */}
-          <div className="space-y-8">
-            <blockquote className="text-xl sm:text-3xl lg:text-4xl font-bold text-stone-950 leading-snug sm:leading-relaxed tracking-tight">
-              {isTe ? (
-                <>
-                  <span className="text-blue-600">Bhargav Digital Solutions</span> మా పండుగ సీజన్ అమ్మకాలను పూర్తిగా మార్చేసింది. వారి <span className="text-blue-600">తెలుగు రీల్స్</span> మరియు <span className="text-blue-600">Facebook ads</span> వల్ల <span className="text-blue-600">రాజమండ్రి</span>, కొవ్వూరు, మండపేటల నుంచి వందలాది మంది కస్టమర్లు నేరుగా మా షోరూమ్‌కి వచ్చారు. వారి ద్వారా మా వ్యాపారానికి వచ్చిన ఫలితాలు మరియు <span className="text-blue-600">quality of work</span> అద్భుతమైనవి!
-                </>
-              ) : (
-                <>
-                  <span className="text-blue-600">Bhargav Digital Solutions</span> completely transformed our festive sales. Their <span className="text-blue-600">Telugu Reels</span> and <span className="text-blue-600">Facebook ads</span> brought hundreds of customers from across <span className="text-blue-600">Rajahmundry</span>, Kovvur, and Mandapeta directly into our showroom. The measurable business growth and <span className="text-blue-600">quality of work</span> they provide has been extraordinary!
-                </>
-              )}
-            </blockquote>
+          {/* 3 Pillar Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-            {/* Understated Attribution */}
-            <div className="pt-6 border-t border-stone-200 space-y-1">
-              <p className="text-base sm:text-lg font-black text-stone-950">
-                M. Venkata Rao
-              </p>
-              <p className="text-xs sm:text-sm font-semibold text-stone-600">
-                Managing Director, Sri Srinivasa Silks &amp; Sarees
-              </p>
-              <p className="text-xs text-stone-400 font-medium">
-                Main Road, Rajahmundry
-              </p>
+            {/* Pillar 1 */}
+            <div className="rounded-3xl bg-stone-900 border border-stone-700/60 p-7 space-y-5 hover:border-blue-500/50 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center shrink-0">
+                <TrendingUp className="w-5 h-5 text-blue-400" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-black text-white tracking-tight">
+                  {isTe ? 'పారదర్శక ROI ట్రాకింగ్' : 'Transparent ROI Tracking'}
+                </h3>
+                <p className="text-sm text-stone-400 leading-relaxed">
+                  {isTe
+                    ? 'ప్రతి రూపాయి ఎక్కడ వెళ్ళిందో మీకు తెలుసు. వారపు రిపోర్ట్‌లు, స్క్రీన్‌షాట్‌లతో సహా — కోల్పోయిన విషయాలు కూడా చెప్తాం.'
+                    : 'You know where every rupee goes. Weekly reports with real screenshots — including what didn\'t work and why.'}
+                </p>
+              </div>
             </div>
-          </div>
 
+            {/* Pillar 2 */}
+            <div className="rounded-3xl bg-stone-900 border border-stone-700/60 p-7 space-y-5 hover:border-blue-500/50 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center shrink-0">
+                <MapPin className="w-5 h-5 text-blue-400" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-black text-white tracking-tight">
+                  {isTe ? 'స్థానిక సాంస్కృతిక అవగాహన' : 'Native Cultural Fluency'}
+                </h3>
+                <p className="text-sm text-stone-400 leading-relaxed">
+                  {isTe
+                    ? 'రాజమండ్రి మార్కెట్ మాకు తెలుసు. తెలుగు భాషలో, స్థానిక రుచులకు తగ్గట్టు — Hyderabad agency\'s generic templates కాదు.'
+                    : 'We know the Rajahmundry market. Campaigns built in Telugu, for local audiences — not repurposed Hyderabad agency templates.'}
+                </p>
+              </div>
+            </div>
+
+            {/* Pillar 3 */}
+            <div className="rounded-3xl bg-stone-900 border border-stone-700/60 p-7 space-y-5 hover:border-blue-500/50 transition-colors">
+              <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center shrink-0">
+                <User className="w-5 h-5 text-blue-400" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-black text-white tracking-tight">
+                  {isTe ? 'ఫౌండర్ నేరుగా పని చేస్తారు' : 'Direct Founder Stewardship'}
+                </h3>
+                <p className="text-sm text-stone-400 leading-relaxed">
+                  {isTe
+                    ? 'జూనియర్ టీమ్ కాదు. Bhargav నేరుగా మీ account handle చేస్తారు — మీ ప్రతి call కి, message కి personally respond చేస్తారు.'
+                    : 'No junior team hand-off. Bhargav personally runs your account, answers your calls, and owns your results.'}
+                </p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </section>
 

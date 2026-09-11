@@ -20,6 +20,7 @@ import { servicesList } from '../../data/servicesData';
 import { companyInfo } from '../../data/companyData';
 import { WhatsAppLogo } from './PlatformLogos';
 import { Language } from '../../types';
+import { submitLead } from '../../services/leadService';
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -32,9 +33,9 @@ const goalOptions = [
   'Store Footfalls',
   'Patient Appointments',
   'More Phone Inquiries',
-  'Viral Telugu Reels',
-  'Google Maps #1 Rank',
-  'Full Market Takeover'
+  'Engaging Video Reels',
+  'Google Maps 3-Pack Optimization',
+  'Comprehensive Local Growth'
 ];
 
 export const QuoteModal: React.FC<QuoteModalProps> = ({
@@ -52,6 +53,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   const [notes, setNotes] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
     if (initialService) {
@@ -84,31 +86,25 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setErrorMessage(null);
 
-    const inquiryData = {
-      contactName,
+    const res = await submitLead({
+      formType: 'growth_audit',
+      name: contactName,
       businessName,
       phone,
       email,
-      selectedService,
+      service: selectedService,
       goals: selectedGoals,
-      notes,
-      timestamp: new Date().toISOString()
-    };
+      notes
+    });
 
-    try {
-      const existing = JSON.parse(localStorage.getItem('bds_client_inquiries') || '[]');
-      existing.unshift(inquiryData);
-      localStorage.setItem('bds_client_inquiries', JSON.stringify(existing.slice(0, 20)));
-    } catch (err) {
-      // safe fallback
-    }
+    setLoading(false);
 
-    setTimeout(() => {
-      setLoading(false);
+    if (res.success) {
       setSubmitted(true);
       try {
         confetti({
@@ -116,14 +112,19 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
           spread: 75,
           origin: { y: 0.6 }
         });
-      } catch (err) {
+      } catch {
         // Safe fallback
       }
-    }, 450);
+    } else {
+      setErrorMessage(
+        res.error || 'Could not deliver online inquiry. Please connect with Bhargav directly on WhatsApp below.'
+      );
+    }
   };
 
   const handleReset = () => {
     setSubmitted(false);
+    setErrorMessage(null);
     onClose();
   };
 
@@ -244,7 +245,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     required
                     className="w-full px-4 py-3 rounded-2xl border border-stone-300 bg-stone-50/60 text-stone-900 text-sm font-semibold focus:ring-2 focus:ring-blue-600 focus:bg-white focus:border-blue-600 transition-all cursor-pointer appearance-none"
                   >
-                    <option value="all-in-one">Complete 360° Regional Growth Package (Highest ROAS)</option>
+                    <option value="all-in-one">Complete 360° Regional Growth Package (Comprehensive Impact)</option>
                     {servicesList.map((s) => (
                       <option key={s.id} value={s.id}>
                         {s.title}
@@ -373,6 +374,22 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   className="w-full p-3 rounded-xl border border-stone-300 bg-white text-xs sm:text-sm font-medium text-stone-900 placeholder:text-stone-400 focus:ring-2 focus:ring-blue-600 focus:border-blue-600 focus:outline-none transition-all"
                 />
               </div>
+
+              {/* Error Message with WhatsApp Direct Fallback */}
+              {errorMessage && (
+                <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 space-y-2.5 text-xs text-amber-900">
+                  <p className="font-semibold leading-relaxed">{errorMessage}</p>
+                  <a
+                    href={`https://wa.me/${companyInfo.whatsappNumber}?text=${formattedWaMessage}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold transition-all shadow-xs"
+                  >
+                    <WhatsAppLogo className="w-4 h-4" />
+                    <span>Send Inquiry to Bhargav via WhatsApp</span>
+                  </a>
+                </div>
+              )}
 
               {/* Submit CTA */}
               <div className="pt-2 space-y-3">

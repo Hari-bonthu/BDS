@@ -18,12 +18,17 @@ import confetti from 'canvas-confetti';
 import { companyInfo, regionalCoverageAreas } from '../data/companyData';
 import { servicesList } from '../data/servicesData';
 import { CTASection } from '../components/common/CTASection';
+import { submitLead } from '../services/leadService';
+import { WhatsAppLogo } from '../components/common/PlatformLogos';
+import { Language } from '../types';
 
 interface ContactPageProps {
+  language?: Language;
   onOpenQuoteModal: () => void;
 }
 
-export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuoteModal }) => {
+export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpenQuoteModal }) => {
+  const isTe = language === 'te';
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -36,30 +41,27 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuoteModal }) =>
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    setErrorMessage(null);
 
-    try {
-      const existing = JSON.parse(localStorage.getItem('bds_client_inquiries') || '[]');
-      existing.unshift({
-        contactName: formData.name,
-        businessName: formData.businessName,
-        phone: formData.phone,
-        email: formData.email,
-        selectedService: formData.service,
-        budget: formData.budget,
-        notes: formData.message,
-        timestamp: new Date().toISOString()
-      });
-      localStorage.setItem('bds_client_inquiries', JSON.stringify(existing.slice(0, 20)));
-    } catch (err) {
-      // safe fallback
-    }
+    const res = await submitLead({
+      formType: 'contact_form',
+      name: formData.name,
+      businessName: formData.businessName,
+      phone: formData.phone,
+      email: formData.email,
+      service: formData.service,
+      budget: formData.budget,
+      notes: formData.message
+    });
 
-    setTimeout(() => {
-      setLoading(false);
+    setLoading(false);
+
+    if (res.success) {
       setSubmitted(true);
       try {
         confetti({
@@ -67,8 +69,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuoteModal }) =>
           spread: 70,
           origin: { y: 0.6 }
         });
-      } catch (err) {}
-    }, 500);
+      } catch {}
+    } else {
+      setErrorMessage(
+        res.error || 'Could not deliver online inquiry. Please connect with Bhargav directly on WhatsApp below.'
+      );
+    }
   };
 
   const contactWaMsg = encodeURIComponent(
@@ -90,12 +96,23 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuoteModal }) =>
       <section className="relative pt-10 sm:pt-16 pb-12 sm:pb-16 bg-gradient-to-b from-blue-50/60 via-slate-50 to-white border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
           <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-            Let&apos;s Grow Your Business in{' '}
-            <span className="text-blue-600">Rajahmundry & Beyond</span>
+            {isTe ? (
+              <>
+                రాజమండ్రిలో మీ వ్యాపారాన్ని{' '}
+                <span className="text-blue-600">మరింత పెంచుకుందాం</span>
+              </>
+            ) : (
+              <>
+                Let&apos;s Grow Your Business in{' '}
+                <span className="text-blue-600">Rajahmundry & Beyond</span>
+              </>
+            )}
           </h1>
 
           <p className="mt-4 text-base sm:text-lg text-slate-600 leading-relaxed">
-            Have questions about digital marketing packages or want a tailored growth strategy? Contact Founder Bhargav directly.
+            {isTe
+              ? 'డిజిటల్ మార్కెటింగ్ ప్యాకేజీల గురించి వివరాలు కావాలన్నా లేదా మీ వ్యాపారానికి సరిపోయే ప్రత్యేక గ్రోత్ ప్లాన్ రూపొందించాలన్నా... ఫౌండర్ భార్గవ్‌ను నేరుగా సంప్రదించండి.'
+              : 'Have questions about digital marketing packages or want a tailored growth strategy? Contact Founder Bhargav directly.'}
           </p>
         </div>
       </section>
@@ -246,7 +263,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuoteModal }) =>
                   <div className="pt-2">
                     <button
                       type="button"
-                      onClick={() => setSubmitted(false)}
+                      onClick={() => {
+                        setSubmitted(false);
+                        setErrorMessage(null);
+                      }}
                       className="px-6 py-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold text-xs transition-colors cursor-pointer"
                     >
                       Send Another Message
@@ -374,6 +394,22 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onOpenQuoteModal }) =>
                       className="w-full p-3 rounded-xl border border-slate-300 text-sm focus:ring-2 focus:ring-blue-600 focus:outline-none"
                     />
                   </div>
+
+                  {/* Error Message with WhatsApp Direct Fallback */}
+                  {errorMessage && (
+                    <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 space-y-2.5 text-xs text-amber-900">
+                      <p className="font-semibold leading-relaxed">{errorMessage}</p>
+                      <a
+                        href={contactWaUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold transition-all shadow-xs"
+                      >
+                        <WhatsAppLogo className="w-4 h-4" />
+                        <span>Send Inquiry to Bhargav via WhatsApp</span>
+                      </a>
+                    </div>
+                  )}
 
                   <button
                     type="submit"

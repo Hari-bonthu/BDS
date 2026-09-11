@@ -72,43 +72,31 @@ const caseStudyPlatforms: Record<string, { component: React.FC<{ className?: str
   ]
 };
 
-// Verified Aggregate Results Stats
+// Capability Pillars (replacing unverified aggregate stats)
 const verifiedStats = [
   {
-    value: '+180',
-    label: 'Showroom Footfalls',
-    labelTe: 'షోరూమ్ కస్టమర్లు',
-    subtext: 'Sri Srinivasa Silks (14 Days)'
+    value: '🎯',
+    label: 'Hands-On Local Focus',
+    labelTe: 'స్థానిక దృష్టి',
+    subtext: 'Rajahmundry & East Godavari'
   },
   {
-    value: '110+',
-    label: 'Monthly Appointments',
-    labelTe: 'నెలవారీ అపాయింట్మెంట్లు',
-    subtext: 'Smile Craft Dental Clinic'
+    value: '📊',
+    label: 'Accountable Ad Spend',
+    labelTe: 'జవాబుదారీ ఖర్చు',
+    subtext: 'Weekly reports with screenshots'
   },
   {
-    value: '240+',
-    label: 'Verified Buyer Leads',
-    labelTe: 'క్వాలిఫైడ్ విల్లా లీడ్స్',
-    subtext: 'Godavari Meadows (₹85L+ Villas)'
+    value: '🤝',
+    label: 'Zero Lock-In Contracts',
+    labelTe: 'లాక్-ఇన్ లేదు',
+    subtext: 'Month-to-month flexibility'
   },
   {
-    value: '₹18L+',
-    label: 'Contract Revenue',
-    labelTe: 'బిజినెస్ రెవెన్యూ',
-    subtext: 'Godavari Living Interiors'
-  },
-  {
-    value: '10×',
-    label: 'Average Client ROAS',
-    labelTe: 'సగటు రిటర్న్ (ROAS)',
-    subtext: 'Tracked Paid Advertising Return'
-  },
-  {
-    value: '₹34',
-    label: 'Average Cost Per Lead',
-    labelTe: 'సగటు లీడ్ కాస్ట్',
-    subtext: 'Regional Meta & Google Ads'
+    value: '👤',
+    label: 'Direct Founder Oversight',
+    labelTe: 'ఫౌండర్ నేరుగా పని',
+    subtext: 'Bhargav on every account'
   }
 ];
 
@@ -161,21 +149,21 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
               <>
                 రాజమండ్రి వ్యాపారాలకు{' '}
                 <span className="text-blue-600 underline decoration-blue-200 decoration-wavy underline-offset-8">
-                  నిరూపితమైన వ్యాపార వృద్ధి
+                  క్యాంపెయిన్ కాన్సెప్ట్స్ &amp; క్రియేటివ్ డైరెక్షన్
                 </span>
               </>
             ) : (
               <>
-                Measurable Footfalls & Revenue for{' '}
-                <span className="text-blue-600">Rajahmundry Businesses</span>
+                Campaign Concepts &amp;{' '}
+                <span className="text-blue-600">Sample Creative Direction</span>
               </>
             )}
           </h1>
 
           <p className="mt-5 text-base sm:text-lg text-stone-600 leading-relaxed max-w-2xl mx-auto">
             {isTe
-              ? 'సాధారణ లైక్స్ మరియు వ్యూస్ కాదు — షోరూమ్ వాక్-ఇన్స్, డాక్టర్ అపాయింట్మెంట్లు, మరియు క్వాలిఫైడ్ కస్టమర్ ఎంక్వైరీలు సాధించిన వాస్తవ కేస్ స్టడీస్.'
-              : 'Zero vanity metrics. Explore how our hyper-local Telugu content, Google Maps SEO, and high-ROAS ads generated verified walk-ins, phone calls, and high-ticket sales across East Godavari.'}
+              ? 'BDS తెలుగు క్రియేటివ్ స్టోరీటెల్లింగ్ మరియు పెర్ఫార్మెన్స్ మార్కెటింగ్ ద్వారా స్థానిక వ్యాపారాలకు ఎలా ఫలితాలు సాధించవచ్చో చూపించే ప్రాక్టికల్ క్యాంపెయిన్ బ్లూప్రింట్స్.'
+              : 'Realistic campaign blueprints and creative direction demonstrating how BDS combines Telugu creative storytelling with performance advertising across East Godavari.'}
           </p>
 
           {/* Quick Contact & WhatsApp Pill */}
@@ -207,7 +195,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
           ========================================================================= */}
       <section className="border-b border-stone-200/80 bg-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 sm:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {verifiedStats.map((stat, idx) => (
               <div
                 key={idx}
@@ -241,12 +229,12 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                 {isTe ? 'పరిశ్రమల వారీగా ఫిల్టర్ చేయండి' : 'EXPLORE BY SECTOR'}
               </span>
               <h2 className="text-xl sm:text-2xl font-black text-stone-950 mt-1">
-                {isTe ? 'నిరూపితమైన ఫలితాలు & అనుభవాలు' : 'Verified Local Client Success Stories'}
+                {isTe ? 'క్యాంపెయిన్ కాన్సెప్ట్స్ & క్రియేటివ్ డైరెక్షన్' : 'Campaign Blueprints & Creative Direction'}
               </h2>
             </div>
 
             <div className="text-xs font-semibold text-stone-500">
-              Showing <strong>{filteredStudies.length}</strong> of {caseStudiesList.length} Case Studies
+              Showing <strong>{filteredStudies.length}</strong> of {caseStudiesList.length} Campaign Concepts
             </div>
           </div>
 
@@ -358,9 +346,9 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
 
                       {/* Bottom-Left Image Overlay Badge */}
                       <div className="absolute bottom-3 left-3 pointer-events-none">
-                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 text-white text-xs font-bold shadow-md">
-                          <TrendingUp className="w-3.5 h-3.5 text-emerald-200" />
-                          <span>Real Results. Local Impact.</span>
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-stone-950/85 backdrop-blur-md text-white text-xs font-bold shadow-md">
+                          <TrendingUp className="w-3.5 h-3.5 text-blue-400" />
+                          <span>Campaign Concept</span>
                         </span>
                       </div>
                     </div>
@@ -391,11 +379,18 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                   <div className="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between space-y-8">
                     <div className="space-y-6">
                       
-                      {/* Client Name & Headline */}
+                      {/* Sector Focus & Headline */}
                       <div>
-                        <span className="text-xs font-bold uppercase tracking-wider text-blue-600 block mb-1">
-                          Client: {study.client} • {study.location}
-                        </span>
+                        <div className="flex flex-wrap items-center gap-2 mb-1.5">
+                          <span className="text-xs font-bold uppercase tracking-wider text-blue-600">
+                            Sector Focus: {study.client} • {study.location}
+                          </span>
+                          {study.conceptNote && (
+                            <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-stone-100 text-stone-600 border border-stone-200">
+                              {study.conceptNote}
+                            </span>
+                          )}
+                        </div>
                         <h3 className="text-2xl sm:text-3xl font-black text-stone-950 leading-tight">
                           {study.title}
                         </h3>
@@ -431,10 +426,10 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                         </div>
                       </div>
 
-                      {/* Verified Results Spotlight with Clean White Cards and Blue Metrics */}
+                      {/* Execution Framework & Impact Model */}
                       <div>
                         <span className="text-xs font-bold uppercase tracking-wider text-stone-500 block mb-3">
-                          Campaign Impact &amp; Key Results
+                          Execution Framework &amp; Impact Model
                         </span>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                           {study.results.map((res, rIdx) => (
@@ -442,7 +437,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                               key={rIdx}
                               className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200/90 shadow-2xs flex flex-col justify-between space-y-1 hover:border-blue-200 transition-colors"
                             >
-                              <span className="text-3xl sm:text-4xl font-black text-blue-600 tracking-tight">
+                              <span className="text-2xl sm:text-3xl font-black text-blue-600 tracking-tight">
                                 {res.metric}
                               </span>
                               <span className="text-xs text-stone-600 font-medium">
@@ -469,7 +464,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                     {/* Bottom Action Triggers */}
                     <div className="pt-6 border-t border-stone-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
                       <div className="text-xs text-stone-500 text-center sm:text-left font-medium">
-                        Want a similar growth engine for your showroom, clinic, or firm?
+                        Want a similar growth framework for your showroom, clinic, or firm?
                       </div>
 
                       <div className="flex flex-wrap items-center gap-3 w-full sm:w-auto">
@@ -478,12 +473,12 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                           onClick={() => onOpenQuoteModal(`${study.client} (${study.industry})`)}
                           className="flex-1 sm:flex-initial px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-xs transition-all flex items-center justify-center gap-1.5 cursor-pointer"
                         >
-                          <span>Get Similar Results</span>
+                          <span>Discuss This Concept</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </button>
 
                         <a
-                          href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent(`Hi Bhargav, I saw the case study for "${study.client}" in ${study.neighborhood || study.location} and would like a similar digital marketing campaign for my business.`)}`}
+                          href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent(`Hi Bhargav, I saw the campaign concept for "${study.client}" in ${study.neighborhood || study.location} and would like to discuss a tailored digital marketing strategy for my business.`)}`}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="flex-1 sm:flex-initial px-4 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 font-semibold text-xs transition-all flex items-center justify-center gap-1.5"
@@ -503,57 +498,96 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
       </section>
 
       {/* =========================================================================
-          SECTION 04: VERIFIED LOCAL REVIEWS & TESTIMONIALS STRIP
+          SECTION 04: OUR 3-STEP WORKING MODEL
           ========================================================================= */}
       <section className="border-t border-b border-stone-200/80 bg-white py-16 sm:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
-          
+
           <div className="text-center max-w-2xl mx-auto space-y-3">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-stone-100 text-xs font-bold text-stone-700">
-              <Star className="w-3.5 h-3.5 fill-amber-400 text-amber-500" />
-              <span>Verified Client Testimonials</span>
+              <Zap className="w-3.5 h-3.5 text-blue-600" />
+              <span>How We Work</span>
             </div>
             <h2 className="text-2xl sm:text-4xl font-black text-stone-950 tracking-tight">
-              What Rajahmundry Business Leaders Say
+              Our 3-Step Working Model
             </h2>
             <p className="text-sm text-stone-600">
-              Real feedback from local showroom owners, doctors, developers, and educators working with Founder Bhargav.
+              A transparent, accountable process from first call to campaign results — no black boxes, no handoffs to juniors.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {testimonialsList.map((test) => (
-              <div
-                key={test.id}
-                className="rounded-3xl bg-[#fafaf9] border border-stone-200/80 p-6 flex flex-col justify-between space-y-4 hover:border-blue-300 transition-colors"
-              >
-                <div className="space-y-3">
-                  <div className="flex items-center gap-1">
-                    {[...Array(test.rating)].map((_, i) => (
-                      <Star key={i} className="w-3.5 h-3.5 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
-                  <p className="text-xs sm:text-sm text-stone-700 leading-relaxed italic">
-                    &ldquo;{test.content}&rdquo;
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-stone-200/60 space-y-1">
-                  <p className="text-xs font-bold text-stone-900">{test.name}</p>
-                  <p className="text-[11px] text-stone-500 font-medium">
-                    {test.role}, {test.company}
-                  </p>
-                  <div className="flex items-center gap-1 text-[10px] text-emerald-700 font-semibold pt-1">
-                    <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                    <span>{test.results}</span>
-                  </div>
-                </div>
+            {/* Step 1 — Strategy */}
+            <div className="rounded-3xl bg-[#fafaf9] border border-stone-200/80 p-7 space-y-5 relative">
+              <div className="absolute top-6 right-6 text-5xl font-black text-stone-100 select-none leading-none">01</div>
+              <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shrink-0">
+                <Target className="w-5 h-5 text-white" />
               </div>
-            ))}
+              <div className="space-y-2">
+                <h3 className="text-lg font-black text-stone-950 tracking-tight">Strategy</h3>
+                <p className="text-sm text-stone-600 leading-relaxed">
+                  Founder Bhargav personally audits your local presence — Google Maps, social, competitor positioning — and builds a prioritised roadmap for your business category and area.
+                </p>
+              </div>
+              <ul className="space-y-2">
+                {['Local competitor audit', 'Platform & budget recommendation', 'Custom 90-day roadmap'].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-xs text-stone-700">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Step 2 — Execution */}
+            <div className="rounded-3xl bg-[#fafaf9] border border-stone-200/80 p-7 space-y-5 relative">
+              <div className="absolute top-6 right-6 text-5xl font-black text-stone-100 select-none leading-none">02</div>
+              <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shrink-0">
+                <Zap className="w-5 h-5 text-white" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-black text-stone-950 tracking-tight">Execution</h3>
+                <p className="text-sm text-stone-600 leading-relaxed">
+                  Campaigns launched with bilingual Telugu/English creatives, precise geo-targeting, and daily monitoring. Every asset is produced in-house — no outsourcing.
+                </p>
+              </div>
+              <ul className="space-y-2">
+                {['Bilingual creative production', 'Geo-targeted ad setup', 'Daily performance monitoring'].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-xs text-stone-700">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Step 3 — Reporting */}
+            <div className="rounded-3xl bg-[#fafaf9] border border-stone-200/80 p-7 space-y-5 relative">
+              <div className="absolute top-6 right-6 text-5xl font-black text-stone-100 select-none leading-none">03</div>
+              <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center shrink-0">
+                <TrendingUp className="w-5 h-5 text-white" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-black text-stone-950 tracking-tight">Reporting</h3>
+                <p className="text-sm text-stone-600 leading-relaxed">
+                  Weekly reports with actual ad screenshots, spend vs. results breakdowns, and honest notes on what's working — and what we're improving next week.
+                </p>
+              </div>
+              <ul className="space-y-2">
+                {['Weekly results report', 'Spend transparency screenshots', 'Continuous optimisation notes'].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-xs text-stone-700">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
           </div>
         </div>
       </section>
+
 
       {/* =========================================================================
           SECTION 05: HYPER-LOCAL NEIGHBORHOOD COVERAGE MATRIX

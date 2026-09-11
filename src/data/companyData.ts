@@ -12,12 +12,13 @@ export const companyInfo = {
   googleMapsQuery: 'Rajahmundry, East Godavari, Andhra Pradesh',
   whatsappNumber: '919704380535',
   whatsappMessage: 'Hello Bhargav Digital Solutions! I would like to inquire about digital marketing services for my business in Rajahmundry.',
+  web3FormsAccessKey: (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY || '13ba520c-0e06-4d8d-a819-5a8f69a57821',
   workingHours: 'Mon – Sat: 9:00 AM – 7:30 PM (Sunday by Appointment)',
   stats: [
-    { value: '120+', label: 'Local Campaigns Run', subtext: 'Across East Godavari' },
-    { value: '10x', label: 'Average Client ROAS', subtext: 'On Paid Advertising' },
-    { value: '98%', label: 'Client Retention Rate', subtext: 'Long-term Partnerships' },
-    { value: '₹15L+', label: 'Revenue Generated', subtext: 'For Regional Businesses' }
+    { value: '🎯', label: 'Hands-On Local Focus', subtext: 'Rajahmundry & East Godavari' },
+    { value: '📊', label: 'Accountable Ad Spend', subtext: 'Weekly Reports With Screenshots' },
+    { value: '🤝', label: 'Zero Lock-In Contracts', subtext: 'Month-to-Month Flexibility' },
+    { value: '👤', label: 'Direct Founder Oversight', subtext: 'Bhargav on Every Account' }
   ],
   founder: {
     name: 'Bhargav',
@@ -30,129 +31,92 @@ export const companyInfo = {
   }
 };
 
-export const testimonialsList: Testimonial[] = [
-  {
-    id: '1',
-    name: 'M. Venkata Rao',
-    role: 'Managing Director',
-    company: 'Sri Srinivasa Silks & Sarees',
-    location: 'Main Road, Rajahmundry',
-    content: 'Bhargav Digital Solutions completely transformed our festive sales. Their Telugu Reels and Facebook ads brought hundreds of customers from across Rajahmundry, Kovvur, and Mandapeta directly into our showroom. The pricing is unbelievably fair for the quality of work they provide!',
-    rating: 5,
-    results: '+180% Footfall during Wedding Season',
-    avatarBg: 'from-blue-600 to-indigo-700'
-  },
-  {
-    id: '2',
-    name: 'Dr. K. Sravani, BDS, MDS',
-    role: 'Chief Dental Surgeon',
-    company: 'Smile Craft Dental Clinic',
-    location: 'Danavaipeta, Rajahmundry',
-    content: 'Before BDS, our Google Maps presence was practically invisible. Bhargav and his team optimized our Google Business profile, ran patient awareness video ads, and set up rapid WhatsApp appointment booking. We now receive 4-5 patient inquiries every single day!',
-    rating: 5,
-    results: 'Ranked #1 on Google Maps in Rajahmundry',
-    avatarBg: 'from-emerald-600 to-teal-700'
-  },
-  {
-    id: '3',
-    name: 'R. Kalyan Varma',
-    role: 'Real Estate Developer',
-    company: 'Godavari Meadows Properties',
-    location: 'Kakinada Road, Rajahmundry',
-    content: 'Finding serious plot and villa buyers in East Godavari was becoming expensive through newspapers. BDS set up targeted Meta lead generation ads that delivered verified buyer leads at just ₹38 per lead. 7 high-value plots were booked in 45 days.',
-    rating: 5,
-    results: '7 Plots Sold in 45 Days (14x ROAS)',
-    avatarBg: 'from-amber-600 to-orange-700'
-  },
-  {
-    id: '4',
-    name: 'S. Nageswara Rao',
-    role: 'Principal & Director',
-    company: 'Vignana Bharathi Junior College',
-    location: 'T Nagar, Rajahmundry',
-    content: 'The admission campaign created by Bhargav Digital Solutions was exceptional. Their bilingual posters, student testimonial reels, and targeted ads gave us our highest enrollment in the last 5 years with zero last-minute panic.',
-    rating: 5,
-    results: '+42% Student Enrollments',
-    avatarBg: 'from-purple-600 to-violet-700'
-  }
-];
+export const testimonialsList: Testimonial[] = [];
 
 export const caseStudiesList: CaseStudy[] = [
   {
     id: 'retail-silks',
-    title: 'How a Rajahmundry Textile Showroom Generated 180+ Walk-ins in 14 Days',
-    client: 'Sri Srinivasa Silks & Handlooms',
+    title: 'Campaign Concept: High-Impact Video Reels for Festive Footfalls',
+    client: 'Bridal Pattu & Textile Showroom',
     industry: 'Fashion & Retail',
     location: 'Rajahmundry, AP',
     neighborhood: 'Main Road & Kotipalli Corridor',
     bilingualTag: 'పట్టు చీరల ప్రమోషన్ & తెలుగు రీల్స్',
     serviceCategory: 'Short-Form Video & Meta Ads',
-    summary: 'A localized video campaign featuring bridal pattu sarees with Telugu voiceovers and radius-targeted Instagram Ads across East Godavari.',
+    summary: 'A sample creative direction demonstrating how localized Telugu voiceover reels and radius-targeted Instagram Ads drive festival foot traffic for regional apparel showrooms.',
     challenge: 'High competition from regional retail chains and heavy dependence on expensive print flyers with declining response rates.',
-    solution: 'Produced 6 high-energy reels showcasing bridal silk drape details, paired with a limited-time festive discount code delivered via WhatsApp automated chat.',
+    solution: 'Produced high-energy reels showcasing bridal silk drape details, paired with a limited-time festive offer delivered via WhatsApp automated chat.',
     results: [
-      { metric: '180+', label: 'Showroom Footfalls' },
-      { metric: '₹34', label: 'Cost Per Message Lead' },
-      { metric: '12.8x', label: 'Return on Ad Spend' }
+      { metric: 'Footfall Lift', label: 'Showroom Traffic' },
+      { metric: 'Low CPL', label: 'Cost Per Message Lead' },
+      { metric: 'High ROAS', label: 'Return on Ad Spend' }
     ],
-    tags: ['Reels Production', 'Meta Lead Ads', 'WhatsApp Automation']
+    tags: ['Reels Production', 'Meta Lead Ads', 'WhatsApp Automation'],
+    isConcept: true,
+    conceptNote: 'Sample creative direction & execution model'
   },
   {
     id: 'dental-clinic',
-    title: 'From 12 to 110+ Monthly Appointments for a Dental & Implant Center',
-    client: 'Smile Craft Dental & Implants',
+    title: 'Campaign Concept: Local Maps Dominance & Patient Acquisition',
+    client: 'Specialty Dental & Implant Center',
     industry: 'Healthcare & Clinics',
     location: 'Danavaipeta, Rajahmundry',
     neighborhood: 'Danavaipeta Medical District',
     bilingualTag: 'డెంటల్ ఇంప్లాంట్స్ & డాక్టర్ బ్రాండింగ్',
     serviceCategory: 'Platform Coverage & Community Mgmt',
-    summary: 'Complete Google Business Profile takeover, patient review acceleration system, and 15-minute response handling for emergency dental inquiries.',
-    challenge: 'The clinic had only 14 reviews on Google Maps and suffered from sluggish inquiry replies, causing patients to book elsewhere.',
+    summary: 'A structured blueprint showcasing how local SEO, Google Business 3-Pack optimization, and emergency WhatsApp booking funnels can attract consistent patient consultations.',
+    challenge: 'The clinic had minimal Google Maps reviews and suffered from sluggish inquiry replies, causing patients to book elsewhere.',
     solution: 'Optimized local search citations, implemented automated review request QR stands at the clinic desk, and managed 7-day DM responses.',
     results: [
-      { metric: '380+', label: 'Google 5-Star Reviews' },
-      { metric: '110+', label: 'Monthly Appointments' },
-      { metric: '<10 min', label: 'Average Response Time' }
+      { metric: 'Reputation', label: 'Patient Trust & Reviews' },
+      { metric: 'Inquiry Flow', label: 'Monthly Inquiries' },
+      { metric: 'Prompt', label: 'Inquiry Response Triage' }
     ],
-    tags: ['Google Maps SEO', 'Reputation Management', 'Lead Qualification']
+    tags: ['Google Maps SEO', 'Reputation Management', 'Lead Qualification'],
+    isConcept: true,
+    conceptNote: 'Sample creative direction & execution model'
   },
   {
     id: 'real-estate-villas',
-    title: 'Generating 240+ High-Net-Worth Buyer Leads for Godavari Meadows',
-    client: 'Godavari Meadows Gated Community',
+    title: 'Campaign Concept: High-Intent Lead Acquisition & Drone Walkthroughs',
+    client: 'Gated Villa & Residential Community',
     industry: 'Real Estate & Construction',
     location: 'Diwancheruvu, Rajahmundry',
     neighborhood: 'NH16 & Diwancheruvu Corridor',
     bilingualTag: 'ప్రీమియం విల్లాస్ లీడ్ జనరేషన్',
     serviceCategory: 'Paid Ad Campaigns & Content Ops',
-    summary: 'Drone video walkthrough ads and precise demographic targeting targeting NRI families and businessmen across Godavari districts.',
-    challenge: 'Premium residential villas priced at ₹85L+ required serious, pre-qualified buyers rather than casual window shoppers.',
+    summary: 'A sample performance marketing framework illustrating how 4K video walkthroughs and multi-step budget qualification forms filter serious home buyers and NRI investors.',
+    challenge: 'Premium residential villas required serious, pre-qualified buyers rather than casual window shoppers.',
     solution: 'Deployed multi-step qualifying lead forms filtering by budget and purchase timeline, with instant WhatsApp notifications to the sales team.',
     results: [
-      { metric: '240+', label: 'Verified Buyer Leads' },
-      { metric: '₹42', label: 'Average Cost Per Lead' },
-      { metric: '9 Units', label: 'Villas Closed' }
+      { metric: 'Buyer Leads', label: 'Verified Buyer Inquiries' },
+      { metric: 'Low CPA', label: 'Average Cost Per Lead' },
+      { metric: 'Units Closed', label: 'Conversions' }
     ],
-    tags: ['Google Ads', 'Meta Performance Ads', 'Content Operations']
+    tags: ['Google Ads', 'Meta Performance Ads', 'Content Operations'],
+    isConcept: true,
+    conceptNote: 'Sample creative direction & execution model'
   },
   {
     id: 'interiors-decors',
-    title: '8.4x Verified ROAS for Morampudi Interior Design & Modular Kitchen Studio',
-    client: 'Godavari Living Interiors & Decors',
+    title: 'Campaign Concept: 3D Project Showcases & High-Intent Search',
+    client: 'Modular Kitchen & Interior Architecture Studio',
     industry: 'Interior Design & Architecture',
     location: 'Morampudi Junction, Rajahmundry',
     neighborhood: 'Morampudi Commercial Hub',
     bilingualTag: 'మోడ్యులర్ కిచెన్ & ఇంటీరియర్ ఆర్డర్లు',
     serviceCategory: 'Content Creation & Google Search Ads',
-    summary: 'High-intent search keyword bidding combined with carousel showcase ads of completed luxury apartment projects in Rajahmundry and Kakinada.',
+    summary: 'A sample digital playbook illustrating how project showcase carousels and localized Google Search campaigns capture new apartment owners looking for interior contracting.',
     challenge: 'High cost per acquisition from traditional hoardings with zero lead attribution.',
     solution: 'Built dedicated 3D project showcase carousels and localized Google Search campaign targeting new apartment owners.',
     results: [
-      { metric: '8.4x', label: 'Verified ROAS' },
-      { metric: '42', label: 'Full Home Consultations' },
-      { metric: '₹18L+', label: 'Contract Revenue' }
+      { metric: 'Strong ROAS', label: 'Verified Return on Spend' },
+      { metric: 'Consultations', label: 'Full Home Consultations' },
+      { metric: 'Revenue', label: 'Contract Revenue' }
     ],
-    tags: ['Google Search Ads', 'Project Carousels', 'Local Search Dominance']
+    tags: ['Google Search Ads', 'Project Carousels', 'Local Search Dominance'],
+    isConcept: true,
+    conceptNote: 'Sample creative direction & execution model'
   }
 ];
 

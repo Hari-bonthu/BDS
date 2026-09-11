@@ -3,4 +3,4 @@ Allow: /
 Disallow: /scratch/
 Disallow: /.system_generated/
 
-Sitemap: https://bhargavdigitalsolutions.com/sitemap.xml
+Sitemap: https://www.bhargavdigitalsolutions.com/sitemap.xml

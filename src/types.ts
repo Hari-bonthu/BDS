@@ -8,6 +8,8 @@ export type PageId =
   | 'pricing'
   | 'portfolio'
   | 'contact'
+  | 'privacy'
+  | 'terms'
   | 'content-creation'
   | 'short-form-video-ads'
   | 'social-media-management'
@@ -102,6 +104,8 @@ export interface CaseStudy {
     label: string;
   }[];
   tags: string[];
+  isConcept?: boolean;
+  conceptNote?: string;
 }
 
 export interface PricingPlan {

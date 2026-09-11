@@ -45,7 +45,9 @@ const routes = [
   '/services/platform-coverage',
   '/services/content-operations',
   '/services/community-management',
-  '/services/reporting-insights'
+  '/services/reporting-insights',
+  '/privacy',
+  '/terms'
 ];
 
 // Simple SPA static server
@@ -121,10 +123,17 @@ async function runPrerender() {
     }
   }
 
-  // Generate 404.html for GitHub Pages fallback
-  const rootHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf-8');
-  fs.writeFileSync(path.join(distDir, '404.html'), rootHtml, 'utf-8');
-  console.log('  ✓ Generated dist/404.html');
+  // Generate / Preserve 404.html for GitHub Pages fallback
+  const public404Path = path.resolve(__dirname, '../public/404.html');
+  if (fs.existsSync(public404Path)) {
+    const custom404Html = fs.readFileSync(public404Path, 'utf-8');
+    fs.writeFileSync(path.join(distDir, '404.html'), custom404Html, 'utf-8');
+    console.log('  ✓ Preserved branded public/404.html -> dist/404.html');
+  } else {
+    const rootHtml = fs.readFileSync(path.join(distDir, 'index.html'), 'utf-8');
+    fs.writeFileSync(path.join(distDir, '404.html'), rootHtml, 'utf-8');
+    console.log('  ✓ Generated dist/404.html from index.html');
+  }
 
   await browser.close();
   server.close();

@@ -26,8 +26,8 @@ interface InsightsPageProps {
 const articleImageMap: Record<string, { src: string; caption: string; captionTe: string }> = {
   'local-seo-guide-rajahmundry-2026': {
     src: asset('assets/service-local-seo.webp'),
-    caption: 'Google Maps #1 ranking strategy on Indian commercial high streets',
-    captionTe: 'గూగుల్ మ్యాప్స్ #1 స్థానిక ర్యాంకింగ్ వ్యూహం'
+    caption: 'Google Maps 3-Pack ranking strategy on Indian commercial high streets',
+    captionTe: 'గూగుల్ మ్యాప్స్ 3-ప్యాక్ స్థానిక ర్యాంకింగ్ వ్యూహం'
   },
   'digital-marketing-pricing-andhra-pradesh-2026': {
     src: asset('assets/service-reporting-insights.webp'),
@@ -36,8 +36,8 @@ const articleImageMap: Record<string, { src: string; caption: string; captionTe:
   },
   'dental-clinic-patient-lead-generation-east-godavari': {
     src: asset('assets/campaign-dental.webp'),
-    caption: 'Smile Craft Dental Danavaipeta: 180+ verified high-intent patient inquiries',
-    captionTe: 'స్మైల్ క్రాఫ్ట్ డెంటల్ దానవాయిపేట: 180+ రోగుల విచారణలు'
+    caption: 'Danavaipeta Dental & Healthcare: Patient inquiry acquisition blueprint',
+    captionTe: 'దానవాయిపేట డెంటల్ & హెల్త్‌కేర్: పేషెంట్ ఎంక్వైరీ అక్విజిషన్ బ్లూప్రింట్'
   },
   'saree-jewelry-showroom-telugu-reels-strategy': {
     src: asset('assets/service-content-creation.webp'),
@@ -46,8 +46,8 @@ const articleImageMap: Record<string, { src: string; caption: string; captionTe:
   },
   'meta-ads-vs-google-ads-local-business-andhra-pradesh': {
     src: asset('assets/service-video-ads.webp'),
-    caption: 'Commercial showroom production: High-ROAS vertical video ad shoots',
-    captionTe: 'షోరూమ్ షూట్: హై-ROAS వర్టికల్ రీల్స్ & యాడ్స్'
+    caption: 'Commercial showroom production: Targeted vertical video ad shoots',
+    captionTe: 'షోరూమ్ షూట్: టార్గెటెడ్ వర్టికల్ రీల్స్ & యాడ్స్'
   }
 };
 
@@ -62,8 +62,8 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
   const featuredArticle = insightsArticlesList[0];
   const featuredImg = articleImageMap[featuredArticle.slug] || {
     src: './assets/service-local-seo.webp',
-    caption: 'Google Maps #1 ranking strategy in Rajahmundry & Coastal AP',
-    captionTe: 'గూగుల్ మ్యాప్స్ #1 స్థానిక ర్యాంకింగ్ వ్యూహం'
+    caption: 'Google Maps 3-Pack ranking strategy in Rajahmundry & Coastal AP',
+    captionTe: 'గూగుల్ మ్యాప్స్ 3-ప్యాక్ స్థానిక ర్యాంకింగ్ వ్యూహం'
   };
 
   return (
@@ -408,7 +408,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                   </button>
 
                   <a
-                    href={`https://wa.me/919494825968?text=${encodeURIComponent('Hi Bhargav, I read your article "' + activeArticle.title + '" and want to apply it to my business.')}`}
+                    href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent('Hi Bhargav, I read your article "' + activeArticle.title + '" and want to apply it to my business.')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-xs border border-white/20 transition-colors inline-flex items-center justify-center gap-2 cursor-pointer"
@@ -481,13 +481,13 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
             </button>
 
             <a
-              href="https://wa.me/919494825968?text=Hello%20Bhargav,%20I%20am%20reading%20the%20BDS%20Insights%20and%20would%20like%20to%20discuss%20a%20strategy%20for%20my%20business."
+              href={`https://wa.me/${companyInfo.whatsappNumber}?text=Hello%20Bhargav,%20I%20am%20reading%20the%20BDS%20Insights%20and%20would%20like%20to%20discuss%20a%20strategy%20for%20my%20business.`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-7 py-4 rounded-xl bg-white border border-stone-300 hover:border-stone-900 text-stone-950 font-extrabold text-sm transition-colors inline-flex items-center justify-center gap-2 shadow-xs cursor-pointer"
             >
               <WhatsAppLogo className="w-4 h-4 shrink-0" />
-              <span>{isTe ? 'వాట్సాప్‌లో మాట్లాడండి' : 'Chat on WhatsApp: +91 94948 25968'}</span>
+              <span>{isTe ? 'వాట్సాప్‌లో మాట్లాడండి' : `Chat on WhatsApp: ${companyInfo.phoneDisplay}`}</span>
             </a>
           </div>
 

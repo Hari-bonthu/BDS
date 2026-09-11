@@ -107,52 +107,52 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       <section className="border-b border-stone-200/80 bg-white py-8 sm:py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-stone-200/80">
-            
+
             <div className="p-4 sm:px-6 sm:py-2 space-y-1">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-950 tracking-tight">
-                120+
+              <div className="text-3xl sm:text-4xl font-black text-stone-950 tracking-tight">
+                🎯
               </div>
               <div className="text-xs font-bold text-stone-800">
-                {isTe ? 'స్థానిక క్యాంపెయిన్లు' : 'Regional Campaigns'}
+                {isTe ? 'స్థానిక దృష్టి' : 'Hands-On Local Focus'}
               </div>
               <div className="text-[11px] text-stone-500">
-                Across Rajahmundry &amp; East Godavari
+                Rajahmundry &amp; East Godavari
               </div>
             </div>
 
             <div className="p-4 sm:px-6 sm:py-2 space-y-1">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-blue-600 tracking-tight">
-                10×
+              <div className="text-3xl sm:text-4xl font-black text-blue-600 tracking-tight">
+                📊
               </div>
               <div className="text-xs font-bold text-stone-800">
-                {isTe ? 'సగటు క్లయింట్ ROAS' : 'Average Client ROAS'}
+                {isTe ? 'జవాబుదారీ ఖర్చు' : 'Accountable Ad Spend'}
               </div>
               <div className="text-[11px] text-stone-500">
-                Tracked return on paid advertising
+                Weekly reports with screenshots
               </div>
             </div>
 
             <div className="p-4 sm:px-6 sm:py-2 space-y-1">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-emerald-600 tracking-tight">
-                98%
+              <div className="text-3xl sm:text-4xl font-black text-emerald-600 tracking-tight">
+                🤝
               </div>
               <div className="text-xs font-bold text-stone-800">
-                {isTe ? 'క్లయింట్ రిటెన్షన్' : 'Client Retention'}
+                {isTe ? 'లాక్-ఇన్ లేదు' : 'Zero Lock-In Contracts'}
               </div>
               <div className="text-[11px] text-stone-500">
-                Month-to-month flexible trust
+                Month-to-month flexibility
               </div>
             </div>
 
             <div className="p-4 sm:px-6 sm:py-2 space-y-1">
-              <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-stone-950 tracking-tight">
-                ₹15L+
+              <div className="text-3xl sm:text-4xl font-black text-stone-950 tracking-tight">
+                👤
               </div>
               <div className="text-xs font-bold text-stone-800">
-                {isTe ? 'వ్యాపార రాబడి' : 'Tracked Client Revenue'}
+                {isTe ? 'ఫౌండర్ నేరుగా పని' : 'Direct Founder Oversight'}
               </div>
               <div className="text-[11px] text-stone-500">
-                Generated for local enterprises
+                Bhargav on every account
               </div>
             </div>
 
@@ -225,8 +225,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                 {/* 3 Executive Credentials */}
                 <div className="grid grid-cols-3 gap-2 pt-1 border-t border-stone-800/80 text-center">
                   <div className="p-2.5 rounded-xl bg-stone-900/60">
-                    <p className="text-base font-black text-white">120+</p>
-                    <p className="text-[10px] text-stone-400 font-medium">Campaigns</p>
+                    <p className="text-sm sm:text-base font-black text-white">Hands-On</p>
+                    <p className="text-[10px] text-stone-400 font-medium">Local Focus</p>
                   </div>
                   <div className="p-2.5 rounded-xl bg-stone-900/60">
                     <p className="text-base font-black text-cyan-300">100%</p>
@@ -528,17 +528,17 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               {
                 num: '02',
                 title: 'Bilingual Content',
-                desc: 'Script viral Telugu reels, design compelling festive offers, and craft creatives that capture local attention.'
+                desc: 'Script engaging Telugu reels, design compelling festive offers, and craft creatives that capture local attention.'
               },
               {
                 num: '03',
                 title: 'Targeted Launch',
-                desc: 'Deploy radius-targeted Meta & Google ads across East Godavari pincodes and dominate Google Maps 3-Pack.'
+                desc: 'Deploy radius-targeted Meta & Google ads across East Godavari pincodes and optimize for the Google Maps 3-Pack.'
               },
               {
                 num: '04',
                 title: 'WhatsApp Lead Route',
-                desc: 'Route customer inquiries to your phone under 15 minutes and automate 5-star Google review collection.'
+                desc: 'Route customer inquiries directly to your phone or WhatsApp with prompt triage and organized lead details.'
               }
             ].map((st, sIdx) => (
               <div key={sIdx} className="space-y-2 border-l-2 border-stone-300 pl-4 py-1">

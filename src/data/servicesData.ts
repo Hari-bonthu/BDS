@@ -10,8 +10,8 @@ export const servicesList: ServiceDetail[] = [
     description: 'We produce captivating social graphics, high-converting Telugu & English ad copy, carousel posts, brand storyboards, and promotional banners crafted specifically to resonate with customers in Rajahmundry, East Godavari, and across Andhra Pradesh.',
     iconName: 'PenTool',
     category: 'Creative & Strategy',
-    highlightMetric: '4.8x',
-    highlightMetricLabel: 'Higher Engagement vs Generic Stock Posts',
+    highlightMetric: 'High-Impact',
+    highlightMetricLabel: 'Bilingual Creatives Designed for Regional Trust',
     startingPrice: '₹4,999/mo',
     whatsIncluded: [
       {
@@ -28,15 +28,15 @@ export const servicesList: ServiceDetail[] = [
         title: 'Bilingual Copywriting (Telugu & English)',
         description: 'Persuasive, culturally tuned copywriting that connects directly with your local audience and prompts action.',
         points: [
-          'Attention-grabbing hooks and emotional storytelling',
-          'Telugu dialect-tuned punchlines for regional resonance',
-          'Clear, persuasive Call-to-Actions (CTAs) for sales & bookings',
-          'SEO-optimized captions and keyword-rich hashtags'
+          'Authentic, conversational Telugu ad copy and hooks',
+          'Clean, polished English copy for corporate credibility',
+          'Clear call-to-action (CTA) messaging guiding users to call or WhatsApp',
+          'Targeted hashtag sets for Rajahmundry, Kakinada & East Godavari reach'
         ]
       },
       {
-        title: 'Brand Asset Kits & Collateral',
-        description: 'Comprehensive design kits to keep your brand looking cohesive across every digital touchpoint.',
+        title: 'Marketing Collateral & Promotional Assets',
+        description: 'Multi-format digital marketing assets for announcements, seasonal sales, and business expansion.',
         points: [
           'Digital brochure and catalogue design',
           'WhatsApp promotion flyer layouts & broadcast graphics',
@@ -48,17 +48,17 @@ export const servicesList: ServiceDetail[] = [
       {
         title: 'Local Godavari Cultural Resonance',
         description: 'Content created with deep understanding of local shopping habits, sentiments, and celebrations in Rajahmundry & coastal AP.',
-        stat: '+85% local recall'
+        stat: 'Culturally Tailored'
       },
       {
         title: 'Consistent Premium Brand Image',
         description: 'Transform your business from looking like an ordinary shop to an established, trustworthy regional market leader.',
-        stat: '100% bespoke design'
+        stat: 'Bespoke Designs'
       },
       {
         title: 'Affordable Scalability',
         description: 'Get an entire creative design team at a fraction of the cost of hiring an in-house graphic designer and copywriter.',
-        stat: '60% cost savings'
+        stat: 'Budget Friendly'
       }
     ],
     process: [
@@ -99,16 +99,16 @@ export const servicesList: ServiceDetail[] = [
     ],
     sampleWorkPreview: [
       {
-        title: 'Kalyani Silks Festive Collection',
-        type: 'Carousel & Story Graphics',
-        description: 'Created 24 festive-themed product showcase posts highlighting wedding silk collections in Telugu and English.',
-        impact: '+340% organic shares and 85 direct WhatsApp inquiries in 10 days'
+        title: 'Bridal Silk Festive Collection Concept',
+        type: 'Carousel & Story Graphics Concept',
+        description: 'Concept showcasing 24 festive-themed product showcase posts highlighting wedding silk collections in Telugu and English.',
+        impact: 'Structured for high organic reach and direct WhatsApp inquiries'
       },
       {
-        title: 'Godavari Multi-Speciality Clinic',
-        type: 'Health Awareness Infographics',
+        title: 'Multi-Speciality Clinic Awareness Concept',
+        type: 'Health Awareness Infographics Concept',
         description: 'Bilingual health checkup awareness carousels simplifying complex medical tips for local families.',
-        impact: '4.2x increase in consultation bookings from Facebook'
+        impact: 'Engineered to boost local consultation inquiries from social platforms'
       }
     ],
     faqs: [
@@ -135,8 +135,8 @@ export const servicesList: ServiceDetail[] = [
     description: 'Transform customer attention into sales with dynamic short-form videos (Reels & Shorts) and laser-targeted ad campaigns on Facebook, Instagram, and Google Ads designed for maximum return on ad spend (ROAS) at affordable budgets.',
     iconName: 'Video',
     category: 'Performance & Paid Ads',
-    highlightMetric: '12.4x',
-    highlightMetricLabel: 'Average Return on Ad Spend (ROAS)',
+    highlightMetric: 'Targeted',
+    highlightMetricLabel: 'Tracked Return on Ad Spend (ROAS) Focus',
     startingPrice: '₹6,999/mo',
     whatsIncluded: [
       {
@@ -171,19 +171,19 @@ export const servicesList: ServiceDetail[] = [
     ],
     benefits: [
       {
-        title: 'Lowest Cost Per Lead (CPL)',
+        title: 'Optimized Cost Per Lead (CPL)',
         description: 'Our hyper-targeted regional ad optimization gets you genuine customer inquiries at budget-friendly rates.',
-        stat: '₹12 - ₹35 per verified lead'
+        stat: 'Budget Optimized'
       },
       {
-        title: 'Viral Local Video Reach',
-        description: 'Short-form video is the #1 algorithm booster in 2025. Get 50k+ local views on your store or clinic.',
-        stat: '10x organic reach'
+        title: 'High-Impact Local Video Reach',
+        description: 'Short-form video is a dominant engagement format. Maximize local attention and discovery for your store or clinic.',
+        stat: 'High-Reach Format'
       },
       {
         title: 'Zero Ad Budget Wastage',
-        description: 'We continuously monitor and refine ad placements daily to ensure every single rupee drives real revenue.',
-        stat: '100% tracked ROAS'
+        description: 'We continuously monitor and refine ad placements daily to ensure every single rupee is accounted for.',
+        stat: 'Accountable Spend'
       }
     ],
     process: [
@@ -224,16 +224,16 @@ export const servicesList: ServiceDetail[] = [
     ],
     sampleWorkPreview: [
       {
-        title: 'Godavari Heights Luxury Villas',
-        type: 'Lead Generation Meta Ads Campaign',
-        description: 'Ran localized video tour ads targeting NRIs and affluent buyers in East Godavari.',
-        impact: '184 qualified buyer inquiries generated at just ₹42 per lead; 6 villas sold.'
+        title: 'Premium Gated Villa Walkthrough Concept',
+        type: 'Lead Generation Video Ads Campaign Concept',
+        description: 'Video tour campaign concept targeting NRI and regional property investors across East Godavari with budget qualification forms.',
+        impact: 'Designed for high-intent buyer qualification with low cost per verified lead'
       },
       {
-        title: 'Spicy Aroma Family Restaurant',
-        type: 'Viral Food Reels & Offer Ads',
-        description: 'Created 4 mouth-watering Telugu food reels featuring weekend biryani specials.',
-        impact: '120,000+ local views and 3x weekend table bookings.'
+        title: 'Regional Restaurant & Dining Video Concept',
+        type: 'Food Reels & Footfall Campaign Concept',
+        description: 'Localized Telugu food showcase reels highlighting signature weekend culinary specials to drive table reservations.',
+        impact: 'Optimized for high regional view-through rates and weekend walk-ins'
       }
     ],
     faqs: [
@@ -260,8 +260,8 @@ export const servicesList: ServiceDetail[] = [
     description: 'Completely hands-off social media management for busy business owners. We handle content calendars, daily feed & story publishing, hashtag strategies, bio optimization, and follower growth across Instagram, Facebook, and YouTube.',
     iconName: 'Share2',
     category: 'Organic Growth',
-    highlightMetric: '320%',
-    highlightMetricLabel: 'Average 90-Day Organic Follower Growth',
+    highlightMetric: 'Compounding',
+    highlightMetricLabel: 'Consistent Organic Reach & Active Follower Engagement',
     startingPrice: '₹5,499/mo',
     whatsIncluded: [
       {
@@ -295,19 +295,19 @@ export const servicesList: ServiceDetail[] = [
     ],
     benefits: [
       {
-        title: '100% Hands-Off for Business Owners',
+        title: 'Hands-Off for Business Owners',
         description: 'Focus entirely on running your operations while our digital specialists grow your online presence daily.',
-        stat: 'Save 25+ hrs/week'
+        stat: 'Time Efficient'
       },
       {
         title: 'Real, Genuine Local Followers',
         description: 'We build an active regional audience of people who actually live, work, and shop in your service area.',
-        stat: '100% genuine audience'
+        stat: 'Targeted Local Reach'
       },
       {
         title: 'Continuous Top-of-Mind Brand Recall',
         description: 'When local customers need your service, your brand is the first name they remember and search for.',
-        stat: '3x repeat inquiries'
+        stat: 'Consistent Recall'
       }
     ],
     process: [
@@ -348,16 +348,16 @@ export const servicesList: ServiceDetail[] = [
     ],
     sampleWorkPreview: [
       {
-        title: 'Royal Fit Gym Rajahmundry',
-        type: 'Complete Social Media Management',
-        description: 'Managed Instagram & FB with workout reels, member transformation stories, and diet tips.',
-        impact: 'Grew from 800 to 5,400+ local followers in 4 months, generating 45+ annual gym memberships.'
+        title: 'Fitness Studio & Gym Channel Concept',
+        type: 'Social Media Growth Concept',
+        description: 'Complete feed and reels management concept with training tips, member milestones, and seasonal membership campaigns.',
+        impact: 'Built to establish organic regional reach and steady membership inquiries'
       },
       {
-        title: 'Dr. Rao Dental Care',
-        type: 'Social Channel Management',
-        description: 'Educational dental tips and patient smile makeover carousels.',
-        impact: 'Established #1 dental brand recall in Rajahmundry on Instagram.'
+        title: 'Speciality Healthcare Brand Concept',
+        type: 'Doctor Branding & Health Content Concept',
+        description: 'Educational healthcare tips and doctor insight carousels building trusted clinic recall.',
+        impact: 'Structured to create authoritative doctor recall across local social feeds'
       }
     ],
     faqs: [
@@ -384,13 +384,13 @@ export const servicesList: ServiceDetail[] = [
     description: 'Ensure your business is visible, verified, and active everywhere your customers spend their time. From Google Business Profile & Maps optimization to Instagram, Facebook, YouTube, LinkedIn, and WhatsApp Business API integrations.',
     iconName: 'Layers',
     category: 'Omnichannel Presence',
-    highlightMetric: '100%',
-    highlightMetricLabel: 'Local Digital Search & Channel Coverage',
+    highlightMetric: 'Complete',
+    highlightMetricLabel: 'Google Maps & Local Search Profile Optimization',
     startingPrice: '₹4,499/mo',
     whatsIncluded: [
       {
-        title: 'Google Business Profile & Local Maps Dominance',
-        description: 'Rank in the top 3 Google Local Pack when customers search for your category "near me" in Rajahmundry.',
+        title: 'Google Business Profile & Local Maps Optimization',
+        description: 'Optimize for the Google Local 3-Pack when customers search for your category locally in Rajahmundry.',
         points: [
           'Complete profile verification, category optimization, and photo uploads',
           'Weekly Google Maps updates and product catalogue listing',
@@ -421,17 +421,17 @@ export const servicesList: ServiceDetail[] = [
       {
         title: 'Never Miss a Potential Customer',
         description: 'Whether a customer searches on Google Maps, scrolls Instagram, or browses YouTube, your brand is everywhere.',
-        stat: '5x discoverability'
+        stat: 'Multi-Channel Reach'
       },
       {
-        title: 'Top 3 Google Maps Ranking',
-        description: 'Capture the highest intent buyers who are actively searching for your service right now in Rajahmundry.',
-        stat: '+180% phone calls'
+        title: 'Google Maps 3-Pack Presence',
+        description: 'Capture high-intent buyers who are actively searching for your service in and around Rajahmundry.',
+        stat: 'High-Intent Discovery'
       },
       {
         title: 'Unified Brand Consistency',
-        description: 'Seamless logo, contact details, operating hours, and message across all 7+ major digital platforms.',
-        stat: '100% sync'
+        description: 'Seamless logo, contact details, operating hours, and message across all major digital platforms.',
+        stat: 'Consistent Profiles'
       }
     ],
     process: [
@@ -472,16 +472,16 @@ export const servicesList: ServiceDetail[] = [
     ],
     sampleWorkPreview: [
       {
-        title: 'Sri Balaji Electronics Showroom',
-        type: 'Google Maps & Omnichannel Dominance',
-        description: 'Optimized Google Business Profile with 45+ product items, regular photos, and customer review funnel.',
-        impact: 'Ranked #1 on Google Maps for "Electronics in Rajahmundry", generating 420+ monthly direct navigation requests.'
+        title: 'Retail Electronics Showroom Maps Model',
+        type: 'Google Maps 3-Pack Dominance Concept',
+        description: 'Google Business Profile architecture concept with cataloged products, geo-tagged photos, and systematic customer review funnels.',
+        impact: 'Engineered to secure top 3 Google Maps rank for high-intent local search queries'
       },
       {
-        title: 'Riverfront Resort & Banquet',
-        type: 'Multi-Channel Setup',
-        description: 'Synchronized WhatsApp booking catalogue with Instagram and Google Maps virtual photo tour.',
-        impact: 'Achieved 92% weekend banquet hall booking rate.'
+        title: 'Hospitality & Banquet Multi-Platform Blueprint',
+        type: 'Omnichannel Local Setup Concept',
+        description: 'Synchronized WhatsApp booking catalog paired with local search presence and virtual photographic tour.',
+        impact: 'Designed to capture event and banquet inquiries with high weekend booking rates'
       }
     ],
     faqs: [
@@ -504,8 +504,8 @@ export const servicesList: ServiceDetail[] = [
     description: 'Eliminate chaotic content bottlenecks. We establish structured digital content operations — editorial workflows, asset libraries, seasonal marketing calendars, quality control checkpoints, and automated approval dashboards tailored for your business.',
     iconName: 'Cpu',
     category: 'Operations & Workflow',
-    highlightMetric: '99.4%',
-    highlightMetricLabel: 'On-Time Content Delivery & Zero Bottlenecks',
+    highlightMetric: 'Organized',
+    highlightMetricLabel: 'Centralized Asset Pipelines & Timely Delivery',
     startingPrice: '₹5,999/mo',
     whatsIncluded: [
       {
@@ -530,7 +530,7 @@ export const servicesList: ServiceDetail[] = [
         title: 'Event & Flash Offer Rapid Response',
         description: 'Fast turnaround for urgent business announcements, flash discounts, and regional breaking events.',
         points: [
-          'Guaranteed 4-hour turnaround for emergency promo creatives',
+          'Prompt turnaround for emergency promo creatives',
           'Festival & local election/event situational marketing readiness',
           'Monthly performance retrospectives to continuously upgrade creative quality'
         ]
@@ -540,17 +540,17 @@ export const servicesList: ServiceDetail[] = [
       {
         title: 'No More Last-Minute Scrambles',
         description: 'Say goodbye to realizing at 10 PM that you forgot to post for Ugadi or a weekend discount sale.',
-        stat: '100% prepared'
+        stat: 'Structured Planning'
       },
       {
         title: 'Flawless Brand Governance',
         description: 'Every single asset published adheres strictly to your brand guidelines, logo usage, and contact info.',
-        stat: 'Zero error rate'
+        stat: 'Quality Controlled'
       },
       {
         title: 'Streamlined Team Collaboration',
         description: 'Seamless coordination between your in-house staff, store managers, and our creative marketing team.',
-        stat: '3x faster output'
+        stat: 'Agile Output'
       }
     ],
     process: [
@@ -591,10 +591,10 @@ export const servicesList: ServiceDetail[] = [
     ],
     sampleWorkPreview: [
       {
-        title: 'Prathap Group of Educational Institutions',
-        type: 'Content Operations Overhaul',
-        description: 'Streamlined admission campaign asset pipeline across 4 colleges, managing 120+ unique creatives in 60 days.',
-        impact: '100% on-time deployment, 0 delayed posts, and 35% reduction in asset production cycle time.'
+        title: 'Multi-Campus Educational Asset Pipeline Concept',
+        type: 'Content Operations Framework Concept',
+        description: 'Asset workflow concept for managing admission campaigns across multiple campuses, coordinating 100+ seasonal creatives with zero production delays.',
+        impact: 'Standardized brand governance with structured turnaround protocols'
       }
     ],
     faqs: [
@@ -617,13 +617,13 @@ export const servicesList: ServiceDetail[] = [
     description: 'Turn social media followers into loyal, paying customers. We provide rapid DM response management, comment moderation, Google review reputation enhancement, and proactive customer interaction across all your public channels.',
     iconName: 'MessageSquare',
     category: 'Reputation & Conversions',
-    highlightMetric: '<15 min',
-    highlightMetricLabel: 'Average Inquiry Response Time (9 AM - 9 PM)',
+    highlightMetric: 'Prompt',
+    highlightMetricLabel: 'Inquiry Triage & Direct WhatsApp Routing',
     startingPrice: '₹4,999/mo',
     whatsIncluded: [
       {
         title: 'DM & WhatsApp Inquiry Handling',
-        description: 'Never lose a hot lead because an Instagram DM or Facebook message sat unread for days.',
+        description: 'Never lose an interested lead because an Instagram DM or Facebook message sat unread.',
         points: [
           'Trained response protocols to answer pricing, timing, and location queries',
           'Lead qualification and forwarding hot inquiries directly to your sales team',
@@ -641,29 +641,29 @@ export const servicesList: ServiceDetail[] = [
       },
       {
         title: 'Google & Facebook Review Management',
-        description: 'Build an unbeatable 4.8+ star public reputation that inspires instant buyer confidence.',
+        description: 'Build an authentic, high-trust public reputation that inspires buyer confidence.',
         points: [
           'Professional, personalized responses to all positive & critical Google reviews',
-          'Automated review generation SMS / WhatsApp campaigns for happy customers',
-          'Crisis resolution framework for handling dissatisfied client feedback'
+          'Review generation SMS / WhatsApp guidance for satisfied customers',
+          'Resolution framework for handling customer feedback constructively'
         ]
       }
     ],
     benefits: [
       {
-        title: 'Instant Lead Conversion',
-        description: 'Customers buy from the business that responds first. Our swift reply speed dramatically boosts closure rates.',
-        stat: '+60% inquiry conversion'
+        title: 'Prompt Lead Follow-Up',
+        description: 'Customers buy from the business that responds quickly. Swift reply handling improves customer experience and inquiries.',
+        stat: 'Prompt Triage'
       },
       {
-        title: '5-Star Google Rating Growth',
-        description: 'A stellar online reputation makes you the undeniable first choice for new customers in East Godavari.',
-        stat: '4.9/5 average rating'
+        title: 'Authentic Review Growth',
+        description: 'A genuine online reputation makes you a preferred choice for customers in East Godavari.',
+        stat: 'Reputation Focus'
       },
       {
         title: 'Protected Brand Safety',
-        description: 'Competitors and spammers are blocked instantly, keeping your public comment sections professional.',
-        stat: '100% clean feeds'
+        description: 'Competitors and spammers are blocked promptly, keeping your public comment sections professional.',
+        stat: 'Moderated Feeds'
       }
     ],
     process: [
@@ -704,10 +704,10 @@ export const servicesList: ServiceDetail[] = [
     ],
     sampleWorkPreview: [
       {
-        title: 'Godavari Care Dental Hospital',
-        type: 'Community & Review Management',
-        description: 'Implemented rapid DM appointment booking and a post-treatment Google review campaign.',
-        impact: 'Increased Google reviews from 42 (3.8 stars) to 380+ (4.9 stars), boosting walk-ins by 85%.'
+        title: 'Healthcare Community & Review Acceleration Concept',
+        type: 'Review Funnel & Lead Triage Concept',
+        description: 'Blueprint for rapid WhatsApp inquiry triage and post-treatment patient Google review QR flows.',
+        impact: 'Engineered to accelerate genuine 5-star Google review growth and fast inquiry responses'
       }
     ],
     faqs: [
@@ -730,7 +730,7 @@ export const servicesList: ServiceDetail[] = [
     description: 'Know exactly where every marketing rupee is spent and what results it produced. We provide simple, transparent monthly performance dashboards covering leads generated, phone calls, cost per acquisition, and clear recommendations for your next growth step.',
     iconName: 'BarChart3',
     category: 'Analytics & ROI',
-    highlightMetric: '100%',
+    highlightMetric: 'Full',
     highlightMetricLabel: 'Transparent ROI Tracking with Zero Fluff',
     startingPrice: '₹3,999/mo',
     whatsIncluded: [
@@ -767,17 +767,17 @@ export const servicesList: ServiceDetail[] = [
       {
         title: 'Complete Financial Peace of Mind',
         description: 'You will never have to wonder if your digital marketing agency is actually bringing in customers.',
-        stat: '100% accountability'
+        stat: 'Full Transparency'
       },
       {
         title: 'Data-Driven Business Decisions',
         description: 'Know which products, offers, and locations generate the highest profit margins for your business.',
-        stat: '2x better budget allocation'
+        stat: 'Data-Led Decisions'
       },
       {
         title: 'Direct Access to Founder Bhargav',
         description: 'Personalized monthly strategy reviews to guide your business growth with actionable insights.',
-        stat: '1-on-1 monthly review'
+        stat: 'Monthly Review'
       }
     ],
     process: [
@@ -817,10 +817,10 @@ export const servicesList: ServiceDetail[] = [
     ],
     sampleWorkPreview: [
       {
-        title: 'East Godavari Diagnostic Network',
-        type: 'ROI & Lead Attribution Dashboard',
-        description: 'Implemented full call-tracking and Meta Ad attribution across 3 diagnostic lab branches.',
-        impact: 'Identified 3 top-performing health packages, reducing overall cost per customer acquisition from ₹180 to ₹72.'
+        title: 'Diagnostic Lab Network Attribution Concept',
+        type: 'ROI & Lead Attribution Dashboard Concept',
+        description: 'Attribution blueprint connecting Meta ad spend, Google Maps calls, and WhatsApp messages to branch-level footfalls.',
+        impact: 'Provides verified clarity on ad spend efficiency and customer acquisition cost'
       }
     ],
     faqs: [

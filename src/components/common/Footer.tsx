@@ -199,7 +199,23 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
             © {new Date().getFullYear()} Bhargav Digital Solutions (BDS). All rights reserved.
           </p>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-4">
+            <button
+              type="button"
+              onClick={() => handleNav('privacy')}
+              className="hover:text-stone-300 transition-colors cursor-pointer"
+            >
+              Privacy Policy
+            </button>
+            <span>·</span>
+            <button
+              type="button"
+              onClick={() => handleNav('terms')}
+              className="hover:text-stone-300 transition-colors cursor-pointer"
+            >
+              Terms of Service
+            </button>
+            <span>·</span>
             <a
               href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent(companyInfo.whatsappMessage)}`}
               target="_blank"

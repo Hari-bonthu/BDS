@@ -4,14 +4,14 @@ export const insightsArticlesList: InsightArticle[] = [
   {
     id: '1',
     slug: 'local-seo-guide-rajahmundry-2026',
-    title: 'The Complete Guide to Local SEO in Rajahmundry: How to Rank #1 on Google Maps in 2026',
+    title: 'The Complete Guide to Local SEO in Rajahmundry: How to Rank in the Google Maps 3-Pack in 2026',
     category: 'Local SEO',
     readTime: '6 min read',
     targetKeyword: 'how to rank on google maps rajahmundry',
-    summary: 'Over 82% of smartphone users in East Godavari search on Google Maps before choosing a store or clinic. Learn the exact 5-step local ranking system BDS uses to place businesses in the coveted Local 3-Pack.',
+    summary: 'Over 80% of local smartphone users search on Google Maps before choosing a store or clinic. Learn the key local optimization steps BDS uses to help businesses rank in the coveted Local 3-Pack.',
     keyTakeaways: [
-      'Complete 100% NAP (Name, Address, Phone) consistency across Danavaipeta and Kotipalli listings.',
-      'How to generate authentic 5-star customer reviews that Google algorithms prioritize.',
+      'Complete NAP (Name, Address, Phone) consistency across local directories.',
+      'How to generate authentic customer reviews that Google algorithms prioritize.',
       'Geo-tagging showroom photos with exact Rajahmundry coordinates (17.0005° N, 81.8040° E).',
       'The importance of localized Telugu voice search queries like "దగ్గర్లో ఉన్న బెస్ట్ షాప్".'
     ],
@@ -29,7 +29,7 @@ export const insightsArticlesList: InsightArticle[] = [
         body: 'Having 20 reviews with detailed location mentions (e.g. "Visited their Danavaipeta branch") outranks 100 generic 5-star ratings with no text. Setting up an automated WhatsApp post-purchase review request is the highest ROI action for local store owners.'
       }
     ],
-    callToAction: 'Want BDS to audit your Google Business Profile and rank you #1 in Rajahmundry?'
+    callToAction: 'Want BDS to audit your Google Business Profile and optimize your local search presence?'
   },
   {
     id: '2',
@@ -60,25 +60,25 @@ export const insightsArticlesList: InsightArticle[] = [
   {
     id: '3',
     slug: 'dental-clinic-patient-lead-generation-east-godavari',
-    title: 'How Dental & Medical Clinics in East Godavari Generate 80+ Monthly Inquiries with Instagram Ads',
+    title: 'How Dental & Medical Clinics in East Godavari Build Consistent Patient Inquiries with Instagram Ads',
     category: 'Healthcare',
     readTime: '7 min read',
     targetKeyword: 'dental clinic digital marketing rajahmundry',
-    summary: 'Discover the exact patient acquisition blueprint used by top doctors in Danavaipeta to fill appointment calendars for root canals, dental implants, and smile makeovers.',
+    summary: 'Discover the patient acquisition blueprint used by healthcare practices in Danavaipeta to build appointment calendars for root canals, dental implants, and smile makeovers.',
     keyTakeaways: [
-      'Doctor-led video explanations build 10x more trust than stock dental photos.',
+      'Doctor-led video explanations build significantly stronger trust than stock dental photos.',
       'Hyper-targeted Meta Ads within a 12km radius of Rajahmundry & Kovvur.',
-      'Instant WhatsApp booking integration that connects patients to your front desk in under 60 seconds.',
+      'Direct WhatsApp booking integration that connects patients directly to your front desk.',
       'Managing patient review compliance and Google Maps medical authority.'
     ],
     contentSections: [
       {
         heading: '1. Why Patients Hesitate and How Video Solves It',
-        body: 'Medical and dental treatments require immense personal trust. When Dr. Bhargav or clinic specialists speak directly on camera in Telugu explaining treatment safety, patient anxiety drops drastically and consultation booking rates skyrocket.'
+        body: 'Medical and dental treatments require immense personal trust. When doctors and clinic specialists speak directly on camera in Telugu explaining treatment safety, patient anxiety drops and consultation inquiries increase.'
       },
       {
         heading: '2. The 12-Kilometer Geofence Strategy',
-        body: 'We configure Meta ad sets targeting residents within 10 to 15 kilometers of the clinic in Danavaipeta, Kotipalli, and Morampudi, offering straightforward consultation calls and transparent smile makeover previews.'
+        body: 'We configure Meta ad sets targeting residents within 10 to 15 kilometers of the clinic in Danavaipeta, Kotipalli, and Morampudi, offering straightforward consultation calls and transparent treatment overviews.'
       }
     ],
     callToAction: 'Book a specialized 1-on-1 healthcare marketing consultation for your clinic.'
@@ -90,9 +90,9 @@ export const insightsArticlesList: InsightArticle[] = [
     category: 'Retail & Showrooms',
     readTime: '5 min read',
     targetKeyword: 'instagram marketing for saree showrooms rajahmundry',
-    summary: 'Footfalls on Main Road Rajahmundry and Kotipalli now start on Instagram. How bridal boutiques and pattu saree showrooms drive massive festive foot traffic.',
+    summary: 'Footfalls on Main Road Rajahmundry and Kotipalli now start on Instagram. How bridal boutiques and pattu saree showrooms drive festive foot traffic.',
     keyTakeaways: [
-      'Showcasing real showroom lighting and drape videos outperforms flat photos by 400%.',
+      'Showcasing real showroom lighting and drape videos significantly outperforms static graphics.',
       'Leveraging trending Telugu audio tracks combined with local festival themes (Sankranti, Dasara, Wedding Season).',
       'Click-to-WhatsApp catalog ads that allow buyers to ask prices immediately.',
       'Attracting bridal shoppers from Kakinada, Amalapuram, and Tanuku to travel to Rajahmundry.'
@@ -100,11 +100,11 @@ export const insightsArticlesList: InsightArticle[] = [
     contentSections: [
       {
         heading: '1. The Death of Static Social Media Banners in Fashion Retail',
-        body: 'Shoppers do not visit saree showrooms based on static graphics. They want to see the fabric sheen, pallu zari work, and pleating in high-definition 4K video reels with authentic Telugu commentary.'
+        body: 'Shoppers do not visit saree showrooms based on static graphics. They want to see the fabric sheen, pallu zari work, and pleating in high-definition video reels with authentic Telugu commentary.'
       },
       {
         heading: '2. The Regional Weekend Footfall Engine',
-        body: 'By running targeted Reels campaigns starting every Wednesday through Friday across East and West Godavari, BDS fills showroom aisles with weekend bridal shoppers ready to purchase.'
+        body: 'By running targeted Reels campaigns ahead of weekends across East and West Godavari, retailers capture bridal shoppers preparing for wedding season.'
       }
     ],
     callToAction: 'Schedule a showroom video shooting session with the BDS creative team.'

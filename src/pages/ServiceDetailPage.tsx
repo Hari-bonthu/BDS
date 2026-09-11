@@ -106,8 +106,8 @@ const serviceHeroImageMap: Record<string, { src: string; caption: string; captio
   },
   'platform-coverage': {
     src: asset('assets/service-local-seo.webp'),
-    caption: 'Google Maps #1 ranking: Local pack visibility, 5-star review acquisition & direct calls',
-    captionTe: 'గూగుల్ మ్యాప్స్ #1 ర్యాంకింగ్: స్థానిక విజిబిలిటీ, 5-స్టార్ రివ్యూలు & కాల్స్'
+    caption: 'Google Maps 3-Pack: Local pack visibility, authentic review acquisition & direct calls',
+    captionTe: 'గూగుల్ మ్యాప్స్ 3-ప్యాక్: స్థానిక విజిబిలిటీ, జెన్యూన్ రివ్యూలు & కాల్స్'
   },
   'content-operations': {
     src: asset('assets/service-content-ops.webp'),
@@ -126,42 +126,42 @@ const serviceHeroImageMap: Record<string, { src: string; caption: string; captio
   }
 };
 
-// Map real regional case study campaign imagery
+// Map campaign concept imagery to services (sector-generic, no fictional client names)
 const serviceCaseProofMap: Record<string, { src: string; client: string; result: string }> = {
   'content-creation': {
     src: asset('assets/campaign-silks.webp'),
-    client: 'Sri Srinivasa Silks · Main Road Showroom',
-    result: '+340% festive footfalls with native Telugu ad creatives'
+    client: 'Textile & Saree Retail Concept',
+    result: 'Bilingual Telugu/English creative concept for festive season retail footfall campaigns'
   },
   'short-form-video-ads': {
     src: asset('assets/campaign-dental.webp'),
-    client: 'Smile Craft Dental · Danavaipeta Clinic',
-    result: '180+ verified patient calls from 12km geofenced ads'
+    client: 'Dental & Medical Practice Concept',
+    result: 'Geo-targeted video ad concept for local healthcare patient acquisition'
   },
   'social-media-management': {
     src: asset('assets/campaign-silks.webp'),
-    client: 'Kalyani Silks · Regional Festive Drop',
-    result: '4.8× Instagram engagement & 120+ direct WhatsApp inquiries'
+    client: 'Textile & Saree Retail Concept',
+    result: 'Organic growth concept for regional apparel showrooms using Instagram & Facebook'
   },
   'platform-coverage': {
     src: asset('assets/campaign-dental.webp'),
-    client: 'Smile Craft Dental · Local Search Pack',
-    result: '#1 Google Maps position across Rajahmundry search queries'
+    client: 'Dental & Medical Practice Concept',
+    result: 'Google Maps 3-Pack optimization concept for local search dominance'
   },
   'content-operations': {
     src: asset('assets/campaign-villas.webp'),
-    client: 'Godavari Meadows · Premium Gated Villas',
-    result: 'Zero-delay 30-day visual pipeline & villa walkthrough launches'
+    client: 'Gated Community Real Estate Concept',
+    result: 'Visual content pipeline concept for premium villa & residential project launches'
   },
   'community-management': {
     src: asset('assets/campaign-dental.webp'),
-    client: 'Smile Craft Dental · Inbound Patient Inquiries',
-    result: '<15 minute average lead response rate resulting in 72 booked checkups'
+    client: 'Dental & Medical Practice Concept',
+    result: 'Under-15-minute inbound lead response model for local service businesses'
   },
   'reporting-insights': {
     src: asset('assets/campaign-villas.webp'),
-    client: 'Godavari Meadows · Ad Spend Audit',
-    result: '6.4× tracked ROAS with verified cost per qualified site visit'
+    client: 'Gated Community Real Estate Concept',
+    result: 'Transparent ad spend audit concept with tracked ROAS for high-ticket real estate'
   }
 };
 
@@ -517,12 +517,12 @@ const serviceBespokeFlows: Record<string, ServiceCustomFlow> = {
       },
       {
         number: '02',
-        title: 'Guaranteed 4-Hour Urgent Revision SLA',
-        titleTe: '4 గంటల్లో అర్జెంట్ రివిజన్ గ్యారెంటీ',
-        description: 'Flash sale notices, sudden stock arrivals, or price changes published in under 4 hours for retainer clients with zero bureaucratic delay.',
-        descriptionTe: 'అర్జెంట్ ఆఫర్లు, కొత్త స్టాక్ రాక లేదా ధరల మార్పులను 4 గంటల వ్యవధిలోనే డిజైన్ చేసి పబ్లిష్ చేస్తాము.',
-        deliverables: ['Priority queue for unexpected promotional updates', 'Same-day turnaround on flash announcements', 'Direct WhatsApp line to senior designer'],
-        deliverablesTe: ['అర్జెంట్ అప్‌డేట్స్‌కు మొదటి ప్రాధాన్యత', 'ఫ్లాష్ ఆఫర్లకు అదే రోజు డెలివరీ', 'సీనియర్ డిజైనర్‌తో నేరుగా వాట్సాప్ కనెక్ట్']
+        title: 'Rapid Urgent Revision Support',
+        titleTe: 'వేగవంతమైన అర్జెంట్ రివిజన్ సపోర్ట్',
+        description: 'Flash sale notices, sudden stock arrivals, or price changes published rapidly for retainer clients with direct access to your designer.',
+        descriptionTe: 'అర్జెంట్ ఆఫర్లు, కొత్త స్టాక్ రాక లేదా ధరల మార్పులను వేగంగా డిజైన్ చేసి పబ్లిష్ చేస్తాము.',
+        deliverables: ['Priority queue for unexpected promotional updates', 'Fast turnaround on flash announcements', 'Direct WhatsApp line to designer desk'],
+        deliverablesTe: ['అర్జెంట్ అప్‌డేట్స్‌కు మొదటి ప్రాధాన్యత', 'ఫ్లాష్ ఆఫర్లకు వేగవంతమైన డెలివరీ', 'డిజైనర్‌తో నేరుగా వాట్సాప్ కనెక్ట్']
       },
       {
         number: '03',
@@ -546,20 +546,20 @@ const serviceBespokeFlows: Record<string, ServiceCustomFlow> = {
     workflowEyebrow: 'THE CONTENT OPERATIONS PROTOCOL',
     workflowTitle: 'How we keep production running seamlessly',
     workflowTitleTe: 'కంటెంట్ ఆపరేషన్స్ నడిచే విధానం',
-    workflowSubtitle: 'Strict operational SLAs and shared cloud infrastructure designed to eliminate agency bottlenecks completely.',
+    workflowSubtitle: 'Structured operational workflows and shared cloud infrastructure designed to eliminate agency bottlenecks completely.',
     workflowSubtitleTe: 'ఏజెన్సీ ఆలస్యం లేకుండా పక్కాగా నడిచే ప్రొడక్షన్ సిస్టమ్.',
     workflowSteps: [
       { step: '01', timeline: 'Day 1', title: 'Private Cloud Hub Provisioned', titleTe: 'ప్రైవేట్ క్లౌడ్ హబ్ సెటప్', description: 'Shared folders established for brand guidelines, typography, past photography, and monthly drops.', descriptionTe: 'మీ బ్రాండ్ కోసం ప్రత్యేకమైన క్లౌడ్ ఫోల్డర్స్ సెటప్ చేసి అందుబాటులో ఉంచుతాము.' },
       { step: '02', timeline: 'Bi-Weekly', title: 'On-Site Production Shoot Execution', titleTe: 'క్రమం తప్పకుండా ఆన్-సైట్ షూటింగ్', description: 'Production team captures fresh products and store walkthroughs according to the pre-approved schedule.', descriptionTe: 'షెడ్యూల్ ప్రకారం మా టీమ్ కొత్త స్టాక్ మరియు షోరూమ్ విజువల్స్ షూట్ చేస్తుంది.' },
-      { step: '03', timeline: 'Continuous', title: 'Urgent Edits via 4-Hour SLA', titleTe: '4 గంటల SLAతో అర్జెంట్ ఎడిట్స్', description: 'Emergency sale notices, pricing tweaks, or inventory changes processed rapidly via direct desk access.', descriptionTe: 'ఎమర్జెన్సీ ఆఫర్లు లేదా ధరల మార్పులను తక్షణమే చేసి లైవ్‌లోకి తెస్తాము.' },
+      { step: '03', timeline: 'Continuous', title: 'Urgent Edits via Rapid Desk', titleTe: 'అర్జెంట్ ఎడిట్స్ సపోర్ట్', description: 'Emergency sale notices, pricing tweaks, or inventory changes processed rapidly via direct desk access.', descriptionTe: 'ఎమర్జెన్సీ ఆఫర్లు లేదా ధరల మార్పులను తక్షణమే చేసి లైవ్‌లోకి తెస్తాము.' },
       { step: '04', timeline: 'Monthly', title: 'Archival & Asset Cleanliness Review', titleTe: 'నెలవారీ అసెట్ రివ్యూ & ఆర్కైవల్', description: 'Cataloging all approved master files and pruning working drafts so storage remains lightning-fast.', descriptionTe: 'అన్ని మాస్టర్ ఫైల్స్‌ను భద్రపరిచి భవిష్యత్తు కోసం సిద్ధంగా ఉంచుతాము.' }
     ],
     specialFeature: {
       tag: 'OPERATIONAL RELIABILITY',
-      title: 'Strict 4-Hour Flash Promotion SLA',
-      titleTe: '4 గంటల ఫ్లాష్ ప్రమోషన్ గ్యారెంటీ',
-      description: 'Running a weekend flash sale, sudden stock clearance, or celebrating a festival announcement? Send the details on WhatsApp, and your approved creative is delivered and scheduled in under 4 hours.',
-      descriptionTe: 'వారాంతపు ఆఫర్ లేదా అకస్మాత్తుగా వచ్చిన కొత్త స్టాక్ వివరాలను వాట్సాప్‌లో పంపితే, 4 గంటల్లోనే ఆకర్షణీయమైన పోస్టర్ సిద్ధమై మీ చేతికి వస్తుంది.',
+      title: 'Agile Flash Promotion Support',
+      titleTe: 'అర్జెంట్ ఫ్లాష్ ప్రమోషన్ సపోర్ట్',
+      description: 'Running a weekend flash sale, sudden stock clearance, or celebrating a festival announcement? Send the details on WhatsApp, and your creative is turned around swiftly and scheduled without delay.',
+      descriptionTe: 'వారాంతపు ఆఫర్ లేదా అకస్మాత్తుగా వచ్చిన కొత్త స్టాక్ వివరాలను వాట్సాప్‌లో పంపితే, వేగంగా ఆకర్షణీయమైన పోస్టర్ సిద్ధమై మీ చేతికి వస్తుంది.',
       bullets: [
         'Dedicated senior designer assigned directly to your business account',
         'Direct priority WhatsApp creative desk with zero ticketing bureaucracy',
@@ -576,15 +576,15 @@ const serviceBespokeFlows: Record<string, ServiceCustomFlow> = {
   'community-management': {
     sectionTitle: 'The Real-Time Lead Conversion & Routing Protocol',
     sectionTitleTe: 'రియల్-టైమ్ లీడ్ కన్వర్షన్ & వాట్సాప్ రౌటింగ్',
-    sectionSubtitle: 'Never lose an interested customer to slow responses. We reply to inquiries in under 15 minutes and route high-intent leads straight to your sales team.',
-    sectionSubtitleTe: 'ఆలస్యం వల్ల కస్టమర్లను కోల్పోకండి. 15 నిమిషాల్లోనే స్పందించి ఆసక్తి ఉన్న లీడ్స్‌ను నేరుగా మీ సేల్స్ టీమ్‌కు పంపుతాము.',
+    sectionSubtitle: 'Never lose an interested customer to slow responses. We reply to customer inquiries promptly and route high-intent leads straight to your sales team.',
+    sectionSubtitleTe: 'ఆలస్యం వల్ల కస్టమర్లను కోల్పోకండి. వేగంగా స్పందించి ఆసక్తి ఉన్న లీడ్స్‌ను నేరుగా మీ సేల్స్ టీమ్‌కు పంపుతాము.',
     operationalItems: [
       {
         number: '01',
-        title: 'Sub-15 Minute Inquiry Response (7 Days a Week)',
-        titleTe: '15 నిమిషాల్లోపు స్పందన (వారం మొత్తం)',
-        description: 'Replying to Instagram DMs, Facebook messages, and Google chat while customer buying intent is at its peak.',
-        descriptionTe: 'కస్టమర్లు ధర లేదా లొకేషన్ అడిగిన వెంటనే 15 నిమిషాల్లోపు స్పందించి వారిని మీ షాప్‌కు రప్పిస్తాము.',
+        title: 'Prompt Inquiry Response (7 Days a Week)',
+        titleTe: 'వేగవంతమైన స్పందన (వారం మొత్తం)',
+        description: 'Replying to Instagram DMs, Facebook messages, and Google chat while customer buying intent is active.',
+        descriptionTe: 'కస్టమర్లు ధర లేదా లొకేషన్ అడిగిన వెంటనే వేగంగా స్పందించి వారిని మీ షాప్‌కు రప్పిస్తాము.',
         deliverables: ['Rapid qualification of price & location inquiries', 'Polite native Telugu and English customer service', 'Operational 7 days a week including festival weekends'],
         deliverablesTe: ['ధర మరియు లొకేషన్ వివరాలపై వేగవంతమైన సమాధానం', 'మర్యాదపూర్వకమైన తెలుగు మరియు ఇంగ్లీష్ సర్వీస్', 'పండుగల సమయాల్లో కూడా వారం మొత్తం సేవలు']
       },
@@ -601,7 +601,7 @@ const serviceBespokeFlows: Record<string, ServiceCustomFlow> = {
         number: '03',
         title: '7-Day Spam Shield & Competitor Moderation',
         titleTe: 'స్పామ్ & కాంపిటీటర్ లింక్స్ ఫిల్టరింగ్',
-        description: 'Instantly removing scam comments, offensive language, and competitor promotion links to protect your brand dignity.',
+        description: 'Promptly removing scam comments, offensive language, and competitor promotion links to protect your brand dignity.',
         descriptionTe: 'కామెంట్లలో వచ్చే స్పామ్, బూతులు మరియు ప్రత్యర్థుల లింకులను వెంటనే తొలగించి మీ బ్రాండ్ పరువు కాపాడతాము.',
         deliverables: ['Active comment monitoring and spam filtering', 'Automated negative keyword blocking', 'Clean, respectful brand community presentation'],
         deliverablesTe: ['నిరంతర కామెంట్ మానిటరింగ్ & స్పామ్ తొలగింపు', 'ఆటోమేటెడ్ నెగెటివ్ కీవర్డ్ బ్లాకింగ్', 'గౌరవప్రదమైన బ్రాండ్ ఇమేజ్ నిర్వహణ']
@@ -610,10 +610,10 @@ const serviceBespokeFlows: Record<string, ServiceCustomFlow> = {
         number: '04',
         title: 'Professional Google Maps Review Replies',
         titleTe: 'గూగుల్ మ్యాప్స్ రివ్యూలకు ప్రొఫెషనల్ సమాధానాలు',
-        description: 'Crafting thoughtful, brand-elevating responses to every customer rating in polite Telugu and English to boost local search rankings.',
+        description: 'Crafting thoughtful, brand-elevating responses to customer ratings in polite Telugu and English to build local trust.',
         descriptionTe: 'గూగుల్ మ్యాప్స్‌లో వచ్చే ప్రతి రివ్యూకి మర్యాదపూర్వకమైన సమాధానాలు ఇచ్చి మీ బ్రాండ్ విలువను పెంచుతాము.',
-        deliverables: ['100% response rate across all 5-star praise', 'Diplomatic, constructive responses to customer feedback', 'Keywords subtly woven into replies to aid Google Maps rank'],
-        deliverablesTe: ['అన్ని 5-స్టార్ రివ్యూలకు ధన్యవాదాలు', 'ఫీడ్‌బ్యాక్ వచ్చినప్పుడు గౌరవప్రదమైన సమాధానం', 'గూగుల్ ర్యాంకింగ్ పెరిగేలా కీవర్డ్స్ అనుసంధానం']
+        deliverables: ['Professional response approach across customer reviews', 'Diplomatic, constructive responses to customer feedback', 'Keywords subtly woven into replies to aid Google Maps relevance'],
+        deliverablesTe: ['అన్ని రివ్యూలకు ప్రొఫెషనల్ సమాధానాలు', 'ఫీడ్‌బ్యాక్ వచ్చినప్పుడు గౌరవప్రదమైన సమాధానం', 'గూగుల్ ప్రొఫైల్ బలపడేలా అనుసంధానం']
       }
     ],
     workflowEyebrow: 'THE LIVE LEAD ROUTING FLOW',
@@ -622,19 +622,19 @@ const serviceBespokeFlows: Record<string, ServiceCustomFlow> = {
     workflowSubtitle: 'A structured, frictionless lead capture system that turns passive social scrollers into booked consultations.',
     workflowSubtitleTe: 'సోషల్ మీడియాలో చూసిన వారిని మీ షాప్‌కి వచ్చే కస్టమర్లుగా మార్చే ప్రక్రియ.',
     workflowSteps: [
-      { step: '01', timeline: 'Minute 0', title: 'Customer Drops Inquiry on Reel or DM', titleTe: 'కస్టమర్ ఎంక్వైరీ రాక', description: 'Customer asks: "What is the price of this wedding pattu saree and is it available in your showroom?"', descriptionTe: 'కస్టమర్ రీల్ లేదా డీఎమ్ ద్వారా ధర మరియు లభ్యత వివరాలు అడుగుతారు.' },
-      { step: '02', timeline: 'Minute 8', title: 'BDS Team Responds & Qualifies', titleTe: '8 నిమిషాల్లోపు స్పందన & వివరాల సేకరణ', description: 'Our team replies politely, shares the price range, and collects the customer’s WhatsApp phone number for showroom booking.', descriptionTe: 'మా టీమ్ వెంటనే స్పందించి ధర వివరాలు చెప్పి వారి వాట్సాప్ నంబర్‌ను సేకరిస్తుంది.' },
-      { step: '03', timeline: 'Minute 12', title: 'Lead Routed to Showroom Manager', titleTe: 'షోరూమ్ మేనేజర్‌కు వాట్సాప్ అలర్ట్', description: 'Customer details and exact product interest forwarded instantly to your store front-desk WhatsApp.', descriptionTe: 'కస్టమర్ పేరు, ఫోన్ మరియు ఆసక్తి ఉన్న వస్తువు వివరాలు మీ మేనేజర్ వాట్సాప్‌కు చేరతాయి.' },
-      { step: '04', timeline: 'Same Day', title: 'Showroom Visit & Sale Closed', titleTe: 'కస్టమర్ రాక & సేల్ పూర్తి', description: 'Your sales staff calls or messages the customer to confirm the drape is held for them, securing the in-store visit.', descriptionTe: 'మీ సేల్స్ టీమ్ కస్టమర్‌తో మాట్లాడి షోరూమ్‌కు రప్పించి వ్యాపారాన్ని పూర్తి చేస్తుంది.' }
+      { step: '01', timeline: 'Step 1', title: 'Customer Drops Inquiry on Reel or DM', titleTe: 'కస్టమర్ ఎంక్వైరీ రాక', description: 'Customer asks: "What is the price of this wedding pattu saree and is it available in your showroom?"', descriptionTe: 'కస్టమర్ రీల్ లేదా డీఎమ్ ద్వారా ధర మరియు లభ్యత వివరాలు అడుగుతారు.' },
+      { step: '02', timeline: 'Step 2', title: 'BDS Team Responds & Qualifies', titleTe: 'త్వరిత స్పందన & వివరాల సేకరణ', description: 'Our team replies politely, shares the price range, and collects the customer’s WhatsApp phone number for showroom booking.', descriptionTe: 'మా టీమ్ వెంటనే స్పందించి ధర వివరాలు చెప్పి వారి వాట్సాప్ నంబర్‌ను సేకరిస్తుంది.' },
+      { step: '03', timeline: 'Step 3', title: 'Lead Routed to Showroom Manager', titleTe: 'షోరూమ్ మేనేజర్‌కు వాట్సాప్ అలర్ట్', description: 'Customer details and exact product interest forwarded instantly to your store front-desk WhatsApp.', descriptionTe: 'కస్టమర్ పేరు, ఫోన్ మరియు ఆసక్తి ఉన్న వస్తువు వివరాలు మీ మేనేజర్ వాట్సాప్‌కు చేరతాయి.' },
+      { step: '04', timeline: 'Step 4', title: 'Showroom Visit & Sale Closed', titleTe: 'కస్టమర్ రాక & సేల్ పూర్తి', description: 'Your sales staff calls or messages the customer to confirm the drape is held for them, securing the in-store visit.', descriptionTe: 'మీ సేల్స్ టీమ్ కస్టమర్‌తో మాట్లాడి షోరూమ్‌కు రప్పించి వ్యాపారాన్ని పూర్తి చేస్తుంది.' }
     ],
     specialFeature: {
       tag: 'CONVERSION SPEED',
-      title: 'Why <15 Minute Response Multiplies Local Sales',
-      titleTe: '15 నిమిషాల్లోపు స్పందన సేల్స్‌ను ఎలా పెంచుతుంది?',
-      description: 'When local buyers inquire about a product on Instagram, they are actively looking to buy today. Replying in under 15 minutes makes customers 7x more likely to visit your store compared to replying hours later.',
-      descriptionTe: 'కస్టమర్లు ఆసక్తి చూపిన వెంటనే సమాధానం ఇస్తే వారు మీ షాప్‌కి వచ్చే అవకాశం 7 రెట్లు పెరుగుతుంది. ఆలస్యమైతే వేరే షాప్‌కు వెళ్లే ప్రమాదం ఉంది.',
+      title: 'Why Fast Inquiry Response Multiplies Local Sales',
+      titleTe: 'వేగవంతమైన స్పందన సేల్స్‌ను ఎలా పెంచుతుంది?',
+      description: 'When local buyers inquire about a product on Instagram, they are actively looking to buy. Replying promptly keeps customers engaged and significantly increases the likelihood of a showroom visit before they turn to competitors.',
+      descriptionTe: 'కస్టమర్లు ఆసక్తి చూపిన వెంటనే సమాధానం ఇస్తే వారు మీ షాప్‌కి వచ్చే అవకాశం గణనీయంగా పెరుగుతుంది. ఆలస్యమైతే వేరే షాప్‌కు వెళ్లే ప్రమాదం ఉంది.',
       bullets: [
-        'Guaranteed rapid response across Instagram DMs, Facebook, and Google Chat',
+        'Rapid response across Instagram DMs, Facebook, and Google Chat',
         'Seamless lead transfer straight into your staff’s WhatsApp hands',
         'Full 7-day monitoring including peak Sunday and evening shopping rushes'
       ],
@@ -827,7 +827,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                   </button>
 
                   <a
-                    href={`https://wa.me/919494825968?text=${encodeURIComponent('Hi Bhargav, I would like to discuss ' + service.title + ' for my business in Rajahmundry.')}`}
+                    href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent('Hi Bhargav, I would like to discuss ' + service.title + ' for my business in Rajahmundry.')}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-5 py-3.5 rounded-xl bg-white hover:bg-stone-100 text-stone-900 font-bold text-sm border border-stone-300 transition-colors inline-flex items-center justify-center gap-2 shadow-xs cursor-pointer"
@@ -1006,15 +1006,15 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
               
               <div className="lg:col-span-4 space-y-3">
                 <p className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600">
-                  03 / {isTe ? 'నిజమైన రుజువులు' : 'VERIFIED PROOF'}
+                  03 / {isTe ? 'క్యాంపెయిన్ బ్లూప్రింట్స్' : 'CAMPAIGN BLUEPRINTS'}
                 </p>
                 <h2 className="text-2xl sm:text-3xl font-black text-stone-950 tracking-tight">
-                  {isTe ? 'స్థానిక వ్యాపారాల ఫలితాలు' : 'Real results in Coastal Andhra.'}
+                  {isTe ? 'స్థానిక వ్యాపారాల కోసం క్యాంపెయిన్ మోడల్స్' : 'Execution blueprints for regional brands.'}
                 </h2>
                 <p className="text-xs sm:text-sm text-stone-500 font-normal leading-relaxed">
                   {isTe
-                    ? 'రాజమండ్రి మరియు పరిసర ప్రాంతాలలో మేము సాధించిన ఖచ్చితమైన ఫలితాల డేటా.'
-                    : 'Authentic campaign metrics from businesses operating in Rajahmundry, Kakinada, and East Godavari.'}
+                    ? 'రాజమండ్రి మరియు ఈస్ట్ గోదావరి వ్యాపారాల కోసం రూపొందించిన ప్రాక్టికల్ మార్కెటింగ్ మోడల్స్.'
+                    : 'Sample creative direction and campaign frameworks designed for businesses across Rajahmundry and East Godavari.'}
                 </p>
               </div>
 
@@ -1023,7 +1023,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                   <div key={samIdx} className="py-8 first:pt-0 last:pb-0 space-y-4">
                     <div className="flex items-center gap-2">
                       <span className="text-xs font-mono font-bold text-blue-600">
-                        CASE 0{samIdx + 1}
+                        CONCEPT 0{samIdx + 1}
                       </span>
                       <span className="text-xs font-mono text-stone-400 font-bold uppercase">
                         · {sample.type}
@@ -1157,7 +1157,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
             <div className="relative">
               <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-stone-300 shadow-md bg-stone-900">
                 <img
-                  src={asset('assets/Bhargav_Profile.png')}
+                  src={asset('assets/Bhargav_Headshot.png')}
                   alt="Bhargav - Founder, BDS"
                   width={80}
                   height={80}
@@ -1202,13 +1202,13 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
             </button>
 
             <a
-              href={`https://wa.me/919494825968?text=${encodeURIComponent('Hi Bhargav, I would like to discuss ' + service.title + ' for my business in Rajahmundry.')}`}
+              href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent('Hi Bhargav, I would like to discuss ' + service.title + ' for my business in Rajahmundry.')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto px-7 py-4 rounded-xl bg-white border border-stone-300 hover:border-stone-900 text-stone-950 font-extrabold text-sm transition-colors inline-flex items-center justify-center gap-2 shadow-xs cursor-pointer"
             >
               <WhatsAppLogo className="w-4 h-4 shrink-0" />
-              <span>{isTe ? 'వాట్సాప్‌లో మాట్లాడండి' : 'Chat on WhatsApp: +91 94948 25968'}</span>
+              <span>{isTe ? 'వాట్సాప్‌లో మాట్లాడండి' : `Chat on WhatsApp: ${companyInfo.phoneDisplay}`}</span>
             </a>
           </div>
 
