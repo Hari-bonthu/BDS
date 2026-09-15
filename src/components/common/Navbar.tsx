@@ -60,8 +60,8 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const getNavHref = (page: PageId): string => {
     if (page === 'home') return '/';
-    if (servicesList.some((s) => s.id === page)) return `/services/${page}`;
-    return `/${page}`;
+    if (servicesList.some((s) => s.id === page)) return `/services/${page}/`;
+    return `/${page}/`;
   };
 
   const isServiceActive =

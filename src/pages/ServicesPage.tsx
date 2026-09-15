@@ -333,8 +333,27 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 }) => {
   const isTe = language === 'te';
 
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': 'https://www.bhargavdigitalsolutions.com/services/#faq',
+    'mainEntity': serviceFaqs.map((faq) => ({
+      '@type': 'Question',
+      'name': faq.q,
+      'acceptedAnswer': {
+        '@type': 'Answer',
+        'text': faq.a
+      }
+    }))
+  };
+
   return (
     <div className="bg-[#fafaf9] min-h-screen text-stone-900 selection:bg-blue-600 selection:text-white pb-16 sm:pb-24">
+      {/* FAQPage Structured Data matching visible serviceFaqs */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       
       {/* =========================================================================
           01 — EDITORIAL SERVICES HERO SECTION

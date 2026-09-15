@@ -820,15 +820,18 @@ export const HomePage: React.FC<HomePageProps> = ({
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex items-center gap-3.5 sm:gap-4">
                       <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-cyan-400/50 shadow-xl shadow-blue-950/50 shrink-0 bg-stone-900">
-                        <img
-                          src={asset('assets/Bhargav_Headshot.png')}
-                          alt="Bhargav - Founder & Lead Growth Strategist"
-                          width={80}
-                          height={80}
-                          className="w-full h-full object-cover object-center"
-                          loading="eager"
-                          decoding="async"
-                        />
+                        <picture>
+                          <source srcSet={asset('assets/Bhargav_Headshot.webp')} type="image/webp" />
+                          <img
+                            src={asset('assets/Bhargav_Headshot.png')}
+                            alt="Bhargav - Founder & Lead Growth Strategist"
+                            width={80}
+                            height={80}
+                            className="w-full h-full object-cover object-center"
+                            loading="eager"
+                            decoding="async"
+                          />
+                        </picture>
                       </div>
                       <div>
                         <div className="flex items-center gap-2">

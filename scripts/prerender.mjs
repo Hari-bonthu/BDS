@@ -34,7 +34,6 @@ const MIME_TYPES = {
 const routes = [
   '/',
   '/services',
-  '/pricing',
   '/portfolio',
   '/insights',
   '/about',

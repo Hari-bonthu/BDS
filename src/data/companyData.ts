@@ -12,6 +12,12 @@ export const companyInfo = {
   googleMapsQuery: 'Rajahmundry, East Godavari, Andhra Pradesh',
   whatsappNumber: '919704380535',
   whatsappMessage: 'Hello Bhargav Digital Solutions! I would like to inquire about digital marketing services for my business in Rajahmundry.',
+  socialLinks: {
+    instagram: 'https://www.instagram.com/bhargavdigitalsolutions/',
+    facebook: 'https://www.facebook.com/bhargavdigitalsolutions/',
+    youtube: 'https://www.youtube.com/@bhargavdigitalsolutions',
+    linkedin: 'https://www.linkedin.com/company/bhargavdigitalsolutions/'
+  },
   web3FormsAccessKey: (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY || '13ba520c-0e06-4d8d-a819-5a8f69a57821',
   workingHours: 'Mon – Sat: 9:00 AM – 7:30 PM (Sunday by Appointment)',
   stats: [
@@ -210,7 +216,7 @@ export const generalFaqs = [
   },
   {
     question: 'How does your affordable pricing model work?',
-    answer: 'We maintain a lean, agile creative team in Rajahmundry with zero bloated agency overheads. We pass those direct cost savings to you, offering high-standard creative design, video editing, and performance ad management starting at just ₹7,999/month.'
+    answer: 'We maintain a lean, agile creative team in Rajahmundry with zero bloated agency overheads. We provide transparent, value-driven retainers customized to your exact marketing requirements without high-ticket metro agency markups.'
   },
   {
     question: 'How quickly will we see results from our marketing campaigns?',

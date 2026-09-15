@@ -5,7 +5,11 @@ import {
   Mail,
   Clock,
   ArrowUpRight,
-  MessageCircle
+  MessageCircle,
+  Instagram,
+  Facebook,
+  Youtube,
+  Linkedin
 } from 'lucide-react';
 import { BDSLogo } from './BDSLogo';
 import { companyInfo } from '../../data/companyData';
@@ -20,8 +24,8 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) => {
   const getNavHref = (page: PageId): string => {
     if (page === 'home') return '/';
-    if (servicesList.some((s) => s.id === page)) return `/services/${page}`;
-    return `/${page}`;
+    if (servicesList.some((s) => s.id === page)) return `/services/${page}/`;
+    return `/${page}/`;
   };
 
   const handleNav = (page: PageId) => {
@@ -57,6 +61,46 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
             <p className="text-xs font-semibold text-blue-400 tracking-wide uppercase">
               Digital Today, Grow Tomorrow
             </p>
+
+            {/* Official Social Media Links */}
+            <div className="pt-1 flex items-center gap-2.5">
+              <a
+                href={companyInfo.socialLinks.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Bhargav Digital Solutions on Instagram"
+                className="w-8 h-8 rounded-lg bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-400 hover:text-white hover:border-stone-700 transition-all"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+              <a
+                href={companyInfo.socialLinks.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Bhargav Digital Solutions on Facebook"
+                className="w-8 h-8 rounded-lg bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-400 hover:text-white hover:border-stone-700 transition-all"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
+                href={companyInfo.socialLinks.youtube}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Bhargav Digital Solutions on YouTube"
+                className="w-8 h-8 rounded-lg bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-400 hover:text-white hover:border-stone-700 transition-all"
+              >
+                <Youtube className="w-4 h-4" />
+              </a>
+              <a
+                href={companyInfo.socialLinks.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Bhargav Digital Solutions on LinkedIn"
+                className="w-8 h-8 rounded-lg bg-stone-900 border border-stone-800 flex items-center justify-center text-stone-400 hover:text-white hover:border-stone-700 transition-all"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+            </div>
           </div>
 
           {/* Column 2: Navigation Links (2 cols) */}
@@ -67,7 +111,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
             <ul className="space-y-2 text-sm font-medium">
               <li>
                 <a
-                  href="/services"
+                  href="/services/"
                   onClick={(e) => {
                     e.preventDefault();
                     handleNav('services');
@@ -79,7 +123,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
               </li>
               <li>
                 <a
-                  href="/portfolio"
+                  href="/portfolio/"
                   onClick={(e) => {
                     e.preventDefault();
                     handleNav('portfolio');
@@ -92,7 +136,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
 
               <li>
                 <a
-                  href="/about"
+                  href="/about/"
                   onClick={(e) => {
                     e.preventDefault();
                     handleNav('about');
@@ -104,7 +148,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
               </li>
               <li>
                 <a
-                  href="/insights"
+                  href="/insights/"
                   onClick={(e) => {
                     e.preventDefault();
                     handleNav('insights');
@@ -116,7 +160,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
               </li>
               <li>
                 <a
-                  href="/contact"
+                  href="/contact/"
                   onClick={(e) => {
                     e.preventDefault();
                     handleNav('contact');
@@ -138,7 +182,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
               {servicesList.map((srv) => (
                 <li key={srv.id}>
                   <a
-                    href={`/services/${srv.id}`}
+                    href={`/services/${srv.id}/`}
                     onClick={(e) => {
                       e.preventDefault();
                       handleNav(srv.id);
@@ -200,21 +244,27 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
           </p>
 
           <div className="flex flex-wrap items-center justify-center sm:justify-end gap-3 sm:gap-4">
-            <button
-              type="button"
-              onClick={() => handleNav('privacy')}
+            <a
+              href="/privacy/"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNav('privacy');
+              }}
               className="hover:text-stone-300 transition-colors cursor-pointer"
             >
               Privacy Policy
-            </button>
+            </a>
             <span>·</span>
-            <button
-              type="button"
-              onClick={() => handleNav('terms')}
+            <a
+              href="/terms/"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNav('terms');
+              }}
               className="hover:text-stone-300 transition-colors cursor-pointer"
             >
               Terms of Service
-            </button>
+            </a>
             <span>·</span>
             <a
               href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent(companyInfo.whatsappMessage)}`}
