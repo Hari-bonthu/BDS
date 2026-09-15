@@ -1,14 +1,15 @@
 import React, { useState, useMemo } from 'react';
 import {
-  HelpCircle,
   X,
   Search,
   ChevronDown,
   ChevronUp,
-  MessageCircle
+  Sparkles
 } from 'lucide-react';
 import { companyInfo } from '../../data/companyData';
 import { Language } from '../../types';
+import { asset } from '../../utils/asset';
+import { WhatsAppLogo } from './PlatformLogos';
 
 interface FaqBotProps {
   isOpen: boolean;
@@ -25,6 +26,7 @@ interface FaqEntry {
   aTe: string;
 }
 
+// Curated FAQ entries (Removed regional coverage question as requested)
 const botFaqs: FaqEntry[] = [
   {
     id: 'pricing',
@@ -47,7 +49,7 @@ const botFaqs: FaqEntry[] = [
     category: 'accountability',
     q: 'Who manages my account and creates the campaigns?',
     qTe: 'నా అకౌంట్‌ను ఎవరు నిర్వహిస్తారు?',
-    a: 'Founder Bhargav directly leads strategy, scriptwriting, creative direction, and paid ad optimizations on every account. You communicate with the strategist doing the actual work, not junior coordinators.',
+    a: 'Founder Bhargav directly leads strategy, scriptwriting, creative direction, and paid ad optimizations on every account. You communicate directly with the strategist doing the actual work, not junior coordinators.',
     aTe: 'ఫౌండర్ భార్గవ్ స్వయంగా ప్రతి అకౌంట్ వ్యూహాన్ని, యాడ్స్‌ను మరియు కంటెంట్‌ను పర్యవేక్షిస్తారు.'
   },
   {
@@ -65,14 +67,6 @@ const botFaqs: FaqEntry[] = [
     qTe: 'క్యాంపెయిన్స్ ఎంత త్వరగా ప్రారంభమవుతాయి?',
     a: 'Audits and strategy alignment take 2–3 business days. On-location shoot coordination, creative production, and live ad launches typically roll out within 5–7 business days.',
     aTe: 'వ్యూహం 2-3 రోజుల్లో ఖరారవుతుంది. షూట్ మరియు మొదటి ప్రకటనలు 5-7 రోజుల్లో లైవ్ అవుతాయి.'
-  },
-  {
-    id: 'coverage',
-    category: 'general',
-    q: 'Which regions do you cover for on-location shoots?',
-    qTe: 'మీరు ఏ ప్రాంతాలలో సేవలు అందిస్తారు?',
-    a: 'We are based in Danavaipeta, Rajahmundry, providing hands-on coverage across Rajahmundry (Main Road, Kotipalli, Morampudi), Kakinada, and surrounding East Godavari districts.',
-    aTe: 'మేము రాజమండ్రి, కాకినాడ మరియు తూర్పు గోదావరి జిల్లాల్లో నేరుగా క్షేత్రస్థాయిలో సేవలు అందిస్తాము.'
   },
   {
     id: 'bundling',
@@ -110,28 +104,37 @@ export const FaqBot: React.FC<FaqBotProps> = ({ isOpen, onClose, language = 'en'
     <div
       role="dialog"
       aria-modal="false"
-      aria-label="BDS Quick FAQ Assistant"
-      className="w-[92vw] sm:w-[380px] bg-white/98 backdrop-blur-lg border border-stone-200/90 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[520px] transition-all duration-200 select-text"
+      aria-label="BDS FAQ Assistant"
+      className="w-[94vw] sm:w-[400px] bg-white border border-stone-200/90 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[540px] transition-all duration-200 select-text border-t-4 border-t-blue-600 animate-in fade-in slide-in-from-bottom-3"
     >
-      {/* Minimal Header */}
-      <div className="p-3.5 sm:p-4 bg-stone-900 text-white flex items-center justify-between border-b border-stone-800">
-        <div className="flex items-center gap-2">
-          <div className="w-7 h-7 rounded-lg bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-blue-400">
-            <HelpCircle className="w-4 h-4" />
+      {/* Redesigned Website Template Header with Authentic BDS Logo */}
+      <div className="p-3.5 sm:p-4 bg-white flex items-center justify-between border-b border-stone-200/80">
+        <div className="flex items-center gap-3">
+          <div className="h-9 px-2 py-1 rounded-xl bg-stone-50 border border-stone-200/80 flex items-center justify-center shadow-2xs">
+            <img
+              src={asset('assets/logo-bds.webp')}
+              alt="Bhargav Digital Solutions Logo"
+              width={80}
+              height={24}
+              className="h-6 w-auto object-contain"
+            />
           </div>
           <div>
-            <div className="text-xs font-bold leading-tight">
-              {isTe ? 'BDS FAQ అసిస్టెంట్' : 'BDS Quick FAQ Assistant'}
+            <div className="flex items-center gap-1.5">
+              <span className="text-xs font-black text-stone-950 leading-tight">
+                {isTe ? 'భార్గవ్ డిజిటల్ సొల్యూషన్స్' : 'Bhargav Digital Solutions'}
+              </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" title="Active Assistant" />
             </div>
-            <div className="text-[10px] text-stone-400 font-medium leading-tight">
-              {isTe ? 'తక్షణ నిజమైన సమాధానాలు' : 'Instant plain-English answers'}
+            <div className="text-[10px] text-stone-500 font-medium leading-tight mt-0.5">
+              {isTe ? 'త్వరిత ప్రశ్నలు & సమాధానాలు' : 'Quick FAQ & Strategy Assistant'}
             </div>
           </div>
         </div>
         <button
           type="button"
           onClick={onClose}
-          className="w-7 h-7 rounded-lg text-stone-400 hover:text-white hover:bg-stone-800 flex items-center justify-center transition-colors"
+          className="w-8 h-8 rounded-xl text-stone-400 hover:text-stone-700 hover:bg-stone-100 flex items-center justify-center transition-colors"
           aria-label="Close FAQ Assistant"
         >
           <X className="w-4 h-4" />
@@ -147,7 +150,7 @@ export const FaqBot: React.FC<FaqBotProps> = ({ isOpen, onClose, language = 'en'
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder={isTe ? 'ప్రశ్నను వెతకండి (ధర, కాంట్రాక్ట్, సమయం)...' : 'Search questions (pricing, timeline, contracts)...'}
-            className="w-full pl-8 pr-3 py-1.5 rounded-lg border border-stone-200 bg-white text-xs text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-all"
+            className="w-full pl-8 pr-3 py-1.5 rounded-lg border border-stone-200 bg-white text-xs text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all font-medium"
           />
           {searchQuery && (
             <button
@@ -160,8 +163,8 @@ export const FaqBot: React.FC<FaqBotProps> = ({ isOpen, onClose, language = 'en'
           )}
         </div>
 
-        {/* Minimal Category Filter Pills */}
-        <div className="flex items-center gap-1.5 mt-2 overflow-x-auto pb-0.5 no-scrollbar">
+        {/* Category Filter Pills Matching Website Style */}
+        <div className="flex items-center gap-1.5 mt-2.5 overflow-x-auto pb-0.5 no-scrollbar">
           {[
             { id: 'all', label: isTe ? 'అన్నీ' : 'All' },
             { id: 'pricing', label: isTe ? 'ధరలు & నియమాలు' : 'Pricing & Terms' },
@@ -173,10 +176,10 @@ export const FaqBot: React.FC<FaqBotProps> = ({ isOpen, onClose, language = 'en'
               key={cat.id}
               type="button"
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-2.5 py-1 rounded-md text-[10px] font-semibold whitespace-nowrap transition-colors ${
+              className={`px-2.5 py-1 rounded-full text-[10px] font-bold whitespace-nowrap transition-all ${
                 selectedCategory === cat.id
                   ? 'bg-blue-600 text-white shadow-2xs'
-                  : 'bg-white text-stone-600 border border-stone-200/80 hover:bg-stone-50'
+                  : 'bg-white text-stone-600 border border-stone-200/90 hover:bg-stone-50'
               }`}
             >
               {cat.label}
@@ -186,19 +189,19 @@ export const FaqBot: React.FC<FaqBotProps> = ({ isOpen, onClose, language = 'en'
       </div>
 
       {/* Accordion FAQ List */}
-      <div className="flex-1 overflow-y-auto p-3 space-y-2 divide-y divide-stone-100">
+      <div className="flex-1 overflow-y-auto p-3.5 space-y-2.5 divide-y divide-stone-100">
         {filteredFaqs.length === 0 ? (
-          <div className="text-center py-6 px-4 space-y-2">
-            <p className="text-xs text-stone-500 font-medium">
-              {isTe ? 'ఈ అంశంపై సమాధానం కనిపించలేదా?' : 'No matching question found?'}
+          <div className="text-center py-6 px-4 space-y-2.5">
+            <p className="text-xs text-stone-600 font-medium">
+              {isTe ? 'ఈ అంశంపై సమాధానం కనిపించలేదా?' : 'Have a custom question not covered here?'}
             </p>
             <a
               href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent('Hi Bhargav, I have a question about BDS services that wasn\'t in your FAQ: ' + searchQuery)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-semibold hover:bg-emerald-100 transition-colors"
+              className="inline-flex items-center gap-2 px-3.5 py-2 rounded-xl bg-emerald-50 text-emerald-800 border border-emerald-200 text-xs font-bold hover:bg-emerald-100 transition-colors shadow-2xs"
             >
-              <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
+              <WhatsAppLogo className="w-4 h-4" />
               <span>{isTe ? 'వాట్సాప్‌లో నేరుగా అడగండి' : 'Ask Bhargav on WhatsApp'}</span>
             </a>
           </div>
@@ -206,19 +209,19 @@ export const FaqBot: React.FC<FaqBotProps> = ({ isOpen, onClose, language = 'en'
           filteredFaqs.map((faq) => {
             const isExpanded = expandedId === faq.id;
             return (
-              <div key={faq.id} className="pt-2 first:pt-0">
+              <div key={faq.id} className="pt-2.5 first:pt-0">
                 <button
                   type="button"
                   onClick={() => setExpandedId(isExpanded ? null : faq.id)}
-                  className="w-full text-left flex items-start justify-between gap-2 py-1 text-xs font-bold text-stone-900 hover:text-blue-600 transition-colors group"
+                  className="w-full text-left flex items-start justify-between gap-2.5 py-1 text-xs sm:text-[13px] font-bold text-stone-900 hover:text-blue-600 transition-colors group"
                 >
                   <span className="leading-snug">{isTe ? faq.qTe : faq.q}</span>
-                  <span className="p-0.5 rounded-md text-stone-400 group-hover:text-blue-600 shrink-0 mt-0.5">
-                    {isExpanded ? <ChevronUp className="w-3.5 h-3.5" /> : <ChevronDown className="w-3.5 h-3.5" />}
+                  <span className="p-1 rounded-md text-stone-400 group-hover:text-blue-600 shrink-0 mt-0.5 bg-stone-50 border border-stone-200/60">
+                    {isExpanded ? <ChevronUp className="w-3 h-3" /> : <ChevronDown className="w-3 h-3" />}
                   </span>
                 </button>
                 {isExpanded && (
-                  <p className="mt-1.5 text-[11px] text-stone-600 leading-relaxed pl-2 border-l-2 border-blue-500/40 bg-blue-50/20 py-1 rounded-r-md">
+                  <p className="mt-2 text-xs text-stone-600 leading-relaxed pl-3 border-l-2 border-blue-600 bg-[#fbfbfb] py-2 pr-2 rounded-r-xl font-normal">
                     {isTe ? faq.aTe : faq.a}
                   </p>
                 )}
@@ -228,19 +231,19 @@ export const FaqBot: React.FC<FaqBotProps> = ({ isOpen, onClose, language = 'en'
         )}
       </div>
 
-      {/* Quiet Escalation Footer */}
-      <div className="p-3 bg-stone-50 border-t border-stone-200/80 flex items-center justify-between text-[11px]">
-        <span className="text-stone-500 font-medium">
-          {isTe ? 'మరిన్ని వివరాలు కావాలా?' : 'Need direct help?'}
+      {/* Website-Styled Minimalist Footer with WhatsApp Link */}
+      <div className="p-3 bg-[#fafaf9] border-t border-stone-200/80 flex items-center justify-between text-xs">
+        <span className="text-stone-500 font-medium text-[11px]">
+          {isTe ? 'ప్రత్యేకమైన ప్రణాళిక కావాలా?' : 'Need a custom growth quote?'}
         </span>
         <a
-          href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent('Hi Bhargav, I was reviewing the FAQ on your website and would like to speak directly.')}`}
+          href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent('Hi Bhargav, I was reviewing the FAQ on your website and would like to discuss a customized growth strategy for my business in Rajahmundry.')}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 text-emerald-700 font-bold hover:text-emerald-800 hover:underline transition-all"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 text-xs font-bold transition-all"
         >
-          <MessageCircle className="w-3.5 h-3.5 text-emerald-600" />
-          <span>{isTe ? 'భార్గవ్‌తో చాట్ చేయండి' : 'Chat on WhatsApp'}</span>
+          <WhatsAppLogo className="w-3.5 h-3.5" />
+          <span>{isTe ? 'వాట్సాప్‌లో మాట్లాడండి' : 'Chat on WhatsApp'}</span>
         </a>
       </div>
     </div>

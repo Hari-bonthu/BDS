@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Phone, MessageCircle, Sparkles, X, HelpCircle } from 'lucide-react';
+import { Phone, MessageCircle, Sparkles, X } from 'lucide-react';
 import { companyInfo } from '../../data/companyData';
 import { FaqBot } from './FaqBot';
 import { Language } from '../../types';
+import { asset } from '../../utils/asset';
 
 interface FloatingQuickActionsProps {
   onOpenQuoteModal: () => void;
@@ -71,7 +72,13 @@ export const FloatingQuickActions: React.FC<FloatingQuickActionsProps> = ({
           {isFaqOpen ? (
             <X className="w-5 h-5 text-stone-200" />
           ) : (
-            <HelpCircle className="w-5 h-5 text-blue-600" />
+            <img
+              src={asset('assets/logo-bds.webp')}
+              alt="BDS Quick FAQs"
+              width={32}
+              height={16}
+              className="w-7 h-auto object-contain"
+            />
           )}
         </button>
 
