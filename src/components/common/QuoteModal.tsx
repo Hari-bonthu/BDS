@@ -130,14 +130,14 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
   const formattedWaMessage = encodeURIComponent(
     `*New Growth Consultation Request — BDS Website*\n\n` +
-    `👤 *Name:* ${contactName || 'Valued Business Owner'}\n` +
-    `🏢 *Business:* ${businessName || 'Business in Rajahmundry'}\n` +
-    `📱 *Phone:* ${phone}\n` +
-    (email ? `✉️ *Email:* ${email}\n` : '') +
-    `🎯 *Primary Service:* ${selectedService}\n` +
-    (selectedGoals.length > 0 ? `🚀 *Goals:* ${selectedGoals.join(', ')}\n` : '') +
-    (notes ? `📝 *Notes:* ${notes}\n` : '') +
-    `📍 *Location:* Rajahmundry & East Godavari, AP`
+    `• *Name:* ${contactName || 'Valued Business Owner'}\n` +
+    `• *Business:* ${businessName || 'Business in Rajahmundry'}\n` +
+    `• *Phone:* ${phone}\n` +
+    (email ? `• *Email:* ${email}\n` : '') +
+    `• *Primary Service:* ${selectedService}\n` +
+    (selectedGoals.length > 0 ? `• *Goals:* ${selectedGoals.join(', ')}\n` : '') +
+    (notes ? `• *Notes:* ${notes}\n` : '') +
+    `• *Location:* Rajahmundry & East Godavari, AP`
   );
   const waUrl = `https://wa.me/${companyInfo.whatsappNumber}?text=${formattedWaMessage}`;
 
@@ -302,8 +302,15 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                     Phone / WhatsApp Number *
                   </label>
                   <div className="relative flex items-center">
-                    <div className="absolute left-3 flex items-center gap-1 text-stone-500 font-bold text-xs pointer-events-none">
-                      <span>🇮🇳</span>
+                    <div className="absolute left-3 flex items-center gap-1.5 text-stone-500 font-bold text-xs pointer-events-none">
+                      <svg className="w-4 h-3 rounded-2xs shrink-0 overflow-hidden shadow-2xs border border-stone-200/50" viewBox="0 0 640 480" aria-hidden="true">
+                        <path fill="#FF9933" d="M0 0h640v160H0z"/>
+                        <path fill="#FFFFFF" d="M0 160h640v160H0z"/>
+                        <path fill="#128807" d="M0 320h640v160H0z"/>
+                        <circle cx="320" cy="240" r="40" fill="#000088"/>
+                        <circle cx="320" cy="240" r="34" fill="#FFFFFF"/>
+                        <circle cx="320" cy="240" r="8" fill="#000088"/>
+                      </svg>
                       <span>+91</span>
                     </div>
                     <input

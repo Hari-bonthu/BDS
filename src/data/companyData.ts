@@ -21,10 +21,10 @@ export const companyInfo = {
   web3FormsAccessKey: (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY || '13ba520c-0e06-4d8d-a819-5a8f69a57821',
   workingHours: 'Mon – Sat: 9:00 AM – 7:30 PM (Sunday by Appointment)',
   stats: [
-    { value: '🎯', label: 'Hands-On Local Focus', subtext: 'Rajahmundry & East Godavari' },
-    { value: '📊', label: 'Accountable Ad Spend', subtext: 'Weekly Reports With Screenshots' },
-    { value: '🤝', label: 'Zero Lock-In Contracts', subtext: 'Month-to-Month Flexibility' },
-    { value: '👤', label: 'Direct Founder Oversight', subtext: 'Bhargav on Every Account' }
+    { value: 'Local Focus', label: 'Hands-On Local Focus', subtext: 'Rajahmundry & East Godavari' },
+    { value: 'Accountable', label: 'Accountable Ad Spend', subtext: 'Weekly Reports With Screenshots' },
+    { value: 'Flexible', label: 'Zero Lock-In Contracts', subtext: 'Month-to-Month Flexibility' },
+    { value: 'Founder Led', label: 'Direct Founder Oversight', subtext: 'Bhargav on Every Account' }
   ],
   founder: {
     name: 'Bhargav',

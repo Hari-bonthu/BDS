@@ -12,7 +12,8 @@ import {
   User,
   ShieldCheck,
   Navigation,
-  Compass
+  Compass,
+  Lock
 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { companyInfo, regionalCoverageAreas } from '../data/companyData';
@@ -78,15 +79,15 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpe
   };
 
   const contactWaMsg = encodeURIComponent(
-    `*Direct Contact Inquiry from BDS Website*\n` +
-    `👤 *Name:* ${formData.name}\n` +
-    `🏢 *Business:* ${formData.businessName}\n` +
-    `📱 *Phone:* ${formData.phone}\n` +
-    (formData.email ? `✉️ *Email:* ${formData.email}\n` : '') +
-    `🎯 *Service:* ${formData.service}\n` +
-    `💰 *Budget:* ${formData.budget}\n` +
-    (formData.message ? `📝 *Message:* ${formData.message}\n` : '') +
-    `📍 *Region:* Rajahmundry & East Godavari, AP`
+    `*Direct Contact Inquiry from BDS Website*\n\n` +
+    `• *Name:* ${formData.name}\n` +
+    `• *Business:* ${formData.businessName}\n` +
+    `• *Phone:* ${formData.phone}\n` +
+    (formData.email ? `• *Email:* ${formData.email}\n` : '') +
+    `• *Service:* ${formData.service}\n` +
+    `• *Budget:* ${formData.budget}\n` +
+    (formData.message ? `• *Message:* ${formData.message}\n` : '') +
+    `• *Region:* Rajahmundry & East Godavari, AP`
   );
   const contactWaUrl = `https://wa.me/${companyInfo.whatsappNumber}?text=${contactWaMsg}`;
 
@@ -425,8 +426,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpe
                       </>
                     )}
                   </button>
-                  <p className="text-[11px] text-center text-slate-500">
-                    🔒 We respect your privacy. No spam. Direct phone callback.
+                  <p className="text-[11px] text-center text-slate-500 flex items-center justify-center gap-1.5">
+                    <Lock className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                    <span>We respect your privacy. No spam. Direct phone callback.</span>
                   </p>
                 </form>
               )}

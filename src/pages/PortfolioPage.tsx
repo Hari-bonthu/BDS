@@ -15,7 +15,9 @@ import {
   Zap,
   Target,
   Users,
-  Briefcase
+  Briefcase,
+  BarChart3,
+  UserCheck
 } from 'lucide-react';
 import { caseStudiesList, testimonialsList, companyInfo } from '../data/companyData';
 import { CTASection } from '../components/common/CTASection';
@@ -75,25 +77,37 @@ const caseStudyPlatforms: Record<string, { component: React.FC<{ className?: str
 // Capability Pillars (replacing unverified aggregate stats)
 const verifiedStats = [
   {
-    value: '🎯',
+    icon: Target,
+    badgeBg: 'bg-blue-50',
+    iconColor: 'text-blue-600',
+    borderColor: 'border-blue-200/80',
     label: 'Hands-On Local Focus',
     labelTe: 'స్థానిక దృష్టి',
     subtext: 'Rajahmundry & East Godavari'
   },
   {
-    value: '📊',
+    icon: BarChart3,
+    badgeBg: 'bg-indigo-50',
+    iconColor: 'text-indigo-600',
+    borderColor: 'border-indigo-200/80',
     label: 'Accountable Ad Spend',
     labelTe: 'జవాబుదారీ ఖర్చు',
     subtext: 'Weekly reports with screenshots'
   },
   {
-    value: '🤝',
+    icon: ShieldCheck,
+    badgeBg: 'bg-emerald-50',
+    iconColor: 'text-emerald-600',
+    borderColor: 'border-emerald-200/80',
     label: 'Zero Lock-In Contracts',
     labelTe: 'లాక్-ఇన్ లేదు',
     subtext: 'Month-to-month flexibility'
   },
   {
-    value: '👤',
+    icon: UserCheck,
+    badgeBg: 'bg-purple-50',
+    iconColor: 'text-purple-600',
+    borderColor: 'border-purple-200/80',
     label: 'Direct Founder Oversight',
     labelTe: 'ఫౌండర్ నేరుగా పని',
     subtext: 'Bhargav on every account'
@@ -196,22 +210,25 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
       <section className="border-b border-stone-200/80 bg-white py-10 sm:py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-            {verifiedStats.map((stat, idx) => (
-              <div
-                key={idx}
-                className="p-4 rounded-2xl bg-[#fafaf9] border border-stone-200/70 text-center hover:border-blue-300 transition-colors"
-              >
-                <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-stone-950 tracking-tight text-blue-600">
-                  {stat.value}
+            {verifiedStats.map((stat, idx) => {
+              const IconComp = stat.icon;
+              return (
+                <div
+                  key={idx}
+                  className="p-5 rounded-2xl bg-[#fafaf9] border border-stone-200/70 text-center hover:border-blue-300 hover:bg-white hover:shadow-xs transition-all group"
+                >
+                  <div className={`w-12 h-12 mx-auto mb-3 rounded-xl ${stat.badgeBg} border ${stat.borderColor} flex items-center justify-center ${stat.iconColor} group-hover:scale-110 transition-transform shadow-2xs`}>
+                    <IconComp className="w-6 h-6" />
+                  </div>
+                  <div className="text-xs sm:text-sm font-bold text-stone-800">
+                    {isTe ? stat.labelTe : stat.label}
+                  </div>
+                  <div className="mt-1 text-[10px] sm:text-[11px] text-stone-500 font-medium">
+                    {stat.subtext}
+                  </div>
                 </div>
-                <div className="mt-1 text-xs font-bold text-stone-800">
-                  {isTe ? stat.labelTe : stat.label}
-                </div>
-                <div className="mt-0.5 text-[10px] text-stone-500 font-medium">
-                  {stat.subtext}
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

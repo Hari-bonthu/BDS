@@ -14,7 +14,10 @@ import {
   Clock,
   Mail,
   Zap,
-  MessageCircle
+  MessageCircle,
+  Target,
+  BarChart3,
+  UserCheck
 } from 'lucide-react';
 import { PageId, Language } from '../types';
 import { asset } from '../utils/asset';
@@ -108,50 +111,50 @@ export const AboutPage: React.FC<AboutPageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-stone-200/80">
 
-            <div className="p-4 sm:px-6 sm:py-2 space-y-1">
-              <div className="text-3xl sm:text-4xl font-black text-stone-950 tracking-tight">
-                🎯
+            <div className="p-4 sm:px-6 sm:py-2 space-y-2 text-center sm:text-left">
+              <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200/80 flex items-center justify-center text-blue-600 shadow-2xs">
+                <Target className="w-5 h-5" />
               </div>
-              <div className="text-xs font-bold text-stone-800">
+              <div className="text-xs sm:text-sm font-bold text-stone-900">
                 {isTe ? 'స్థానిక దృష్టి' : 'Hands-On Local Focus'}
               </div>
-              <div className="text-[11px] text-stone-500">
+              <div className="text-[11px] text-stone-500 font-medium">
                 Rajahmundry &amp; East Godavari
               </div>
             </div>
 
-            <div className="p-4 sm:px-6 sm:py-2 space-y-1">
-              <div className="text-3xl sm:text-4xl font-black text-blue-600 tracking-tight">
-                📊
+            <div className="p-4 sm:px-6 sm:py-2 space-y-2 text-center sm:text-left">
+              <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200/80 flex items-center justify-center text-indigo-600 shadow-2xs">
+                <BarChart3 className="w-5 h-5" />
               </div>
-              <div className="text-xs font-bold text-stone-800">
+              <div className="text-xs sm:text-sm font-bold text-stone-900">
                 {isTe ? 'జవాబుదారీ ఖర్చు' : 'Accountable Ad Spend'}
               </div>
-              <div className="text-[11px] text-stone-500">
+              <div className="text-[11px] text-stone-500 font-medium">
                 Weekly reports with screenshots
               </div>
             </div>
 
-            <div className="p-4 sm:px-6 sm:py-2 space-y-1">
-              <div className="text-3xl sm:text-4xl font-black text-emerald-600 tracking-tight">
-                🤝
+            <div className="p-4 sm:px-6 sm:py-2 space-y-2 text-center sm:text-left">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600 shadow-2xs">
+                <ShieldCheck className="w-5 h-5" />
               </div>
-              <div className="text-xs font-bold text-stone-800">
+              <div className="text-xs sm:text-sm font-bold text-stone-900">
                 {isTe ? 'లాక్-ఇన్ లేదు' : 'Zero Lock-In Contracts'}
               </div>
-              <div className="text-[11px] text-stone-500">
+              <div className="text-[11px] text-stone-500 font-medium">
                 Month-to-month flexibility
               </div>
             </div>
 
-            <div className="p-4 sm:px-6 sm:py-2 space-y-1">
-              <div className="text-3xl sm:text-4xl font-black text-stone-950 tracking-tight">
-                👤
+            <div className="p-4 sm:px-6 sm:py-2 space-y-2 text-center sm:text-left">
+              <div className="w-10 h-10 rounded-xl bg-purple-50 border border-purple-200/80 flex items-center justify-center text-purple-600 shadow-2xs">
+                <UserCheck className="w-5 h-5" />
               </div>
-              <div className="text-xs font-bold text-stone-800">
+              <div className="text-xs sm:text-sm font-bold text-stone-900">
                 {isTe ? 'ఫౌండర్ నేరుగా పని' : 'Direct Founder Oversight'}
               </div>
-              <div className="text-[11px] text-stone-500">
+              <div className="text-[11px] text-stone-500 font-medium">
                 Bhargav on every account
               </div>
             </div>
