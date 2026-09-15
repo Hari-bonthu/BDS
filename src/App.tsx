@@ -367,9 +367,10 @@ export default function App() {
         language={language}
       />
 
-      {/* Floating Action Buttons: Direct Call & WhatsApp */}
+      {/* Floating Action Buttons: Direct Call, WhatsApp & Instant FAQ Bot */}
       <FloatingQuickActions
         onOpenQuoteModal={() => handleOpenQuoteModal()}
+        language={language}
       />
     </div>
   );

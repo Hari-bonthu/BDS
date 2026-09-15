@@ -14,9 +14,9 @@ export const companyInfo = {
   whatsappMessage: 'Hello Bhargav Digital Solutions! I would like to inquire about digital marketing services for my business in Rajahmundry.',
   socialLinks: {
     instagram: 'https://www.instagram.com/bhargavdigitalsolutions/',
-    facebook: 'https://www.facebook.com/bhargavdigitalsolutions/',
+    facebook: 'https://www.facebook.com/bhargavdigitalsolutions',
     youtube: 'https://www.youtube.com/@bhargavdigitalsolutions',
-    linkedin: 'https://www.linkedin.com/company/bhargavdigitalsolutions/'
+    linkedin: 'https://www.linkedin.com/company/bhargav-digital-solutions'
   },
   web3FormsAccessKey: (import.meta as any).env?.VITE_WEB3FORMS_ACCESS_KEY || '13ba520c-0e06-4d8d-a819-5a8f69a57821',
   workingHours: 'Mon – Sat: 9:00 AM – 7:30 PM (Sunday by Appointment)',
