@@ -101,7 +101,7 @@ export const FounderPortrait: React.FC<FounderPortraitProps> = ({
                 <p>
                   {companyInfo.founder.bio}
                 </p>
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-slate-700 italic text-xs sm:text-sm border-l-4 border-l-blue-600">
+                <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-slate-700 italic text-xs sm:text-sm">
                   &ldquo;{companyInfo.founder.quote}&rdquo;
                 </div>
               </div>

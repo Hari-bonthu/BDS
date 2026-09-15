@@ -105,7 +105,7 @@ export const FaqBot: React.FC<FaqBotProps> = ({ isOpen, onClose, language = 'en'
       role="dialog"
       aria-modal="false"
       aria-label="BDS FAQ Assistant"
-      className="w-[94vw] sm:w-[400px] bg-white border border-stone-200/90 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[540px] transition-all duration-200 select-text border-t-4 border-t-blue-600 animate-in fade-in slide-in-from-bottom-3"
+      className="w-[94vw] sm:w-[400px] bg-white border border-stone-200/90 rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[540px] transition-all duration-200 select-text animate-in fade-in slide-in-from-bottom-3"
     >
       {/* Redesigned Website Template Header with Authentic BDS Logo */}
       <div className="p-3.5 sm:p-4 bg-white flex items-center justify-between border-b border-stone-200/80">
@@ -221,9 +221,9 @@ export const FaqBot: React.FC<FaqBotProps> = ({ isOpen, onClose, language = 'en'
                   </span>
                 </button>
                 {isExpanded && (
-                  <p className="mt-2 text-xs text-stone-600 leading-relaxed pl-3 border-l-2 border-blue-600 bg-[#fbfbfb] py-2 pr-2 rounded-r-xl font-normal">
+                  <div className="mt-2 text-xs text-stone-600 leading-relaxed p-3 bg-stone-50 rounded-xl font-normal">
                     {isTe ? faq.aTe : faq.a}
-                  </p>
+                  </div>
                 )}
               </div>
             );

@@ -328,8 +328,8 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
                 {activeArticle.title}
               </h2>
 
-              {/* Summary Callout with Clean Left Border */}
-              <div className="border-l-3 border-blue-600 pl-4 py-2 bg-stone-50 text-stone-700 text-sm sm:text-base leading-relaxed italic">
+              {/* Summary Callout with Clean Rounded Container */}
+              <div className="p-4 rounded-xl bg-stone-50 border border-stone-200/80 text-stone-700 text-sm sm:text-base leading-relaxed italic">
                 &ldquo;{activeArticle.summary}&rdquo;
               </div>
 
