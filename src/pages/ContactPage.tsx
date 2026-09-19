@@ -42,6 +42,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpe
 
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [botcheck, setBotcheck] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -57,7 +58,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpe
       email: formData.email,
       service: formData.service,
       budget: formData.budget,
-      notes: formData.message
+      notes: formData.message,
+      botcheck: botcheck ? 'true' : undefined
     });
 
     setLoading(false);
@@ -201,9 +203,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpe
                 <p className="text-xs font-bold uppercase tracking-wider text-emerald-200">
                   Instant Response
                 </p>
-                <h4 className="text-lg font-extrabold text-white">
+                <h3 className="text-lg font-extrabold text-white">
                   Chat on WhatsApp
-                </h4>
+                </h3>
                 <p className="text-xs text-emerald-100 mt-0.5">
                   Direct connection with Founder Bhargav
                 </p>
@@ -241,9 +243,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpe
                   <div className="w-16 h-16 bg-emerald-100 rounded-full flex items-center justify-center mx-auto text-emerald-600 shadow-inner">
                     <CheckCircle2 className="w-9 h-9" />
                   </div>
-                  <h4 className="text-2xl font-extrabold text-slate-900">
+                  <h3 className="text-2xl font-extrabold text-slate-900">
                     Message Successfully Sent!
-                  </h4>
+                  </h3>
                   <p className="text-slate-600 text-sm max-w-md mx-auto leading-relaxed">
                     Thank you, <strong>{formData.name}</strong>! We have received your inquiry for <strong>{formData.businessName || 'your business'}</strong>. Founder Bhargav will connect with you via phone or WhatsApp at <strong>{formData.phone}</strong>.
                   </p>
@@ -276,14 +278,26 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpe
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4 text-left">
+                  {/* Honeypot field for bot mitigation (hidden from users) */}
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    checked={botcheck}
+                    onChange={(e) => setBotcheck(e.target.checked)}
+                  />
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
+                      <label htmlFor="contact-name" className="block text-xs font-bold text-slate-700 mb-1">
                         Your Full Name *
                       </label>
                       <div className="relative">
                         <User className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                         <input
+                          id="contact-name"
                           type="text"
                           required
                           placeholder="e.g. Bhargav / Siva Kumar"
@@ -295,12 +309,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpe
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
+                      <label htmlFor="contact-phone" className="block text-xs font-bold text-slate-700 mb-1">
                         Phone / WhatsApp Number *
                       </label>
                       <div className="relative">
                         <Phone className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                         <input
+                          id="contact-phone"
                           type="tel"
                           required
                           placeholder="e.g. 9704380535"
@@ -314,12 +329,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpe
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
+                      <label htmlFor="contact-business" className="block text-xs font-bold text-slate-700 mb-1">
                         Business Name in Rajahmundry / AP *
                       </label>
                       <div className="relative">
                         <Building className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                         <input
+                          id="contact-business"
                           type="text"
                           required
                           placeholder="e.g. Godavari Silks / Clinic"
@@ -331,12 +347,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpe
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
+                      <label htmlFor="contact-email" className="block text-xs font-bold text-slate-700 mb-1">
                         Email Address
                       </label>
                       <div className="relative">
                         <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
                         <input
+                          id="contact-email"
                           type="email"
                           placeholder="e.g. business@gmail.com"
                           value={formData.email}
@@ -349,10 +366,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpe
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
+                      <label htmlFor="contact-service" className="block text-xs font-bold text-slate-700 mb-1">
                         Primary Service Interested In
                       </label>
                       <select
+                        id="contact-service"
                         value={formData.service}
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-sm font-medium bg-slate-50 focus:ring-2 focus:ring-blue-600 focus:outline-none"
@@ -367,10 +385,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpe
                     </div>
 
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">
+                      <label htmlFor="contact-budget" className="block text-xs font-bold text-slate-700 mb-1">
                         Approximate Monthly Budget
                       </label>
                       <select
+                        id="contact-budget"
                         value={formData.budget}
                         onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                         className="w-full px-3 py-2.5 rounded-xl border border-slate-300 text-sm font-medium bg-slate-50 focus:ring-2 focus:ring-blue-600 focus:outline-none"
@@ -384,10 +403,11 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpe
                   </div>
 
                   <div>
-                    <label className="block text-xs font-bold text-slate-700 mb-1">
+                    <label htmlFor="contact-message" className="block text-xs font-bold text-slate-700 mb-1">
                       Your Business Goals or Questions
                     </label>
                     <textarea
+                      id="contact-message"
                       rows={3}
                       placeholder="Tell us what you want to achieve (e.g. increase customer footfalls, get 50+ local leads, manage Instagram daily)..."
                       value={formData.message}
@@ -398,7 +418,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpe
 
                   {/* Error Message with WhatsApp Direct Fallback */}
                   {errorMessage && (
-                    <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 space-y-2.5 text-xs text-amber-900">
+                    <div role="alert" aria-live="assertive" id="contact-form-error" className="p-4 rounded-2xl bg-amber-50 border border-amber-200 space-y-2.5 text-xs text-amber-900">
                       <p className="font-semibold leading-relaxed">{errorMessage}</p>
                       <a
                         href={contactWaUrl}
@@ -476,9 +496,9 @@ export const ContactPage: React.FC<ContactPageProps> = ({ language = 'en', onOpe
                     </span>
                   </div>
 
-                  <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+                  <h3 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
                     {area.name}
-                  </h4>
+                  </h3>
 
                   <p className="text-xs text-slate-500 leading-relaxed">
                     {area.description}

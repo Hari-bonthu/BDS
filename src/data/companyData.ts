@@ -5,9 +5,9 @@ export const companyInfo = {
   shortName: 'BDS',
   tagline: 'Digital Today, Grow Tomorrow',
   positioning: 'Full-service digital marketing solutions provider, affordably priced for clients across Rajahmundry, East Godavari, and Andhra Pradesh.',
-  phone: '9704380535',
+  phone: '+919704380535',
   phoneDisplay: '+91 97043 80535',
-  email: 'bhargavdigitalsolutions@gmail.com',
+  email: 'contact@bhargavdigitalsolutions.com',
   address: 'Main Road, Danavaipeta, Rajahmundry, East Godavari District, Andhra Pradesh - 533103',
   googleMapsQuery: 'Rajahmundry, East Godavari, Andhra Pradesh',
   whatsappNumber: '919704380535',
@@ -27,8 +27,8 @@ export const companyInfo = {
     { value: 'Founder Led', label: 'Direct Founder Oversight', subtext: 'Bhargav on Every Account' }
   ],
   founder: {
-    name: 'Bhargav',
-    fullName: 'Bhargav (Founder & Digital Growth Strategist)',
+    name: 'Bhargav Daliparthi',
+    fullName: 'Bhargav Daliparthi (Founder & Digital Growth Strategist)',
     role: 'Founder & Lead Growth Strategist',
     bio: 'Bhargav is a passionate digital marketing strategist and entrepreneur dedicated to transforming local and regional businesses in Rajahmundry, Kakinada, and the wider East Godavari region. With deep expertise across paid ad architectures, viral short-form video production, and conversion rate optimization, Bhargav founded Bhargav Digital Solutions (BDS) to bridge the gap between high-ticket agency pricing and the genuine marketing needs of local enterprises. His hands-on, ROI-first philosophy ensures that every marketing rupee invested produces measurable phone calls, walk-ins, and sustained business growth.',
     quote: 'Our mission is simple: provide world-class digital marketing strategies at prices that local businesses can comfortably afford, delivering real customers, not vanity metrics.',
@@ -131,9 +131,9 @@ export const pricingPlans: PricingPlan[] = [
     id: 'starter',
     name: 'Starter Growth',
     tagline: 'Ideal for local retail shops, clinics, and new businesses starting digital marketing.',
-    price: '₹7,999',
-    period: '/month',
-    badge: 'Affordable Entry',
+    price: 'Custom',
+    period: 'upon requirement',
+    badge: 'Tailored Entry',
     idealFor: 'Small local businesses & startups in East Godavari',
     features: [
       '12 Custom High-Resolution Creatives (Bilingual Telugu/English)',
@@ -145,14 +145,14 @@ export const pricingPlans: PricingPlan[] = [
       'WhatsApp Support during business hours'
     ],
     servicesIncluded: ['Content Creation', 'Social Media Management', 'Platform Coverage'],
-    ctaText: 'Choose Starter Plan'
+    ctaText: 'Request Custom Proposal'
   },
   {
     id: 'pro',
     name: 'Business Pro Accelerator',
     tagline: 'Our most popular comprehensive package designed for maximum local market traction and customer inquiries.',
-    price: '₹14,999',
-    period: '/month',
+    price: 'Custom',
+    period: 'upon requirement',
     badge: 'Most Popular',
     popular: true,
     idealFor: 'Established shops, hospitals, institutes & growing brands',
@@ -175,14 +175,14 @@ export const pricingPlans: PricingPlan[] = [
       'Community Management',
       'Reporting & Insights'
     ],
-    ctaText: 'Choose Pro Accelerator'
+    ctaText: 'Request Custom Proposal'
   },
   {
     id: 'dominance',
     name: 'Regional Dominance',
     tagline: 'Complete 360-degree digital takeover for businesses seeking undisputed market leadership in Coastal AP.',
-    price: '₹24,999',
-    period: '/month',
+    price: 'Custom',
+    period: 'upon requirement',
     badge: 'Maximum ROI',
     idealFor: 'Multi-branch showrooms, hospitals, builders & enterprises',
     features: [
@@ -193,8 +193,9 @@ export const pricingPlans: PricingPlan[] = [
       'Content Operations & Dedicated Asset Hub with 4-Hour Turnaround',
       'Dedicated Community Manager for 7-Day DM & Review Management',
       'Google 5-Star Review Acceleration Funnel Setup',
-      'Advanced Conversion Tracking & Real-Time ROI Analytics',
-      'Weekly Strategy Sprints with Bhargav & Priority Support'
+      'Fortnightly On-Location 4K Video Shooting in Rajahmundry',
+      'Real-Time WhatsApp Inquiries Escalation Protocol',
+      'Weekly In-Person / Video Strategy Session with Founder Bhargav'
     ],
     servicesIncluded: [
       'Content Creation',
@@ -205,18 +206,18 @@ export const pricingPlans: PricingPlan[] = [
       'Community Management',
       'Reporting & Insights'
     ],
-    ctaText: 'Choose Dominance Plan'
+    ctaText: 'Request Custom Proposal'
   }
 ];
 
 export const generalFaqs = [
   {
     question: 'Why choose Bhargav Digital Solutions over big Hyderabad or Bangalore agencies?',
-    answer: 'Big metro agencies charge exorbitant retainers (₹50,000+) without understanding the regional dynamics of Rajahmundry and East Godavari. BDS offers localized cultural fluency (Telugu + English), hands-on founder attention from Bhargav, fast response times, and transparent pricing designed specifically for regional business budgets.'
+    answer: 'Big metro agencies charge exorbitant retainers without understanding the regional dynamics of Rajahmundry and East Godavari. BDS offers localized cultural fluency (Telugu + English), hands-on founder attention from Bhargav, fast response times, and transparent pricing tailored specifically to regional business requirements.'
   },
   {
     question: 'How does your affordable pricing model work?',
-    answer: 'We maintain a lean, agile creative team in Rajahmundry with zero bloated agency overheads. We provide transparent, value-driven retainers customized to your exact marketing requirements without high-ticket metro agency markups.'
+    answer: 'We maintain a lean, agile creative team in Rajahmundry with zero bloated agency overheads. We provide transparent, value-driven retainers customized to your exact marketing requirements based on an in-depth requirement analysis during initial consultation.'
   },
   {
     question: 'How quickly will we see results from our marketing campaigns?',

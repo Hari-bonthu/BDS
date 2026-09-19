@@ -38,6 +38,7 @@ const routes = [
   '/insights',
   '/about',
   '/contact',
+  '/services/local-seo',
   '/services/short-form-video-ads',
   '/services/content-creation',
   '/services/social-media-management',

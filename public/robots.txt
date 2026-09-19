@@ -1,6 +1,10 @@
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 User-agent: *
 Allow: /
-Disallow: /scratch/
-Disallow: /.system_generated/
 
 Sitemap: https://www.bhargavdigitalsolutions.com/sitemap.xml

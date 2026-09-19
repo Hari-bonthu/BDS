@@ -355,9 +355,9 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
 
               {/* Key Takeaways */}
               <div className="space-y-3 pt-2">
-                <h4 className="text-xs font-mono font-bold uppercase tracking-wider text-stone-400">
+                <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-stone-400">
                   {isTe ? 'ముఖ్య ముఖ్యాంశాలు (KEY TAKEAWAYS)' : 'STRATEGIC TAKEAWAYS'}
-                </h4>
+                </h3>
                 <div className="space-y-2">
                   {activeArticle.keyTakeaways.map((item, idx) => (
                     <div key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-stone-800 font-medium">

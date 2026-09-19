@@ -377,6 +377,11 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           ========================================================================= */}
       <section className="py-10 sm:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-8">
+            <h2 className="text-2xl sm:text-3xl font-black text-stone-950 tracking-tight">
+              {isTe ? 'మా 7 ప్రధాన డిజిటల్ మార్కెటింగ్ సేవలు' : 'Our 7 Core Digital Marketing Capabilities'}
+            </h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 items-stretch">
             
             {/* 7 Services Cards — Compact & Scannable */}

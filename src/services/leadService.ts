@@ -23,6 +23,7 @@ export interface LeadPayload {
   utmSource?: string;
   utmMedium?: string;
   utmCampaign?: string;
+  botcheck?: string;
   timestamp?: string;
 }
 
@@ -42,21 +43,22 @@ export function getTrackingContext(): {
   if (typeof window === 'undefined') {
     return { landingPage: '/', referrer: '' };
   }
-  try {
-    const params = new URLSearchParams(window.location.search);
-    return {
-      landingPage: window.location.pathname + window.location.search,
-      referrer: document.referrer || '',
-      utmSource: params.get('utm_source') || undefined,
-      utmMedium: params.get('utm_medium') || undefined,
-      utmCampaign: params.get('utm_campaign') || undefined
-    };
-  } catch {
-    return { landingPage: '/', referrer: '' };
-  }
+  const urlParams = new URLSearchParams(window.location.search);
+  return {
+    landingPage: window.location.pathname,
+    referrer: document.referrer || '',
+    utmSource: urlParams.get('utm_source') || undefined,
+    utmMedium: urlParams.get('utm_medium') || undefined,
+    utmCampaign: urlParams.get('utm_campaign') || undefined
+  };
 }
 
 export async function submitLead(payload: LeadPayload): Promise<SubmitLeadResult> {
+  // Silent drop if honeypot is triggered by spam bots
+  if (payload.botcheck) {
+    return { success: true };
+  }
+
   const tracking = getTrackingContext();
   const enrichedPayload: LeadPayload = {
     ...tracking,
@@ -87,7 +89,7 @@ export async function submitLead(payload: LeadPayload): Promise<SubmitLeadResult
         access_key: accessKey || undefined,
         subject: `New ${enrichedPayload.formType === 'growth_audit' ? 'Growth Plan' : 'Direct Contact'} Inquiry: ${enrichedPayload.businessName || enrichedPayload.name}`,
         from_name: 'BDS Website Lead System',
-        to_email: 'bhargavdigitalsolutions@gmail.com',
+        to_email: 'contact@bhargavdigitalsolutions.com',
         ...enrichedPayload
       })
     });

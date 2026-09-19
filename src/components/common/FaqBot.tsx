@@ -149,6 +149,7 @@ export const FaqBot: React.FC<FaqBotProps> = ({ isOpen, onClose, language = 'en'
             type="text"
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
+            aria-label={isTe ? 'ప్రశ్నను వెతకండి' : 'Search FAQ questions'}
             placeholder={isTe ? 'ప్రశ్నను వెతకండి (ధర, కాంట్రాక్ట్, సమయం)...' : 'Search questions (pricing, timeline, contracts)...'}
             className="w-full pl-8 pr-3 py-1.5 rounded-lg border border-stone-200 bg-white text-xs text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 transition-all font-medium"
           />
@@ -156,7 +157,8 @@ export const FaqBot: React.FC<FaqBotProps> = ({ isOpen, onClose, language = 'en'
             <button
               type="button"
               onClick={() => setSearchQuery('')}
-              className="absolute right-2 text-stone-400 hover:text-stone-600 text-xs"
+              aria-label="Clear search"
+              className="absolute right-2 text-stone-400 hover:text-stone-600 text-xs cursor-pointer"
             >
               <X className="w-3 h-3" />
             </button>
@@ -213,7 +215,9 @@ export const FaqBot: React.FC<FaqBotProps> = ({ isOpen, onClose, language = 'en'
                 <button
                   type="button"
                   onClick={() => setExpandedId(isExpanded ? null : faq.id)}
-                  className="w-full text-left flex items-start justify-between gap-2.5 py-1 text-xs sm:text-[13px] font-bold text-stone-900 hover:text-blue-600 transition-colors group"
+                  aria-expanded={isExpanded}
+                  aria-controls={`faq-answer-${faq.id}`}
+                  className="w-full text-left flex items-start justify-between gap-2.5 py-1 text-xs sm:text-[13px] font-bold text-stone-900 hover:text-blue-600 transition-colors group cursor-pointer"
                 >
                   <span className="leading-snug">{isTe ? faq.qTe : faq.q}</span>
                   <span className="p-1 rounded-md text-stone-400 group-hover:text-blue-600 shrink-0 mt-0.5 bg-stone-50 border border-stone-200/60">
@@ -221,7 +225,7 @@ export const FaqBot: React.FC<FaqBotProps> = ({ isOpen, onClose, language = 'en'
                   </span>
                 </button>
                 {isExpanded && (
-                  <div className="mt-2 text-xs text-stone-600 leading-relaxed p-3 bg-stone-50 rounded-xl font-normal">
+                  <div id={`faq-answer-${faq.id}`} className="mt-2 text-xs text-stone-600 leading-relaxed p-3 bg-stone-50 rounded-xl font-normal">
                     {isTe ? faq.aTe : faq.a}
                   </div>
                 )}

@@ -51,6 +51,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   const [email, setEmail] = useState('');
   const [selectedGoals, setSelectedGoals] = useState<string[]>(['Store Footfalls']);
   const [notes, setNotes] = useState('');
+  const [botcheck, setBotcheck] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -68,17 +69,25 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     }
   }, [initialService, isOpen]);
 
-  // Lock body scroll when modal is open
+  // Lock body scroll and listen for Escape key when modal is open
   useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        onClose();
+      }
+    };
+
     if (isOpen) {
       document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
     } else {
       document.body.style.overflow = 'unset';
     }
     return () => {
       document.body.style.overflow = 'unset';
+      window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [isOpen]);
+  }, [isOpen, onClose]);
 
   const toggleGoal = (goal: string) => {
     setSelectedGoals((prev) =>
@@ -99,7 +108,8 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
       email,
       service: selectedService,
       goals: selectedGoals,
-      notes
+      notes,
+      botcheck: botcheck ? 'true' : undefined
     });
 
     setLoading(false);
@@ -153,12 +163,15 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
     >
       <div
         id="quote-consultation-modal-box"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="quote-modal-heading"
         className="relative w-full max-w-xl bg-white rounded-3xl shadow-2xl border border-stone-200 overflow-hidden max-h-[94vh] flex flex-col animate-in zoom-in-95 duration-200"
       >
         {/* Modal Header */}
         <div className="px-6 py-5 border-b border-stone-100 bg-[#fafaf9] flex items-start justify-between gap-4 shrink-0">
           <div className="space-y-1">
-            <h3 className="text-xl sm:text-2xl font-black text-stone-950 tracking-tight">
+            <h3 id="quote-modal-heading" className="text-xl sm:text-2xl font-black text-stone-950 tracking-tight">
               Get a Free Custom Quote
             </h3>
             <p className="text-stone-500 text-xs sm:text-sm">
@@ -232,14 +245,25 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-5 text-left">
+              {/* Honeypot field for bot mitigation (hidden from users) */}
+              <input
+                type="checkbox"
+                name="botcheck"
+                className="hidden"
+                tabIndex={-1}
+                autoComplete="off"
+                checked={botcheck}
+                onChange={(e) => setBotcheck(e.target.checked)}
+              />
               
               {/* Primary Service Selection */}
               <div className="space-y-1.5">
-                <label className="block text-xs font-bold uppercase tracking-wider text-stone-700">
+                <label htmlFor="quote-service" className="block text-xs font-bold uppercase tracking-wider text-stone-700">
                   Primary Service Needed *
                 </label>
                 <div className="relative">
                   <select
+                    id="quote-service"
                     value={selectedService}
                     onChange={(e) => setSelectedService(e.target.value)}
                     required
@@ -261,12 +285,13 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               {/* Business Name & Contact Person Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div className="space-y-1.5">
-                  <label className="block text-xs font-bold text-stone-700">
+                  <label htmlFor="quote-business" className="block text-xs font-bold text-stone-700">
                     Business / Brand Name *
                   </label>
                   <div className="relative">
                     <Building className="w-4 h-4 text-stone-400 absolute left-3.5 top-3.5" />
                     <input
+                      id="quote-business"
                       type="text"
                       required
                       placeholder="e.g. Godavari Silks / Smile Care"
@@ -278,12 +303,13 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="block text-xs font-bold text-stone-700">
+                  <label htmlFor="quote-name" className="block text-xs font-bold text-stone-700">
                     Your Name *
                   </label>
                   <div className="relative">
                     <User className="w-4 h-4 text-stone-400 absolute left-3.5 top-3.5" />
                     <input
+                      id="quote-name"
                       type="text"
                       required
                       placeholder="e.g. Ramesh Kumar"
@@ -298,7 +324,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               {/* Phone / WhatsApp & Email Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div className="space-y-1.5">
-                  <label className="block text-xs font-bold text-stone-700">
+                  <label htmlFor="quote-phone" className="block text-xs font-bold text-stone-700">
                     Phone / WhatsApp Number *
                   </label>
                   <div className="relative flex items-center">
@@ -314,6 +340,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                       <span>+91</span>
                     </div>
                     <input
+                      id="quote-phone"
                       type="tel"
                       required
                       placeholder="98765 43210"
@@ -325,12 +352,13 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 </div>
 
                 <div className="space-y-1.5">
-                  <label className="block text-xs font-bold text-stone-700">
-                    Email Address <span className="text-stone-400 font-normal">(Optional)</span>
+                  <label htmlFor="quote-email" className="block text-xs font-bold text-stone-700">
+                    Email Address <span className="text-stone-500 font-normal">(Optional)</span>
                   </label>
                   <div className="relative">
                     <Mail className="w-4 h-4 text-stone-400 absolute left-3.5 top-3.5" />
                     <input
+                      id="quote-email"
                       type="email"
                       placeholder="yourname@gmail.com"
                       value={email}
@@ -344,7 +372,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
               {/* Interactive Marketing Goals Selector */}
               <div className="space-y-2">
                 <label className="block text-xs font-bold text-stone-700 uppercase tracking-wider">
-                  Primary Growth Goals <span className="text-stone-400 font-normal">(Tap to select)</span>
+                  Primary Growth Goals <span className="text-stone-500 font-normal">(Tap to select)</span>
                 </label>
                 <div className="flex flex-wrap gap-1.5">
                   {goalOptions.map((goal) => {
@@ -370,10 +398,11 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
               {/* Optional Message */}
               <div className="space-y-1.5">
-                <label className="block text-xs font-bold text-stone-700">
-                  Any Specific Requirements or Notes? <span className="text-stone-400 font-normal">(Optional)</span>
+                <label htmlFor="quote-notes" className="block text-xs font-bold text-stone-700">
+                  Any Specific Requirements or Notes? <span className="text-stone-500 font-normal">(Optional)</span>
                 </label>
                 <textarea
+                  id="quote-notes"
                   rows={2}
                   placeholder="e.g. We are opening a new showroom near Kotipalli and need footfalls within 15 days..."
                   value={notes}
@@ -384,7 +413,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
               {/* Error Message with WhatsApp Direct Fallback */}
               {errorMessage && (
-                <div className="p-4 rounded-2xl bg-amber-50 border border-amber-200 space-y-2.5 text-xs text-amber-900">
+                <div role="alert" aria-live="assertive" id="quote-form-error" className="p-4 rounded-2xl bg-amber-50 border border-amber-200 space-y-2.5 text-xs text-amber-900">
                   <p className="font-semibold leading-relaxed">{errorMessage}</p>
                   <a
                     href={`https://wa.me/${companyInfo.whatsappNumber}?text=${formattedWaMessage}`}

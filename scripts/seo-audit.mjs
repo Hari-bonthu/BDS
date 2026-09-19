@@ -39,6 +39,7 @@ const ROUTES = [
   '/insights',
   '/about',
   '/contact',
+  '/services/local-seo',
   '/services/short-form-video-ads',
   '/services/content-creation',
   '/services/social-media-management',
@@ -110,12 +111,16 @@ function parseRawHtmlMetadata(html) {
   const titleMatch = html.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
   const title = titleMatch ? decodeHtml(titleMatch[1].trim()) : null;
 
-  const descMatch = html.match(/<meta[^>]*name=["']description["'][^>]*content=["']([^"']*)["'][^>]*>/i)
-    || html.match(/<meta[^>]*content=["']([^"']*)["'][^>]*name=["']description["'][^>]*>/i);
+  const descMatch = html.match(/<meta[^>]*name=["']description["'][^>]*content="([^"]*)"/i)
+    || html.match(/<meta[^>]*name=["']description["'][^>]*content='([^']*)'/i)
+    || html.match(/<meta[^>]*content="([^"]*)"[^>]*name=["']description["']/i)
+    || html.match(/<meta[^>]*content='([^']*)'[^>]*name=["']description["']/i);
   const description = descMatch ? decodeHtml(descMatch[1].trim()) : null;
 
-  const canonicalMatch = html.match(/<link[^>]*rel=["']canonical["'][^>]*href=["']([^"']*)["'][^>]*>/i)
-    || html.match(/<link[^>]*href=["']([^"']*)["'][^>]*rel=["']canonical["'][^>]*>/i);
+  const canonicalMatch = html.match(/<link[^>]*rel=["']canonical["'][^>]*href="([^"]*)"/i)
+    || html.match(/<link[^>]*rel=["']canonical["'][^>]*href='([^']*)'/i)
+    || html.match(/<link[^>]*href="([^"]*)"[^>]*rel=["']canonical["']/i)
+    || html.match(/<link[^>]*href='([^']*)'[^>]*rel=["']canonical["']/i);
   const canonical = canonicalMatch ? decodeHtml(canonicalMatch[1].trim()) : null;
 
   const robotsMatch = html.match(/<meta[^>]*name=["']robots["'][^>]*content=["']([^"']*)["'][^>]*>/i);

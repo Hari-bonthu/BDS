@@ -110,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div className="relative" ref={dropdownRef}>
               <div className="inline-flex items-center">
                 <a
-                  href="/services"
+                  href="/services/"
                   onClick={(e) => {
                     e.preventDefault();
                     handleNavClick('services');
@@ -129,6 +129,8 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onClick={() => setServicesDropdownOpen(!servicesDropdownOpen)}
                   onMouseEnter={() => setServicesDropdownOpen(true)}
                   aria-label="Toggle services menu"
+                  aria-expanded={servicesDropdownOpen}
+                  aria-haspopup="menu"
                   className="p-1 -ml-1 text-stone-400 hover:text-stone-700 cursor-pointer"
                 >
                   <ChevronDown className="w-3.5 h-3.5" />
@@ -141,7 +143,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   className="absolute left-0 mt-1.5 w-72 bg-white rounded-2xl shadow-xl border border-stone-200 p-2.5 space-y-1 animate-in fade-in zoom-in-95 duration-150"
                 >
                   <a
-                    href="/services"
+                    href="/services/"
                     onClick={(e) => {
                       e.preventDefault();
                       handleNavClick('services');
@@ -154,7 +156,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   {servicesList.map((srv) => (
                     <a
                       key={srv.id}
-                      href={`/services/${srv.id}`}
+                      href={`/services/${srv.id}/`}
                       onClick={(e) => {
                         e.preventDefault();
                         handleNavClick(srv.id);
@@ -170,7 +172,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* Results (points to portfolio) */}
             <a
-              href="/portfolio"
+              href="/portfolio/"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('portfolio');
@@ -188,7 +190,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* About */}
             <a
-              href="/about"
+              href="/about/"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('about');
@@ -204,7 +206,7 @@ export const Navbar: React.FC<NavbarProps> = ({
 
             {/* Insights */}
             <a
-              href="/insights"
+              href="/insights/"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('insights');
@@ -222,7 +224,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           {/* Right: Contact + Language Toggle + Action CTA */}
           <div className="hidden lg:flex items-center space-x-3">
             <a
-              href="/contact"
+              href="/contact/"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('contact');
@@ -264,6 +266,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg text-stone-700 hover:bg-stone-100 cursor-pointer"
               aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-navigation-drawer"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -273,7 +277,10 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Mobile Navigation Drawer */}
         {mobileMenuOpen && (
-          <div className="lg:hidden pt-4 pb-6 border-t border-stone-200 mt-3 space-y-2">
+          <div
+            id="mobile-navigation-drawer"
+            className="lg:hidden mt-3 pt-3 border-t border-stone-200/80 space-y-1.5 pb-2 animate-in slide-in-from-top-2 duration-150"
+          >
             <a
               href="/"
               onClick={(e) => {
@@ -287,7 +294,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               Home
             </a>
             <a
-              href="/services"
+              href="/services/"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('services');
@@ -299,7 +306,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               {t.services}
             </a>
             <a
-              href="/portfolio"
+              href="/portfolio/"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('portfolio');
@@ -312,7 +319,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             </a>
 
             <a
-              href="/about"
+              href="/about/"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('about');
@@ -324,7 +331,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               {t.about}
             </a>
             <a
-              href="/insights"
+              href="/insights/"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('insights');
@@ -336,7 +343,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               {t.insights}
             </a>
             <a
-              href="/contact"
+              href="/contact/"
               onClick={(e) => {
                 e.preventDefault();
                 handleNavClick('contact');

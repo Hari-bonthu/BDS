@@ -46,7 +46,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
           </span>
           <span className="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-full border border-slate-200 shadow-xs">
             <CheckCircle2 className="w-4 h-4 text-blue-600" />
-            <span>Packages Starting ₹7,999/mo</span>
+            <span>Tailored Custom Plans</span>
           </span>
         </div>
 

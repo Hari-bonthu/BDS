@@ -49,6 +49,11 @@ interface ServiceDetailPageProps {
 
 // Map authentic platform logos to each service
 const serviceLogoMap: Record<string, { component: React.FC<{ className?: string }>; label: string }[]> = {
+  'local-seo': [
+    { component: GoogleMapsLogo, label: 'Google Maps 3-Pack' },
+    { component: GoogleLogo, label: 'Google Business Profile' },
+    { component: InquiriesLogo, label: 'Direct Calls & Inquiries' }
+  ],
   'content-creation': [
     { component: CreativesLogo, label: 'Custom Creatives' },
     { component: InstagramLogo, label: 'Instagram Feed' },
@@ -89,6 +94,11 @@ const serviceLogoMap: Record<string, { component: React.FC<{ className?: string 
 
 // Map high-definition editorial production images to each service
 const serviceHeroImageMap: Record<string, { src: string; caption: string; captionTe: string }> = {
+  'local-seo': {
+    src: asset('assets/service-local-seo.webp'),
+    caption: 'Google Maps 3-Pack: Local pack visibility, authentic review acquisition & direct calls',
+    captionTe: 'గూగుల్ మ్యాప్స్ 3-ప్యాక్: స్థానిక విజిబిలిటీ, జెన్యూన్ రివ్యూలు & కాల్స్'
+  },
   'content-creation': {
     src: asset('assets/service-content-creation.webp'),
     caption: 'Production desk: Bilingual Telugu creative direction & festive campaign assets',
@@ -128,6 +138,11 @@ const serviceHeroImageMap: Record<string, { src: string; caption: string; captio
 
 // Map campaign concept imagery to services (sector-generic, no fictional client names)
 const serviceCaseProofMap: Record<string, { src: string; client: string; result: string }> = {
+  'local-seo': {
+    src: asset('assets/campaign-dental.webp'),
+    client: 'Dental & Healthcare Practice Concept',
+    result: 'Local SEO & Google Maps 3-Pack rank acceleration driving 3.4x monthly appointment inquiries'
+  },
   'content-creation': {
     src: asset('assets/campaign-silks.webp'),
     client: 'Textile & Saree Retail Concept',
@@ -208,6 +223,81 @@ interface ServiceCustomFlow {
 }
 
 const serviceBespokeFlows: Record<string, ServiceCustomFlow> = {
+  'local-seo': {
+    sectionTitle: 'What BDS Delivers for Google Maps & Local SEO Dominance',
+    sectionTitleTe: 'గూగుల్ మ్యాప్స్ మరియు లోకల్ SEO కోసం మేము అందించే సేవలు',
+    sectionSubtitle: 'Dominate the Google Local 3-Pack across Rajahmundry, Danavaipeta, Kotipalli, and Morampudi. Capture customer phone calls right when they are ready to purchase.',
+    sectionSubtitleTe: 'రాజమండ్రి మరియు పరిసర ప్రాంతాలలో గూగుల్ మ్యాప్స్‌లో అగ్రస్థానంలో నిలిచి కస్టమర్ కాల్స్ పొందండి.',
+    operationalItems: [
+      {
+        number: '01',
+        title: 'Google Business Profile Optimization & Audit',
+        titleTe: 'గూగుల్ బిజినెస్ ప్రొఫైల్ ఆడిట్ & ఆప్టిమైజేషన్',
+        description: 'Complete category clustering, keyword-rich business descriptions, and geo-tagged showroom/clinic photo uploads with clean EXIF coordinates.',
+        descriptionTe: 'సరైన కేటగిరీ ఎంపిక, కీవర్డ్లతో కూడిన వివరణ మరియు జియో-ట్యాగ్ చేయబడిన ఫోటోల అప్‌లోడ్.',
+        deliverables: ['Primary & secondary category alignment', 'Local search keyword clustering', 'Weekly geo-tagged photos'],
+        deliverablesTe: ['సరైన కేటగిరీల ఎంపిక', 'స్థానిక కీవర్డ్స్ ఆప్టిమైజేషన్', 'వీక్లీ జియో-ట్యాగ్డ్ ఫోటోస్']
+      },
+      {
+        number: '02',
+        title: 'NAP Directory Standardization & Citations',
+        titleTe: 'డైరెక్టరీ సైటేషన్స్ & స్థానిక లిస్టింగ్స్',
+        description: 'Synchronizing Name, Address, and Phone across Justdial, Sulekha, IndiaMART, and regional portals to build search engine authority.',
+        descriptionTe: 'జస్ట్‌డయల్, సులేఖ మరియు ఇతర డైరెక్టరీలలో ఒకే విధమైన పేరు, చిరునామా మరియు ఫోన్ నంబర్ అప్‌డేట్.',
+        deliverables: ['25+ Verified Indian citations', 'Duplicate listing suppression', 'RFC 3966 phone formatting'],
+        deliverablesTe: ['25+ వెరిఫైడ్ సైటేషన్స్', 'డూప్లికేట్ లిస్టింగ్స్ తొలగింపు', 'ఖచ్చితమైన కాంటాక్ట్ సమాచారం']
+      },
+      {
+        number: '03',
+        title: '5-Star Review Generation Funnel',
+        titleTe: '5-స్టార్ గూగుల్ రివ్యూల సేకరణ',
+        description: 'Custom branded in-store QR code standees and automated WhatsApp follow-ups that turn happy customers into verified 5-star Google reviews.',
+        descriptionTe: 'కౌంటర్ వద్ద ఉంచే కస్టమ్ క్యూఆర్ కోడ్ మరియు వాట్సాప్ ద్వారా కస్టమర్ల నుండి రివ్యూల సేకరణ.',
+        deliverables: ['Counter QR standee designs', 'WhatsApp review prompts', 'Keyword-rich owner review responses'],
+        deliverablesTe: ['క్యూఆర్ కోడ్ స్టాండీ డిజైన్', 'వాట్సాప్ ఫాలో-అప్ టెంప్లేట్స్', 'కీవర్డ్స్‌తో కూడిన ఓనర్ రెస్పాన్స్']
+      },
+      {
+        number: '04',
+        title: 'Localized Schema & GeoCoordinates Markup',
+        titleTe: 'లోకల్ బిజినెస్ స్కీమా మార్కప్',
+        description: 'Embedding LocalBusiness JSON-LD structured data and geo-coordinates into your website to dominate local search snippets.',
+        descriptionTe: 'గూగుల్ సెర్చ్‌లో వేగంగా ర్యాంక్ అవ్వడానికి వెబ్‌సైట్‌లో లోకల్ బిజినెస్ స్కీమా కోడ్ ఇంప్లిమెంటేషన్.',
+        deliverables: ['Schema.org LocalBusiness JSON-LD', 'AreaServed neighborhood mapping', 'Core Web Vitals mobile speed'],
+        deliverablesTe: ['స్కీమా.ఆర్గ్ లోకల్ బిజినెస్ కోడ్', 'ఏరియా సర్వ్డ్ మ్యాపింగ్', 'మొబైల్ స్పీడ్ ఆప్టిమైజేషన్']
+      }
+    ],
+    workflowEyebrow: '5-STEP LOCAL RANKING METHODOLOGY',
+    workflowTitle: 'How We Rank Your Business in Google Maps 3-Pack',
+    workflowTitleTe: 'గూగుల్ మ్యాప్స్‌లో టాప్ ర్యాంక్ సాధించే 5-దశల విధానం',
+    workflowSubtitle: 'A battle-tested 5-step blueprint that transforms your local presence into verified customer phone calls within 45 to 90 days.',
+    workflowSubtitleTe: '45 నుండి 90 రోజుల్లో మీ వ్యాపారానికి కస్టమర్ ఫోన్ కాల్స్ పెంచే పద్ధతి.',
+    workflowSteps: [
+      { step: '01', timeline: 'Week 1', title: 'GBP & Competitor Audit', titleTe: 'ప్రొఫైల్ & కాంపిటీటర్ ఆడిట్', description: 'Comprehensive audit of Google Business Profile categories, eliminating dilution and identifying local search volume in Rajahmundry.', descriptionTe: 'మీ ప్రస్తుత ర్యాంకింగ్స్ మరియు పోటీదారుల వివరాల సమగ్ర పరిశీలన.' },
+      { step: '02', timeline: 'Week 2', title: 'NAP Directory Standardization', titleTe: 'డైరెక్టరీ స్టాండర్డైజేషన్', description: 'Synchronizing Name, Address, and Phone across Justdial, Sulekha, and local directories to build unshakeable location trust.', descriptionTe: 'అన్ని ప్రముఖ భారతీయ డైరెక్టరీలలో చిరునామా సరిదిద్దడం.' },
+      { step: '03', timeline: 'Week 3', title: 'On-Page Local Schema Injection', titleTe: 'ఆన్-పేజ్ స్కీమా మార్కప్', description: 'Embedding schema.org LocalBusiness markup, GPS coordinates, and neighborhood signals directly into your website code.', descriptionTe: 'వెబ్‌సైట్‌లో లోకల్ సెర్చ్ సిగ్నల్స్ మరియు స్కీమా కోడింగ్.' },
+      { step: '04', timeline: 'Week 4', title: 'Automated Review Funnel Launch', titleTe: 'రివ్యూ ఫన్నెల్ ప్రారంభం', description: 'Deploying custom reception QR standees and polite WhatsApp review request prompts to satisfied patients or buyers.', descriptionTe: 'కౌంటర్ వద్ద క్యూఆర్ స్టాండీలు మరియు కస్టమర్ రివ్యూ టెంప్లేట్స్ అమర్చడం.' },
+      { step: '05', timeline: 'Monthly', title: 'Geo-Grid Tracking & Updates', titleTe: 'ర్యాంకింగ్ ట్రాకింగ్ & అప్‌డేట్స్', description: 'Monitoring kilometer-by-kilometer map rankings across Danavaipeta, Kotipalli, and Morampudi, publishing regular local posts.', descriptionTe: 'ప్రతి ఏరియాలో ర్యాంకులను పరిశీలిస్తూ నిరంతరం ప్రొఫైల్ అప్‌డేట్ చేయడం.' }
+    ],
+    specialFeature: {
+      tag: 'AI SEARCH CITABILITY • THE BDS METHODOLOGY',
+      title: 'How Does Bhargav Digital Solutions Rank Local Businesses in Google Maps 3-Pack?',
+      titleTe: 'రాజమండ్రిలో లోకల్ SEO & మ్యాప్స్ 3-ప్యాక్ ఆధిక్యత',
+      description: 'Bhargav Digital Solutions executes a structured five-step Local SEO methodology designed to rank Rajahmundry and East Godavari businesses within Google\'s local 3-Pack. First, BDS conducts a comprehensive audit of Google Business Profile (GBP) categories, eliminating category dilution and selecting high-intent primary classifications. Second, the agency performs strict Name, Address, and Phone (NAP) standardization across prominent Indian business directories, including Justdial, Sulekha, and IndiaMART. Third, BDS implements localized on-page SEO by embedding schema.org LocalBusiness JSON-LD markup and geo-tagged coordinates into the client website. Fourth, BDS deploys an authentic customer review generation funnel with automated WhatsApp prompts and keyword-rich owner review responses. Finally, BDS generates local relevance signals through geo-targeted photo uploads and location-specific service pages. This data-driven framework typically delivers measurable map ranking improvements, increased direction requests, and verified inbound phone calls within 45 to 90 days.',
+      descriptionTe: 'రాజమండ్రి మరియు తూర్పు గోదావరి వ్యాపారాలకు గూగుల్ మ్యాప్స్ 3-ప్యాక్‌లో అగ్రస్థానం సాధించడానికి BDS 5-దశల నిరూపితమైన లోకల్ SEO విధానాన్ని అమలు చేస్తుంది.',
+      bullets: [
+        'Elimination of GBP category dilution & high-intent category clustering',
+        'Strict NAP consistency across Justdial, Sulekha, and regional portals',
+        'In-store QR code standees + automated WhatsApp review generation funnel',
+        'Complete schema.org LocalBusiness JSON-LD markup with GPS coordinates'
+      ],
+      bulletsTe: [
+        'ఖచ్చితమైన కేటగిరీ ఎంపిక మరియు కీవర్డ్ క్లస్టరింగ్',
+        'ప్రముఖ డైరెక్టరీలలో ఒకే విధమైన కాంటాక్ట్ సమాచారం',
+        'కౌంటర్ క్యూఆర్ కోడ్స్ మరియు వాట్సాప్ రివ్యూ సిస్టమ్',
+        'వెబ్‌సైట్‌లో స్కీమా మార్కప్ మరియు జియో-కోఆర్డినేట్స్'
+      ]
+    }
+  },
   'content-creation': {
     sectionTitle: 'What BDS Actually Delivers Every Month',
     sectionTitleTe: 'ప్రతినెలా మేము అందించే క్రియేటివ్ డెలివరబుల్స్',

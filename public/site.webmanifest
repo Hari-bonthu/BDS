@@ -1,0 +1,30 @@
+{
+  "name": "Bhargav Digital Solutions",
+  "short_name": "BDS",
+  "description": "Digital Marketing Agency in Rajahmundry helping local businesses grow through Local SEO, social media, video marketing and performance campaigns.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0247fe",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/assets/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

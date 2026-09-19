@@ -10,6 +10,7 @@ export type PageId =
   | 'contact'
   | 'privacy'
   | 'terms'
+  | 'local-seo'
   | 'content-creation'
   | 'short-form-video-ads'
   | 'social-media-management'

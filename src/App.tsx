@@ -111,60 +111,74 @@ export default function App() {
 
   // Dynamic Head Metadata Synchronization for SEO & Search Crawlers
   useEffect(() => {
-    const metaMap: Record<string, { title: string; desc: string; canonical: string }> = {
+    const metaMap: Record<string, { title: string; desc: string; canonical: string; image?: string }> = {
       home: {
         title: 'Bhargav Digital Solutions | Digital Marketing Agency in Rajahmundry',
-        desc: 'Bhargav Digital Solutions is a digital marketing agency in Rajahmundry helping local businesses grow through Local SEO, social media, video marketing and performance campaigns.',
-        canonical: 'https://www.bhargavdigitalsolutions.com/'
+        desc: "Bhargav Digital Solutions is Rajahmundry's results-driven digital marketing agency specializing in Local SEO, Google Maps 3-Pack, Telugu Reels and Meta Ads.",
+        canonical: 'https://www.bhargavdigitalsolutions.com/',
+        image: 'https://www.bhargavdigitalsolutions.com/assets/logo-bds.png'
       },
       services: {
         title: 'Digital Marketing Services in Rajahmundry | BDS',
-        desc: 'Explore BDS digital marketing services including Local SEO, social media, video content and performance marketing for businesses in Rajahmundry and the wider region.',
-        canonical: 'https://www.bhargavdigitalsolutions.com/services/'
+        desc: 'Explore BDS digital marketing services: Local SEO, Google Maps 3-Pack, Telugu Reels, and Meta Ads for businesses in Rajahmundry and Coastal Andhra.',
+        canonical: 'https://www.bhargavdigitalsolutions.com/services/',
+        image: 'https://www.bhargavdigitalsolutions.com/assets/campaign-silks.webp'
       },
       pricing: {
-        title: 'Contact BDS | Digital Marketing Agency in Rajahmundry',
-        desc: 'Contact Bhargav Digital Solutions for a growth consultation, Local SEO, social media, content or performance marketing support.',
-        canonical: 'https://www.bhargavdigitalsolutions.com/contact/'
+        title: 'Growth Consultation & Tailored Proposals | BDS Rajahmundry',
+        desc: 'Schedule a free growth strategy consultation with Founder Bhargav. Get tailored digital marketing proposals for your Rajahmundry business.',
+        canonical: 'https://www.bhargavdigitalsolutions.com/contact/',
+        image: 'https://www.bhargavdigitalsolutions.com/assets/logo-bds.png'
       },
       portfolio: {
         title: 'Digital Marketing Portfolio & Campaign Concepts | BDS',
-        desc: 'Explore BDS campaign concepts and sample creative direction across local-business marketing, social media, video and performance campaigns.',
-        canonical: 'https://www.bhargavdigitalsolutions.com/portfolio/'
+        desc: 'Explore BDS campaign concepts and performance frameworks across Local SEO, Meta Ads, and video production for businesses in Rajahmundry.',
+        canonical: 'https://www.bhargavdigitalsolutions.com/portfolio/',
+        image: 'https://www.bhargavdigitalsolutions.com/assets/campaign-silks.webp'
       },
       insights: {
         title: 'Digital Marketing & Local SEO Insights | BDS',
-        desc: 'Practical digital marketing, Local SEO, social media and growth insights from Bhargav Digital Solutions.',
-        canonical: 'https://www.bhargavdigitalsolutions.com/insights/'
+        desc: 'Actionable digital marketing guides, Local SEO playbooks, and video advertising strategies from Bhargav Digital Solutions in Rajahmundry.',
+        canonical: 'https://www.bhargavdigitalsolutions.com/insights/',
+        image: 'https://www.bhargavdigitalsolutions.com/assets/campaign-dental.webp'
       },
       about: {
         title: 'About Bhargav Digital Solutions | BDS Rajahmundry',
-        desc: 'Learn about Bhargav Digital Solutions (BDS), a Rajahmundry-based digital marketing team focused on practical local growth, content and performance marketing.',
-        canonical: 'https://www.bhargavdigitalsolutions.com/about/'
+        desc: 'Learn about Bhargav Digital Solutions (BDS), an agile Rajahmundry digital marketing agency providing direct founder strategy and transparent ROI.',
+        canonical: 'https://www.bhargavdigitalsolutions.com/about/',
+        image: 'https://www.bhargavdigitalsolutions.com/assets/Bhargav_Headshot.webp'
       },
       contact: {
         title: 'Contact BDS | Digital Marketing Agency in Rajahmundry',
-        desc: 'Contact Bhargav Digital Solutions for a growth consultation, Local SEO, social media, content or performance marketing support.',
-        canonical: 'https://www.bhargavdigitalsolutions.com/contact/'
+        desc: 'Contact Bhargav Digital Solutions for a free 20-minute growth session. Local SEO, Telugu Reels, and performance ad campaigns in Rajahmundry.',
+        canonical: 'https://www.bhargavdigitalsolutions.com/contact/',
+        image: 'https://www.bhargavdigitalsolutions.com/assets/logo-bds.png'
       },
       privacy: {
         title: 'Privacy Policy | Bhargav Digital Solutions',
-        desc: 'Read the Bhargav Digital Solutions privacy policy and information about website forms, analytics and data handling.',
+        desc: 'Read the official privacy policy of Bhargav Digital Solutions (BDS), detailing our strict commitments to visitor data protection and compliance.',
         canonical: 'https://www.bhargavdigitalsolutions.com/privacy/'
       },
       terms: {
         title: 'Terms of Service | Bhargav Digital Solutions',
-        desc: 'Read the terms governing use of the Bhargav Digital Solutions website and services.',
+        desc: 'Review the terms of service governing website use, growth consultations, and digital marketing engagements with Bhargav Digital Solutions.',
         canonical: 'https://www.bhargavdigitalsolutions.com/terms/'
+      },
+      'local-seo': {
+        title: 'Local SEO & Google Maps 3-Pack Agency in Rajahmundry | BDS',
+        desc: 'Rank #1 on Google Maps in Rajahmundry and East Godavari. Google Business Profile optimization, local citations, and 5-star review acquisition by BDS.',
+        canonical: 'https://www.bhargavdigitalsolutions.com/services/local-seo/',
+        image: 'https://www.bhargavdigitalsolutions.com/assets/service-local-seo.webp'
       },
       'short-form-video-ads': {
         title: 'Targeted Instagram Reels & Performance Meta Ads in Rajahmundry | BDS',
-        desc: 'Native Telugu video scripting, on-location 4K shooting in Rajahmundry, targeted reels editing, and Meta Ads Manager setup for cost-effective local leads.',
-        canonical: 'https://www.bhargavdigitalsolutions.com/services/short-form-video-ads/'
+        desc: 'Native Telugu video scripting, on-location 4K shooting in Rajahmundry, targeted reels editing, and Meta Ads Manager setup for cost-effective leads.',
+        canonical: 'https://www.bhargavdigitalsolutions.com/services/short-form-video-ads/',
+        image: 'https://www.bhargavdigitalsolutions.com/assets/campaign-silks.webp'
       },
       'content-creation': {
         title: 'Bilingual Social Media Creatives & Ads Design | Rajahmundry | BDS',
-        desc: 'High-resolution Telugu and English post designs, festival campaign banners, educational carousels, and custom brand graphics for businesses in Rajahmundry & East Godavari.',
+        desc: 'High-resolution Telugu and English post designs, festival banners, educational carousels, and custom brand graphics for businesses in Rajahmundry.',
         canonical: 'https://www.bhargavdigitalsolutions.com/services/content-creation/'
       },
       'social-media-management': {
@@ -174,17 +188,18 @@ export default function App() {
       },
       'platform-coverage': {
         title: 'Google Maps 3-Pack & Local SEO Optimization | Rajahmundry | BDS',
-        desc: 'Google Maps 3-Pack optimization in Rajahmundry. Google Business Profile management, local keyword geo-tagging, and citation syncing.',
-        canonical: 'https://www.bhargavdigitalsolutions.com/services/platform-coverage/'
+        desc: 'Google Maps 3-Pack optimization in Rajahmundry. Google Business Profile management, local keyword geo-tagging, and multi-platform citation syncing.',
+        canonical: 'https://www.bhargavdigitalsolutions.com/services/platform-coverage/',
+        image: 'https://www.bhargavdigitalsolutions.com/assets/campaign-dental.webp'
       },
       'content-operations': {
         title: 'Centralized Digital Asset Management & Agile Turnaround | Rajahmundry | BDS',
-        desc: 'Cloud asset library for all brand media, 30-day advance rolling content calendar, and rapid promo turnaround for seasonal campaigns.',
+        desc: 'Cloud asset library for all brand media, 30-day advance rolling content calendar, and rapid promotional turnaround for seasonal business campaigns.',
         canonical: 'https://www.bhargavdigitalsolutions.com/services/content-operations/'
       },
       'community-management': {
         title: 'Prompt Lead Handling & WhatsApp Routing | Rajahmundry | BDS',
-        desc: '7-day direct message and comment monitoring, instant WhatsApp lead routing to owner, and proactive customer reputation management.',
+        desc: '7-day direct message and comment monitoring, instant WhatsApp lead routing to owner, and proactive customer reputation management in Rajahmundry.',
         canonical: 'https://www.bhargavdigitalsolutions.com/services/community-management/'
       },
       'reporting-insights': {
@@ -230,6 +245,17 @@ export default function App() {
     const twDescEl = document.querySelector('meta[name="twitter:description"]');
     if (twDescEl) {
       twDescEl.setAttribute('content', currentMeta.desc);
+    }
+
+    if (currentMeta.image) {
+      const ogImgEl = document.querySelector('meta[property="og:image"]');
+      if (ogImgEl) {
+        ogImgEl.setAttribute('content', currentMeta.image);
+      }
+      const twImgEl = document.querySelector('meta[name="twitter:image"]');
+      if (twImgEl) {
+        twImgEl.setAttribute('content', currentMeta.image);
+      }
     }
   }, [currentPage]);
 

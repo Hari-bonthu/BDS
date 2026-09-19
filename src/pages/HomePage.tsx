@@ -935,7 +935,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   <div className="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-xs">
                     01
                   </div>
-                  <h4 className="text-xs font-bold text-stone-900">Direct Senior Access</h4>
+                  <h3 className="text-xs font-bold text-stone-900">Direct Senior Access</h3>
                   <p className="text-[11px] text-stone-500 leading-snug">No account managers or junior interns between you and the strategist.</p>
                 </div>
 
@@ -943,7 +943,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   <div className="w-7 h-7 rounded-lg bg-cyan-50 text-cyan-600 flex items-center justify-center font-bold text-xs">
                     02
                   </div>
-                  <h4 className="text-xs font-bold text-stone-900">Regional Resonance</h4>
+                  <h3 className="text-xs font-bold text-stone-900">Regional Resonance</h3>
                   <p className="text-[11px] text-stone-500 leading-snug">Native Telugu copy and scripts tuned to Godavari shopping behavior.</p>
                 </div>
 
@@ -951,7 +951,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                   <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center font-bold text-xs">
                     03
                   </div>
-                  <h4 className="text-xs font-bold text-stone-900">Verified Outcomes</h4>
+                  <h3 className="text-xs font-bold text-stone-900">Verified Outcomes</h3>
                   <p className="text-[11px] text-stone-500 leading-snug">Tracked lead forms, calls, and showroom walk-ins, not vanity impressions.</p>
                 </div>
               </div>
@@ -969,6 +969,51 @@ export const HomePage: React.FC<HomePageProps> = ({
             </div>
 
           </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          05.5 — AI SEARCH CITABILITY & FREQUENTLY ASKED QUESTIONS
+          ========================================================================= */}
+      <section className="py-16 sm:py-24 bg-white border-t border-stone-200">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+          
+          <div className="text-center space-y-3">
+            <span className="text-xs font-extrabold uppercase tracking-widest text-blue-600">
+              Agency Overview &amp; Pricing Insights
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-black text-stone-950 tracking-tight">
+              Essential Answers About Digital Marketing in Rajahmundry
+            </h2>
+            <p className="text-sm text-stone-500 max-w-xl mx-auto">
+              Direct, transparent information about BDS agency services, localized capabilities, and tailored growth partnerships.
+            </p>
+          </div>
+
+          <div className="space-y-8 divide-y divide-stone-200">
+            
+            {/* Passage 1: Brand Entity Definition */}
+            <div className="pt-8 first:pt-0 space-y-3">
+              <h2 className="text-xl sm:text-2xl font-black text-stone-950 tracking-tight">
+                What Services Does Bhargav Digital Solutions Provide in Rajahmundry?
+              </h2>
+              <p className="text-sm sm:text-base text-stone-700 leading-relaxed">
+                Bhargav Digital Solutions (BDS) is a regional digital marketing and growth marketing agency headquartered in Danavaipeta, Rajahmundry, Andhra Pradesh. The agency specializes in hyper-local customer acquisition for small-to-medium businesses across the East Godavari region, including Kakinada, Amalapuram, and Rajahmundry. BDS provides four core services: Local SEO and Google Maps 3-Pack ranking optimization; end-to-end short-form video production specializing in high-converting Telugu-language Instagram Reels and YouTube Shorts; full-funnel Meta and Google advertising management; and direct WhatsApp lead generation pipelines. Unlike traditional metro advertising agencies that rely on outsourced talent and generic English ad templates, Bhargav Digital Solutions is founder-led by Bhargav Daliparthi, providing direct strategy, native Telugu cultural copywriting, transparent weekly ROI reporting, and custom pricing tailored upon consulting and client requirements. All campaigns are engineered to convert digital visibility into physical footfall and direct phone inquiries.
+              </p>
+            </div>
+
+            {/* Passage 4: Custom Pricing Structure */}
+            <div className="pt-8 space-y-3">
+              <h2 className="text-xl sm:text-2xl font-black text-stone-950 tracking-tight">
+                How Is Digital Marketing Pricing Structured at Bhargav Digital Solutions?
+              </h2>
+              <p className="text-sm sm:text-base text-stone-700 leading-relaxed">
+                Digital marketing engagements at Bhargav Digital Solutions are structured on a custom basis following an in-depth requirement analysis and consulting session. Rather than enforcing rigid package rates, BDS assesses the business's specific growth stage, target geographic radius across Rajahmundry and East Godavari, video production cadence, and campaign objectives. Custom proposals can encompass Google Business Profile and Local SEO optimization, on-location 4K Telugu video reel production, Meta and Google paid ad campaigns, or full-funnel WhatsApp lead generation. Every client agreement is month-to-month with zero forced annual contracts and zero agency markups on direct ad spend. Business owners receive complete transparency, dedicated founder oversight from Bhargav Daliparthi, and measurable return on investment tailored directly to their operational budget.
+              </p>
+            </div>
+
+          </div>
+
         </div>
       </section>
 

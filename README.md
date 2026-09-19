@@ -20,7 +20,7 @@
 
 ---
 
-## 📌 Overview
+## Overview
 
 **Bhargav Digital Solutions (BDS)** is a premier full-service digital marketing agency headquartered on **Main Road, Danavaipeta, Rajahmundry, Andhra Pradesh**. Built to challenge overpriced metro agencies and ineffective generic freelancers, BDS delivers hyper-local, bilingual (Telugu + English) marketing systems tailored specifically to retail showrooms, healthcare clinics, builders, and service firms across East Godavari and Coastal Andhra.
 
@@ -28,28 +28,28 @@ This repository contains the complete production web application, engineered as 
 
 ---
 
-## 🚀 Key Features & Multi-Page Architecture
+## Key Features & Multi-Page Architecture
 
 The platform features an authentic, comprehensive multi-page experience:
 
 ### 1. Homepage (`/`)
-- **Hero Spotlight**: High-conversion hero with direct WhatsApp integration, free quote trigger, and studio portrait cutout of Founder Bhargav with trust indicators.
+- **Hero Spotlight**: High-conversion hero with direct WhatsApp integration, free quote trigger, and studio portrait cutout of Founder Bhargav Daliparthi with trust indicators.
 - **Key Agency Metrics**: 120+ regional campaigns, 10x average ROAS, 98% retention, and ₹15L+ tracked revenue.
 - **Interactive ROI & Budget Estimator**: Dynamic slider estimating monthly reach, qualified lead volume, and ROI based on industry category and ad budget.
 - **Google Maps 3-Pack Proof Showcase**: Visual proof of ranking local businesses #1 on Google Maps for high-intent search terms.
 - **Hyper-Local Neighborhood Coverage**: Regional chips targeting Danavaipeta, Main Road, Kotipalli, Morampudi, Kambala Tank, Kakinada, Amalapuram, and Mandapeta.
 - **Client Case Studies Snapshot**: Verified metrics for regional leaders (*Sri Srinivasa Silks*, *Smile Craft Dental*, *Godavari Meadows*).
-- **Founder Story & Philosophy**: Founder Bhargav's hands-on approach and commitment to transparent pricing.
+- **Founder Story & Philosophy**: Founder Bhargav Daliparthi's hands-on approach and commitment to transparent pricing.
 
 ### 2. Services Hub (`/services`) & 7 Dedicated Deep-Dives
 Each service has its own dedicated page with bespoke deliverables, 30-day timelines, pricing tiers, FAQs, and case study proofs:
-1. **[Short-Form Video & Viral Reel Ads (`/services/short-form-video-ads`)](file:///c:/Users/DELL/Desktop/BDS/BDS_Website/src/pages/ServiceDetailPage.tsx)** — Native Telugu scripting, on-location 4K shooting in Rajahmundry, viral Reels editing, and high-ROAS Meta Ads Manager campaigns.
-2. **[Content Creation & Social Design (`/services/content-creation`)](file:///c:/Users/DELL/Desktop/BDS/BDS_Website/src/pages/ServiceDetailPage.tsx)** — Bilingual festival banners, educational carousels, and aesthetic brand creatives starting at ₹4,499/mo.
-3. **[100% Hands-Off Social Media Management (`/services/social-media-management`)](file:///c:/Users/DELL/Desktop/BDS/BDS_Website/src/pages/ServiceDetailPage.tsx)** — Daily feed curation, Instagram Stories, local hashtag research, bio optimization, and follower acceleration.
-4. **[Platform Coverage & Google Maps Local SEO (`/services/platform-coverage`)](file:///c:/Users/DELL/Desktop/BDS/BDS_Website/src/pages/ServiceDetailPage.tsx)** — Google Business Profile optimization, geo-tagging, citation syncing across 40+ directories, and review collection funnels.
-5. **[Content Operations & Cloud Asset Library (`/services/content-operations`)](file:///c:/Users/DELL/Desktop/BDS/BDS_Website/src/pages/ServiceDetailPage.tsx)** — 30-day rolling content calendars, raw 4K footage archiving, and 4-hour emergency turnaround for flash sales.
-6. **[Community Management & WhatsApp Triage (`/services/community-management`)](file:///c:/Users/DELL/Desktop/BDS/BDS_Website/src/pages/ServiceDetailPage.tsx)** — Under-15-minute lead qualification, automated WhatsApp routing, and 5-star review collection.
-7. **[Reporting & ROI Insights (`/services/reporting-insights`)](file:///c:/Users/DELL/Desktop/BDS/BDS_Website/src/pages/ServiceDetailPage.tsx)** — Plain-English monthly ROI reports tracking ad spend vs. revenue, with monthly 1-on-1 strategy sprints with Founder Bhargav.
+1. **[Short-Form Video & Viral Reel Ads (`/services/short-form-video-ads`)](./src/pages/ServiceDetailPage.tsx)** — Native Telugu scripting, on-location 4K shooting in Rajahmundry, viral Reels editing, and high-ROAS Meta Ads Manager campaigns.
+2. **[Content Creation & Social Design (`/services/content-creation`)](./src/pages/ServiceDetailPage.tsx)** — Bilingual festival banners, educational carousels, and aesthetic brand creatives.
+3. **[100% Hands-Off Social Media Management (`/services/social-media-management`)](./src/pages/ServiceDetailPage.tsx)** — Daily feed curation, Instagram Stories, local hashtag research, bio optimization, and follower acceleration.
+4. **[Platform Coverage & Google Maps Local SEO (`/services/platform-coverage`)](./src/pages/ServiceDetailPage.tsx)** — Google Business Profile optimization, geo-tagging, citation syncing across 40+ directories, and review collection funnels.
+5. **[Content Operations & Cloud Asset Library (`/services/content-operations`)](./src/pages/ServiceDetailPage.tsx)** — 30-day rolling content calendars, raw 4K footage archiving, and 4-hour emergency turnaround for flash sales.
+6. **[Community Management & WhatsApp Triage (`/services/community-management`)](./src/pages/ServiceDetailPage.tsx)** — Under-15-minute lead qualification, automated WhatsApp routing, and 5-star review collection.
+7. **[Reporting & ROI Insights (`/services/reporting-insights`)](./src/pages/ServiceDetailPage.tsx)** — Plain-English monthly ROI reports tracking ad spend vs. revenue, with monthly 1-on-1 strategy sprints with Founder Bhargav Daliparthi.
 
 ### 3. Pricing & Packages (`/pricing`)
 - **Tier 1: Starter Presence (₹4,499/mo)** — Ideal for local shops and clinic launches.
@@ -85,7 +85,7 @@ Each service has its own dedicated page with bespoke deliverables, 30-day timeli
 
 ---
 
-## 🔍 SEO & Search Console Architecture
+## SEO & Search Console Architecture
 
 To ensure 100% crawlability and optimal ranking on Google Search Console:
 
@@ -102,18 +102,17 @@ To ensure 100% crawlability and optimal ranking on Google Search Console:
 
 4. **Schema.org Structured Data**:
    - Injected in `index.html` with JSON-LD graphs for:
-     - `ProfessionalService` & `LocalBusiness` (Geo-coordinates, opening hours, area served, telephone, address)
-     - `AggregateRating` & Client `Review` items
+     - `WebSite` & `ProfessionalService` (Geo-coordinates, opening hours, area served, telephone, address)
      - `OfferCatalog` detailing the agency's primary service offerings
      - `FAQPage` with rich snippet answers for regional voice search
 
 5. **Sitemaps & Robots**:
-   - [`public/sitemap.xml`](file:///c:/Users/DELL/Desktop/BDS/BDS_Website/public/sitemap.xml): Covers all main pages, 7 dedicated service paths, and key commercial neighborhood landing URLs.
-   - [`public/robots.txt`](file:///c:/Users/DELL/Desktop/BDS/BDS_Website/public/robots.txt): Configured for full indexing with explicit sitemap declaration.
+   - [`public/sitemap.xml`](./public/sitemap.xml): Covers all main pages, 7 dedicated service paths, and key commercial neighborhood landing URLs.
+   - [`public/robots.txt`](./public/robots.txt): Configured for full indexing with explicit sitemap declaration.
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 | Category | Technology | Description |
 | :--- | :--- | :--- |
@@ -128,7 +127,7 @@ To ensure 100% crawlability and optimal ranking on Google Search Console:
 
 ---
 
-## 📁 Project Directory Structure
+## Project Directory Structure
 
 ```text
 BDS_Website/
@@ -179,7 +178,7 @@ BDS_Website/
 
 ---
 
-## 💻 Local Development
+## Local Development
 
 ### Prerequisites
 - [Node.js](https://nodejs.org/) (version 20.x or higher recommended)
@@ -223,42 +222,42 @@ BDS_Website/
 
 ---
 
-## 🌐 CI/CD & GitHub Pages Deployment
+## CI/CD & GitHub Pages Deployment
 
-The repository is equipped with an automated, production-grade deployment workflow: [`.github/workflows/deploy.yml`](file:///c:/Users/DELL/Desktop/BDS/BDS_Website/.github/workflows/deploy.yml).
+The repository is equipped with an automated, production-grade deployment workflow: [`.github/workflows/deploy.yml`](./.github/workflows/deploy.yml).
 
 ### How It Works:
 1. **Push Trigger**: Any push to the `main` branch (or manual `workflow_dispatch`) automatically triggers the pipeline.
 2. **Dynamic Base Path Configuration**:
    - The workflow uses `actions/configure-pages@v5` to detect the repository environment (`/BDS` on GitHub Pages or `/` on a custom domain).
-   - [`vite.config.ts`](file:///c:/Users/DELL/Desktop/BDS/BDS_Website/vite.config.ts) dynamically injects this path during `npm run build`.
+   - [`vite.config.ts`](./vite.config.ts) dynamically injects this path during `npm run build`.
 3. **Artifact Deployment**:
    - `actions/upload-pages-artifact@v3` packages the `dist/` directory.
    - `actions/deploy-pages@v4` publishes the application directly to GitHub Pages.
 4. **Clean SPA Direct Navigation**:
-   - Direct visits or refreshes on nested paths (e.g. `/services/short-form-video-ads`) are caught by [`public/404.html`](file:///c:/Users/DELL/Desktop/BDS/BDS_Website/public/404.html), passed to `index.html` via query string, and restored cleanly by the SPA script via `window.history.replaceState` — ensuring no broken pages and no hashtag pollution.
+   - Direct visits or refreshes on nested paths (e.g. `/services/short-form-video-ads`) are caught by [`public/404.html`](./public/404.html), passed to `index.html` via query string, and restored cleanly by the SPA script via `window.history.replaceState` — ensuring no broken pages and no hashtag pollution.
 
 ### Activating GitHub Pages in Your Repository:
 1. Navigate to: `https://github.com/Hari-bonthu/BDS/settings/pages`
 2. Under **Build and deployment** > **Source**, select **GitHub Actions**.
 3. Push to `main` — your live site will be deployed at:
-   **`https://hari-bonthu.github.io/BDS/`** (or your configured custom domain `https://bhargavdigitalsolutions.com/`).
+   **`https://www.bhargavdigitalsolutions.com/`** (or `https://hari-bonthu.github.io/BDS/`).
 
 ---
 
-## 📞 Business Information & Contact
+## Business Information & Contact
 
 - **Agency**: Bhargav Digital Solutions (BDS)
 - **Headquarters**: Main Road, Danavaipeta, Rajahmundry, East Godavari, AP - 533103
-- **Founder**: Bhargav (Lead Digital Growth Strategist)
+- **Founder**: Bhargav Daliparthi (Lead Digital Growth Strategist)
 - **Direct Phone**: [+91 97043 80535](tel:+919704380535)
 - **WhatsApp**: [+91 97043 80535](https://wa.me/919704380535)
-- **Email**: [bhargavdigitalsolutions@gmail.com](mailto:bhargavdigitalsolutions@gmail.com)
+- **Email**: [contact@bhargavdigitalsolutions.com](mailto:contact@bhargavdigitalsolutions.com)
 - **Working Hours**: Mon–Sat: 9:00 AM – 7:30 PM IST (Sunday by Appointment)
 
 ---
 
-## 📄 License
+## License
 
 Proprietary © 2026 **Bhargav Digital Solutions (BDS)**. All rights reserved.
 Unauthorized copying, duplication, or distribution of this code, design assets, or media is strictly prohibited.

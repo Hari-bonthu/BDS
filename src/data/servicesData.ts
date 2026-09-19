@@ -2,6 +2,152 @@ import { ServiceDetail } from '../types';
 
 export const servicesList: ServiceDetail[] = [
   {
+    id: 'local-seo',
+    slug: 'local-seo',
+    title: 'Local SEO & Google Maps 3-Pack',
+    shortTitle: 'Local SEO',
+    tagline: 'Rank #1 on Google Maps in Rajahmundry & East Godavari',
+    description: 'Dominate local search results and capture customer calls right when they search for your services. We execute complete Google Business Profile optimization, localized citation building, geo-targeted schema markup, and 5-star review acceleration funnels.',
+    iconName: 'MapPin',
+    category: 'Local Search & Maps',
+    highlightMetric: '#1 Rank Focus',
+    highlightMetricLabel: 'Google Maps 3-Pack & High-Intent Call Inquiries',
+    startingPrice: 'Custom / Tailored Upon Consultation',
+    whatsIncluded: [
+      {
+        title: 'Google Business Profile (GBP) Mastery',
+        description: 'Complete audit and restructuring of your Google Maps listing to trigger Google Local 3-Pack placement.',
+        points: [
+          'Primary and secondary category clustering to eliminate category dilution',
+          'High-converting business description packed with local East Godavari search entities',
+          'Weekly geo-tagged showroom/clinic photo uploads with EXIF metadata',
+          'Product and service catalogue synchronization with direct call-to-action buttons'
+        ]
+      },
+      {
+        title: 'Regional Citation & Directory Building',
+        description: 'Strict Name, Address, and Phone (NAP) synchronization across authoritative Indian directory ecosystems.',
+        points: [
+          'Direct citation creation on Justdial, Sulekha, IndiaMART, and regional portals',
+          'Duplicate listing suppression and cleanup to fix conflicting location signals',
+          'Consistent phone number formatting (RFC 3966) and precise GPS coordinates',
+          'Hyper-local backlinks from East Godavari portals and business associations'
+        ]
+      },
+      {
+        title: '5-Star Review Generation Funnel',
+        description: 'Convert satisfied walk-in customers into verified 5-star Google reviews consistently.',
+        points: [
+          'Custom branded QR code standees designed for reception desks and billing counters',
+          'Automated WhatsApp review request templates for post-purchase follow-up',
+          'Keyword-rich owner responses to every customer review for enhanced local relevance',
+          'Negative feedback mitigation protocol to resolve customer disputes privately'
+        ]
+      },
+      {
+        title: 'Localized On-Page & Schema Architecture',
+        description: 'Embed search engine signals directly into your website code to outrank regional competitors.',
+        points: [
+          'Schema.org LocalBusiness, ProfessionalService, and GeoCoordinates JSON-LD implementation',
+          'Neighborhood targeting covering Danavaipeta, Kotipalli, Morampudi, and Kakinada',
+          'Optimized Google Maps iframe integration and mobile tap-to-call buttons',
+          'Core Web Vitals acceleration ensuring instant mobile loading speeds'
+        ]
+      }
+    ],
+    benefits: [
+      {
+        title: 'Direct High-Intent Phone Calls',
+        description: 'Customers searching "near me" or looking up your category on Google Maps are ready to buy immediately.',
+        stat: 'High-Intent Inquiries'
+      },
+      {
+        title: 'Unrivaled Regional Credibility',
+        description: 'A verified Google Maps listing with 50+ authentic reviews builds instant customer trust in Rajahmundry.',
+        stat: 'Top-3 Visibility'
+      },
+      {
+        title: 'Zero Per-Click Advertising Cost',
+        description: 'Unlike paid Google Ads that stop working when your budget ends, organic Local 3-Pack rankings drive continuous free inquiries.',
+        stat: 'Compounding ROI'
+      }
+    ],
+    process: [
+      {
+        step: '01',
+        title: 'Comprehensive Local Audit',
+        description: 'We audit your existing Google Business Profile, audit competitor rankings in Rajahmundry, and identify NAP inconsistencies.'
+      },
+      {
+        step: '02',
+        title: 'GBP Architecture & Optimization',
+        description: 'We align primary and secondary categories, craft keyword-optimized service catalogs, and upload geo-tagged imagery.'
+      },
+      {
+        step: '03',
+        title: 'NAP Directory Standardization',
+        description: 'We build and claim verified business citations across top Indian platforms including Justdial, Sulekha, and local directories.'
+      },
+      {
+        step: '04',
+        title: 'Automated Review Funnel Deployment',
+        description: 'We set up in-store QR code cards and WhatsApp review request prompts for your satisfied customers.'
+      },
+      {
+        step: '05',
+        title: 'Rank Tracking & Monthly Growth',
+        description: 'We monitor geo-grid map rankings across Rajahmundry neighborhoods and continuously publish localized updates.'
+      }
+    ],
+    deliverables: [
+      'Complete Google Business Profile (GBP) Setup & Optimization',
+      '25+ High-Authority Indian Directory Citations with NAP Consistency',
+      'Branded In-Store QR Standee Artwork for Review Collection',
+      'Schema.org LocalBusiness JSON-LD Implementation for Website',
+      'Weekly Geo-Tagged Photo Updates & Promotional Posts on Maps',
+      'Monthly Geo-Grid Ranking Report Tracking Keyword Positions'
+    ],
+    targetAudience: [
+      'Multi-Speciality Hospitals, Dental Clinics, Eye Care & Diagnostic Centers',
+      'Textile Showrooms, Silk Stores, Boutiques & Jewelry Retailers',
+      'Restaurants, Fine-Dining Cafes & Banquet Halls in Rajahmundry',
+      'Real Estate Builders, Apartment Promoters & Architecture Firms',
+      'Coaching Centers, Professional Academies & Driving Schools'
+    ],
+    sampleWorkPreview: [
+      {
+        title: 'Dental Healthcare Google Maps 3-Pack Takeover',
+        type: 'Local SEO & Review Acceleration Blueprint',
+        description: 'Optimized local listing and structured citation building for a Rajahmundry dental clinic, moving from unranked to #1 on Google Maps.',
+        impact: '3.4x increase in direct phone calls and 65+ new verified 5-star patient reviews'
+      },
+      {
+        title: 'Textile Showroom Regional Search Authority',
+        type: 'Geo-Targeted Local Search Campaign',
+        description: 'Dominating bridal wear and festival shopping search terms across Danavaipeta and Kotipalli commercial hubs.',
+        impact: '180% surge in Google Maps direction requests during wedding season'
+      }
+    ],
+    faqs: [
+      {
+        question: 'How long does it take to rank in Google Maps 3-Pack in Rajahmundry?',
+        answer: 'Most local businesses see noticeable ranking improvements within 30 to 45 days of NAP cleanup and GBP optimization. Reaching top-3 positions for competitive keywords typically takes 60 to 90 days of consistent review velocity and local posting.'
+      },
+      {
+        question: 'What is NAP consistency and why does it matter?',
+        answer: 'NAP stands for Name, Address, and Phone number. Google compares your NAP information across the web. If your phone number or address varies between your website, Justdial, and Google Maps, Google loses trust in your location and lowers your map ranking.'
+      },
+      {
+        question: 'Can I rank on Google Maps if I do not have a commercial physical storefront?',
+        answer: 'Yes! Google allows service-area businesses (SAB) to hide their residential address while designating specific service areas (like Rajahmundry, Kakinada, and East Godavari). You can fully rank on Google Maps while protecting your home privacy.'
+      },
+      {
+        question: 'How do you help us get more genuine 5-star Google reviews?',
+        answer: 'We provide custom-designed QR code standees for your front billing counter or reception, coupled with gentle WhatsApp review follow-up templates that make leaving a review effortless for happy customers in under 30 seconds.'
+      }
+    ]
+  },
+  {
     id: 'content-creation',
     slug: 'content-creation',
     title: 'Content Creation',
@@ -12,7 +158,7 @@ export const servicesList: ServiceDetail[] = [
     category: 'Creative & Strategy',
     highlightMetric: 'High-Impact',
     highlightMetricLabel: 'Bilingual Creatives Designed for Regional Trust',
-    startingPrice: '₹4,999/mo',
+    startingPrice: 'Custom / Tailored Upon Consultation',
     whatsIncluded: [
       {
         title: 'Custom Brand Visuals & Graphics',
@@ -137,7 +283,7 @@ export const servicesList: ServiceDetail[] = [
     category: 'Performance & Paid Ads',
     highlightMetric: 'Targeted',
     highlightMetricLabel: 'Tracked Return on Ad Spend (ROAS) Focus',
-    startingPrice: '₹6,999/mo',
+    startingPrice: 'Custom / Tailored Upon Consultation',
     whatsIncluded: [
       {
         title: 'Short-Form Video Production (Reels & Shorts)',
@@ -239,7 +385,7 @@ export const servicesList: ServiceDetail[] = [
     faqs: [
       {
         question: 'What is the minimum ad budget required for Meta/Google Ads?',
-        answer: 'You can start with as little as ₹200 to ₹500 per day for ad spend. We optimize every rupee to ensure maximum return before scaling up.'
+        answer: 'Ad spend budgets are flexible and tailored to your targets and growth phase. We optimize every rupee to ensure maximum return before scaling up.'
       },
       {
         question: 'Do we need to provide video clips or will you help?',
@@ -262,7 +408,7 @@ export const servicesList: ServiceDetail[] = [
     category: 'Organic Growth',
     highlightMetric: 'Compounding',
     highlightMetricLabel: 'Consistent Organic Reach & Active Follower Engagement',
-    startingPrice: '₹5,499/mo',
+    startingPrice: 'Custom / Tailored Upon Consultation',
     whatsIncluded: [
       {
         title: 'Channel Optimization & Branding',
@@ -386,7 +532,7 @@ export const servicesList: ServiceDetail[] = [
     category: 'Omnichannel Presence',
     highlightMetric: 'Complete',
     highlightMetricLabel: 'Google Maps & Local Search Profile Optimization',
-    startingPrice: '₹4,499/mo',
+    startingPrice: 'Custom / Tailored Upon Consultation',
     whatsIncluded: [
       {
         title: 'Google Business Profile & Local Maps Optimization',
@@ -506,7 +652,7 @@ export const servicesList: ServiceDetail[] = [
     category: 'Operations & Workflow',
     highlightMetric: 'Organized',
     highlightMetricLabel: 'Centralized Asset Pipelines & Timely Delivery',
-    startingPrice: '₹5,999/mo',
+    startingPrice: 'Custom / Tailored Upon Consultation',
     whatsIncluded: [
       {
         title: 'Centralized Content Asset Management (DAM)',
@@ -619,7 +765,7 @@ export const servicesList: ServiceDetail[] = [
     category: 'Reputation & Conversions',
     highlightMetric: 'Prompt',
     highlightMetricLabel: 'Inquiry Triage & Direct WhatsApp Routing',
-    startingPrice: '₹4,999/mo',
+    startingPrice: 'Custom / Tailored Upon Consultation',
     whatsIncluded: [
       {
         title: 'DM & WhatsApp Inquiry Handling',
@@ -732,7 +878,7 @@ export const servicesList: ServiceDetail[] = [
     category: 'Analytics & ROI',
     highlightMetric: 'Full',
     highlightMetricLabel: 'Transparent ROI Tracking with Zero Fluff',
-    startingPrice: '₹3,999/mo',
+    startingPrice: 'Custom / Tailored Upon Consultation',
     whatsIncluded: [
       {
         title: 'Plain-English Monthly ROI Reports',
