@@ -10,8 +10,8 @@ Updated on 2026-09-22. Execute in the order below. Each executor: read the plan 
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **017** | [Section 1: High-Impact Visual Proof — Before/After Comparison Slider & Kinetic Number Ticker](./017-visual-proof-before-after-slider-number-ticker.md) | **P1** | M (2–3h) | — | **DONE** |
 | **018** | [Section 2: Layout & Grid — Interactive Bento Grid & Sticky Timeline Progression](./018-layout-bento-grid-timeline.md) | **P2** | M (2h) | 017 | **DONE** |
-| **019** | [Section 3: Trust & Authority — Smooth Infinite Marquee & Spotlight Glowing Border Cards](./019-trust-marquee-card-spotlight.md) | **P2** | S (1.5h) | 018 | **TODO** |
-| **020** | Section 4: Conversion Accelerators — Shimmer Button Glow CTA & Floating Mobile Action Dock | **P1** | M (2h) | — | **PENDING** |
+| **019** | [Section 3: Trust & Authority — Smooth Infinite Marquee & Spotlight Glowing Border Cards](./019-trust-marquee-card-spotlight.md) | **P2** | S (1.5h) | 018 | **DONE** |
+| **020** | [Section 4: Conversion Accelerators — Shimmer Button Glow CTA & Floating Mobile Action Dock](./020-conversion-shimmer-button-floating-dock.md) | **P1** | M (2h) | 019 | **TODO** |
 | **021** | Section 5: Content & Article Experience — Minimal Scroll Progress Indicator & Interactive TOC | **P3** | S (1h) | — | **PENDING** |
 
 ---

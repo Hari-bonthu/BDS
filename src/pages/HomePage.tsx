@@ -23,6 +23,8 @@ import {
   InquiriesLogo
 } from '../components/common/PlatformLogos';
 import { NumberTicker } from '@/components/ui/number-ticker';
+import { Marquee } from '@/components/ui/marquee';
+import { CardSpotlight } from '@/components/ui/card-spotlight';
 
 const parseMetricValue = (val: string) => {
   const match = val.match(/^([^\d.]*)(\d+(?:\.\d+)?)(.*)$/);
@@ -285,21 +287,21 @@ export const HomePage: React.FC<HomePageProps> = ({
           </p>
         </div>
 
-        {/* Slow, Elegant Continuous Client Names Marquee (No Boxes, No Cards, No Shadows) */}
+        {/* Slow, Elegant Continuous Client Names Marquee with Edge Gradient Masks */}
         <div className="relative w-full overflow-hidden">
-          <div className="animate-marquee flex items-center gap-12 sm:gap-16 py-1">
-            {[...trustedClients, ...trustedClients, ...trustedClients].map((client, idx) => (
-              <div key={idx} className="flex items-center gap-3 shrink-0 group">
+          <Marquee pauseOnHover repeat={3} duration={32} gradient gradientColor="from-white">
+            {trustedClients.map((client, idx) => (
+              <div key={idx} className="flex items-center gap-3 shrink-0 group px-3">
                 <span className="text-[11px] font-mono font-bold tracking-widest text-stone-400 group-hover:text-blue-600 transition-colors uppercase border-b border-stone-300 pb-0.5">
                   {client.mark}
                 </span>
                 <span className="text-sm sm:text-base font-bold text-stone-800 group-hover:text-blue-600 tracking-tight transition-colors whitespace-nowrap">
                   {client.name}
                 </span>
-                <span className="w-1.5 h-1.5 rounded-full bg-stone-300 ml-8 shrink-0" />
+                <span className="w-1.5 h-1.5 rounded-full bg-stone-300 ml-6 shrink-0" />
               </div>
             ))}
-          </div>
+          </Marquee>
         </div>
       </section>
 
@@ -768,11 +770,11 @@ export const HomePage: React.FC<HomePageProps> = ({
             </p>
           </div>
 
-          {/* 3 Pillar Cards */}
+          {/* 3 Pillar Cards with Cursor Spotlight Glow */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             {/* Pillar 1 */}
-            <div className="rounded-3xl bg-stone-900 border border-stone-700/60 p-7 space-y-5 hover:border-blue-500/50 transition-colors">
+            <CardSpotlight className="p-7 space-y-5">
               <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center shrink-0">
                 <TrendingUp className="w-5 h-5 text-blue-400" />
               </div>
@@ -786,10 +788,10 @@ export const HomePage: React.FC<HomePageProps> = ({
                     : 'You know where every rupee goes. Weekly reports with real screenshots — including what didn\'t work and why.'}
                 </p>
               </div>
-            </div>
+            </CardSpotlight>
 
             {/* Pillar 2 */}
-            <div className="rounded-3xl bg-stone-900 border border-stone-700/60 p-7 space-y-5 hover:border-blue-500/50 transition-colors">
+            <CardSpotlight className="p-7 space-y-5">
               <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center shrink-0">
                 <MapPin className="w-5 h-5 text-blue-400" />
               </div>
@@ -803,10 +805,10 @@ export const HomePage: React.FC<HomePageProps> = ({
                     : 'We know the Rajahmundry market. Campaigns built in Telugu, for local audiences — not repurposed Hyderabad agency templates.'}
                 </p>
               </div>
-            </div>
+            </CardSpotlight>
 
             {/* Pillar 3 */}
-            <div className="rounded-3xl bg-stone-900 border border-stone-700/60 p-7 space-y-5 hover:border-blue-500/50 transition-colors">
+            <CardSpotlight className="p-7 space-y-5">
               <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center shrink-0">
                 <User className="w-5 h-5 text-blue-400" />
               </div>
@@ -820,7 +822,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                     : 'No junior team hand-off. Bhargav personally runs your account, answers your calls, and owns your results.'}
                 </p>
               </div>
-            </div>
+            </CardSpotlight>
 
           </div>
         </div>
