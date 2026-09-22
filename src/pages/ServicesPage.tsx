@@ -27,6 +27,7 @@ import {
   LeadGenLogo,
   InquiriesLogo
 } from '../components/common/PlatformLogos';
+import { BentoGrid, BentoCard } from '../components/ui/bento-grid';
 
 interface ServicesPageProps {
   language?: Language;
@@ -382,83 +383,113 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
               {isTe ? 'మా 7 ప్రధాన డిజిటల్ మార్కెటింగ్ సేవలు' : 'Our 7 Core Digital Marketing Capabilities'}
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 items-stretch">
+          <BentoGrid className="items-stretch">
             
-            {/* 7 Services Cards — Compact & Scannable */}
-            {servicesCatalog.map((service) => (
-              <div
-                key={service.id}
-                id={`service-${service.id}`}
-                className="rounded-2xl bg-white border border-stone-200/90 p-5 sm:p-6 flex flex-col justify-between hover:border-blue-500/80 hover:shadow-md transition-all duration-200 group h-full"
-              >
-                <div>
-                  {/* Header: Number Badge on Left | Platform Logos on Right */}
-                  <div className="flex items-center justify-between gap-3">
-                    <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-md">
-                      {service.num}
-                    </span>
-                    <div className="flex items-center gap-1.5 shrink-0">
-                      {service.logos.map((logo, lIdx) => {
-                        const LogoComp = logo.component;
-                        return (
-                          <div
-                            key={lIdx}
-                            title={logo.label}
-                            className="p-1 rounded-md bg-stone-50 border border-stone-200/80 shadow-2xs"
-                          >
-                            <LogoComp className="w-3.5 h-3.5" />
+            {/* 7 Services Cards — Bento Layout with Flagship Visual Dominance */}
+            {servicesCatalog.map((service) => {
+              const isVideoFlagship = service.num === '02';
+              const isLocalSeoFlagship = service.num === '04';
+              const isFlagship = isVideoFlagship || isLocalSeoFlagship;
+
+              return (
+                <BentoCard
+                  key={service.id}
+                  id={`service-${service.id}`}
+                  className={
+                    isFlagship
+                      ? "col-span-1 md:col-span-1 lg:col-span-2 bg-gradient-to-br from-white via-white to-blue-50/30 hover:border-blue-500/80"
+                      : "col-span-1 hover:border-blue-500/80"
+                  }
+                >
+                  <div>
+                    {/* Header: Number Badge on Left | Platform Logos & Flagship Tag on Right */}
+                    <div className="flex items-center justify-between gap-3">
+                      <div className="flex items-center gap-2">
+                        <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-md">
+                          {service.num}
+                        </span>
+                        {isVideoFlagship && (
+                          <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-blue-700 bg-blue-100/70 border border-blue-200 px-2 py-0.5 rounded-full">
+                            {isTe ? 'అత్యధిక రీచ్' : 'Flagship 4K Ads'}
+                          </span>
+                        )}
+                        {isLocalSeoFlagship && (
+                          <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-emerald-700 bg-emerald-100/70 border border-emerald-200 px-2 py-0.5 rounded-full">
+                            {isTe ? 'టాప్ లోకల్ ROI' : 'Google Maps 3-Pack'}
+                          </span>
+                        )}
+                      </div>
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        {service.logos.map((logo, lIdx) => {
+                          const LogoComp = logo.component;
+                          return (
+                            <div
+                              key={lIdx}
+                              title={logo.label}
+                              className="p-1 rounded-md bg-stone-50 border border-stone-200/80 shadow-2xs"
+                            >
+                              <LogoComp className="w-3.5 h-3.5" />
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-lg sm:text-xl font-black text-stone-950 group-hover:text-blue-600 transition-colors leading-snug mt-3">
+                      {isTe ? service.titleTe : service.title}
+                    </h3>
+
+                    {/* 1-Line Description */}
+                    <p className="text-xs sm:text-sm text-stone-600 leading-relaxed mt-1.5 line-clamp-2">
+                      {isTe ? service.descriptionTe : service.description}
+                    </p>
+
+                    {/* Deliverables Grid: 2x2 on Flagship 2-col, Single Column on standard 1-col */}
+                    <div
+                      className={
+                        isFlagship
+                          ? "grid grid-cols-1 sm:grid-cols-2 gap-2 mt-3 pt-3 border-t border-stone-100"
+                          : "space-y-1.5 mt-3 pt-3 border-t border-stone-100"
+                      }
+                    >
+                      {(isTe ? service.deliverablesTe : service.deliverables)
+                        .slice(0, isFlagship ? 4 : 3)
+                        .map((item, dIdx) => (
+                          <div key={dIdx} className="flex items-center gap-2 text-xs text-stone-700">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                            <span className="truncate font-medium">{item}</span>
                           </div>
-                        );
-                      })}
+                        ))}
                     </div>
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-lg sm:text-xl font-black text-stone-950 group-hover:text-blue-600 transition-colors leading-snug mt-3">
-                    {isTe ? service.titleTe : service.title}
-                  </h3>
+                  {/* Bottom Footer Bar: Standout Metric on Left | Direct Link on Right */}
+                  <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between gap-3">
+                    <div>
+                      <p className="text-xs font-black text-stone-950 leading-none">
+                        {isTe ? service.metricTe : service.metric}
+                      </p>
+                      <p className="text-[10px] text-stone-500 font-medium mt-0.5">
+                        {isTe ? service.metricSubTe : service.metricSub}
+                      </p>
+                    </div>
 
-                  {/* 1-Line Description */}
-                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed mt-1.5 line-clamp-2">
-                    {isTe ? service.descriptionTe : service.description}
-                  </p>
-
-                  {/* Top 3 Concrete Deliverables (Truncated to fit single line) */}
-                  <div className="space-y-1.5 mt-3 pt-3 border-t border-stone-100">
-                    {(isTe ? service.deliverablesTe : service.deliverables).slice(0, 3).map((item, dIdx) => (
-                      <div key={dIdx} className="flex items-center gap-2 text-xs text-stone-700">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                        <span className="truncate font-medium">{item}</span>
-                      </div>
-                    ))}
+                    <button
+                      type="button"
+                      onClick={() => onNavigate(service.id as PageId)}
+                      className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors group-hover:translate-x-0.5 transition-transform cursor-pointer"
+                    >
+                      <span>{isTe ? 'పూర్తి స్కోప్' : 'Explore Scope'}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
                   </div>
-                </div>
+                </BentoCard>
+              );
+            })}
 
-                {/* Bottom Footer Bar: Standout Metric on Left | Direct Link on Right */}
-                <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between gap-3">
-                  <div>
-                    <p className="text-xs font-black text-stone-950 leading-none">
-                      {isTe ? service.metricTe : service.metric}
-                    </p>
-                    <p className="text-[10px] text-stone-500 font-medium mt-0.5">
-                      {isTe ? service.metricSubTe : service.metricSub}
-                    </p>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => onNavigate(service.id as PageId)}
-                    className="inline-flex items-center gap-1 text-xs font-bold text-blue-600 hover:text-blue-800 transition-colors group-hover:translate-x-0.5 transition-transform cursor-pointer"
-                  >
-                    <span>{isTe ? 'పూర్తి స్కోప్' : 'Explore Scope'}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </div>
-            ))}
-
-            {/* 08 — All-In-One Full Growth Retainer (Spans 2 columns to complete Row 3) */}
-            <div className="md:col-span-2 lg:col-span-2 rounded-2xl bg-stone-950 text-white p-5 sm:p-6 flex flex-col justify-between border border-stone-800 shadow-lg relative overflow-hidden group h-full">
+            {/* 08 — All-In-One Full Growth Retainer (Spans full width across 3 columns to anchor grid) */}
+            <BentoCard className="col-span-1 md:col-span-2 lg:col-span-3 rounded-2xl sm:rounded-3xl bg-stone-950 text-white p-5 sm:p-7 border-stone-800 hover:border-blue-500/50 shadow-lg">
               <div>
                 {/* Header */}
                 <div className="flex items-center justify-between gap-3 pb-3 border-b border-stone-800">
@@ -526,9 +557,9 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
-            </div>
+            </BentoCard>
 
-          </div>
+          </BentoGrid>
         </div>
       </section>
 

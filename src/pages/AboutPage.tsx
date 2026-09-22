@@ -24,6 +24,7 @@ import { asset } from '../utils/asset';
 import { companyInfo, regionalCoverageAreas } from '../data/companyData';
 import { CTASection } from '../components/common/CTASection';
 import { WhatsAppLogo } from '../components/common/PlatformLogos';
+import { Timeline } from '../components/ui/timeline';
 
 interface AboutPageProps {
   language?: Language;
@@ -507,53 +508,129 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       </section>
 
       {/* =========================================================================
-          06 — 4-STEP WORKING ROADMAP (CONTINUOUS HORIZONTAL FLOW — NO CARDS)
+          06 — 4-STEP WORKING ROADMAP (INTERACTIVE STICKY TIMELINE)
           ========================================================================= */}
       <section className="py-16 sm:py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 border-b border-stone-200/80">
-        <div className="space-y-12">
+        <div className="space-y-8">
           
           <div className="max-w-2xl space-y-2">
             <span className="text-xs font-extrabold uppercase tracking-widest text-blue-600">
-              Methodology
+              {isTe ? 'పనితీరు విధానం' : 'Methodology'}
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-stone-950 tracking-tight">
-              The 4-Step BDS Growth Roadmap
+              {isTe ? '4-దశల BDS వృద్ధి రోడ్‌మ్యాప్' : 'The 4-Step BDS Growth Roadmap'}
             </h2>
             <p className="text-stone-500 text-sm">
-              How we take a local business from invisible to market-dominant in 30 days.
+              {isTe
+                ? 'స్థానిక వ్యాపారాన్ని కేవలం 30 రోజుల్లో మార్కెట్ లీడర్‌గా మార్చే మా ప్రత్యేక కార్యాచరణ.'
+                : 'How we take a local business from invisible to market-dominant in 30 days.'}
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
-            {[
+          <Timeline
+            data={[
               {
-                num: '01',
-                title: 'Local Audit & Recon',
-                desc: 'Analyze competitor ads in Rajahmundry, audit Google Maps rank, and uncover high-intent category search gaps.'
+                badge: 'STEP 01 • DAY 1–2',
+                title: isTe ? 'లోకల్ ఆడిట్ & మార్కెట్ రీకాన్' : 'Local Audit & Competitor Recon',
+                subtitle: isTe ? 'పరిశోధన & అవకాశాల గుర్తింపు' : 'Diagnostics & Gap Analysis',
+                content: (
+                  <div className="space-y-3 bg-stone-50/70 border border-stone-200/70 rounded-2xl p-5 sm:p-6">
+                    <p className="text-xs sm:text-sm text-stone-700 leading-relaxed">
+                      {isTe
+                        ? 'రాజమండ్రి & తూర్పు గోదావరిలోని ప్రత్యర్థి వ్యాపార ప్రకటనలను పరిశీలించి, గూగుల్ మ్యాప్స్ ర్యాంకింగ్స్‌ను ఆడిట్ చేస్తాం. అధిక కొనుగోలు ఆసక్తి ఉన్న స్థానిక శోధనలను గుర్తిస్తాం.'
+                        : 'We analyze live competitor ad creative across Rajahmundry, audit your Google Maps 3-Pack rank, and uncover high-intent category search gaps before spending a single rupee on ads.'}
+                    </p>
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      <span className="inline-flex items-center text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 px-2.5 py-1 rounded-md">
+                        Google Maps 3-Pack Audit
+                      </span>
+                      <span className="inline-flex items-center text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 px-2.5 py-1 rounded-md">
+                        Meta Ad Library Recon
+                      </span>
+                      <span className="inline-flex items-center text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 px-2.5 py-1 rounded-md">
+                        High-Intent Search Volume Mapping
+                      </span>
+                    </div>
+                  </div>
+                ),
               },
               {
-                num: '02',
-                title: 'Bilingual Content',
-                desc: 'Script engaging Telugu reels, design compelling festive offers, and craft creatives that capture local attention.'
+                badge: 'STEP 02 • DAY 3–5',
+                title: isTe ? 'ద్విభాషా కంటెంట్ & 4K ప్రొడక్షన్' : 'Bilingual Content & 4K Production',
+                subtitle: isTe ? 'తెలుగు రీల్స్ & హై-ఇంపాక్ట్ గ్రాఫిక్స్' : 'Scripting, Shooting & Post-Production',
+                content: (
+                  <div className="space-y-3 bg-stone-50/70 border border-stone-200/70 rounded-2xl p-5 sm:p-6">
+                    <p className="text-xs sm:text-sm text-stone-700 leading-relaxed">
+                      {isTe
+                        ? 'స్థానిక ప్రజలను ఆకట్టుకునేలా ఆకర్షణీయమైన తెలుగు రీల్స్ స్క్రిప్ట్ చేయడం, పండుగ ఆఫర్ల డిజైన్లు మరియు హై-క్వాలిటీ వీడియో ప్రొడక్షన్ వేగంగా పూర్తి చేస్తాం.'
+                        : 'Script engaging native Telugu hooks, record professional 4K footage on-location, design festive offer creatives, and color-grade vertical assets tailored for Instagram and YouTube.'}
+                    </p>
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      <span className="inline-flex items-center text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 px-2.5 py-1 rounded-md">
+                        Native Telugu Hook Scripts
+                      </span>
+                      <span className="inline-flex items-center text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 px-2.5 py-1 rounded-md">
+                        On-Location 4K Video Production
+                      </span>
+                      <span className="inline-flex items-center text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 px-2.5 py-1 rounded-md">
+                        High-Converting Festive Creatives
+                      </span>
+                    </div>
+                  </div>
+                ),
               },
               {
-                num: '03',
-                title: 'Targeted Launch',
-                desc: 'Deploy radius-targeted Meta & Google ads across East Godavari pincodes and optimize for the Google Maps 3-Pack.'
+                badge: 'STEP 03 • DAY 6–7',
+                title: isTe ? 'హైపర్-లోకల్ క్యాంపెయిన్ లాంచ్' : 'Hyper-Local Campaign Launch',
+                subtitle: isTe ? 'మెటా & గూగుల్ యాడ్స్ యాక్టివేషన్' : 'Targeted Ads & Maps 3-Pack',
+                content: (
+                  <div className="space-y-3 bg-stone-50/70 border border-stone-200/70 rounded-2xl p-5 sm:p-6">
+                    <p className="text-xs sm:text-sm text-stone-700 leading-relaxed">
+                      {isTe
+                        ? 'తూర్పు గోదావరి పిన్‌కోడ్స్ చుట్టూ ఖచ్చితమైన రేడియస్ టార్గెటెడ్ మెటా & గూగుల్ యాడ్స్ లాంచ్ చేస్తాం మరియు గూగుల్ మ్యాప్స్ 3-ప్యాక్ కోసం ఆప్టిమైజ్ చేస్తాం.'
+                        : 'Deploy radius-targeted Meta & Google campaigns strictly focused on East Godavari pincodes (Rajahmundry, Kakinada, Amalapuram) while activating local schema and GBP citations.'}
+                    </p>
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      <span className="inline-flex items-center text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 px-2.5 py-1 rounded-md">
+                        Pincode-Level Radius Targeting
+                      </span>
+                      <span className="inline-flex items-center text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 px-2.5 py-1 rounded-md">
+                        Google Business Profile Citations
+                      </span>
+                      <span className="inline-flex items-center text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 px-2.5 py-1 rounded-md">
+                        Meta Conversion API Setup
+                      </span>
+                    </div>
+                  </div>
+                ),
               },
               {
-                num: '04',
-                title: 'WhatsApp Lead Route',
-                desc: 'Route customer inquiries directly to your phone or WhatsApp with prompt triage and organized lead details.'
-              }
-            ].map((st, sIdx) => (
-              <div key={sIdx} className="space-y-2 border-l-2 border-stone-300 pl-4 py-1">
-                <span className="text-xs font-mono font-bold text-blue-600">{st.num}</span>
-                <h3 className="text-base font-bold text-stone-900">{st.title}</h3>
-                <p className="text-xs text-stone-600 leading-relaxed">{st.desc}</p>
-              </div>
-            ))}
-          </div>
+                badge: 'STEP 04 • ONGOING',
+                title: isTe ? 'వాట్సాప్ లీడ్ రౌటింగ్ & స్కేలింగ్' : 'WhatsApp Lead Routing & Scaling',
+                subtitle: isTe ? 'త్వరిత స్పందన & నిరంతర ఆప్టిమైజేషన్' : 'Instant Triage & Weekly ROI Review',
+                content: (
+                  <div className="space-y-3 bg-stone-50/70 border border-stone-200/70 rounded-2xl p-5 sm:p-6">
+                    <p className="text-xs sm:text-sm text-stone-700 leading-relaxed">
+                      {isTe
+                        ? 'వచ్చిన కస్టమర్ ఎంక్వైరీలను నేరుగా మీ వాట్సాప్ లేదా ఫోన్‌కు వేగంగా రౌట్ చేస్తాం. ప్రతివారం పారదర్శకమైన ROI రిపోర్ట్ అందిస్తూ క్యాంపెయిన్‌లను స్కేల్ చేస్తాం.'
+                        : 'Customer inquiries route directly into your WhatsApp and phone within seconds. We conduct weekly ROI reviews to double down on winning ad creative and eliminate wasteful ad spend.'}
+                    </p>
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      <span className="inline-flex items-center text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 px-2.5 py-1 rounded-md">
+                        Instant WhatsApp Lead Routing
+                      </span>
+                      <span className="inline-flex items-center text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 px-2.5 py-1 rounded-md">
+                        Weekly Transparent CPL & ROI Report
+                      </span>
+                      <span className="inline-flex items-center text-[11px] font-semibold text-stone-700 bg-white border border-stone-200 px-2.5 py-1 rounded-md">
+                        Continuous Creative & Copy Refresh
+                      </span>
+                    </div>
+                  </div>
+                ),
+              },
+            ]}
+          />
 
         </div>
       </section>
