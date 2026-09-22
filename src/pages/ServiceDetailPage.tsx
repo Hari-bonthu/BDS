@@ -39,6 +39,7 @@ import {
   LeadGenLogo,
   InquiriesLogo
 } from '../components/common/PlatformLogos';
+import { ContainerScroll, CardSticky } from '@/components/ui/cards-stack';
 
 interface ServiceDetailPageProps {
   pageId: PageId;
@@ -995,14 +996,14 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
       </section>
 
       {/* =========================================================================
-          02 — BESPOKE SERVICE SCOPE & WHAT ACTUALLY GETS DONE (Card-Free)
+          02 — BESPOKE SERVICE SCOPE & WHAT ACTUALLY GETS DONE (21st.dev Card Stack)
           ========================================================================= */}
       <section className="py-16 sm:py-24 border-b border-stone-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             
             {/* Left Sticky Context */}
-            <div className="lg:col-span-4 space-y-3">
+            <div className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start space-y-3">
               <p className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600">
                 01 / {isTe ? 'ఖచ్చితమైన స్కోప్' : 'CONCRETE DELIVERABLES'}
               </p>
@@ -1014,33 +1015,41 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
               </p>
             </div>
 
-            {/* Right Editorial Divided Rows */}
-            <div className="lg:col-span-8 divide-y divide-stone-200">
-              {flow.operationalItems.map((item, idx) => (
-                <div key={idx} className="py-8 first:pt-0 last:pb-0 space-y-3">
-                  <div className="flex items-center gap-2">
-                    <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 px-2 py-0.5 rounded">
-                      {item.number}
-                    </span>
-                    <h3 className="text-xl sm:text-2xl font-black text-stone-950">
-                      {isTe ? item.titleTe : item.title}
-                    </h3>
-                  </div>
-                  
-                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
-                    {isTe ? item.descriptionTe : item.description}
-                  </p>
+            {/* Right Card Stack Showcase */}
+            <div className="lg:col-span-8">
+              <ContainerScroll className="space-y-6">
+                {flow.operationalItems.map((item, idx) => (
+                  <CardSticky
+                    key={idx}
+                    index={idx}
+                    baseTop={88}
+                    incrementY={20}
+                    className="relative md:sticky p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-stone-200/90 shadow-2xs hover:border-blue-200 transition-colors space-y-4"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-100">
+                        {item.number}
+                      </span>
+                      <h3 className="text-xl sm:text-2xl font-black text-stone-950 tracking-tight">
+                        {isTe ? item.titleTe : item.title}
+                      </h3>
+                    </div>
+                    
+                    <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                      {isTe ? item.descriptionTe : item.description}
+                    </p>
 
-                  <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2">
-                    {(isTe ? item.deliverablesTe : item.deliverables).map((pt, pIdx) => (
-                      <div key={pIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-stone-800 font-medium">
-                        <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
-                        <span className="leading-snug">{pt}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
+                    <div className="pt-3 grid grid-cols-1 sm:grid-cols-2 gap-2.5 border-t border-stone-100">
+                      {(isTe ? item.deliverablesTe : item.deliverables).map((pt, pIdx) => (
+                        <div key={pIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-stone-800 font-medium">
+                          <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+                          <span className="leading-snug">{pt}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardSticky>
+                ))}
+              </ContainerScroll>
             </div>
 
           </div>
@@ -1048,14 +1057,14 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
       </section>
 
       {/* =========================================================================
-          03 — BESPOKE SERVICE EXECUTION TIMELINE (Bespoke Workflow, NO CARDS)
+          03 — BESPOKE SERVICE EXECUTION TIMELINE (21st.dev Card Stack Workflow)
           ========================================================================= */}
       <section className="py-16 sm:py-24 bg-white border-b border-stone-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
             
-            {/* Left Context */}
-            <div className="lg:col-span-4 space-y-3">
+            {/* Left Sticky Context */}
+            <div className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start space-y-3">
               <p className="text-xs font-mono font-bold uppercase tracking-widest text-blue-600">
                 02 / {flow.workflowEyebrow}
               </p>
@@ -1067,28 +1076,34 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
               </p>
             </div>
 
-            {/* Right Divided Step Progression */}
-            <div className="lg:col-span-8 divide-y divide-stone-200">
-              {flow.workflowSteps.map((step, sIdx) => (
-                <div key={sIdx} className="py-6 first:pt-0 last:pb-0 grid grid-cols-1 sm:grid-cols-12 gap-4 items-baseline">
-                  <div className="sm:col-span-3">
-                    <span className="text-xs font-mono font-bold text-blue-600">
-                      STEP {step.step}
-                    </span>
-                    <p className="text-[11px] font-mono text-stone-400 font-bold mt-0.5">
-                      {step.timeline}
-                    </p>
-                  </div>
-                  <div className="sm:col-span-9 space-y-1">
-                    <h3 className="text-lg font-black text-stone-950">
+            {/* Right Step Progression Card Stack */}
+            <div className="lg:col-span-8">
+              <ContainerScroll className="space-y-4 sm:space-y-5">
+                {flow.workflowSteps.map((step, sIdx) => (
+                  <CardSticky
+                    key={sIdx}
+                    index={sIdx}
+                    baseTop={88}
+                    incrementY={20}
+                    className="relative md:sticky p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-white border border-stone-200/90 shadow-2xs hover:border-blue-200 transition-colors space-y-3"
+                  >
+                    <div className="flex items-center justify-between gap-4">
+                      <span className="text-xs font-mono font-extrabold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-100">
+                        STEP {step.step}
+                      </span>
+                      <span className="text-[11px] font-mono text-stone-500 font-bold bg-stone-100 px-2.5 py-0.5 rounded-md">
+                        {step.timeline}
+                      </span>
+                    </div>
+                    <h3 className="text-lg sm:text-xl font-black text-stone-950 tracking-tight">
                       {isTe ? step.titleTe : step.title}
                     </h3>
                     <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
                       {isTe ? step.descriptionTe : step.description}
                     </p>
-                  </div>
-                </div>
-              ))}
+                  </CardSticky>
+                ))}
+              </ContainerScroll>
             </div>
 
           </div>

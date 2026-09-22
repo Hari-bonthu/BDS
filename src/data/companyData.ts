@@ -117,7 +117,7 @@ export const caseStudiesList: CaseStudy[] = [
     solution: 'Built dedicated 3D project showcase carousels and localized Google Search campaign targeting new apartment owners.',
     results: [
       { metric: 'Strong ROAS', label: 'Verified Return on Spend' },
-      { metric: 'Consultations', label: 'Full Home Consultations' },
+      { metric: 'Consults', label: 'Full Home Consultations' },
       { metric: 'Revenue', label: 'Contract Revenue' }
     ],
     tags: ['Google Search Ads', 'Project Carousels', 'Local Search Dominance'],

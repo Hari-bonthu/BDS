@@ -449,19 +449,31 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                           Execution Framework &amp; Impact Model
                         </span>
                         <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                          {study.results.map((res, rIdx) => (
-                            <div
-                              key={rIdx}
-                              className="p-4 sm:p-5 rounded-2xl bg-white border border-stone-200/90 shadow-2xs flex flex-col justify-between space-y-1 hover:border-blue-200 transition-colors"
-                            >
-                              <span className="text-2xl sm:text-3xl font-black text-blue-600 tracking-tight">
-                                {res.metric}
-                              </span>
-                              <span className="text-xs text-stone-600 font-medium">
-                                {res.label}
-                              </span>
-                            </div>
-                          ))}
+                          {study.results.map((res, rIdx) => {
+                            const isLong = res.metric.length > 10;
+                            const isMedium = res.metric.length > 6;
+                            const metricSize = isLong
+                              ? 'text-lg sm:text-xl'
+                              : isMedium
+                              ? 'text-xl sm:text-2xl'
+                              : 'text-2xl sm:text-3xl';
+                            return (
+                              <div
+                                key={rIdx}
+                                className="min-w-0 p-3.5 sm:p-4 rounded-2xl bg-white border border-stone-200/90 shadow-2xs flex flex-col justify-between space-y-1 hover:border-blue-200 transition-colors overflow-hidden"
+                              >
+                                <span
+                                  className={`${metricSize} font-black text-blue-600 tracking-tight leading-tight break-words`}
+                                  title={res.metric}
+                                >
+                                  {res.metric}
+                                </span>
+                                <span className="text-xs text-stone-600 font-medium leading-snug">
+                                  {res.label}
+                                </span>
+                              </div>
+                            );
+                          })}
                         </div>
                       </div>
 
