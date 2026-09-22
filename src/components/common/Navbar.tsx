@@ -12,6 +12,7 @@ import { BDSLogo } from './BDSLogo';
 import { servicesList } from '../../data/servicesData';
 import { companyInfo } from '../../data/companyData';
 import { PageId, Language } from '../../types';
+import { ShimmerButton } from '../ui/shimmer-button';
 
 interface NavbarProps {
   currentPage: PageId;
@@ -248,13 +249,16 @@ export const Navbar: React.FC<NavbarProps> = ({
               <MessageCircle className="w-4 h-4" />
             </a>
 
-            <button
-              type="button"
+            <ShimmerButton
               onClick={() => onOpenQuoteModal('Growth Plan')}
-              className="px-4 py-2 rounded-xl bg-slate-950 hover:bg-blue-600 text-white font-bold text-xs sm:text-sm transition-all duration-150 cursor-pointer shadow-xs"
+              borderRadius="12px"
+              shimmerDuration="3s"
+              background="rgba(9, 13, 22, 1)"
+              shimmerColor="#60a5fa"
+              className="px-4 py-2 text-xs sm:text-sm font-bold shadow-xs cursor-pointer"
             >
-              {t.cta}
-            </button>
+              <span>{t.cta}</span>
+            </ShimmerButton>
           </div>
 
           {/* Mobile Menu Controls */}

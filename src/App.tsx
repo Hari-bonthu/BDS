@@ -3,6 +3,7 @@ import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
 import { QuoteModal } from './components/common/QuoteModal';
 import { FloatingQuickActions } from './components/common/FloatingQuickActions';
+import { FloatingDock } from './components/ui/floating-dock';
 import { HomePage } from './pages/HomePage';
 import { ServicesPage } from './pages/ServicesPage';
 import { ServiceDetailPage } from './pages/ServiceDetailPage';
@@ -393,10 +394,17 @@ export default function App() {
         language={language}
       />
 
-      {/* Floating Action Buttons: Direct Call, WhatsApp & Instant FAQ Bot */}
+      {/* Floating Action Buttons: Direct Call, WhatsApp & Instant FAQ Bot (Desktop) */}
       <FloatingQuickActions
         onOpenQuoteModal={() => handleOpenQuoteModal()}
         language={language}
+      />
+
+      {/* Mobile Floating Action Dock (< 768px) */}
+      <FloatingDock
+        language={language}
+        onNavigate={handleNavigate}
+        onOpenQuoteModal={(service) => handleOpenQuoteModal(service)}
       />
     </div>
   );

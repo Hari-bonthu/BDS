@@ -84,3 +84,22 @@
   animation-play-state: paused;
 }
 
+/* Shimmer Button Keyframes */
+@keyframes spin-around {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-around {
+  animation: spin-around var(--speed, 3s) linear infinite;
+}
+
+@keyframes shimmer-sweep {
+  0% { transform: translateX(-150%); }
+  100% { transform: translateX(250%); }
+}
+
+.animate-shimmer-sweep {
+  animation: shimmer-sweep 3s ease-in-out infinite;
+}
+

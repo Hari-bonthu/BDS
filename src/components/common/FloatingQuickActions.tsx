@@ -20,7 +20,7 @@ export const FloatingQuickActions: React.FC<FloatingQuickActionsProps> = ({
   return (
     <div
       id="floating-quick-actions-bar"
-      className="fixed bottom-5 right-5 z-40 flex flex-col items-end gap-2.5 select-none"
+      className="hidden md:flex fixed bottom-5 right-5 z-40 flex-col items-end gap-2.5 select-none"
     >
       {/* FAQ Bot Drawer Panel (Opens quietly without aggressive popups) */}
       {isFaqOpen && (

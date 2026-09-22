@@ -25,6 +25,7 @@ import {
 import { NumberTicker } from '@/components/ui/number-ticker';
 import { Marquee } from '@/components/ui/marquee';
 import { CardSpotlight } from '@/components/ui/card-spotlight';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
 
 const parseMetricValue = (val: string) => {
   const match = val.match(/^([^\d.]*)(\d+(?:\.\d+)?)(.*)$/);
@@ -150,14 +151,17 @@ export const HomePage: React.FC<HomePageProps> = ({
 
               {/* Primary & Secondary Action CTAs */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 pt-1">
-                <button
-                  type="button"
+                <ShimmerButton
                   onClick={() => onOpenQuoteModal('Growth Plan')}
-                  className="px-7 py-3.5 rounded-xl bg-slate-950 hover:bg-blue-600 text-white font-bold text-sm sm:text-base transition-all duration-200 flex items-center justify-center gap-2.5 cursor-pointer shadow-sm hover:shadow-md"
+                  borderRadius="12px"
+                  shimmerDuration="2.5s"
+                  background="rgba(9, 13, 22, 1)"
+                  shimmerColor="#60a5fa"
+                  className="px-7 py-3.5 font-bold text-sm sm:text-base cursor-pointer shadow-md hover:shadow-lg"
                 >
                   <span>{isTe ? 'ఉచిత Growth Plan పొందండి' : 'Get a Free Growth Plan'}</span>
-                  <ArrowRight className="w-4 h-4 text-stone-300" />
-                </button>
+                  <ArrowRight className="w-4 h-4 text-blue-300" />
+                </ShimmerButton>
 
                 <button
                   type="button"
