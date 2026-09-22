@@ -15,6 +15,8 @@ import { companyInfo } from '../data/companyData';
 import { PageId, InsightArticle, Language } from '../types';
 import { WhatsAppLogo } from '../components/common/PlatformLogos';
 import { asset } from '../utils/asset';
+import { ScrollProgress } from '../components/ui/scroll-progress';
+import { TableOfContents } from '../components/ui/table-of-contents';
 
 interface InsightsPageProps {
   language?: Language;
@@ -69,6 +71,9 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
   return (
     <div id="bds-insights-hub" className="min-h-screen bg-[#fafaf9] text-stone-900 selection:bg-blue-600 selection:text-white font-sans antialiased">
       
+      {/* Minimal Top Reading Progress Bar */}
+      <ScrollProgress />
+
       {/* =========================================================================
           01 — EDITORIAL PUBLICATION HERO (Card-Free, Authoritative Typography)
           ========================================================================= */}
@@ -101,6 +106,23 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
 
         </div>
       </section>
+
+      {/* Interactive Sticky Playbook Navigation Index */}
+      {!activeArticle && (
+        <section className="py-3 bg-[#fafaf9]/95 backdrop-blur-md border-b border-stone-200/80 sticky top-16 z-30 shadow-2xs">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <TableOfContents
+              title={isTe ? "వ్యూహాత్మక గైడ్‌లు / నేరుగా చదవండి" : "Playbook Index / Jump to Guide"}
+              items={insightsArticlesList.map((art) => ({
+                id: `article-${art.slug}`,
+                title: art.title,
+                category: art.category,
+                readTime: art.readTime,
+              }))}
+            />
+          </div>
+        </section>
+      )}
 
       {/* =========================================================================
           02 — FEATURED STORY (Card-Free Editorial Split Layout)
