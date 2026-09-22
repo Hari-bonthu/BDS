@@ -116,6 +116,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
               items={insightsArticlesList.map((art) => ({
                 id: `article-${art.slug}`,
                 title: art.title,
+                shortTitle: art.category,
                 category: art.category,
                 readTime: art.readTime,
               }))}

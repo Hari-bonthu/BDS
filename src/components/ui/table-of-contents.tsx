@@ -3,11 +3,12 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { ListFilter, ChevronDown } from "lucide-react";
+import { ListFilter, ChevronDown, Check } from "lucide-react";
 
 export interface TocItem {
   id: string;
   title: string;
+  shortTitle?: string;
   category?: string;
   readTime?: string;
 }
@@ -28,6 +29,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
   title = "Quick Navigation / Playbook Index",
 }) => {
   const [currentActive, setCurrentActive] = useState<string>(activeId || items[0]?.id || "");
+  const [isExpanded, setIsExpanded] = useState<boolean>(false);
 
   useEffect(() => {
     if (activeId) {
@@ -58,6 +60,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
 
   const navigateToId = (id: string) => {
     setCurrentActive(id);
+    setIsExpanded(false);
     if (onItemClick) {
       onItemClick(id);
     } else {
@@ -68,64 +71,102 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
     }
   };
 
-  const handleClick = (id: string, e: React.MouseEvent) => {
-    e.preventDefault();
-    navigateToId(id);
-  };
-
-  const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    navigateToId(e.target.value);
-  };
+  const currentIndex = items.findIndex((it) => it.id === currentActive);
 
   return (
     <nav
       aria-label="Table of contents"
       className={cn(
-        "rounded-2xl border border-stone-200/90 bg-white/95 p-3 sm:p-4 backdrop-blur-md shadow-xs transition-all",
+        "w-full rounded-2xl border border-stone-200/90 bg-white/95 p-3 sm:p-4 backdrop-blur-md shadow-xs transition-all duration-200",
         className
       )}
     >
-      <div className="flex items-center justify-between pb-2 mb-2 border-b border-stone-100 text-xs font-mono font-bold uppercase tracking-wider text-stone-500">
-        <div className="flex items-center gap-2">
+      {/* Top Header Bar */}
+      <div className="flex items-center justify-between gap-2 pb-2 mb-2 border-b border-stone-100 text-xs font-mono font-bold uppercase tracking-wider text-stone-500">
+        <div className="flex items-center gap-2 min-w-0">
           <ListFilter className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-          <span>{title}</span>
+          <span className="truncate">{title}</span>
         </div>
+
+        {/* Mobile Toggle Button for Full In-Card Index */}
+        <button
+          type="button"
+          onClick={() => setIsExpanded(!isExpanded)}
+          aria-expanded={isExpanded}
+          className="sm:hidden shrink-0 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-800 text-[11px] font-bold transition-colors cursor-pointer"
+        >
+          <span>{isExpanded ? "Close" : `Guide 0${(currentIndex >= 0 ? currentIndex : 0) + 1} ▾`}</span>
+        </button>
+
         <span className="text-[10px] text-stone-400 font-mono hidden sm:inline">
           {items.length} PLAYBOOKS
         </span>
       </div>
 
-      {/* Mobile Instant Quick Jump Selector */}
-      <div className="relative sm:hidden mb-2">
-        <label htmlFor="mobile-toc-select" className="sr-only">
-          {title}
-        </label>
-        <select
-          id="mobile-toc-select"
-          value={currentActive}
-          onChange={handleSelectChange}
-          aria-label={title}
-          className="w-full appearance-none rounded-xl border border-stone-200 bg-stone-50 py-2 pl-3 pr-8 text-xs font-semibold text-stone-800 focus:border-blue-500 focus:bg-white focus:outline-hidden focus:ring-1 focus:ring-blue-500 cursor-pointer"
-        >
-          {items.map((item, idx) => (
-            <option key={item.id} value={item.id}>
-              {`0${idx + 1}. ${item.title}`}
-            </option>
-          ))}
-        </select>
-        <ChevronDown className="pointer-events-none absolute right-2.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
-      </div>
-
-      {/* Touch-Friendly Scrolling / Wrapped Pills Track */}
-      <div className="relative">
-        <div className="flex gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none sm:flex-wrap scroll-smooth overscroll-x-contain touch-pan-x [mask-image:linear-gradient(to_right,white_85%,transparent_100%)] sm:[mask-image:none]">
+      {/* Expanded In-Card Mobile Menu (100% Contained, Zero Overflow) */}
+      {isExpanded && (
+        <div className="sm:hidden space-y-1 pt-1 pb-2 border-b border-stone-100 mb-2">
           {items.map((item, idx) => {
             const isActive = currentActive === item.id;
+            return (
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => navigateToId(item.id)}
+                className={cn(
+                  "w-full text-left p-2.5 rounded-xl transition-all flex items-start gap-2.5 cursor-pointer",
+                  isActive
+                    ? "bg-blue-50 border border-blue-200 text-blue-950 shadow-2xs"
+                    : "hover:bg-stone-50 text-stone-700 border border-transparent"
+                )}
+              >
+                <span
+                  className={cn(
+                    "text-xs font-mono font-bold px-2 py-0.5 rounded-md mt-0.5 shrink-0",
+                    isActive ? "bg-blue-600 text-white" : "bg-stone-100 text-stone-500"
+                  )}
+                >
+                  0{idx + 1}
+                </span>
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-blue-600">
+                      {item.category || `Playbook 0${idx + 1}`}
+                    </span>
+                    {item.readTime && (
+                      <span className="text-[10px] text-stone-400 font-mono">
+                        · {item.readTime}
+                      </span>
+                    )}
+                  </div>
+                  <p className="text-xs font-semibold leading-snug text-stone-900 mt-0.5">
+                    {item.title}
+                  </p>
+                </div>
+                {isActive && (
+                  <Check className="w-4 h-4 text-blue-600 shrink-0 mt-1" />
+                )}
+              </button>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Horizontal Pills Track (Swipeable on mobile, wrapped on desktop) */}
+      <div className="relative">
+        <div className="flex gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none sm:flex-wrap scroll-smooth overscroll-x-contain touch-pan-x [mask-image:linear-gradient(to_right,white_88%,transparent_100%)] sm:[mask-image:none]">
+          {items.map((item, idx) => {
+            const isActive = currentActive === item.id;
+            const displayLabel = item.shortTitle || item.category || item.title;
             return (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                onClick={(e) => handleClick(item.id, e)}
+                title={item.title}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigateToId(item.id);
+                }}
                 className={cn(
                   "group flex shrink-0 items-center gap-2 whitespace-nowrap rounded-xl px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer min-h-[34px]",
                   isActive
@@ -141,7 +182,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
                 >
                   0{idx + 1}
                 </span>
-                <span className="truncate max-w-[210px] sm:max-w-none">{item.title}</span>
+                <span className="max-w-[220px] sm:max-w-none truncate">{displayLabel}</span>
               </a>
             );
           })}
