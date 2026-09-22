@@ -22,9 +22,9 @@ export const ShimmerButton = React.forwardRef<
     {
       shimmerColor = "#ffffff",
       shimmerSize = "0.1em",
-      shimmerDuration = "3s",
-      borderRadius = "14px",
-      background = "rgba(2, 71, 254, 1)", // BDS Blue primary
+      shimmerDuration = "2.5s",
+      borderRadius = "12px",
+      background = "linear-gradient(135deg, #0247fe 0%, #0b63f6 100%)", // Signature BDS Blue gradient
       className,
       children,
       ...props

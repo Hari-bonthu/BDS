@@ -252,10 +252,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             <ShimmerButton
               onClick={() => onOpenQuoteModal('Growth Plan')}
               borderRadius="12px"
-              shimmerDuration="3s"
-              background="rgba(9, 13, 22, 1)"
-              shimmerColor="#60a5fa"
-              className="px-4 py-2 text-xs sm:text-sm font-bold shadow-xs cursor-pointer"
+              shimmerDuration="2.5s"
+              background="linear-gradient(135deg, #0247fe 0%, #0b63f6 100%)"
+              shimmerColor="#ffffff"
+              className="px-4 py-2 text-xs sm:text-sm font-bold shadow-md shadow-blue-600/25 hover:shadow-blue-600/40 cursor-pointer text-white"
             >
               <span>{t.cta}</span>
             </ShimmerButton>
@@ -366,7 +366,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                   setMobileMenuOpen(false);
                   onOpenQuoteModal('Growth Plan');
                 }}
-                className="w-full py-3 rounded-xl bg-slate-950 text-white font-bold text-sm text-center shadow-sm"
+                className="w-full py-3 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-bold text-sm text-center shadow-md shadow-blue-600/25 cursor-pointer"
               >
                 {t.cta}
               </button>

@@ -109,7 +109,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
 
       {/* Interactive Sticky Playbook Navigation Index */}
       {!activeArticle && (
-        <section className="py-3 bg-[#fafaf9]/95 backdrop-blur-md border-b border-stone-200/80 sticky top-16 z-30 shadow-2xs">
+        <section className="py-2.5 sm:py-3 bg-[#fafaf9]/95 backdrop-blur-md border-b border-stone-200/80 sticky top-[64px] sm:top-16 z-30 shadow-2xs">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <TableOfContents
               title={isTe ? "వ్యూహాత్మక గైడ్‌లు / నేరుగా చదవండి" : "Playbook Index / Jump to Guide"}

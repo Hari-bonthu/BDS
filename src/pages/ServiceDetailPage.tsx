@@ -41,6 +41,7 @@ import {
 } from '../components/common/PlatformLogos';
 import { ContainerScroll, CardSticky } from '@/components/ui/cards-stack';
 import { ImageComparison } from '@/components/ui/image-comparison';
+import { ShimmerButton } from '@/components/ui/shimmer-button';
 
 interface ServiceDetailPageProps {
   pageId: PageId;
@@ -989,14 +990,17 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-                  <button
-                    type="button"
+                  <ShimmerButton
                     onClick={() => onOpenQuoteModal(service.title)}
-                    className="px-6 py-3.5 rounded-xl bg-stone-950 hover:bg-blue-600 text-white font-extrabold text-sm transition-all duration-200 inline-flex items-center justify-center gap-2 shadow-xs cursor-pointer"
+                    borderRadius="12px"
+                    shimmerDuration="2.5s"
+                    background="linear-gradient(135deg, #0247fe 0%, #0b63f6 100%)"
+                    shimmerColor="#ffffff"
+                    className="px-6 py-3.5 font-extrabold text-sm shadow-md shadow-blue-600/30 hover:shadow-lg hover:shadow-blue-600/40 inline-flex items-center justify-center gap-2 cursor-pointer text-white"
                   >
                     <span>{isTe ? 'ఉచిత గ్రోత్ ప్లాన్ పొందండి' : 'Get Free Growth Plan'}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
+                    <ArrowRight className="w-4 h-4 text-white" />
+                  </ShimmerButton>
 
                   <a
                     href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent('Hi Bhargav, I would like to discuss ' + service.title + ' for my business in Rajahmundry.')}`}
@@ -1077,14 +1081,14 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
 
             {/* Right Card Stack Showcase */}
             <div className="lg:col-span-8">
-              <ContainerScroll className="space-y-6">
+              <ContainerScroll className="space-y-4 sm:space-y-6">
                 {flow.operationalItems.map((item, idx) => (
                   <CardSticky
                     key={idx}
                     index={idx}
-                    baseTop={88}
-                    incrementY={20}
-                    className="relative md:sticky p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-stone-200/90 shadow-2xs hover:border-blue-200 transition-colors space-y-4"
+                    baseTop={76}
+                    incrementY={16}
+                    className="sticky p-5 sm:p-8 rounded-2xl sm:rounded-3xl bg-white border border-stone-200/90 shadow-md sm:shadow-2xs hover:border-blue-200 transition-all space-y-3 sm:space-y-4"
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-100">
@@ -1143,9 +1147,9 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                   <CardSticky
                     key={sIdx}
                     index={sIdx}
-                    baseTop={88}
-                    incrementY={20}
-                    className="relative md:sticky p-6 sm:p-7 rounded-2xl sm:rounded-3xl bg-white border border-stone-200/90 shadow-2xs hover:border-blue-200 transition-colors space-y-3"
+                    baseTop={76}
+                    incrementY={16}
+                    className="sticky p-5 sm:p-7 rounded-2xl sm:rounded-3xl bg-white border border-stone-200/90 shadow-md sm:shadow-2xs hover:border-blue-200 transition-all space-y-3"
                   >
                     <div className="flex items-center justify-between gap-4">
                       <span className="text-xs font-mono font-extrabold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-lg border border-blue-100">

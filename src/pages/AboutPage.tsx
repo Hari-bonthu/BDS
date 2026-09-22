@@ -25,6 +25,7 @@ import { companyInfo, regionalCoverageAreas } from '../data/companyData';
 import { CTASection } from '../components/common/CTASection';
 import { WhatsAppLogo } from '../components/common/PlatformLogos';
 import { Timeline } from '../components/ui/timeline';
+import { ShimmerButton } from '../components/ui/shimmer-button';
 
 interface AboutPageProps {
   language?: Language;
@@ -73,14 +74,17 @@ export const AboutPage: React.FC<AboutPageProps> = ({
 
             {/* Action Triggers */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
-              <button
-                type="button"
+              <ShimmerButton
                 onClick={onOpenQuoteModal}
-                className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs sm:text-sm shadow-sm transition-all flex items-center gap-2 cursor-pointer"
+                borderRadius="12px"
+                shimmerDuration="2.5s"
+                background="linear-gradient(135deg, #0247fe 0%, #0b63f6 100%)"
+                shimmerColor="#ffffff"
+                className="px-6 py-3 font-bold text-xs sm:text-sm cursor-pointer shadow-md shadow-blue-600/30 hover:shadow-lg hover:shadow-blue-600/40 text-white"
               >
                 <span>{isTe ? 'ఉచిత స్ట్రాటజీ కాల్ బుక్ చేయండి' : 'Book Free Strategy Call'}</span>
-                <ArrowRight className="w-4 h-4" />
-              </button>
+                <ArrowRight className="w-4 h-4 text-white" />
+              </ShimmerButton>
 
               <a
                 href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent('Hi Bhargav, I was reading about BDS on your website and want to discuss digital marketing for my business in Rajahmundry.')}`}

@@ -28,6 +28,7 @@ import {
   InquiriesLogo
 } from '../components/common/PlatformLogos';
 import { BentoGrid, BentoCard } from '../components/ui/bento-grid';
+import { ShimmerButton } from '../components/ui/shimmer-button';
 
 interface ServicesPageProps {
   language?: Language;
@@ -619,14 +620,17 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-            <button
-              type="button"
+            <ShimmerButton
               onClick={() => onOpenQuoteModal('General Services Inquiry')}
-              className="w-full sm:w-auto px-7 py-4 rounded-xl bg-stone-950 hover:bg-blue-600 text-white font-extrabold text-sm transition-all duration-200 shadow-md hover:shadow-lg inline-flex items-center justify-center gap-2 cursor-pointer"
+              borderRadius="12px"
+              shimmerDuration="2.5s"
+              background="linear-gradient(135deg, #0247fe 0%, #0b63f6 100%)"
+              shimmerColor="#ffffff"
+              className="w-full sm:w-auto px-7 py-4 font-extrabold text-sm shadow-md shadow-blue-600/30 hover:shadow-lg hover:shadow-blue-600/40 inline-flex items-center justify-center gap-2 cursor-pointer text-white"
             >
               <span>{isTe ? 'ఉచిత గ్రోత్ ప్లాన్ పొందండి' : 'Get a Free Growth Plan'}</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+              <ArrowRight className="w-4 h-4 text-white" />
+            </ShimmerButton>
 
             <a
               href={`https://wa.me/${companyInfo.whatsappNumber}?text=Hello%20Bhargav,%20I%20am%20exploring%20BDS%20services%20and%20would%20like%20to%20discuss%20a%20plan%20for%20my%20business.`}

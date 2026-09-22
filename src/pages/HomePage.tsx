@@ -5,7 +5,8 @@ import {
   MessageCircle,
   MapPin,
   TrendingUp,
-  User
+  User,
+  Sparkles
 } from 'lucide-react';
 import { companyInfo } from '../data/companyData';
 import { PageId, Language } from '../types';
@@ -155,12 +156,12 @@ export const HomePage: React.FC<HomePageProps> = ({
                   onClick={() => onOpenQuoteModal('Growth Plan')}
                   borderRadius="12px"
                   shimmerDuration="2.5s"
-                  background="rgba(9, 13, 22, 1)"
-                  shimmerColor="#60a5fa"
-                  className="px-7 py-3.5 font-bold text-sm sm:text-base cursor-pointer shadow-md hover:shadow-lg"
+                  background="linear-gradient(135deg, #0247fe 0%, #0b63f6 100%)"
+                  shimmerColor="#ffffff"
+                  className="px-7 py-3.5 font-bold text-sm sm:text-base cursor-pointer shadow-md shadow-blue-600/30 hover:shadow-lg hover:shadow-blue-600/40 text-white"
                 >
                   <span>{isTe ? 'ఉచిత Growth Plan పొందండి' : 'Get a Free Growth Plan'}</span>
-                  <ArrowRight className="w-4 h-4 text-blue-300" />
+                  <ArrowRight className="w-4 h-4 text-white" />
                 </ShimmerButton>
 
                 <button
@@ -470,17 +471,18 @@ export const HomePage: React.FC<HomePageProps> = ({
           03 — SELECTED WORK (3 Equal Cards: Alternating Zigzag Editorial Layout)
           ========================================================================= */}
       <section className="py-16 sm:py-24 bg-[#fafaf9] border-b border-stone-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-18">
           
           {/* Section Header */}
           <div className="max-w-3xl space-y-2">
-            <p className="text-xs font-bold uppercase tracking-widest text-blue-600">
-              {isTe ? 'క్యాంపెయిన్ కాన్సెప్ట్స్' : 'SAMPLE CREATIVE DIRECTION'}
-            </p>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-mono font-bold tracking-wider uppercase mb-1">
+              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+              <span>03 / {isTe ? 'క్యాంపెయిన్ కాన్సెప్ట్స్' : 'SAMPLE CREATIVE DIRECTION'}</span>
+            </div>
             <h2 className="text-3xl sm:text-5xl font-black text-stone-950 tracking-tight leading-tight">
               {isTe ? 'క్యాంపెయిన్ కాన్సెప్ట్స్ & క్రియేటివ్ డైరెక్షన్' : 'Sample Creative Direction & Campaign Execution'}
             </h2>
-            <p className="text-sm sm:text-base text-stone-500 font-normal">
+            <p className="text-sm sm:text-base text-stone-500 font-normal leading-relaxed">
               {isTe ? (
                 'BDS తెలుగు క్రియేటివ్ స్టోరీటెల్లింగ్ మరియు పెర్ఫార్మెన్స్ అడ్వర్టైజింగ్‌ను కలిపి ఎలా పని చేస్తుందో చూపించే ఉదాహరణ క్యాంపెయిన్ బ్లూప్రింట్స్.'
               ) : (
@@ -492,61 +494,62 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* =====================================================================
               CARD 01 (ROW 1): TEXTILE & BRIDAL RETAIL CONCEPT (Image Left, Info Right)
               ===================================================================== */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center border-t-2 border-stone-950 pt-10 sm:pt-14">
+          <div className="group/concept grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center border-t border-stone-200/90 pt-10 sm:pt-14">
             
             {/* Image Left */}
             <div className="lg:col-span-7">
-              <div className="relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl shadow-stone-900/5 bg-stone-100">
+              <div className="relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg shadow-stone-900/5 bg-stone-100 border border-stone-200/80 transition-all duration-500 group-hover/concept:shadow-xl group-hover/concept:border-blue-200/60">
                 <img
                   src={asset('assets/campaign-silks.webp')}
                   alt="Textile & Bridal Retail Campaign Concept Visual"
                   width={640}
                   height={400}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover/concept:scale-[1.03]"
                   loading="lazy"
                   decoding="async"
                 />
                 {/* Campaign Concept Badge */}
-                <div className="absolute top-3 left-3 bg-stone-950/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
-                  Campaign Concept
+                <div className="absolute top-3.5 left-3.5 bg-stone-950/85 backdrop-blur-md text-white text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-white/10 flex items-center gap-1.5 shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Campaign Concept</span>
                 </div>
               </div>
             </div>
 
             {/* Information Right */}
-            <div className="lg:col-span-5 space-y-5">
+            <div className="lg:col-span-5 space-y-4">
               <div className="space-y-1">
-                <p className="text-xs font-mono font-bold uppercase tracking-wider text-stone-400">
+                <p className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600">
                   MAIN ROAD & KOTIPALLI, RAJAHMUNDRY · RETAIL & FASHION
                 </p>
-                <h3 className="text-2xl sm:text-3xl font-black text-stone-950 leading-tight">
+                <h3 className="text-2xl sm:text-3xl font-black text-stone-950 leading-tight tracking-tight">
                   Textile & Bridal Showroom Concept
                 </h3>
                 <p className="text-[11px] text-stone-400 font-medium italic">Conceptual example — illustrating BDS execution capability</p>
               </div>
 
-              {/* Illustrative Outcome */}
-              <div className="space-y-1">
-                <div className="flex items-baseline gap-3">
-                  <span className="text-5xl sm:text-6xl lg:text-7xl font-black text-stone-950 tracking-tight leading-none">
+              {/* Illustrative Outcome Highlight Box */}
+              <div className="p-4 rounded-2xl bg-white border border-stone-200/80 shadow-2xs space-y-1.5">
+                <div className="flex items-center gap-3 flex-wrap">
+                  <span className="text-3xl sm:text-4xl font-black text-stone-950 tracking-tight leading-none">
                     High
                   </span>
-                  <span className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-blue-600">
+                  <span className="text-xs font-mono font-extrabold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">
                     FOOTFALL LIFT POTENTIAL
                   </span>
                 </div>
-                <p className="text-xs text-stone-500 font-semibold">Festive video campaign concept · Telugu voiceover reels + Meta Ads</p>
+                <p className="text-xs text-stone-500 font-medium">Festive video campaign concept · Telugu voiceover reels + Meta Ads</p>
               </div>
 
-              {/* Supporting Approach */}
-              <div className="flex items-center gap-6 pt-1 border-t border-stone-200">
-                <div>
-                  <p className="text-xs text-stone-400 font-semibold uppercase">Approach</p>
-                  <p className="text-base font-black text-stone-950">Video + Meta</p>
+              {/* Supporting Approach Telemetry Cards */}
+              <div className="grid grid-cols-2 gap-3 pt-1">
+                <div className="p-3 rounded-xl bg-white border border-stone-200/70 shadow-2xs">
+                  <p className="text-[11px] font-mono uppercase tracking-wider text-stone-400 font-semibold">Approach</p>
+                  <p className="text-sm font-bold text-stone-900 mt-0.5">Video + Meta</p>
                 </div>
-                <div className="border-l border-stone-200 pl-6">
-                  <p className="text-xs text-stone-400 font-semibold uppercase">Targeting</p>
-                  <p className="text-base font-black text-stone-950">Radius-Based</p>
+                <div className="p-3 rounded-xl bg-white border border-stone-200/70 shadow-2xs">
+                  <p className="text-[11px] font-mono uppercase tracking-wider text-stone-400 font-semibold">Targeting</p>
+                  <p className="text-sm font-bold text-stone-900 mt-0.5">Radius-Based</p>
                 </div>
               </div>
 
@@ -558,14 +561,14 @@ export const HomePage: React.FC<HomePageProps> = ({
                 )}
               </p>
 
-              <div>
+              <div className="pt-1">
                 <button
                   type="button"
                   onClick={() => onNavigate('portfolio')}
-                  className="inline-flex items-center gap-2 text-sm font-extrabold text-stone-950 hover:text-blue-600 transition-colors group cursor-pointer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-900 hover:bg-blue-600 text-white text-xs sm:text-sm font-bold transition-all duration-200 shadow-xs hover:shadow-md group/btn cursor-pointer"
                 >
-                  <span>{isTe ? 'కాన్సెప్ట్ చూడండి →' : 'View Concept →'}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <span>{isTe ? 'కాన్సెప్ట్ చూడండి' : 'View Concept'}</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>
@@ -575,42 +578,42 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* =====================================================================
               CARD 02 (ROW 2): HEALTHCARE & CLINICS CONCEPT (Information Left, Image Right)
               ===================================================================== */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center border-t border-stone-200 pt-12 sm:pt-16">
+          <div className="group/concept grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center border-t border-stone-200/90 pt-12 sm:pt-16">
             
             {/* Information Left */}
-            <div className="order-2 lg:order-1 lg:col-span-5 space-y-5">
+            <div className="order-2 lg:order-1 lg:col-span-5 space-y-4">
               <div className="space-y-1">
-                <p className="text-xs font-mono font-bold uppercase tracking-wider text-stone-400">
+                <p className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600">
                   DANAVAIPETA, RAJAHMUNDRY · HEALTHCARE & CLINICS
                 </p>
-                <h3 className="text-2xl sm:text-3xl font-black text-stone-950 leading-tight">
+                <h3 className="text-2xl sm:text-3xl font-black text-stone-950 leading-tight tracking-tight">
                   Dental & Healthcare Clinic Concept
                 </h3>
                 <p className="text-[11px] text-stone-400 font-medium italic">Conceptual example — illustrating BDS execution capability</p>
               </div>
 
-              {/* Illustrative Outcome */}
-              <div className="space-y-1">
-                <div className="flex items-baseline gap-3">
-                  <span className="text-5xl sm:text-6xl lg:text-7xl font-black text-stone-950 tracking-tight leading-none">
+              {/* Illustrative Outcome Highlight Box */}
+              <div className="p-4 rounded-2xl bg-white border border-stone-200/80 shadow-2xs space-y-1.5">
+                <div className="flex items-center gap-3 flex-wrap">
+                  <span className="text-3xl sm:text-4xl font-black text-stone-950 tracking-tight leading-none">
                     3-Pack
                   </span>
-                  <span className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-blue-600">
+                  <span className="text-xs font-mono font-extrabold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">
                     GOOGLE MAPS MODEL
                   </span>
                 </div>
                 <p className="text-xs text-stone-500 font-semibold">Local search & booking concept · Patient acquisition blueprint</p>
               </div>
 
-              {/* Supporting Approach */}
-              <div className="flex items-center gap-6 pt-1 border-t border-stone-200">
-                <div>
-                  <p className="text-xs text-stone-400 font-semibold uppercase">Approach</p>
-                  <p className="text-base font-black text-stone-950">Maps SEO</p>
+              {/* Supporting Approach Telemetry Cards */}
+              <div className="grid grid-cols-2 gap-3 pt-1">
+                <div className="p-3 rounded-xl bg-white border border-stone-200/70 shadow-2xs">
+                  <p className="text-[11px] font-mono uppercase tracking-wider text-stone-400 font-semibold">Approach</p>
+                  <p className="text-sm font-bold text-stone-900 mt-0.5">Maps SEO</p>
                 </div>
-                <div className="border-l border-stone-200 pl-6">
-                  <p className="text-xs text-stone-400 font-semibold uppercase">Inquiries</p>
-                  <p className="text-base font-black text-stone-950">Prompt Triage</p>
+                <div className="p-3 rounded-xl bg-white border border-stone-200/70 shadow-2xs">
+                  <p className="text-[11px] font-mono uppercase tracking-wider text-stone-400 font-semibold">Inquiries</p>
+                  <p className="text-sm font-bold text-stone-900 mt-0.5">Prompt Triage</p>
                 </div>
               </div>
 
@@ -622,33 +625,34 @@ export const HomePage: React.FC<HomePageProps> = ({
                 )}
               </p>
 
-              <div>
+              <div className="pt-1">
                 <button
                   type="button"
                   onClick={() => onNavigate('portfolio')}
-                  className="inline-flex items-center gap-2 text-sm font-extrabold text-stone-950 hover:text-blue-600 transition-colors group cursor-pointer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-900 hover:bg-blue-600 text-white text-xs sm:text-sm font-bold transition-all duration-200 shadow-xs hover:shadow-md group/btn cursor-pointer"
                 >
-                  <span>{isTe ? 'కాన్సెప్ట్ చూడండి →' : 'View Concept →'}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <span>{isTe ? 'కాన్సెప్ట్ చూడండి' : 'View Concept'}</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>
 
             {/* Image Right */}
             <div className="order-1 lg:order-2 lg:col-span-7">
-              <div className="relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl shadow-stone-900/5 bg-stone-100">
+              <div className="relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg shadow-stone-900/5 bg-stone-100 border border-stone-200/80 transition-all duration-500 group-hover/concept:shadow-xl group-hover/concept:border-blue-200/60">
                 <img
                   src={asset('assets/campaign-dental.webp')}
                   alt="Healthcare & Clinics Campaign Concept Visual"
                   width={640}
                   height={400}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover/concept:scale-[1.03]"
                   loading="lazy"
                   decoding="async"
                 />
                 {/* Campaign Concept Badge */}
-                <div className="absolute top-3 left-3 bg-stone-950/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
-                  Campaign Concept
+                <div className="absolute top-3.5 left-3.5 bg-stone-950/85 backdrop-blur-md text-white text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-white/10 flex items-center gap-1.5 shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Campaign Concept</span>
                 </div>
               </div>
             </div>
@@ -658,61 +662,62 @@ export const HomePage: React.FC<HomePageProps> = ({
           {/* =====================================================================
               CARD 03 (ROW 3): RESIDENTIAL REAL ESTATE CONCEPT (Image Left, Information Right)
               ===================================================================== */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center border-t border-stone-200 pt-12 sm:pt-16">
+          <div className="group/concept grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center border-t border-stone-200/90 pt-12 sm:pt-16">
             
             {/* Image Left */}
             <div className="lg:col-span-7">
-              <div className="relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl shadow-stone-900/5 bg-stone-100">
+              <div className="relative aspect-[16/10] w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg shadow-stone-900/5 bg-stone-100 border border-stone-200/80 transition-all duration-500 group-hover/concept:shadow-xl group-hover/concept:border-blue-200/60">
                 <img
                   src={asset('assets/campaign-villas.webp')}
                   alt="Residential Real Estate Campaign Concept Visual"
                   width={640}
                   height={400}
-                  className="w-full h-full object-cover object-center"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover/concept:scale-[1.03]"
                   loading="lazy"
                   decoding="async"
                 />
                 {/* Campaign Concept Badge */}
-                <div className="absolute top-3 left-3 bg-stone-950/80 backdrop-blur-sm text-white text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full">
-                  Campaign Concept
+                <div className="absolute top-3.5 left-3.5 bg-stone-950/85 backdrop-blur-md text-white text-[10px] font-mono font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-white/10 flex items-center gap-1.5 shadow-sm">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Campaign Concept</span>
                 </div>
               </div>
             </div>
 
             {/* Information Right */}
-            <div className="lg:col-span-5 space-y-5">
+            <div className="lg:col-span-5 space-y-4">
               <div className="space-y-1">
-                <p className="text-xs font-mono font-bold uppercase tracking-wider text-stone-400">
+                <p className="text-xs font-mono font-bold uppercase tracking-wider text-blue-600">
                   NH16 CORRIDOR, RAJAHMUNDRY · REAL ESTATE
                 </p>
-                <h3 className="text-2xl sm:text-3xl font-black text-stone-950 leading-tight">
+                <h3 className="text-2xl sm:text-3xl font-black text-stone-950 leading-tight tracking-tight">
                   Gated Villa Community Concept
                 </h3>
                 <p className="text-[11px] text-stone-400 font-medium italic">Conceptual example — illustrating BDS execution capability</p>
               </div>
 
-              {/* Illustrative Outcome */}
-              <div className="space-y-1">
-                <div className="flex items-baseline gap-3">
-                  <span className="text-5xl sm:text-6xl lg:text-7xl font-black text-stone-950 tracking-tight leading-none">
+              {/* Illustrative Outcome Highlight Box */}
+              <div className="p-4 rounded-2xl bg-white border border-stone-200/80 shadow-2xs space-y-1.5">
+                <div className="flex items-center gap-3 flex-wrap">
+                  <span className="text-3xl sm:text-4xl font-black text-stone-950 tracking-tight leading-none">
                     Verified
                   </span>
-                  <span className="text-sm sm:text-base font-extrabold uppercase tracking-wider text-blue-600">
+                  <span className="text-xs font-mono font-extrabold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">
                     BUYER LEAD MODEL
                   </span>
                 </div>
                 <p className="text-xs text-stone-500 font-semibold">High-intent lead qualification concept · Drone walkthrough + Meta Ads</p>
               </div>
 
-              {/* Supporting Approach */}
-              <div className="flex items-center gap-6 pt-1 border-t border-stone-200">
-                <div>
-                  <p className="text-xs text-stone-400 font-semibold uppercase">Approach</p>
-                  <p className="text-base font-black text-stone-950">Multi-Step Leads</p>
+              {/* Supporting Approach Telemetry Cards */}
+              <div className="grid grid-cols-2 gap-3 pt-1">
+                <div className="p-3 rounded-xl bg-white border border-stone-200/70 shadow-2xs">
+                  <p className="text-[11px] font-mono uppercase tracking-wider text-stone-400 font-semibold">Approach</p>
+                  <p className="text-sm font-bold text-stone-900 mt-0.5">Multi-Step Leads</p>
                 </div>
-                <div className="border-l border-stone-200 pl-6">
-                  <p className="text-xs text-stone-400 font-semibold uppercase">Targeting</p>
-                  <p className="text-base font-black text-stone-950">NRI + Local</p>
+                <div className="p-3 rounded-xl bg-white border border-stone-200/70 shadow-2xs">
+                  <p className="text-[11px] font-mono uppercase tracking-wider text-stone-400 font-semibold">Targeting</p>
+                  <p className="text-sm font-bold text-stone-900 mt-0.5">NRI + Local</p>
                 </div>
               </div>
 
@@ -724,14 +729,14 @@ export const HomePage: React.FC<HomePageProps> = ({
                 )}
               </p>
 
-              <div>
+              <div className="pt-1">
                 <button
                   type="button"
                   onClick={() => onNavigate('portfolio')}
-                  className="inline-flex items-center gap-2 text-sm font-extrabold text-stone-950 hover:text-blue-600 transition-colors group cursor-pointer"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-900 hover:bg-blue-600 text-white text-xs sm:text-sm font-bold transition-all duration-200 shadow-xs hover:shadow-md group/btn cursor-pointer"
                 >
-                  <span>{isTe ? 'కాన్సెప్ట్ చూడండి →' : 'View Concept →'}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <span>{isTe ? 'కాన్సెప్ట్ చూడండి' : 'View Concept'}</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                 </button>
               </div>
             </div>
@@ -1067,14 +1072,17 @@ export const HomePage: React.FC<HomePageProps> = ({
 
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3.5 pt-2">
-            <button
-              type="button"
+            <ShimmerButton
               onClick={() => onOpenQuoteModal('Final Growth Plan')}
-              className="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold text-sm sm:text-base transition-all duration-200 flex items-center justify-center gap-2 shadow-lg cursor-pointer"
+              borderRadius="12px"
+              shimmerDuration="2.5s"
+              background="linear-gradient(135deg, #0247fe 0%, #0b63f6 100%)"
+              shimmerColor="#ffffff"
+              className="w-full sm:w-auto px-8 py-3.5 font-bold text-sm sm:text-base cursor-pointer shadow-md shadow-blue-600/30 hover:shadow-lg hover:shadow-blue-600/40 text-white"
             >
               <span>{isTe ? 'ఉచిత Growth Plan పొందండి' : 'Get a Free Growth Plan'}</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
+              <ArrowRight className="w-4 h-4 text-white" />
+            </ShimmerButton>
 
             <a
               href={`https://wa.me/${companyInfo.whatsappNumber}?text=${encodeURIComponent(companyInfo.whatsappMessage)}`}
