@@ -25,7 +25,7 @@ interface InsightsPageProps {
 // Map authentic high-res photography to each article
 const articleImageMap: Record<string, { src: string; caption: string; captionTe: string }> = {
   'local-seo-guide-rajahmundry-2026': {
-    src: asset('assets/service-local-seo.webp'),
+    src: asset('assets/service-local-seo.webp?v=1'),
     caption: 'Google Maps 3-Pack ranking strategy on Indian commercial high streets',
     captionTe: 'గూగుల్ మ్యాప్స్ 3-ప్యాక్ స్థానిక ర్యాంకింగ్ వ్యూహం'
   },
@@ -61,7 +61,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
 
   const featuredArticle = insightsArticlesList[0];
   const featuredImg = articleImageMap[featuredArticle.slug] || {
-    src: asset('assets/service-local-seo.webp'),
+    src: asset('assets/service-local-seo.webp?v=1'),
     caption: 'Google Maps 3-Pack ranking strategy in Rajahmundry & Coastal AP',
     captionTe: 'గూగుల్ మ్యాప్స్ 3-ప్యాక్ స్థానిక ర్యాంకింగ్ వ్యూహం'
   };
@@ -194,7 +194,7 @@ export const InsightsPage: React.FC<InsightsPageProps> = ({
           <div className="divide-y divide-stone-200">
             {insightsArticlesList.map((article, idx) => {
               const artImg = articleImageMap[article.slug] || {
-                src: asset('assets/service-local-seo.webp'),
+                src: asset('assets/service-local-seo.webp?v=1'),
                 caption: article.title,
                 captionTe: article.title
               };

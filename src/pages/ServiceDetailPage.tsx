@@ -95,7 +95,7 @@ const serviceLogoMap: Record<string, { component: React.FC<{ className?: string 
 // Map high-definition editorial production images to each service
 const serviceHeroImageMap: Record<string, { src: string; caption: string; captionTe: string }> = {
   'local-seo': {
-    src: asset('assets/service-local-seo.webp'),
+    src: asset('assets/service-local-seo.webp?v=1'),
     caption: 'Google Maps 3-Pack: Local pack visibility, authentic review acquisition & direct calls',
     captionTe: 'గూగుల్ మ్యాప్స్ 3-ప్యాక్: స్థానిక విజిబిలిటీ, జెన్యూన్ రివ్యూలు & కాల్స్'
   },
@@ -115,7 +115,7 @@ const serviceHeroImageMap: Record<string, { src: string; caption: string; captio
     captionTe: 'బ్రాండ్ క్యూరేషన్: ఇన్‌స్టాగ్రామ్ ఫీడ్, స్టోరీలు & స్థానిక ప్రచురణ'
   },
   'platform-coverage': {
-    src: asset('assets/service-local-seo.webp'),
+    src: asset('assets/service-local-seo.webp?v=1'),
     caption: 'Google Maps 3-Pack: Local pack visibility, authentic review acquisition & direct calls',
     captionTe: 'గూగుల్ మ్యాప్స్ 3-ప్యాక్: స్థానిక విజిబిలిటీ, జెన్యూన్ రివ్యూలు & కాల్స్'
   },
