@@ -9,13 +9,15 @@ export interface CardSpotlightProps extends React.HTMLAttributes<HTMLDivElement>
   radius?: number;
   color?: string;
   className?: string;
+  contentClassName?: string;
 }
 
 export const CardSpotlight: React.FC<CardSpotlightProps> = ({
   children,
-  radius = 360,
-  color = "rgba(2, 71, 254, 0.18)", // BDS Blue glow
+  radius = 320,
+  color = "rgba(59, 130, 246, 0.65)", // Dynamic glowing border color
   className,
+  contentClassName,
   ...props
 }) => {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -46,22 +48,41 @@ export const CardSpotlight: React.FC<CardSpotlightProps> = ({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        "group relative overflow-hidden rounded-3xl border border-stone-800 bg-stone-900 transition-all duration-300 hover:border-blue-500/60 shadow-xs",
+        "group relative rounded-3xl p-[1px] overflow-hidden bg-stone-800/80 transition-all duration-300 shadow-xs",
         className
       )}
       {...props}
     >
-      {/* Dynamic Cursor Spotlight Radial Gradient */}
+      {/* 1. Dynamic Border Spotlight (Lights up ONLY the 1px edge boundary near the cursor) */}
       <div
         className="pointer-events-none absolute -inset-px transition-opacity duration-300 ease-out"
         style={{
           opacity,
-          background: `radial-gradient(${radius}px circle at ${position.x}px ${position.y}px, ${color}, transparent 80%)`,
+          background: `radial-gradient(${radius}px circle at ${position.x}px ${position.y}px, ${color}, transparent 65%)`,
         }}
         aria-hidden="true"
       />
-      {/* Content */}
-      <div className="relative z-10 h-full">{children}</div>
+
+      {/* 2. Inner Card Surface (Hugs border cleanly with dark background) */}
+      <div
+        className={cn(
+          "relative h-full w-full rounded-[23px] bg-stone-900 p-7 overflow-hidden flex flex-col justify-between",
+          contentClassName
+        )}
+      >
+        {/* Ultra-subtle ambient surface diffusion (seamless fade, zero harsh cutoff lines) */}
+        <div
+          className="pointer-events-none absolute -inset-px transition-opacity duration-500 ease-out"
+          style={{
+            opacity: opacity * 0.4,
+            background: `radial-gradient(${radius * 1.5}px circle at ${position.x}px ${position.y}px, rgba(2, 71, 254, 0.14), transparent 85%)`,
+          }}
+          aria-hidden="true"
+        />
+
+        {/* Content */}
+        <div className="relative z-10 h-full">{children}</div>
+      </div>
     </div>
   );
 };

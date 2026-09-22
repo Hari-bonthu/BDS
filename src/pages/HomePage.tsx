@@ -778,7 +778,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 
             {/* Pillar 1 */}
-            <CardSpotlight className="p-7 space-y-5">
+            <CardSpotlight contentClassName="space-y-5">
               <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center shrink-0">
                 <TrendingUp className="w-5 h-5 text-blue-400" />
               </div>
@@ -795,7 +795,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </CardSpotlight>
 
             {/* Pillar 2 */}
-            <CardSpotlight className="p-7 space-y-5">
+            <CardSpotlight contentClassName="space-y-5">
               <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center shrink-0">
                 <MapPin className="w-5 h-5 text-blue-400" />
               </div>
@@ -812,7 +812,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </CardSpotlight>
 
             {/* Pillar 3 */}
-            <CardSpotlight className="p-7 space-y-5">
+            <CardSpotlight contentClassName="space-y-5">
               <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center shrink-0">
                 <User className="w-5 h-5 text-blue-400" />
               </div>
