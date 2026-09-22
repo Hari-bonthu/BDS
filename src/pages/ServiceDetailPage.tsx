@@ -136,48 +136,89 @@ const serviceHeroImageMap: Record<string, { src: string; caption: string; captio
   }
 };
 
-// Map campaign concept imagery to services (sector-generic, no fictional client names)
-const serviceCaseProofMap: Record<string, { src: string; client: string; result: string }> = {
-  'local-seo': {
-    src: asset('assets/campaign-dental.webp'),
-    client: 'Dental & Healthcare Practice Concept',
-    result: 'Local SEO & Google Maps 3-Pack rank acceleration driving 3.4x monthly appointment inquiries'
-  },
-  'content-creation': {
-    src: asset('assets/campaign-silks.webp'),
-    client: 'Textile & Saree Retail Concept',
-    result: 'Bilingual Telugu/English creative concept for festive season retail footfall campaigns'
-  },
-  'short-form-video-ads': {
-    src: asset('assets/campaign-dental.webp'),
-    client: 'Dental & Medical Practice Concept',
-    result: 'Geo-targeted video ad concept for local healthcare patient acquisition'
-  },
-  'social-media-management': {
-    src: asset('assets/campaign-silks.webp'),
-    client: 'Textile & Saree Retail Concept',
-    result: 'Organic growth concept for regional apparel showrooms using Instagram & Facebook'
-  },
-  'platform-coverage': {
-    src: asset('assets/campaign-dental.webp'),
-    client: 'Dental & Medical Practice Concept',
-    result: 'Google Maps 3-Pack optimization concept for local search dominance'
-  },
-  'content-operations': {
-    src: asset('assets/campaign-villas.webp'),
-    client: 'Gated Community Real Estate Concept',
-    result: 'Visual content pipeline concept for premium villa & residential project launches'
-  },
-  'community-management': {
-    src: asset('assets/campaign-dental.webp'),
-    client: 'Dental & Medical Practice Concept',
-    result: 'Under-15-minute inbound lead response model for local service businesses'
-  },
-  'reporting-insights': {
-    src: asset('assets/campaign-villas.webp'),
-    client: 'Gated Community Real Estate Concept',
-    result: 'Transparent ad spend audit concept with tracked ROAS for high-ticket real estate'
-  }
+// Map campaign concept imagery to services (distinct visual proofs per concept)
+const serviceCaseProofListMap: Record<string, { src: string; client: string; result: string }[]> = {
+  'local-seo': [
+    {
+      src: asset('assets/campaign-dental.webp'),
+      client: 'Dental & Healthcare Practice Concept',
+      result: 'Local SEO & Google Maps 3-Pack rank acceleration driving 3.4x monthly appointment inquiries'
+    },
+    {
+      src: asset('assets/campaign-silks.webp'),
+      client: 'Textile & Saree Retail Concept',
+      result: 'Geo-targeted local search ranking for bridal wear and festive shopping'
+    }
+  ],
+  'content-creation': [
+    {
+      src: asset('assets/campaign-silks.webp'),
+      client: 'Textile & Saree Retail Concept',
+      result: 'Bilingual Telugu/English creative concept for festive season retail footfall campaigns'
+    },
+    {
+      src: asset('assets/campaign-dental.webp'),
+      client: 'Healthcare & Clinic Awareness Concept',
+      result: 'Bilingual medical awareness infographics simplifying healthcare tips for local families'
+    }
+  ],
+  'short-form-video-ads': [
+    {
+      src: asset('assets/campaign-villas.webp'),
+      client: 'Gated Community Real Estate Concept',
+      result: 'Lead generation video tour campaign targeting regional property investors'
+    },
+    {
+      src: asset('assets/service-video-ads.webp'),
+      client: 'Hospitality & Dining Video Concept',
+      result: 'Localized Telugu food showcase reels driving weekend reservations'
+    }
+  ],
+  'social-media-management': [
+    {
+      src: asset('assets/service-social-media.webp'),
+      client: 'Retail & Commercial Growth Concept',
+      result: 'Organic community reach and seasonal brand engagement'
+    },
+    {
+      src: asset('assets/campaign-dental.webp'),
+      client: 'Doctor Branding & Healthcare Concept',
+      result: 'Doctor insight carousels building trusted clinic recall across local feeds'
+    }
+  ],
+  'platform-coverage': [
+    {
+      src: asset('assets/campaign-silks.webp'),
+      client: 'Retail Commercial Hub Concept',
+      result: 'Google Maps 3-Pack dominance with cataloged products and review funnels'
+    },
+    {
+      src: asset('assets/campaign-villas.webp'),
+      client: 'Hospitality & Real Estate Venue Concept',
+      result: 'Synchronized multi-channel setup driving direct booking inquiries'
+    }
+  ],
+  'content-operations': [
+    {
+      src: asset('assets/campaign-villas.webp'),
+      client: 'Educational & Multi-Campus Concept',
+      result: 'Asset pipeline coordinating 100+ seasonal admission creatives without bottlenecks'
+    }
+  ],
+  'community-management': [
+    {
+      src: asset('assets/campaign-dental.webp'),
+      client: 'Healthcare Community & Review Concept',
+      result: 'Under-15-minute patient DM triage and review acceleration model'
+    }
+  ],
+  'reporting-insights': [
+    {
+      src: asset('assets/campaign-villas.webp'),
+      client: 'Enterprise Growth Attribution Concept',
+      result: 'Transparent ad spend audit concept with tracked ROAS for high-ticket investments'
+    }
+  ]
 };
 
 // =============================================================================
@@ -824,7 +865,7 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
   const nextService = servicesList[(currentIndex + 1) % servicesList.length];
   const logos = serviceLogoMap[service.id] || [];
   const heroImg = serviceHeroImageMap[service.id] || serviceHeroImageMap['content-creation'];
-  const caseImg = serviceCaseProofMap[service.id] || serviceCaseProofMap['content-creation'];
+  const proofList = serviceCaseProofListMap[service.id] || serviceCaseProofListMap['content-creation'];
   const flow = serviceBespokeFlows[service.id] || serviceBespokeFlows['content-creation'];
 
   return (
@@ -1131,23 +1172,28 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
                     </div>
 
                     {/* Regional Campaign Visual Proof */}
-                    <div className="pt-2 space-y-2">
-                      <div className="overflow-hidden rounded-2xl border border-stone-200/90 shadow-sm aspect-[16/10] bg-stone-100">
-                        <img
-                          src={caseImg.src}
-                          alt={caseImg.client}
-                          width={640}
-                          height={400}
-                          className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
-                          loading="lazy"
-                          decoding="async"
-                        />
-                      </div>
-                      <div className="flex items-center justify-between text-xs text-stone-500 px-1">
-                        <span className="font-bold text-stone-900">{caseImg.client}</span>
-                        <span className="text-blue-600 font-bold">{caseImg.result}</span>
-                      </div>
-                    </div>
+                    {(() => {
+                      const sampleProof = proofList[samIdx] || proofList[0];
+                      return (
+                        <div className="pt-2 space-y-2">
+                          <div className="overflow-hidden rounded-2xl border border-stone-200/90 shadow-sm aspect-[16/10] bg-stone-100">
+                            <img
+                              src={sampleProof.src}
+                              alt={sampleProof.client}
+                              width={640}
+                              height={400}
+                              className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
+                              loading="lazy"
+                              decoding="async"
+                            />
+                          </div>
+                          <div className="flex items-center justify-between text-xs text-stone-500 px-1">
+                            <span className="font-bold text-stone-900">{sampleProof.client}</span>
+                            <span className="text-blue-600 font-bold">{sampleProof.result}</span>
+                          </div>
+                        </div>
+                      );
+                    })()}
                   </div>
                 ))}
               </div>

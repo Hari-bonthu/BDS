@@ -18,8 +18,11 @@ Thumbs.db
 # Reports, Audits & Non-Runtime Documentation (SEO reports, PDFs, audit assets)
 *.pdf
 *seo-report*
-*SEO*
+*SEO_EXECUTION*
+*SEO_AUDIT*
 !scripts/seo-audit.mjs
+!public/assets/*
+!.github/**
 *.docx
 *.xlsx
 *.pptx
