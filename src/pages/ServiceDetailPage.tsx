@@ -40,6 +40,7 @@ import {
   InquiriesLogo
 } from '../components/common/PlatformLogos';
 import { ContainerScroll, CardSticky } from '@/components/ui/cards-stack';
+import { ImageComparison } from '@/components/ui/image-comparison';
 
 interface ServiceDetailPageProps {
   pageId: PageId;
@@ -134,6 +135,45 @@ const serviceHeroImageMap: Record<string, { src: string; caption: string; captio
     src: asset('assets/service-reporting-insights.webp'),
     caption: 'Executive transparency: Live ROAS metrics, bi-weekly audits & cost-per-lead tracking',
     captionTe: 'పారదర్శకమైన రిపోర్టింగ్: లైవ్ ROAS మెట్రిక్స్ & లీడ్స్ ఆడిట్ రిపోర్ట్'
+  }
+};
+
+// Interactive Before/After Visual Comparison configurations
+const serviceComparisonMap: Record<string, {
+  beforeImage: string;
+  afterImage: string;
+  beforeAlt: string;
+  afterAlt: string;
+  beforeLabel: string;
+  afterLabel: string;
+  beforeLabelTe: string;
+  afterLabelTe: string;
+  caption: string;
+  captionTe: string;
+}> = {
+  'local-seo': {
+    beforeImage: asset('assets/campaign-dental.webp'),
+    afterImage: asset('assets/service-local-seo.webp'),
+    beforeAlt: 'Google Maps Search Rank #18 listing before local SEO optimization',
+    afterAlt: 'BDS Google Maps 3-Pack Rank #1 local listing dominance',
+    beforeLabel: 'Rank #18 (Before)',
+    afterLabel: 'Rank #1 (3-Pack)',
+    beforeLabelTe: 'ర్యాంక్ #18 (ముందు)',
+    afterLabelTe: 'ర్యాంక్ #1 (3-ప్యాక్)',
+    caption: 'Drag to compare: Unranked local profile vs. Google Maps 3-Pack Top 1 placement',
+    captionTe: 'ర్యాంకింగ్ వ్యత్యాసాన్ని చూడటానికి స్లైడర్‌ను లాగండి'
+  },
+  'short-form-video-ads': {
+    beforeImage: asset('assets/campaign-silks.webp'),
+    afterImage: asset('assets/service-video-ads.webp'),
+    beforeAlt: 'Raw phone camera footage without color grading or dynamic hooks',
+    afterAlt: 'Mastered 4K Telugu Reel with high-retention hook and subtitles',
+    beforeLabel: 'Raw Phone Clip',
+    afterLabel: 'Mastered 4K Reel',
+    beforeLabelTe: 'రా రికార్డింగ్',
+    afterLabelTe: '4K తెలుగు రీల్',
+    caption: 'Drag to compare: Raw mobile capture vs. color-graded high-retention Telugu Reel',
+    captionTe: 'రా వీడియో మరియు 4K రీల్ మధ్య తేడాను చూడటానికి స్లైడర్‌ను లాగండి'
   }
 };
 
@@ -971,23 +1011,43 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
               </div>
             </div>
 
-            {/* Right: Authentic Production Photography Showcase */}
+            {/* Right: Authentic Production Photography or Interactive Before/After Comparison */}
             <div className="lg:col-span-5 space-y-2">
-              <div className="overflow-hidden rounded-2xl border border-stone-200/90 shadow-sm aspect-[4/3] bg-stone-100">
-                <img
-                  src={heroImg.src}
-                  alt={service.title}
-                  width={560}
-                  height={420}
-                  className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
-                  loading="eager"
-                  decoding="async"
-                />
-              </div>
-              <p className="text-[11px] font-mono text-stone-500 flex items-center justify-between px-1">
-                <span className="truncate">{isTe ? heroImg.captionTe : heroImg.caption}</span>
-                <span className="shrink-0 text-stone-400 ml-2">BDS Studio</span>
-              </p>
+              {serviceComparisonMap[service.id] ? (
+                <>
+                  <ImageComparison
+                    beforeImage={serviceComparisonMap[service.id].beforeImage}
+                    afterImage={serviceComparisonMap[service.id].afterImage}
+                    beforeAlt={serviceComparisonMap[service.id].beforeAlt}
+                    afterAlt={serviceComparisonMap[service.id].afterAlt}
+                    beforeLabel={isTe ? serviceComparisonMap[service.id].beforeLabelTe : serviceComparisonMap[service.id].beforeLabel}
+                    afterLabel={isTe ? serviceComparisonMap[service.id].afterLabelTe : serviceComparisonMap[service.id].afterLabel}
+                    aspectRatio="aspect-[4/3]"
+                  />
+                  <p className="text-[11px] font-mono text-stone-500 flex items-center justify-between px-1">
+                    <span className="truncate">{isTe ? serviceComparisonMap[service.id].captionTe : serviceComparisonMap[service.id].caption}</span>
+                    <span className="shrink-0 text-blue-600 font-bold ml-2">Interactive Proof</span>
+                  </p>
+                </>
+              ) : (
+                <>
+                  <div className="overflow-hidden rounded-2xl border border-stone-200/90 shadow-sm aspect-[4/3] bg-stone-100">
+                    <img
+                      src={heroImg.src}
+                      alt={service.title}
+                      width={560}
+                      height={420}
+                      className="w-full h-full object-cover hover:scale-[1.02] transition-transform duration-500"
+                      loading="eager"
+                      decoding="async"
+                    />
+                  </div>
+                  <p className="text-[11px] font-mono text-stone-500 flex items-center justify-between px-1">
+                    <span className="truncate">{isTe ? heroImg.captionTe : heroImg.caption}</span>
+                    <span className="shrink-0 text-stone-400 ml-2">BDS Studio</span>
+                  </p>
+                </>
+              )}
             </div>
 
           </div>

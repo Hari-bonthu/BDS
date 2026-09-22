@@ -32,6 +32,17 @@ import {
   WhatsAppLogo,
   YouTubeLogo
 } from '../components/common/PlatformLogos';
+import { NumberTicker } from '@/components/ui/number-ticker';
+
+const parseMetricValue = (val: string) => {
+  const match = val.match(/^([^\d.]*)(\d+(?:\.\d+)?)(.*)$/);
+  if (!match) return null;
+  const prefix = match[1] || '';
+  const num = parseFloat(match[2]);
+  const suffix = match[3] || '';
+  const decimalPlaces = match[2].includes('.') ? match[2].split('.')[1].length : 0;
+  return { prefix, num, suffix, decimalPlaces };
+};
 
 interface PortfolioPageProps {
   language?: Language;
@@ -457,6 +468,7 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                               : isMedium
                               ? 'text-xl sm:text-2xl'
                               : 'text-2xl sm:text-3xl';
+                            const parsed = parseMetricValue(res.metric);
                             return (
                               <div
                                 key={rIdx}
@@ -466,7 +478,16 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({
                                   className={`${metricSize} font-black text-blue-600 tracking-tight leading-tight break-words`}
                                   title={res.metric}
                                 >
-                                  {res.metric}
+                                  {parsed ? (
+                                    <NumberTicker
+                                      value={parsed.num}
+                                      prefix={parsed.prefix}
+                                      suffix={parsed.suffix}
+                                      decimalPlaces={parsed.decimalPlaces}
+                                    />
+                                  ) : (
+                                    res.metric
+                                  )}
                                 </span>
                                 <span className="text-xs text-stone-600 font-medium leading-snug">
                                   {res.label}

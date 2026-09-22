@@ -1,6 +1,18 @@
 # Bhargav Digital Solutions (BDS) — Implementation Plans
 
-Updated on 2026-09-11 following the **BDS Website Audit & Implementation Brief** (`BDS_Website_Audit_Implementation_Brief.docx`). Execute in the order below. Each executor: read the plan fully before starting, honor its STOP conditions, and update your row in the status table when done.
+Updated on 2026-09-22. Execute in the order below. Each executor: read the plan fully before starting, honor its STOP conditions, and update your row in the status table when done.
+
+---
+
+## Sprint 3: 21st.dev Component Suite & Emil Design Engineering (2026-09-22)
+
+| Plan | Title | Priority | Effort | Depends on | Status |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **017** | [Section 1: High-Impact Visual Proof — Before/After Comparison Slider & Kinetic Number Ticker](./017-visual-proof-before-after-slider-number-ticker.md) | **P1** | M (2–3h) | — | **DONE** |
+| **018** | Section 2: Layout & Grid — Interactive Bento Grid & Sticky Timeline Progression | **P2** | M (2h) | 017 | **PENDING** |
+| **019** | Section 3: Trust & Authority — Smooth Infinite Marquee & Spotlight Glowing Border Cards | **P2** | S (1.5h) | — | **PENDING** |
+| **020** | Section 4: Conversion Accelerators — Shimmer Button Glow CTA & Floating Mobile Action Dock | **P1** | M (2h) | — | **PENDING** |
+| **021** | Section 5: Content & Article Experience — Minimal Scroll Progress Indicator & Interactive TOC | **P3** | S (1h) | — | **PENDING** |
 
 ---
 

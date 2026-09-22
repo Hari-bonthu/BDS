@@ -22,6 +22,17 @@ import {
   LeadGenLogo,
   InquiriesLogo
 } from '../components/common/PlatformLogos';
+import { NumberTicker } from '@/components/ui/number-ticker';
+
+const parseMetricValue = (val: string) => {
+  const match = val.match(/^([^\d.]*)(\d+(?:\.\d+)?)(.*)$/);
+  if (!match) return null;
+  const prefix = match[1] || '';
+  const num = parseFloat(match[2]);
+  const suffix = match[3] || '';
+  const decimalPlaces = match[2].includes('.') ? match[2].split('.')[1].length : 0;
+  return { prefix, num, suffix, decimalPlaces };
+};
 
 interface HomePageProps {
   language?: Language;
@@ -204,10 +215,23 @@ export const HomePage: React.FC<HomePageProps> = ({
                       </p>
                     </div>
 
-                    {/* Single Large Dominant Result */}
+                    {/* Single Large Dominant Result with Kinetic Ticker */}
                     <div className="pt-1 flex items-baseline gap-2.5">
                       <span className="text-4xl sm:text-5xl font-black text-white tracking-tight leading-none">
-                        {currentCampaign.resultNumber}
+                        {(() => {
+                          const parsed = parseMetricValue(currentCampaign.resultNumber);
+                          return parsed ? (
+                            <NumberTicker
+                              key={currentCampaign.resultNumber}
+                              value={parsed.num}
+                              prefix={parsed.prefix}
+                              suffix={parsed.suffix}
+                              decimalPlaces={parsed.decimalPlaces}
+                            />
+                          ) : (
+                            currentCampaign.resultNumber
+                          );
+                        })()}
                       </span>
                       <span className="text-xs sm:text-sm font-bold uppercase tracking-wider text-emerald-400">
                         {isTe ? currentCampaign.resultLabelTe : currentCampaign.resultLabel}
