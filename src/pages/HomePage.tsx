@@ -6,7 +6,8 @@ import {
   MapPin,
   TrendingUp,
   User,
-  Sparkles
+  Sparkles,
+  CheckCircle2
 } from 'lucide-react';
 import { companyInfo } from '../data/companyData';
 import { PageId, Language } from '../types';
@@ -129,14 +130,14 @@ export const HomePage: React.FC<HomePageProps> = ({
               <h1 className="text-3xl sm:text-5xl lg:text-[58px] font-black tracking-tight text-stone-950 leading-[1.14] sm:leading-[1.12]">
                 {isTe ? (
                   <>
-                    రాజమండ్రిలో మీ బిజినెస్ గ్రోత్ కోసం <br className="hidden sm:inline" />
-                    <span className="text-blue-600">అఫర్డబుల్ డిజిటల్ మార్కెటింగ్</span> ఏజెన్సీ.
+                    రాజమండ్రిలోని లోకల్ బిజినెస్‌ల కోసం <br className="hidden sm:inline" />
+                    <span className="text-blue-600">డిజిటల్ మార్కెటింగ్ ఏజెన్సీ</span>.
                   </>
                 ) : (
                   <>
-                    Affordable Digital Marketing <br className="hidden sm:inline" />
-                    <span className="text-blue-600">Agency in Rajahmundry</span> <br className="hidden sm:inline" />
-                    to grow your local business.
+                    <span className="text-blue-600">Digital Marketing Agency</span> <br className="hidden sm:inline" />
+                    in Rajahmundry built for <br className="hidden sm:inline" />
+                    growing local businesses.
                   </>
                 )}
               </h1>
@@ -144,9 +145,9 @@ export const HomePage: React.FC<HomePageProps> = ({
               {/* Supporting Copy */}
               <p className="text-base sm:text-lg text-stone-600 leading-relaxed max-w-2xl font-normal">
                 {isTe ? (
-                  'భార్గవ్ డిజిటల్ సొల్యూషన్స్ (BDS): తెలుగు రీల్స్, సోషల్ మీడియా, Google Maps 3-Pack, మరియు పెయిడ్ యాడ్స్ ద్వారా మీ వ్యాపారానికి ఎక్కువ కస్టమర్లను తీసుకువస్తాము.'
+                  'భార్గవ్ డిజిటల్ సొల్యూషన్స్ (BDS): రాజమండ్రి మరియు కోస్తా ఆంధ్ర వ్యాపారాలకు Google Maps 3-Pack, తెలుగు రీల్స్, మరియు పెర్ఫార్మెన్స్ యాడ్స్ ద్వారా నిజమైన కస్టమర్లను తీసుకువస్తాము.'
                 ) : (
-                  'Bhargav Digital Solutions (BDS): High-converting Telugu Reels, social media management, Google Maps 3-Pack, and ROI-driven performance ads built for businesses across Rajahmundry and Coastal Andhra.'
+                  'Bhargav Digital Solutions (BDS) is the results-driven digital marketing agency in Rajahmundry helping local retail showrooms, healthcare clinics, and service firms grow through Google Maps 3-Pack SEO, high-converting Telugu Reels, and ROI-focused Meta Ads.'
                 )}
               </p>
 
@@ -311,157 +312,310 @@ export const HomePage: React.FC<HomePageProps> = ({
       </section>
 
       {/* =========================================================================
-          02 — WHAT WE DO (Compact 3-Column Outcomes with Official Platform Logos)
+          02 — REGIONAL SERVICES & GROWTH SYSTEMS (Rajahmundry & East Godavari Hub)
           ========================================================================= */}
-      <section className="py-12 sm:py-16 bg-white border-b border-stone-200/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
+      <section className="py-14 sm:py-20 bg-white border-b border-stone-200/80">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12">
           
-          {/* Compact Header: Headline on Left, Brief Subtitle + CTA on Right */}
+          {/* Section Header */}
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-stone-200">
-            <div className="space-y-2 max-w-2xl">
-              <p className="text-xs font-bold uppercase tracking-widest text-blue-600">
-                {isTe ? 'సర్వీసులు' : 'WHAT WE DO'}
-              </p>
+            <div className="space-y-3 max-w-3xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-xs font-mono font-bold tracking-wider uppercase">
+                <MapPin className="w-3.5 h-3.5 text-blue-600" />
+                <span>{isTe ? 'రాజమండ్రి & ఈస్ట్ గోదావరి సర్వీసెస్' : 'LOCAL GROWTH SYSTEMS • RAJAHMUNDRY & EAST GODAVARI'}</span>
+              </div>
               <h2 className="text-3xl sm:text-5xl font-black text-stone-950 tracking-tight leading-tight">
                 {isTe ? (
-                  <>మీ వ్యాపారాన్ని ముందుకు నడిపించే డిజిటల్ మార్కెటింగ్.</>
+                  <>రాజమండ్రిలోని లోకల్ బిజినెస్‌ల కోసం ప్రత్యేక డిజిటల్ మార్కెటింగ్ సర్వీసులు.</>
                 ) : (
-                  <>Digital marketing that moves your business forward.</>
+                  <>Tailored Digital Marketing Services for Businesses in Rajahmundry.</>
                 )}
               </h2>
+              <p className="text-sm sm:text-base text-stone-600 font-medium leading-relaxed max-w-2xl">
+                {isTe
+                  ? 'దానవాయిపేట, మెయిన్ రోడ్ నుండి కడియం, కాకినాడ వరకు — రాజమండ్రి పరిసరాల్లోని రిటైల్ షోరూమ్‌లు, హాస్పిటల్స్, సర్వీస్ బిజినెస్‌లకు నేరుగా కస్టమర్ల వాకింగ్స్ మరియు ఫోన్ కాల్స్ తీసుకొచ్చే గ్రోత్ సిస్టమ్స్.'
+                  : 'From high-intent Google Maps searches in Danavaipeta to viral Telugu Reels across Godavari districts, we engineer local visibility that converts directly into store footfall and customer inquiries.'}
+              </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 shrink-0">
-              <p className="text-xs sm:text-sm text-stone-500 max-w-xs font-medium leading-relaxed">
-                {isTe
-                  ? 'స్థానిక కస్టమర్లు మిమ్మల్ని సులభంగా కనుగొని, మీ బ్రాండ్‌ని గుర్తుంచుకుని, కస్టమర్లుగా మారేలా చేస్తాం.'
-                  : 'Get found, get noticed and turn attention into real customers.'}
-              </p>
-              <button
-                type="button"
-                onClick={() => onNavigate('services')}
-                className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-stone-950 hover:text-blue-600 transition-colors group cursor-pointer whitespace-nowrap self-start sm:self-auto"
+            <div className="shrink-0">
+              <a
+                href="/services/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate('services');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-stone-900 text-white text-xs sm:text-sm font-bold hover:bg-blue-600 transition-colors shadow-sm group"
               >
-                <span>{isTe ? 'అన్ని సర్వీసులు →' : 'Explore All Services →'}</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-              </button>
+                <span>{isTe ? 'అన్ని సర్వీసులు చూడండి' : 'View All 8 Services'}</span>
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </a>
             </div>
           </div>
 
-          {/* Equal-Height 3-Column Grid: 01 GET FOUND | 02 GET NOTICED | 03 GET CUSTOMERS */}
-          <div className="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-stone-200">
+          {/* 4 Featured Strategic Service Cards for Rajahmundry Businesses */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             
-            {/* Column 01: GET FOUND */}
-            <div className="flex flex-col justify-between h-full space-y-5 pb-6 md:pb-0 md:pr-8 lg:pr-10">
-              <div className="space-y-1.5">
-                <div className="flex items-baseline gap-2">
+            {/* Card 1: Local SEO & Google Maps */}
+            <div className="group relative rounded-2xl border border-stone-200/90 bg-stone-50/60 hover:bg-white hover:border-blue-300 p-6 sm:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2.5 p-2 rounded-xl bg-white border border-stone-200/80 shadow-xs">
+                    <GoogleMapsLogo className="w-5 h-5 shrink-0" />
+                    <span className="text-xs font-mono font-bold text-stone-700">Google 3-Pack SEO</span>
+                  </div>
                   <span className="text-xs font-mono font-bold text-blue-600">01</span>
-                  <h3 className="text-lg sm:text-xl font-black text-stone-950 tracking-tight">
-                    {isTe ? 'కనుగొనబడండి' : 'GET FOUND'}
-                  </h3>
                 </div>
-                <p className="text-xs sm:text-sm text-stone-500 leading-snug min-h-[36px] sm:min-h-[40px]">
-                  {isTe
-                    ? 'కస్టమర్లు వెతికినప్పుడు మీ బిజినెస్ సులభంగా కనిపించేలా చేస్తాం.'
-                    : "Help customers discover you when they're already searching."}
-                </p>
+
+                <div className="space-y-2">
+                  <h3 className="text-xl sm:text-2xl font-black text-stone-950 tracking-tight group-hover:text-blue-600 transition-colors">
+                    {isTe ? 'లోకల్ SEO & గూగుల్ మ్యాప్స్ ర్యాంకింగ్' : 'Local SEO & Google Maps 3-Pack Ranking'}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                    {isTe
+                      ? 'రాజమండ్రిలో కస్టమర్లు "near me" లేదా మీ సర్వీస్ కోసం వెతికినప్పుడు గూగుల్ మ్యాప్స్ టాప్ 3 లో కనిపించేలా చేస్తాం. GBP ఆప్టిమైజేషన్, కీవర్డ్స్, రివ్యూ సిస్టమ్స్.'
+                      : 'Capture high-intent local customers actively searching in Rajahmundry. We optimize your Google Business Profile, geo-tag updates, build local citations, and accelerate review velocity to rank in the Google Maps 3-Pack.'}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <span className="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-md bg-white border border-stone-200 text-stone-700">
+                    Danavaipeta & Main Road
+                  </span>
+                  <span className="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-md bg-white border border-stone-200 text-stone-700">
+                    Kakinada & East Godavari
+                  </span>
+                  <span className="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-md bg-blue-50 border border-blue-100 text-blue-700">
+                    High-Intent Phone Calls
+                  </span>
+                </div>
               </div>
 
-              {/* Symmetrical 2x2 Grid: Fills Column Width */}
-              <div className="grid grid-cols-2 gap-2.5 sm:gap-3 w-full pt-2">
-                <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-xs sm:text-sm font-bold text-stone-900">
-                  <GoogleMapsLogo className="w-4 h-4 shrink-0" />
-                  <span className="truncate">Google Maps</span>
-                </div>
-                <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-xs sm:text-sm font-bold text-stone-900">
-                  <GoogleLogo className="w-4 h-4 shrink-0" />
-                  <span className="truncate">Local SEO</span>
-                </div>
-                <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-xs sm:text-sm font-bold text-stone-900">
-                  <GoogleLogo className="w-4 h-4 shrink-0" />
-                  <span className="truncate">Google Search</span>
-                </div>
-                <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-xs sm:text-sm font-bold text-stone-900">
-                  <GoogleMapsLogo className="w-4 h-4 shrink-0" />
-                  <span className="truncate">Business Profile</span>
-                </div>
+              <div className="pt-6 border-t border-stone-200/60 mt-6">
+                <a
+                  href="/services/local-seo/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('local-seo');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-blue-600 group-hover:text-blue-700 transition-colors"
+                >
+                  <span>{isTe ? 'లోకల్ SEO సర్వీసులు చూడండి →' : 'Explore Rajahmundry Local SEO →'}</span>
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
               </div>
             </div>
 
-            {/* Column 02: GET NOTICED */}
-            <div className="flex flex-col justify-between h-full space-y-5 py-6 md:py-0 md:px-8 lg:px-10">
-              <div className="space-y-1.5">
-                <div className="flex items-baseline gap-2">
+            {/* Card 2: Short-Form Video & Reels */}
+            <div className="group relative rounded-2xl border border-stone-200/90 bg-stone-50/60 hover:bg-white hover:border-blue-300 p-6 sm:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2.5 p-2 rounded-xl bg-white border border-stone-200/80 shadow-xs">
+                    <ReelsLogo className="w-5 h-5 shrink-0" />
+                    <span className="text-xs font-mono font-bold text-stone-700">Telugu Video Production</span>
+                  </div>
                   <span className="text-xs font-mono font-bold text-blue-600">02</span>
-                  <h3 className="text-lg sm:text-xl font-black text-stone-950 tracking-tight">
-                    {isTe ? 'గుర్తింపు పొందండి' : 'GET NOTICED'}
-                  </h3>
                 </div>
-                <p className="text-xs sm:text-sm text-stone-500 leading-snug min-h-[36px] sm:min-h-[40px]">
-                  {isTe
-                    ? 'ఆకట్టుకునే కంటెంట్‌తో మీ బ్రాండ్‌ని గుర్తుంచుకునేలా చేస్తాం.'
-                    : 'Create content that makes people stop, watch and remember you.'}
-                </p>
+
+                <div className="space-y-2">
+                  <h3 className="text-xl sm:text-2xl font-black text-stone-950 tracking-tight group-hover:text-blue-600 transition-colors">
+                    {isTe ? 'షార్ట్-ఫార్మ్ వీడియోలు & తెలుగు రీల్స్' : 'Short-Form Video Ads & Telugu Reels'}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                    {isTe
+                      ? 'మీ షోరూమ్ లేదా క్లినిక్‌లో డైరెక్ట్ ఆన్-లొకేషన్ షూట్స్. స్థానిక ప్రజలకు కనెక్ట్ అయ్యే సహజమైన తెలుగు డైలాగ్స్ మరియు ఆకట్టుకునే వీడియో ఎడిటింగ్.'
+                      : 'Stop the scroll with high-retention 4K video reels scripted in authentic native Telugu slang. We shoot on-location inside your store, restaurant, or clinic across Rajahmundry to showcase products and drive viral regional reach.'}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <span className="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-md bg-white border border-stone-200 text-stone-700">
+                    On-Location 4K Shoots
+                  </span>
+                  <span className="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-md bg-white border border-stone-200 text-stone-700">
+                    Native Telugu Scripting
+                  </span>
+                  <span className="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-md bg-blue-50 border border-blue-100 text-blue-700">
+                    Viral Instagram Reach
+                  </span>
+                </div>
               </div>
 
-              {/* Symmetrical 2x2 Grid: Fills Column Width */}
-              <div className="grid grid-cols-2 gap-2.5 sm:gap-3 w-full pt-2">
-                <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-xs sm:text-sm font-bold text-stone-900">
-                  <ReelsLogo className="w-4 h-4 shrink-0" />
-                  <span className="truncate">Reels</span>
-                </div>
-                <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-xs sm:text-sm font-bold text-stone-900">
-                  <InstagramLogo className="w-4 h-4 shrink-0" />
-                  <span className="truncate">Social Media</span>
-                </div>
-                <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-xs sm:text-sm font-bold text-stone-900">
-                  <YouTubeLogo className="w-4 h-4 shrink-0" />
-                  <span className="truncate">Content</span>
-                </div>
-                <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-xs sm:text-sm font-bold text-stone-900">
-                  <CreativesLogo className="w-4 h-4 shrink-0" />
-                  <span className="truncate">Campaign Creatives</span>
-                </div>
+              <div className="pt-6 border-t border-stone-200/60 mt-6">
+                <a
+                  href="/services/short-form-video-ads/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('short-form-video-ads');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-blue-600 group-hover:text-blue-700 transition-colors"
+                >
+                  <span>{isTe ? 'వీడియో ప్రొడక్షన్ వివరాలు →' : 'Explore Short-Form Video Ads →'}</span>
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
               </div>
             </div>
 
-            {/* Column 03: GET CUSTOMERS */}
-            <div className="flex flex-col justify-between h-full space-y-5 pt-6 md:pt-0 md:pl-8 lg:pl-10">
-              <div className="space-y-1.5">
-                <div className="flex items-baseline gap-2">
+            {/* Card 3: Creative Content & Bilingual Design */}
+            <div className="group relative rounded-2xl border border-stone-200/90 bg-stone-50/60 hover:bg-white hover:border-blue-300 p-6 sm:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2.5 p-2 rounded-xl bg-white border border-stone-200/80 shadow-xs">
+                    <CreativesLogo className="w-5 h-5 shrink-0" />
+                    <span className="text-xs font-mono font-bold text-stone-700">Bilingual Creatives</span>
+                  </div>
                   <span className="text-xs font-mono font-bold text-blue-600">03</span>
-                  <h3 className="text-lg sm:text-xl font-black text-stone-950 tracking-tight">
-                    {isTe ? 'కస్టమర్లను పొందండి' : 'GET CUSTOMERS'}
-                  </h3>
                 </div>
-                <p className="text-xs sm:text-sm text-stone-500 leading-snug min-h-[36px] sm:min-h-[40px]">
-                  {isTe
-                    ? 'కస్టమర్ల దృష్టిని నేరుగా ఎంక్వైరీలు మరియు అమ్మకాలుగా మారుస్తాం.'
-                    : 'Turn attention into enquiries, conversations and customers.'}
-                </p>
+
+                <div className="space-y-2">
+                  <h3 className="text-xl sm:text-2xl font-black text-stone-950 tracking-tight group-hover:text-blue-600 transition-colors">
+                    {isTe ? 'కంటెంట్ క్రియేషన్ & క్యాంపెయిన్ పోస్టర్స్' : 'Content Creation & Bilingual Ad Creatives'}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                    {isTe
+                      ? 'పండుగ ఆఫర్లు, బ్రైడల్ కలెక్షన్స్, మెడికల్ క్యాంప్స్‌కి తగ్గట్టుగా ప్రీమియం తెలుగు & ఇంగ్లీష్ సోషల్ మీడియా పోస్టర్స్ మరియు బ్యానర్స్.'
+                      : 'Stop looking like an amateur online. We produce high-converting bilingual ad banners, festive seasonal promotions, and carousel creatives specifically designed for Godavari district audiences and retail buying behaviors.'}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <span className="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-md bg-white border border-stone-200 text-stone-700">
+                    Festive Promotions
+                  </span>
+                  <span className="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-md bg-white border border-stone-200 text-stone-700">
+                    Telugu Copywriting
+                  </span>
+                  <span className="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-md bg-blue-50 border border-blue-100 text-blue-700">
+                    High Brand Recall
+                  </span>
+                </div>
               </div>
 
-              {/* Symmetrical 2x2 Grid: Fills Column Width */}
-              <div className="grid grid-cols-2 gap-2.5 sm:gap-3 w-full pt-2">
-                <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-xs sm:text-sm font-bold text-stone-900">
-                  <MetaLogo className="w-4 h-4 shrink-0" />
-                  <span className="truncate">Meta Ads</span>
-                </div>
-                <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-xs sm:text-sm font-bold text-stone-900">
-                  <LeadGenLogo className="w-4 h-4 shrink-0" />
-                  <span className="truncate">Lead Gen</span>
-                </div>
-                <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-xs sm:text-sm font-bold text-stone-900">
-                  <WhatsAppLogo className="w-4 h-4 shrink-0" />
-                  <span className="truncate">WhatsApp</span>
-                </div>
-                <div className="flex items-center gap-2.5 p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 text-xs sm:text-sm font-bold text-stone-900">
-                  <InquiriesLogo className="w-4 h-4 shrink-0" />
-                  <span className="truncate">Customer Enquiries</span>
-                </div>
+              <div className="pt-6 border-t border-stone-200/60 mt-6">
+                <a
+                  href="/services/content-creation/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('content-creation');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-blue-600 group-hover:text-blue-700 transition-colors"
+                >
+                  <span>{isTe ? 'కంటెంట్ సర్వీసులు చూడండి →' : 'Explore Creative Content Services →'}</span>
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
               </div>
             </div>
 
+            {/* Card 4: Social Media Management & Meta Ads */}
+            <div className="group relative rounded-2xl border border-stone-200/90 bg-stone-50/60 hover:bg-white hover:border-blue-300 p-6 sm:p-8 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/5 flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2.5 p-2 rounded-xl bg-white border border-stone-200/80 shadow-xs">
+                    <MetaLogo className="w-5 h-5 shrink-0" />
+                    <span className="text-xs font-mono font-bold text-stone-700">Meta Ads & Handling</span>
+                  </div>
+                  <span className="text-xs font-mono font-bold text-blue-600">04</span>
+                </div>
+
+                <div className="space-y-2">
+                  <h3 className="text-xl sm:text-2xl font-black text-stone-950 tracking-tight group-hover:text-blue-600 transition-colors">
+                    {isTe ? 'సోషల్ మీడియా మేనేజ్‌మెంట్ & లీడ్ జనరేషన్' : 'Social Media Management & Paid Ads'}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                    {isTe
+                      ? 'ప్రతిరోజూ పోస్టింగ్‌లు, కస్టమర్ కామెంట్స్ రిప్లైలు మరియు మెటా ప్రకటనల ద్వారా నేరుగా మీ WhatsApp కి కస్టమర్ ఎంక్వైరీలను రప్పించడం.'
+                      : 'Full-service profile management, comment handling, and hyper-targeted Meta ad campaigns restricted to a 15–30km radius around Rajahmundry. Zero wasted ad spend, routing hot leads directly into your WhatsApp inbox.'}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2 pt-1">
+                  <span className="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-md bg-white border border-stone-200 text-stone-700">
+                    WhatsApp Lead Routing
+                  </span>
+                  <span className="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-md bg-white border border-stone-200 text-stone-700">
+                    15–30km Geo-Fencing
+                  </span>
+                  <span className="inline-flex items-center text-[11px] font-semibold px-2.5 py-1 rounded-md bg-blue-50 border border-blue-100 text-blue-700">
+                    Transparent Ad Spend
+                  </span>
+                </div>
+              </div>
+
+              <div className="pt-6 border-t border-stone-200/60 mt-6">
+                <a
+                  href="/services/social-media-management/"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('social-media-management');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-extrabold text-blue-600 group-hover:text-blue-700 transition-colors"
+                >
+                  <span>{isTe ? 'సోషల్ మీడియా వివరాలు →' : 'Explore Social Media Management →'}</span>
+                  <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Secondary Directory Bar: Deep Linking Supporting Capabilities */}
+          <div className="p-4 sm:p-5 rounded-2xl bg-stone-50 border border-stone-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-stone-500">
+                {isTe ? 'అదనపు సేవలు:' : 'Additional Specialized Capabilities:'}
+              </span>
+            </div>
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs font-bold">
+              <a
+                href="/services/platform-coverage/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate('platform-coverage');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="px-3 py-1.5 rounded-lg bg-white border border-stone-200 text-stone-700 hover:text-blue-600 hover:border-blue-300 transition-colors"
+              >
+                Platform Coverage
+              </a>
+              <a
+                href="/services/community-management/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate('community-management');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="px-3 py-1.5 rounded-lg bg-white border border-stone-200 text-stone-700 hover:text-blue-600 hover:border-blue-300 transition-colors"
+              >
+                Community & WhatsApp Management
+              </a>
+              <a
+                href="/services/reporting-insights/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate('reporting-insights');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="px-3 py-1.5 rounded-lg bg-white border border-stone-200 text-stone-700 hover:text-blue-600 hover:border-blue-300 transition-colors"
+              >
+                Weekly ROI Reporting
+              </a>
+              <a
+                href="/services/content-operations/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  onNavigate('content-operations');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+                className="px-3 py-1.5 rounded-lg bg-white border border-stone-200 text-stone-700 hover:text-blue-600 hover:border-blue-300 transition-colors"
+              >
+                Content Operations
+              </a>
+            </div>
           </div>
 
         </div>
@@ -1029,21 +1183,21 @@ export const HomePage: React.FC<HomePageProps> = ({
             
             {/* Passage 1: Brand Entity Definition */}
             <div className="pt-8 first:pt-0 space-y-3">
-              <h2 className="text-xl sm:text-2xl font-black text-stone-950 tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-black text-stone-950 tracking-tight">
                 What Services Does Bhargav Digital Solutions Provide in Rajahmundry?
-              </h2>
+              </h3>
               <p className="text-sm sm:text-base text-stone-700 leading-relaxed">
-                Bhargav Digital Solutions (BDS) is a regional digital marketing and growth marketing agency headquartered in Danavaipeta, Rajahmundry, Andhra Pradesh. The agency specializes in hyper-local customer acquisition for small-to-medium businesses across the East Godavari region, including Kakinada, Amalapuram, and Rajahmundry. BDS provides four core services: Local SEO and Google Maps 3-Pack ranking optimization; end-to-end short-form video production specializing in high-converting Telugu-language Instagram Reels and YouTube Shorts; full-funnel Meta and Google advertising management; and direct WhatsApp lead generation pipelines. Unlike traditional metro advertising agencies that rely on outsourced talent and generic English ad templates, Bhargav Digital Solutions is founder-led by Bhargav Daliparthi, providing direct strategy, native Telugu cultural copywriting, transparent weekly ROI reporting, and custom pricing tailored upon consulting and client requirements. All campaigns are engineered to convert digital visibility into physical footfall and direct phone inquiries.
+                Bhargav Digital Solutions (BDS) is a regional digital marketing and growth marketing agency headquartered in Danavaipeta, Rajahmundry, Andhra Pradesh. The agency specializes in hyper-local customer acquisition for small-to-medium businesses across the East Godavari region, including Kakinada, Amalapuram, and Rajahmundry. BDS provides four core services: <a href="/services/local-seo/" onClick={(e) => { e.preventDefault(); onNavigate('local-seo'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-blue-600 font-semibold underline hover:text-blue-700">Local SEO and Google Maps 3-Pack ranking optimization</a>; end-to-end <a href="/services/short-form-video-ads/" onClick={(e) => { e.preventDefault(); onNavigate('short-form-video-ads'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-blue-600 font-semibold underline hover:text-blue-700">short-form video production</a> specializing in high-converting Telugu-language Instagram Reels and YouTube Shorts; full-funnel <a href="/services/social-media-management/" onClick={(e) => { e.preventDefault(); onNavigate('social-media-management'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-blue-600 font-semibold underline hover:text-blue-700">Meta and Google advertising management</a>; and direct WhatsApp lead generation pipelines. Unlike traditional metro advertising agencies that rely on outsourced talent and generic English ad templates, Bhargav Digital Solutions is founder-led by Bhargav Daliparthi, providing direct strategy, native Telugu cultural copywriting, transparent weekly ROI reporting, and custom pricing tailored upon consulting and client requirements. All campaigns are engineered to convert digital visibility into physical footfall and direct phone inquiries.
               </p>
             </div>
 
             {/* Passage 4: Custom Pricing Structure */}
             <div className="pt-8 space-y-3">
-              <h2 className="text-xl sm:text-2xl font-black text-stone-950 tracking-tight">
+              <h3 className="text-xl sm:text-2xl font-black text-stone-950 tracking-tight">
                 How Is Digital Marketing Pricing Structured at Bhargav Digital Solutions?
-              </h2>
+              </h3>
               <p className="text-sm sm:text-base text-stone-700 leading-relaxed">
-                Digital marketing engagements at Bhargav Digital Solutions are structured on a custom basis following an in-depth requirement analysis and consulting session. Rather than enforcing rigid package rates, BDS assesses the business's specific growth stage, target geographic radius across Rajahmundry and East Godavari, video production cadence, and campaign objectives. Custom proposals can encompass Google Business Profile and Local SEO optimization, on-location 4K Telugu video reel production, Meta and Google paid ad campaigns, or full-funnel WhatsApp lead generation. Every client agreement is month-to-month with zero forced annual contracts and zero agency markups on direct ad spend. Business owners receive complete transparency, dedicated founder oversight from Bhargav Daliparthi, and measurable return on investment tailored directly to their operational budget.
+                Digital marketing engagements at Bhargav Digital Solutions are structured on a custom basis following an in-depth requirement analysis and consulting session. Rather than enforcing rigid package rates, BDS assesses the business's specific growth stage, target geographic radius across Rajahmundry and East Godavari, video production cadence, and campaign objectives. Custom proposals can encompass Google Business Profile and <a href="/services/local-seo/" onClick={(e) => { e.preventDefault(); onNavigate('local-seo'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-blue-600 font-semibold underline hover:text-blue-700">Local SEO optimization</a>, on-location 4K Telugu <a href="/services/short-form-video-ads/" onClick={(e) => { e.preventDefault(); onNavigate('short-form-video-ads'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-blue-600 font-semibold underline hover:text-blue-700">video reel production</a>, <a href="/services/content-creation/" onClick={(e) => { e.preventDefault(); onNavigate('content-creation'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="text-blue-600 font-semibold underline hover:text-blue-700">creative campaign assets</a>, Meta and Google paid ad campaigns, or full-funnel WhatsApp lead generation. Every client agreement is month-to-month with zero forced annual contracts and zero agency markups on direct ad spend. Business owners receive complete transparency, dedicated founder oversight from Bhargav Daliparthi, and measurable return on investment tailored directly to their operational budget.
               </p>
             </div>
 

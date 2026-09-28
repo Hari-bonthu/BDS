@@ -114,7 +114,7 @@ export default function App() {
   useEffect(() => {
     const metaMap: Record<string, { title: string; desc: string; canonical: string; image?: string }> = {
       home: {
-        title: 'Bhargav Digital Solutions | Digital Marketing Agency in Rajahmundry',
+        title: 'Digital Marketing Agency in Rajahmundry | Bhargav Digital Solutions',
         desc: "Bhargav Digital Solutions is Rajahmundry's results-driven digital marketing agency specializing in Local SEO, Google Maps 3-Pack, Telugu Reels and Meta Ads.",
         canonical: 'https://www.bhargavdigitalsolutions.com/',
         image: 'https://www.bhargavdigitalsolutions.com/assets/logo-bds.png'
